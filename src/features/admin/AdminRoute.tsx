@@ -56,14 +56,12 @@ export const AdminRoute: React.FC = () => {
                 return;
             }
 
-            // Verificación por PIN (Localhost/Bootstrap)
+            // Verificación por PIN (Localhost y Producción)
             if (checkSession()) {
                 setStatus('authorized');
                 updateActivity();
-            } else if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                setStatus('gate');
             } else {
-                setStatus('denied');
+                setStatus('gate');
             }
         };
 
