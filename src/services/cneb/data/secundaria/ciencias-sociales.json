@@ -1,0 +1,362 @@
+{
+    "area": "Ciencias Sociales",
+    "nivel": "Secundaria",
+    "competencias": [
+        {
+            "nombre": "Construye interpretaciones históricas",
+            "estandares": {
+                "Ciclo VI": "Construye interpretaciones históricas sobre hechos o procesos del Perú y el mundo, en los que explica hechos o procesos históricos, a partir de la clasificación de las causas y consecuencias, reconociendo sus cambios y permanencias, y usando términos históricos. Explica su relevancia a partir de los cambios y permanencias que generan en el tiempo, identificando simultaneidades. Emplea distintos referentes y convenciones temporales, así como conceptos relacionados a instituciones sociopolíticas y la economía. Compara e integra información de diversas fuentes, estableciendo diferencias entre las narraciones de los hechos y las interpretaciones de los autores de las fuentes.",
+                "Ciclo VII": "Construye interpretaciones históricas sobre la base de los problemas históricos del Perú y el mundo en relación a los grandes cambios, permanencias y simultaneidades a lo largo de la historia, empleando conceptos sociales, políticos y económicos abstractos y complejos. Jerarquiza múltiples causas y consecuencias de los hechos o procesos históricos. Establece relaciones entre esos procesos históricos y situaciones contemporáneas. Explica la perspectiva de los protagonistas y de los autores de las fuentes, para evaluar su fiabilidad, estableciendo diferencias entre las narraciones de los hechos y las interpretaciones de los autores. Combina diversos tipos de fuentes seleccionando las más pertinentes para responder a preguntas sobre el pasado."
+            },
+            "capacidades": [
+                "Interpreta críticamente fuentes diversas.",
+                "Comprende el tiempo histórico.",
+                "Elabora explicaciones sobre procesos históricos."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Interpreta críticamente fuentes diversas.",
+                    "texto": "Utiliza fuentes históricas para obtener información sobre un hecho o proceso histórico, desde el origen de la humanidad hasta las civilizaciones del mundo clásico y desde los primeros pobladores hasta los Estados regionales en los Andes centrales."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Interpreta críticamente fuentes diversas.",
+                    "texto": "Clasifica diferentes tipos de fuentes históricas y obtiene información de estas respecto a hechos o procesos históricos, desde el origen de la humanidad hasta las civilizaciones del mundo clásico y desde los primeros pobladores hasta los Estados regionales en los Andes centrales."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comprende el tiempo histórico.",
+                    "texto": "Sitúa en orden sucesivo distintos hechos o procesos históricos comprendidos desde el origen de la humanidad hasta las civilizaciones del mundo clásico y desde los primeros pobladores hasta los Estados regionales en los Andes centrales. Con este fin, establece la distancia temporal y la simultaneidad que hay entre ellos, utilizando convenciones temporales y periodificaciones."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica hechos o procesos históricos comprendidos desde el origen de la humanidad hasta las civilizaciones del mundo clásico y desde los primeros pobladores hasta los Estados regionales en los Andes centrales sobre la base de sus causas y consecuencias, y de conceptos sociales, políticos y económicos."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica las causas y consecuencias de hechos o procesos históricos comprendidos desde el origen de la humanidad hasta las civilizaciones del mundo clásico y desde los primeros pobladores hasta los Estados regionales en los Andes centrales utilizando conceptos sociales, políticos y económicos."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Interpreta críticamente fuentes diversas.",
+                    "texto": "Explica las diferencias entre narraciones e interpretaciones de un hecho o proceso histórico, desde las invasiones bárbaras hasta la expansión europea ((siglos XV y XVI)) y desde el Tahuantinsuyo hasta el Virreinato del Perú ((siglo XVI))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Interpreta críticamente fuentes diversas.",
+                    "texto": "Utiliza diversas fuentes históricas sobre determinados hechos o procesos históricos, desde las invasiones bárbaras hasta la expansión europea ((siglos XV y XVI)) y desde el Tahuantinsuyo hasta el Virreinato del Perú ((siglo XVI)). Para ello, identifica el contexto histórico ((características de la época)) en el que fueron producidas esas fuentes y complementa una con otra."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende el tiempo histórico.",
+                    "texto": "Utiliza las convenciones y categorías temporales para explicar la importancia de los hechos o procesos históricos desde las invasiones bárbaras hasta la expansión europea ((siglos XV y XVI)) y desde el Tahuantinsuyo hasta el Virreinato del Perú ((siglo XVI)). Toma en cuenta las simultaneidades, los aspectos que cambian y otros que permanecen."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica hechos o procesos históricos desde las invasiones bárbaras hasta la expansión europea ((siglos XV y XVI)) y desde el Tahuantinsuyo hasta el Virreinato del Perú ((siglo XVI)) a partir de la clasificación de sus causas y consecuencias ((sociales, políticas, económicas, culturales, entre otras)). Para ello, utiliza conceptos sociopolíticos y económicos, y diversos términos históricos."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Clasifica las causas y consecuencias de los hechos o procesos históricos desde las invasiones bárbaras hasta la expansión europea ((siglos XV y XVI)) y desde el Tahuantinsuyo hasta el Virreinato del Perú ((siglo XVI)) para elaborar explicaciones históricas. Para ello utiliza conceptos sociopolíticos y económicos así como diversos términos históricos."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Interpreta críticamente fuentes diversas.",
+                    "texto": "Identifica coincidencias y contradicciones entre diversas fuentes y complementa la información que brindan sobre hechos o procesos históricos, desde la Reforma hasta la era de las revoluciones ((siglo XVII y XVIII)) y desde el Virreinato ((siglo XVII)) hasta el surgimiento de la República peruana. Para ello, identifica las características del contexto histórico de la época en que se produjeron las fuentes y explica los cambios y permanencias que estos procesos han generado en la historia."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comprende el tiempo histórico.",
+                    "texto": "Utiliza convenciones y categorías temporales para explicar la importancia de los hechos o procesos históricos desde la Reforma hasta la era de las revoluciones ((siglo XVII y XVIII)) y desde el Virreinato ((siglo XVII)) hasta el surgimiento de la República peruana. Toma en cuenta las simultaneidades, los aspectos que cambian y otros que permanecen."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica y jerarquiza las causas de los procesos históricos desde la Reforma hasta la era de las revoluciones ((siglo XVII y XVIII)) y desde el Virreinato ((siglo XVII)) hasta el surgimiento de la República peruana. Para ello utiliza conceptos de carácter político, económico, social y cultural."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica hechos o procesos históricos desde la Reforma hasta la era de las revoluciones ((siglo XVII y XVIII)) y desde el Virreinato ((siglo XVII)) hasta el surgimiento de la República peruana a partir de la clasificación de sus causas y consecuencias ((sociales, políticas, económicas, culturales, entre otras)). Para ello, utiliza conceptos científicos y diversos términos históricos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Interpreta críticamente fuentes diversas.",
+                    "texto": "Explica que las interpretaciones sobre hechos o procesos históricos, desde la Segunda Revolución Industrial hasta la Primera Guerra Mundial y desde el primer civilismo hasta el Oncenio de Leguía, pueden ser distintas por las ideologías y antecedentes de los autores de las fuentes. Para ello, utiliza diversas fuentes e identifica la validez de estas."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comprende el tiempo histórico.",
+                    "texto": "Utiliza convenciones y categorías temporales para explicar la importancia de los hechos o procesos históricos desde la Segunda Revolución Industrial hasta la Primera Guerra Mundial y desde el primer civilismo hasta el Oncenio de Leguía. Toma en cuenta la simultaneidad y periodificación, y los cambios y permanencias."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica hechos, procesos o problemas históricos comprendidos desde la Segunda Revolución Industrial hasta la Primera Guerra Mundial y desde el primer civilismo hasta el Oncenio de Leguía, a partir de la clasificación de las causas y consecuencias de estos. Para ello, usa conceptos sociopolíticos y económicos, así como diversos términos históricos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica las causas y consecuencias de los hechos o procesos históricos comprendidos desde la Segunda Revolución Industrial hasta la Primera Guerra Mundial y desde el primer civilismo hasta el Oncenio de Leguía, y establece relaciones entre ellos. Para ello, utiliza conceptos sociopolíticos y económicos así como diversos términos históricos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Interpreta críticamente fuentes diversas.",
+                    "texto": "Utiliza constantemente una diversidad de fuentes, incluyendo las producidas por él ((entrevistas o testimonios a personas que vivieron hechos recientes)), para indagar sobre un hecho, proceso o problema histórico comprendido desde el periodo entre guerras hasta las crisis económicas de inicios del siglo XXI y desde el Oncenio de Leguía hasta la historia reciente en el Perú ((década de 1990)). Para ello, contrasta diversas interpretaciones que se presentan en las fuentes."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comprende el tiempo histórico.",
+                    "texto": "Utiliza convenciones y categorías temporales para explicar la importancia de los hechos o procesos históricos comprendidos desde el periodo entre guerras hasta las crisis económicas de inicios del siglo XXI y desde el Oncenio de Leguía hasta la historia reciente en el Perú ((década de 1990)). Toma en cuenta la simultaneidad y periodificación, y los cambios y permanencias."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica hechos, procesos o problemas históricos comprendidos desde el periodo entre guerras hasta las crisis económicas de inicios del siglo XXI y desde el Oncenio de Leguía hasta la historia reciente en el Perú ((década de 1990)), a partir de evidencias con respaldo científico. Para ello, utiliza conceptos sociopolíticos y económicos, así como diversos términos históricos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Elabora explicaciones sobre procesos históricos.",
+                    "texto": "Explica los cambios, las permanencias y las relaciones de simultaneidad generados por los hechos o procesos históricos comprendidos desde el periodo entre guerras hasta las crisis económicas de inicios del siglo XXI y desde el Oncenio de Leguía hasta la historia reciente en el Perú ((década de 1990)), utilizando conceptos sociopolíticos y económicos y diversos términos históricos."
+                }
+            ]
+        },
+        {
+            "nombre": "Gestiona responsablemente el espacio y el ambiente",
+            "estandares": {
+                "Ciclo VI": "Gestiona responsablemente el espacio y ambiente al realizar actividades orientadas al cuidado de su entorno, analizando las causas y consecuencias de problemáticas ambientales y territoriales. Explica cómo las distintas dimensiones influyen en la diferenciación de los espacios geográficos. Utiliza diversas fuentes de información y herramientas cartográficas para describir el espacio geográfico y el ambiente, orientándose, desplazándose y extrayendo información de estos.",
+                "Ciclo VII": "Gestiona responsablemente el espacio y ambiente al proponer acciones basadas en el análisis de las causas y consecuencias de las problemáticas ambientales a diferentes escalas. Explica los cambios y permanencias en el espacio geográfico a diferentes escalas. Utiliza fuentes de información geográfica y herramientas cartográficas para analizar el espacio geográfico y el ambiente, orientándose, desplazándose y extrayendo información del ambiente."
+            },
+            "capacidades": [
+                "Comprende las relaciones entre los elementos naturales y sociales.",
+                "Maneja fuentes de información para comprender el espacio geográfico y el ambiente.",
+                "Genera acciones para conservar el ambiente local y global."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comprende las relaciones entre los elementos naturales y sociales.",
+                    "texto": "Describe los elementos naturales y sociales de los grandes espacios en el Perú y el mundo ((selvas, desiertos, zonas glaciares, entre otros)), y establece relaciones entre ellos."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comprende las relaciones entre los elementos naturales y sociales.",
+                    "texto": "Explica cómo los distintos actores sociales intervienen en la construcción de los espacios geográficos y analiza las repercusiones de estas intervenciones en la calidad de vida de las personas y en su entorno."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Maneja fuentes de información para comprender el espacio geográfico y el ambiente.",
+                    "texto": "Utiliza información y diversas herramientas cartográficas para ubicar y orientarse en el espacio geográfico y el ambiente."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Maneja fuentes de información para comprender el espacio geográfico y el ambiente.",
+                    "texto": "Utiliza fuentes de información geográfica para describir los espacios geográficos y el ambiente."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Explica las causas y consecuencias de los problemas ambientales ((calentamiento global, contaminación, deforestación, entre otros)) y territoriales ((vulnerabilidad ante desastres)), y propone acciones para prevenirlos o mitigarlos."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Promueve y participa en acciones orientadas al cuidado del ambiente y a la gestión de riesgo de desastres en su escuela y comunidad."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende las relaciones entre los elementos naturales y sociales.",
+                    "texto": "Explica los cambios y permanencias en las ocho regiones naturales del Perú y los grandes espacios en América basándose en la influencia de las actividades económicas y los procesos de urbanización."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende las relaciones entre los elementos naturales y sociales.",
+                    "texto": "Explica cómo las intervenciones de los actores sociales en el espacio geográfico generan problemáticas ambientales y territoriales."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Maneja fuentes de información para comprender el espacio geográfico y el ambiente.",
+                    "texto": "Utiliza información y diversas herramientas cartográficas y sociales para describir espacios geográficos de influencia en América y el mundo, y utiliza puntos de referencia para orientarse en estos."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Maneja fuentes de información para comprender el espacio geográfico y el ambiente.",
+                    "texto": "Describe los espacios geográficos a diferentes escalas integrando información de diversas fuentes."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Explica las causas y consecuencias de los conflictos ambientales y territoriales, y reconoce la importancia de la gestión de riesgos para prevenirlos o mitigarlos."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Propone acciones orientadas al cuidado del ambiente y a la prevención de riesgos de desastres en su escuela y comunidad."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comprende las relaciones entre los elementos naturales y sociales.",
+                    "texto": "Explica la influencia de los actores sociales en la configuración de los espacios geográficos a diferentes escalas ((local, nacional y mundial)) y en la generación de problemáticas ambientales y territoriales."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Maneja fuentes de información para comprender el espacio geográfico y el ambiente.",
+                    "texto": "Utiliza diversas herramientas cartográficas y tecnológicas para procesar información geográfica sobre el espacio geográfico y el ambiente."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Explica las causas y consecuencias de los conflictos ambientales y territoriales a partir de considerar las visiones de los distintos actores involucrados."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Propone proyectos para el cuidado del ambiente y para mitigar los riesgos de desastres en su comunidad."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comprende las relaciones entre los elementos naturales y sociales.",
+                    "texto": "Explica las formas de organizar el territorio peruano sobre la base de los cambios y permanencias en el espacio geográfico y el ambiente, a partir de las decisiones de los actores sociales y el impacto de estas en la calidad de vida de la población."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Maneja fuentes de información para comprender el espacio geográfico y el ambiente.",
+                    "texto": "Utiliza diversas fuentes de información geográfica y herramientas cartográficas para analizar el espacio geográfico y el ambiente."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Propone y ejecuta acciones frente al cambio climático y a los riesgos de desastres, considerando las políticas ambientales nacionales y los acuerdos internacionales para el desarrollo sostenible."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Evalúa las problemáticas ambientales y territoriales considerando las diferentes escalas y las dimensiones sociales, económicas, políticas y culturales."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comprende las relaciones entre los elementos naturales y sociales.",
+                    "texto": "Explica cómo se configura el espacio geográfico a partir de las interrelaciones entre los elementos naturales y sociales, y cómo estas influyen en la calidad de vida de la población a diferentes escalas."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Maneja fuentes de información para comprender el espacio geográfico y el ambiente.",
+                    "texto": "Utiliza fuentes of información geográfica y herramientas estadísticas, cartográficas y tecnológicas para analizar el espacio geográfico y el ambiente y orientarse en estos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Plantea medidas de prevención o mitigación ante situaciones de riesgo de desastres considerando las políticas públicas nacionales e internacionales."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Genera acciones para conservar el ambiente local y global.",
+                    "texto": "Ejecuta acciones para el desarrollo sostenible, orientadas al cuidado del ambiente y a la gestión del riesgo de desastres, analizando las causas y consecuencias de las problemáticas ambientales y territoriales a diferentes escalas."
+                }
+            ]
+        },
+        {
+            "nombre": "Gestiona responsablemente los recursos económicos",
+            "estandares": {
+                "Ciclo VI": "Gestiona responsablemente los recursos económicos al promover el ahorro y la inversión de los recursos de manera que se satisfagan las necesidades. Analiza las interrelaciones entre los agentes del sistema económico y financiero global teniendo en cuenta el mercado y el papel del Estado. Gestiona de manera inteligente los recursos para proteger sus derechos como consumidor.",
+                "Ciclo VII": "Gestiona responsablemente los recursos económicos al promover el ahorro y la inversión de los recursos de manera que se satisfagan las necesidades. Analiza las interrelaciones entre los agentes del sistema económico y financiero global teniendo en cuenta el mercado y el papel del Estado. Gestiona de manera inteligente los recursos para proteger sus derechos como consumidor."
+            },
+            "capacidades": [
+                "Comprende las relaciones entre los elementos del sistema económico y financiero.",
+                "Toma decisiones económicas y financieras."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comprende las relaciones entre los elementos del sistema económico y financiero.",
+                    "texto": "Explica los roles de los distintos agentes económicos ((familias, empresas y Estado)) y la función que cumple el mercado en el sistema económico."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comprende las relaciones entre los elementos del sistema económico y financiero.",
+                    "texto": "Describe el papel del Estado en la economía, la importancia de los impuestos y los servicios públicos."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Propone acciones para el uso responsable de los recursos de su hogar y escuela con el fin de satisfacer sus necesidades y promover el ahorro."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Reconoce sus derechos como consumidor y utiliza información para tomar decisiones al momento de adquirir productos o servicios."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende las relaciones entre los elementos del sistema económico y financiero.",
+                    "texto": "Explica la interrelación entre los agentes del sistema económico y financiero nacional y el impacto de sus decisiones en la economía del hogar."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende las relaciones entre los elementos del sistema económico y financiero.",
+                    "texto": "Describe la importancia de la inversión y el ahorro ante situaciones de incertidumbre y riesgo."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Propone alternativas de consumo responsable considerando sus derechos como consumidor y la importancia ética en la adquisición de productos o servicios."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Organiza un presupuesto personal o familiar con el fin de optimizar el uso de los recursos."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comprende las relaciones entre los elementos del sistema económico y financiero.",
+                    "texto": "Explica el funcionamiento del sistema económico y financiero a partir de las interrelaciones entre sus diversos agentes y el rol del Estado como regulador del mercado."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Propone alternativas para el uso responsable de los recursos económicos y financieros considerando el costo de oportunidad y los beneficios del ahorro y la inversión."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Ejerce sus derechos como consumidor responsable y evalúa la publicidad y el consumo basándose en criterios éticos y de sostenibilidad."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comprende las relaciones entre los elementos del sistema económico y financiero.",
+                    "texto": "Explica el rol del Estado en la economía nacional a partir del análisis de las políticas económicas, de los presupuestos públicos y de los impuestos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Propone alternativas de consumo basándose en el análisis de las dinámicas del mercado, los derechos del consumidor y la importancia de la educación financiera."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Formula planes de ahorro e inversión considerando el riesgo y el costo de oportunidad."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comprende las relaciones entre los elementos del sistema económico y financiero.",
+                    "texto": "Explica el funcionamiento del sistema económico y financiero mundial y nacional, y cómo las decisiones de los agentes económicos y financieros influyen en la calidad de vida de las personas."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Propone alternativas de consumo responsable y participación en el sistema financiero considerando la ética, la sostenibilidad y sus derechos como consumidor."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Toma decisiones económicas y financieras.",
+                    "texto": "Ejecuta un plan de negocios o planes de ahorro e inversión para el uso responsable de los recursos económicos y financieros."
+                }
+            ]
+        }
+    ]
+}

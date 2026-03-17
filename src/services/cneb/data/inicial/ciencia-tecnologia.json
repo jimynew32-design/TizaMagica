@@ -1,0 +1,86 @@
+{
+    "area": "Ciencia y Tecnología",
+    "nivel": "Inicial",
+    "competencias": [
+        {
+            "nombre": "Indaga mediante métodos científicos para construir sus conocimientos",
+            "estandares": {
+                "Ciclo II": "Explora los objetos, el espacio y hechos que acontecen en su entorno, hace preguntas con base en su curiosidad, propone posibles respuestas, obtiene información al observar, manipular y describir; compara aspectos del objeto o fenómeno para comprobar la respuesta y expresa en forma oral o gráfica lo que hizo y aprendió."
+            },
+            "capacidades": [
+                "Problematiza situaciones para hacer indagación.",
+                "Diseña estrategias para hacer indagación.",
+                "Genera y registra datos o información.",
+                "Analiza datos e información.",
+                "Evalúa y comunica el proceso y resultado de su indagación."
+            ],
+            "desempenos": [
+                {
+                    "grado": "3 años",
+                    "capacidad": "Problematiza situaciones para hacer indagación.",
+                    "texto": "Hace preguntas que expresan su curiosidad sobre los objetos, seres vivos, hechos o fenómenos que acontecen en su ambiente. ((Ejemplo: Un niño pregunta a la docente: \"¿Qué es eso?\". \"Una hormiga\", responde el adulto. \"¿Por qué la hormiga entró a la casa?\", vuelve a preguntar el niño))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Genera y registra datos o información.",
+                    "texto": "Obtiene información sobre las características de los objetos y materiales que explora a través de sus sentidos. Usa algunos objetos y herramientas en su exploración. ((Ejemplo: Utiliza una lupa para observar algo pequeño, como una hormiga, y descubre que tiene seis patas y dos antenas))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Evalúa y comunica el proceso y resultado de su indagación.",
+                    "texto": "Comunica los descubrimientos que hace cuando explora. Utiliza gestos o señas, movimientos corporales o lo hace oralmente. ((Ejemplo: Un niño señala con el dedo un gusano en el piso y salta emocionado))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Problematiza situaciones para hacer indagación.",
+                    "texto": "Hace preguntas que expresan su curiosidad sobre los objetos, seres vivos, hechos o fenómenos que acontecen en su ambiente; y, al responder, da a conocer lo que sabe acerca de ellos. ((Ejemplo: Un grupo de niños al descubrir una fila de hormigas le pregunta a la docente: \"¿Dónde viven las hormigas?\"))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Diseña estrategias para hacer indagación.",
+                    "texto": "Propone acciones, y el uso de materiales e instrumentos para buscar información del objeto, ser vivo o hecho de interés que le genera interrogantes. ((Ejemplo: Para averiguar dónde viven las hormigas, los niños proponen utilizar lupas, salir al patio para encontrarlas y seguirlas))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Genera y registra datos o información.",
+                    "texto": "Obtiene información sobre las características de los objetos, seres vivos o fenómenos naturales que observa y/o explora, y establece relaciones entre ellos. Registra la información de differentes formas ((dibujos, fotos, modelados)). ((Ejemplo: Al observar y hacer seguimiento a las hormigas los niños descubren que salen y entran, llevando pedacitos de pan, a un pequeño orificio en el piso del patio))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Analiza datos e información.",
+                    "texto": "Compara su respuesta inicial con respecto al objeto, ser vivo o hecho de interés, con la información obtenida posteriormente. ((Ejemplo: Fabiola dice: \"Las hormigas no solo viven en el jardín, sino también en los huequitos del piso\"))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Evalúa y comunica el proceso y resultado de su indagación.",
+                    "texto": "Comunica las acciones que realizó para obtener información y comparte sus resultados. Utiliza sus registros ((dibujos, fotos u otras formas de representación, como el modelado)) o lo hace verbalmente. ((Ejemplo: Juan explica sus dibujos sobre donde viven las hormigas a los demás compañeros))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Problematiza situaciones para hacer indagación.",
+                    "texto": "Hace preguntas que expresan su curiosidad sobre los objetos, seres vivos, hechos o fenómenos que acontecen en su ambiente; da a conocer lo que sabe y las ideas que tiene acerca de ellos. Plantea posibles explicaciones y/o alternativas de solución frente a una pregunta o situación problemática. ((Ejemplo: Un niño comenta que el queso que ha traído, lo hizo su abuelita con la leche que saca de su vaca))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Diseña estrategias para hacer indagación.",
+                    "texto": "Propone acciones, y el uso de materiales e instrumentos para buscar información del objeto, ser vivo o hecho de interés que genera interrogantes, o para resolver un problema planteado. ((Ejemplo: Para obtener información acerca de cómo la leche \"se convierte\" en queso, los niños proponen visitar y hablar con la abuelita de Juan))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Genera y registra datos o información.",
+                    "texto": "Obtiene información sobre las características de los objetos, seres vivos, hechos y fenómenos de la naturaleza, y establece relaciones entre ellos a través de la observación, experimentación y otras fuentes proporcionadas ((libros, noticias, videos, imágenes, entrevistas)). Describe sus características, necesidades, funciones, relaciones o cambios en su apariencia física. Registra la información de diferentes formas ((con fotos, dibujos, modelado o de acuerdo con su nivel de escritura)). ((Ejemplo: Para comprobar la idea \"para hacer queso hay que meter la leche a la refrigeradora/hielo\". Observan y registran los resultados))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Analiza datos e información.",
+                    "texto": "Compara sus explicaciones y predicciones con los datos e información que ha obtenido, y participa en la construcción de las conclusiones. ((Ejemplo: Pepe dice: \"No, porque la leche no se convirtió en queso cuando la metimos en la refrigeradora\", \"La abuelita nos enseñó que hay que mezclar la leche con el cuajo y ponerla en el molde\"))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Evalúa y comunica el proceso y resultado de su indagación.",
+                    "texto": "Comunica -de manera verbal, a través de dibujos, fotos, modelado o también según su nivel de escritura- las acciones que realizó para obtener información. Comparte sus resultados y lo que aprendió. ((Ejemplo: Luisa explica a través de las fotos que tomaron sobre la elaboración del queso, acerca de los ingredientes, objetos y acciones que hizo la abuelita para preparar el queso))."
+                }
+            ]
+        }
+    ]
+}

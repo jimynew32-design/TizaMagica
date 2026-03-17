@@ -1,0 +1,210 @@
+{
+    "area": "Competencias Transversales",
+    "nivel": "Secundaria",
+    "competencias": [
+        {
+            "nombre": "Se desenvuelve en los entornos virtuales generados por las TIC",
+            "estandares": {
+                "Ciclo VI": "Se desenvuelve en los entornos virtuales cuando integra distintas actividades, actitudes y conocimientos de diversos contextos socioculturales en su entorno virtual personal. Crea materiales digitales ((presentaciones, videos, documentos, diseños, entre otros)) que responde a necesidades concretas de acuerdo a sus procesos cognitivos y la manifestación de su individualidad.",
+                "Ciclo VII": "Se desenvuelve en los entornos virtuales cuando interactúa en diversos espacios ((como portales educativos, foros, redes sociales, entre otros)) de manera consciente y sistemática administrando información y creando materiales digitales en respuesta a necesidades de su entorno laboral, escolar o de su vida cotidiana."
+            },
+            "capacidades": [
+                "Personaliza entornos virtuales.",
+                "Gestiona información del entorno virtual.",
+                "Interactúa en entornos virtuales.",
+                "Crea objetos virtuales en diversos formatos."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Personaliza entornos virtuales.",
+                    "texto": "Navega en diversos entornos virtuales recomendados adaptando funcionalidades básicas de acuerdo con sus necesidades de aprendizaje."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Gestiona información del entorno virtual.",
+                    "texto": "Clasifica información de diversas fuentes y entornos virtuales y la organiza en el entorno virtual personal considerando su propósito."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Interactúa en entornos virtuales.",
+                    "texto": "Participa en actividades colaborativas en entornos virtuales para intercambiar y compartir información de manera ética y responsable."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Crea objetos virtuales en diversos formatos.",
+                    "texto": "Elabora objetos virtuales mediante la combinación de recursos digitales ((texto, imagen, audio)) para representar sus ideas en diferentes tareas escolares."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Personaliza entornos virtuales.",
+                    "texto": "Organiza aplicaciones y recursos digitales según sus necesidades de aprendizaje y preferencias, personalizando su entorno virtual personal."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Gestiona información del entorno virtual.",
+                    "texto": "Contrasta información de diversas fuentes y entornos virtuales, evaluando su utilidad y pertinencia para sus tareas y proyectos de aprendizaje."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Interactúa en entornos virtuales.",
+                    "texto": "Utiliza herramientas de comunicación y colaboración en entornos virtuales siguiendo normas de netiqueta para fortalecer su aprendizaje."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Crea objetos virtuales en diversos formatos.",
+                    "texto": "Crea diversos objetos virtuales ((presentaciones, audios, videos)) para comunicar sus hallazgos o ideas de forma original y estructurada."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Personaliza entornos virtuales.",
+                    "texto": "Administra su entorno virtual personal y sus herramientas digitales para optimizar su desempeño académico y su interacción con otros."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Gestiona información del entorno virtual.",
+                    "texto": "Selecciona y analiza información especializada de entornos virtuales complejos, validando las fuentes y organizando los datos de forma sistemática."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Interactúa en entornos virtuales.",
+                    "texto": "Interactúa en redes sociales y entornos de aprendizaje virtual de manera crítica y proactiva, participando en foros o debates sobre temas de interés."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Crea objetos virtuales en diversos formatos.",
+                    "texto": "Elabora proyectos digitales complejos ((animaciones, blogs, bases de datos)) integrando diversos lenguajes y recursos tecnológicos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Personaliza entornos virtuales.",
+                    "texto": "Personaliza y optimiza sus entornos virtuales para el desarrollo de proyectos de aprendizaje e investigación complejos, integrando diversas herramientas."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Gestiona información del entorno virtual.",
+                    "texto": "Gestiona grandes volúmenes de información técnica y especializada en entornos virtuales, utilizando herramientas de búsqueda y filtrado avanzado."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Interactúa en entornos virtuales.",
+                    "texto": "Participa en comunidades virtuales de aprendizaje a nivel global compartiendo conocimientos y experiencias sobre temáticas específicas."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Crea objetos virtuales en diversos formatos.",
+                    "texto": "Desarrolla objetos virtuales innovadores ((programas, simulaciones, diseños 3D)) para resolver problemas o comunicar propuestas creativas."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Personaliza entornos virtuales.",
+                    "texto": "Diseña y gestiona de manera experta su entorno virtual personal como una herramienta para el aprendizaje a lo largo de la vida y el desarrollo profesional."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Gestiona información del entorno virtual.",
+                    "texto": "Evalúa de forma crítica y sistemática la información en entornos virtuales complejos, identificando sesgos, intenciones y la validez técnica de los datos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Interactúa en entornos virtuales.",
+                    "texto": "Lidera y promueve la participación ética y responsable en entornos virtuales, fomentando el intercambio intercultural y el aprendizaje colaborativo global."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Crea objetos virtuales en diversos formatos.",
+                    "texto": "Crea y publica objetos virtuales de alta calidad técnica y estética para audiencias globales, utilizando una variedad de medios y lenguajes digitales."
+                }
+            ]
+        },
+        {
+            "nombre": "Gestiona su aprendizaje de manera autónoma",
+            "estandares": {
+                "Ciclo VI": "Gestiona su aprendizaje de manera autónoma al darse cuenta lo que debe aprender al distinguir lo sencillo o complejo de una tarea, y por ende define metas personales respaldándose en sus potencialidades. Comprende que debe organizarse lo más específicamente posible y que lo planteado incluya las mejores estrategias, procedimientos, recursos que le permitan realizar una tarea basado en sus experiencias. Monitorea de manera permanente sus avances respecto a las metas de aprendizaje y realiza ajustes a sus procesos basándose en los resultados de aprendizaje obtenidos.",
+                "Ciclo VII": "Gestiona su aprendizaje de manera autónoma al darse cuenta lo que debe aprender al establecer metas de aprendizaje con base en sus potencialidades y limitaciones de manera consciente y sistemática. Organiza de manera estratégica acciones para alcanzar sus metas de aprendizaje. Monitorea y revisa de manera permanente sus avances respecto a las metas de aprendizaje y realiza los ajustes necesarios para mejorar sus procesos de aprendizaje."
+            },
+            "capacidades": [
+                "Define metas de aprendizaje.",
+                "Organiza acciones estratégicas para alcanzar sus metas de aprendizaje.",
+                "Monitorea y ajusta su desempeño durante el proceso de aprendizaje."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Define metas de aprendizaje.",
+                    "texto": "Determina metas de aprendizaje viables asociadas a sus conocimientos, estilos de aprendizaje, habilidades y actitudes para el logro de la tarea, formulándose preguntas de manera reflexiva."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Organiza acciones estratégicas para alcanzar sus metas de aprendizaje.",
+                    "texto": "Organiza un conjunto de estrategias y procedimientos en función del tiempo y de los recursos de que dispone para lograr las metas de aprendizaje con base en sus experiencias previas."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Monitorea y ajusta su desempeño durante el proceso de aprendizaje.",
+                    "texto": "Explica los avances en sus metas de aprendizaje a partir del análisis de sus procesos y resultados, y propone ajustes de ser necesario."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Define metas de aprendizaje.",
+                    "texto": "Establece metas personales de aprendizaje considerando sus potencialidades y dificultades, y se organiza para alcanzarlas de forma autónoma."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Organiza acciones estratégicas para alcanzar sus metas de aprendizaje.",
+                    "texto": "Selecciona las estrategias de aprendizaje más adecuadas para cumplir con sus metas, organizando sus actividades y recursos de manera efectiva."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Monitorea y ajusta su desempeño durante el proceso de aprendizaje.",
+                    "texto": "Monitorea sus avances y evalúa si las estrategias utilizadas le permiten alcanzar sus resultados de aprendizaje, realizando los cambios necesarios en su proceso."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Define metas de aprendizaje.",
+                    "texto": "Formula metas de aprendizaje claras y realistas sobre la base de su autoconocimiento y la complejidad de las tareas planteadas."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Organiza acciones estratégicas para alcanzar sus metas de aprendizaje.",
+                    "texto": "Propone un plan de acción estratégico detallado para alcanzar sus metas de aprendizaje, evaluando los riesgos y beneficios de las opciones consideradas."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Monitorea y ajusta su desempeño durante el proceso de aprendizaje.",
+                    "texto": "Revisa de manera constante sus avances respecto a las metas de aprendizaje y reorienta sus acciones basándose en la retroalimentación recibida y sus propios descubrimientos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Define metas de aprendizaje.",
+                    "texto": "Establece metas de aprendizaje desafiantes y se compromete de manera autónoma y responsable con su cumplimiento basándose en sus intereses y expectativas futuras."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Organiza acciones estratégicas para alcanzar sus metas de aprendizaje.",
+                    "texto": "Gestiona de manera estratégica sus procesos de aprendizaje integrando diversos recursos y adaptando sus planes ante situaciones imprevistas para alcanzar sus objetivos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Monitorea y ajusta su desempeño durante el proceso de aprendizaje.",
+                    "texto": "Evalúa rigurosamente su desempeño en las tareas de aprendizaje y propone acciones concretas de mejora para optimizar su autonomía y eficacia."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Define metas de aprendizaje.",
+                    "texto": "Define metas de aprendizaje de corto, mediano y largo plazo en el marco de su proyecto de vida, considerando sus aspiraciones personales y las demandas del entorno social."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Organiza acciones estratégicas para alcanzar sus metas de aprendizaje.",
+                    "texto": "Toma decisiones estratégicas autónomas para gestionar su aprendizaje de manera continua y sistemática, demostrando flexibilidad y adaptabilidad."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Monitorea y ajusta su desempeño durante el proceso de aprendizaje.",
+                    "texto": "Evalúa de forma crítica sus procesos de aprendizaje analizando sus logros y dificultades desde una perspectiva metacognitiva para fomentar su aprendizaje permanente."
+                }
+            ]
+        }
+    ]
+}

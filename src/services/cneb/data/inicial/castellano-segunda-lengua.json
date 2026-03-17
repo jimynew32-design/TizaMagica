@@ -1,0 +1,32 @@
+{
+    "area": "Castellano como Segunda Lengua",
+    "nivel": "Inicial",
+    "competencias": [
+        {
+            "nombre": "Se comunica oralmente en castellano como segunda lengua",
+            "estandares": {
+                "Ciclo II": "Se comunica oralmente mediante palabras o frases breves. Obtiene información de textos acompañados de expresiones corporales, gestos y tono de voz de su interlocutor. Responde a través de algunas palabras aisladas, con apoyo de gestos y expresiones corporales y de su lengua materna."
+            },
+            "capacidades": [
+                "Obtiene información del texto oral.",
+                "Infiere e interpreta información del texto oral.",
+                "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                "Interactúa estratégicamente con distintos interlocutores.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto oral."
+            ],
+            "desempenos": [
+                {
+                    "grado": "5 años",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita ((algunos hechos y lugares, el nombre de personas y personajes)) de un texto oral donde predominan palabras de uso frecuente ((IE, familia y comunidad)) y son expresados con apoyo de gestos, expresiones corporales y tono de voz del interlocutor. ((Ejemplo: Cuando escucha información sobre los animales, un niño o niña dice en su lengua materna de qué animal se trató))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Responde a un interlocutor ((compañero de clases o docente)) utilizando palabras y frases de su lengua materna. ((Ejemplo: \"¿Cómo te llamas?\", dice el o la docente. Y el niño o niña responde en ashaninka: \"Naro Elvis\" ((\"Yo soy Elvis\"))))."
+                }
+            ]
+        }
+    ]
+}

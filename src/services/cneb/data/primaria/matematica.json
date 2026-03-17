@@ -1,0 +1,675 @@
+{
+    "area": "Matemática",
+    "nivel": "Primaria",
+    "competencias": [
+        {
+            "nombre": "Resuelve problemas de cantidad",
+            "estandares": {
+                "Ciclo III": "Resuelve problemas referidos a acciones de juntar, separar, agregar, quitar, igualar y comparar cantidades; y las traduce a expresiones de adición y sustracción, doble y mitad. Expresa su comprensión del valor de posición en números de hasta dos cifras y los representa mediante equivalencias entre unidades y decenas. Emplea estrategias de cálculo y procedimientos de comparación y estimación. Compara expresiones numéricas y regla de formación de secuencias.",
+                "Ciclo IV": "Resuelve problemas referidos a una o más acciones de agregar, quitar, igualar, repetir o repartir cantidades, partir y repartir una cantidad en partes iguales; las traduce a expresiones aditivas y multiplicativas con números naturales y expresiones aditivas con fracciones de uso frecuente. Emplea estrategias de cálculo y procedimientos de estimación. Expresa su comprensión del valor posicional en números de hasta cuatro cifras y los representa mediante equivalencias.",
+                "Ciclo V": "Resuelve problemas referidos a una o más acciones de comparar, igualar, repetir y repartir cantidades, o dividir una cantidad en partes iguales; las traduce a expresiones aditivas, multiplicativas y la potenciación cuadrada y cúbica, con números naturales; y en expresiones aditivas con fracciones y números decimales. Emplea estrategias y procedimientos de cálculo para resolver problemas. Justifica sus procesos de resolución."
+            },
+            "capacidades": [
+                "Traduce cantidades a expresiones numéricas.",
+                "Comunica su comprensión sobre los números y las operaciones.",
+                "Usa estrategias y procedimientos de estimación y cálculo.",
+                "Argumenta afirmaciones sobre las relaciones numéricas y las operaciones."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Traduce cantidades a expresiones numéricas.",
+                    "texto": "Establece relaciones entre datos y acciones de agregar, quitar y juntar cantidades, y las transforma en expresiones numéricas ((modelo)) de adición o sustracción con números naturales hasta 20."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa con diversas representaciones y lenguaje numérico ((números, signos y expresiones verbales)) su comprensión del número como ordinal hasta el décimo, al ordenar objetos y personas."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa con diversas representaciones y lenguaje numérico su comprensión de la decena como grupo de diez unidades y de las operaciones de adición y sustracción con números hasta 20."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Usa estrategias y procedimientos de estimación y cálculo.",
+                    "texto": "Emplea estrategias de cálculo mental, como la suma de cifras iguales, el conteo y las descomposiciones del 10."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Argumenta afirmaciones sobre las relaciones numéricas y las operaciones.",
+                    "texto": "Compara objetos por su tamaño y peso al resolver situaciones de su entorno."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Traduce cantidades a expresiones numéricas.",
+                    "texto": "Establece relaciones entre datos y una o más acciones de agregar, quitar, avanzar, retroceder, juntar, separar, comparar e igualar cantidades, y las transforma en expresiones numéricas ((modelo)) de adición o sustracción con números naturales de hasta dos cifras."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa con diversas representaciones y lenguaje numérico su comprensión de la decena como nueva unidad en el sistema de numeración decimal y el valor posicional de una cifra en números de hasta dos cifras."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa su comprensión del doble y mitad de números de hasta dos cifras."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Usa estrategias y procedimientos de estimación y cálculo.",
+                    "texto": "Emplea estrategias y procedimientos de cálculo mental, como descomposiciones aditivas o el uso de analogías ((Ejemplo: 70 + 20; 70 + 9, completar a la decena))."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Traduce cantidades a expresiones numéricas.",
+                    "texto": "Establece relaciones entre datos y una o más acciones de agregar, quitar, comparar, igualar, reiterar y agrupar cantidades, a expresiones numéricas ((modelo)) de adición, sustracción, multiplicación y división con números naturales de hasta tres cifras."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Traduce cantidades a expresiones numéricas.",
+                    "texto": "Establece relaciones entre datos y acciones de partir una unidad en partes iguales y las transforma en expresiones numéricas de fracciones usuales."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa con diversas representaciones y lenguaje numérico su comprensión sobre la centena como nueva unidad en el sistema de numeración decimal, sus equivalencias con decenas y unidades, el valor posicional de una cifra en números de tres cifras y la comparación y el orden de números."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Usa estrategias y procedimientos de estimación y cálculo.",
+                    "texto": "Emplea estrategias y procedimientos de cálculo mental o escrito, como descomposiciones aditivas y multiplicativas, duplicar o triplicar números, aproximaciones y estimaciones."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Traduce cantidades a expresiones numéricas.",
+                    "texto": "Establece relaciones entre datos y una o más acciones de agregar, quitar, comparar, igualar, reiterar, agrupar, repartir cantidades y combinar colecciones, para transformarlas en expresiones numéricas ((modelo)) de adición, sustracción, multiplicación y división con números naturales de hasta cuatro cifras."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa con diversas representaciones y lenguaje numérico su comprensión de la fracción como parte-todo ((cantidad discreta o continua)), así como equivalencias y operaciones de adición y sustracción con fracciones usuales."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa su comprensión del valor posicional en números de hasta cuatro cifras y sus equivalencias hasta la unidad de millar."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Usa estrategias y procedimientos de estimación y cálculo.",
+                    "texto": "Emplea estrategias y procedimientos de cálculo mental o escrito, como descomposiciones aditivas y multiplicativas, formas de dividir, usar la propiedad distributiva, para resolver problemas."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Traduce cantidades a expresiones numéricas.",
+                    "texto": "Establece relaciones entre datos y una o más acciones de comparar, igualar, repetir y repartir cantidades para transformarlas en expresiones numéricas ((modelo)) de adición, sustracción, multiplicación y división con números naturales, y adición y sustracción con fracciones y números decimales."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa con diversas representaciones y lenguaje numérico su comprensión sobre el sistema de numeración decimal con números naturales hasta seis cifras, de divisores y múltiplos, y el valor posicional de los números decimales hasta el centésimo."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Usa estrategias y procedimientos de estimación y cálculo.",
+                    "texto": "Emplea estrategias y procedimientos como los siguientes: Estrategias de cálculo mental, como uso de la reversibilidad de las operaciones con números naturales, estimar productos y cocientes razonables."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Argumenta afirmaciones sobre las relaciones numéricas y las operaciones.",
+                    "texto": "Justifica sus procesos de resolución y sus afirmaciones sobre las relaciones entre las cuatro operaciones."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Traduce cantidades a expresiones numéricas.",
+                    "texto": "Establece relaciones entre datos y una o más acciones de comparar, igualar, repetir y repartir cantidades, y de dividir una cantidad en partes iguales, para transformarlas en expresiones numéricas ((modelo)) de adición, sustracción, multiplicación y división con números naturales y decimales ((hasta el centésimo)) y la potenciación cuadrada y cúbica."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa con diversas representaciones y lenguaje numérico su comprensión sobre: El valor posicional de un dígito en números de hasta seis cifras y decimales hasta el centésimo, así como las unidades del sistema de numeración decimal."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comunica su comprensión sobre los números y las operaciones.",
+                    "texto": "Expresa su comprensión de la relación entre operaciones inversas y la jerarquía de las operaciones."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Usa estrategias y procedimientos de estimación y cálculo.",
+                    "texto": "Emplea estrategias y procedimientos como los siguientes: Estrategias de cálculo mental, como uso de la propiedad distributiva, la reversibilidad de las operaciones con números naturales y decimales, así como el redondeo."
+                }
+            ]
+        },
+        {
+            "nombre": "Resuelve problemas de regularidad, equivalencia y cambio",
+            "estandares": {
+                "Ciclo III": "Resuelve problemas que presentan equivalencias o regularidades; traduciéndolas a igualdades que contienen operaciones de adición o sustracción y a patrones de repetición de dos criterios perceptuales y patrones aditivos. Expresa su comprensión de la igualdad y del patrón usando lenguaje cotidiano y diversos recursos. Emplea estrategias de diversas representaciones, de ensayo y error.",
+                "Ciclo IV": "Resuelve problemas que presentan dos equivalencias, regularidades o relación de cambio entre dos magnitudes y expresiones; traduciéndolas a igualdades que contienen adiciones, sustracciones o multiplicaciones; a tablas de proporcionalidad y a patrones de repetición que combinan criterios perceptuales y un criterio geométrico de simetría o traslación, y patrones aditivos o multiplicativos. Expresa su comprensión de la regla de formación de un patrón y del signo igual para expresar equivalencias. Así también, describe la relación de cambio entre una magnitud y otra. Emplea estrategias, la descomposición de números, el cálculo mental, para crear, continuar o completar patrones de repetición.",
+                "Ciclo V": "Resuelve problemas de equivalencias, regularidades o relaciones de cambio entre dos magnitudes o entre expresiones; traduciéndolas a ecuaciones que combinan las cuatro operaciones, a expresiones de desigualdad o a relaciones de proporcionalidad directa, y patrones de repetición que combinan criterios geométricos y cuya regla de formación se asocia a la posición de sus elementos. Expresa su comprensión del término general de un patrón, las condiciones de desigualdad expresadas con los signos > y <, así como de la relación proporcional como un cambio constante. Emplea recursos, estrategias y propiedades de las igualdades para resolver ecuaciones o hallar valores que cumplen una condición de desigualdad o proporcionalidad; así como procedimientos para crear, continuar o completar patrones."
+            },
+            "capacidades": [
+                "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                "Comunica su comprensión sobre las relaciones algebraicas.",
+                "Usa estrategias y procedimientos para encontrar equivalencias y reglas generales.",
+                "Argumenta afirmaciones sobre relaciones de cambio y equivalencia."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones de equivalencias entre dos grupos de hasta diez objetos y las trasforma en igualdades que contienen adiciones."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre los datos que se repiten ((objetos, colores, diseños, sonidos o movimientos)) o entre cantidades que aumentan regularmente, y los transforma en patrones de repetición o en patrones aditivos."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comunica su comprensión sobre las relaciones algebraicas.",
+                    "texto": "Describe, usando lenguaje cotidiano y representaciones concretas y dibujos, su comprensión de la equivalencia como equilibrio o igual valor entre dos colecciones o cantidades."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Usa estrategias y procedimientos para encontrar equivalencias y reglas generales.",
+                    "texto": "Emplea estrategias heurísticas y estrategias de cálculo ((el conteo o la descomposición aditiva)) para encontrar equivalencias, mantener la igualdad ((equilibrio)) o crear, continuar y completar patrones."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones de cambio y equivalencia.",
+                    "texto": "Explica cómo continúa el patrón y lo que debe hacer para encontrar una equivalencia, así como su proceso de resolución."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones de equivalencias entre dos grupos de hasta veinte objetos y las trasforma en igualdades que contienen adiciones o sustracciones."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre los datos que se repiten ((objetos, colores, diseños, sonidos o movimientos)) o entre cantidades que aumentan o disminuyen regularmente, y los transforma en patrones de repetición ((con dos criterios perceptuales)) o patrones aditivos ((de hasta 2 cifras))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comunica su comprensión sobre las relaciones algebraicas.",
+                    "texto": "Expresa, con lenguaje cotidiano y representaciones concretas o dibujos, su comprensión de la equivalencia como equilibrio o igual valor entre dos colecciones o cantidades; asimismo, cómo se forma el patrón de repetición ((de un criterio perceptual)) y el patrón aditivo creciente hasta el 20 ((de 1 en 1 y 2 en 2))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Usa estrategias y procedimientos para encontrar equivalencias y reglas generales.",
+                    "texto": "Emplea estrategias heurísticas y estrategias de cálculo ((la descomposición aditiva y agregando o quitando en ambos lados de la igualdad)) para encontrar equivalencias, mantener la igualdad ((equilibrio)) o crear, continuar y completar patrones."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones de cambio y equivalencia.",
+                    "texto": "Explica lo que debe hacer para mantener el equilibrio o la igualdad, y cómo continúa el patrón y las semejanzas que encuentra en dos versiones del mismo patrón, con base en ejemplos concretos. Así también, explica su proceso de resolución."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre datos y valores desconocidos de una equivalencia, de no equivalencia ((desequilibrio)) y de variación entre los datos de dos magnitudes, y las transforma en ecuaciones simples ((por ejemplo: x + a = b)) con números naturales, o en tablas de proporcionalidad."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre los datos de una regularidad y los transforma en patrones de repetición ((que combinan criterios perceptuales y un criterio geométrico de simetría o traslación)) o patrones aditivos ((que aumentan o disminuyen))."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comunica su comprensión sobre las relaciones algebraicas.",
+                    "texto": "Expresa, con lenguaje cotidiano y representaciones concretas o gráficas, su comprensión de la igualdad como equivalencia entre dos colecciones o cantidades, así como que una desigualdad expresa que dos cantidades no son equivalentes."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comunica su comprensión sobre las relaciones algebraicas.",
+                    "texto": "Describe la relación de cambio de una magnitud con respecto de otra, apoyándose en tablas o dibujos."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Usa estrategias y procedimientos para encontrar equivalencias y reglas generales.",
+                    "texto": "Emplea estrategias heurísticas o estrategias de cálculo ((la descomposición aditiva y multiplicativa, agregar o quitar en ambos lados de la igualdad, relación inversa entre adición y sustracción, uso de la conmutatividad)), para encontrar equivalencias, mantener la igualdad o crear, continuar y completar patrones."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones de cambio y equivalencia.",
+                    "texto": "Hace afirmaciones y explica lo que sucede al modificar las cantidades que intervienen en una relación de igualdad y cómo equiparar dos cantidades, así como lo que debe considerar para continuar o completar el patrón y las semejanzas que encuentra en dos versiones del mismo patrón, mediante ejemplos concretos. Así también, explica su proceso de resolución."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre datos de hasta dos equivalencias y las trasforma en igualdades que contienen adiciones o sustracciones, o multiplicaciones."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre los datos de una regularidad y los transforma en un patrón de repetición ((que combine un criterio geométrico de simetría o traslación y un criterio perceptual)) o en un patrón aditivo de segundo orden ((por ejemplo: 13 - 15 - 18 - 22 - 27 - …))."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comunica su comprensión sobre las relaciones algebraicas.",
+                    "texto": "Expresa, usando lenguaje algebraico ((ícono y operaciones)) y diversas representaciones, su comprensión de la regla de formación de un patrón, de la igualdad ((con un término desconocido)) y del signo igual, distinguiéndolo de su uso en el resultado de una operación."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Usa estrategias y procedimientos para encontrar equivalencias y reglas generales.",
+                    "texto": "Emplea estrategias heurísticas, estrategias de cálculo y propiedades de la igualdad ((uniformidad y cancelativa)) para encontrar el valor de la incógnita en una igualdad, para hallar la regla de formación de un patrón o para completar, crear o continuar secuencias."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones de cambio y equivalencia.",
+                    "texto": "Hace afirmaciones sobre la equivalencia entre expresiones ((propiedades de la igualdad, aditiva y multiplicativa)) y regularidades en sus variaciones, las relaciones de cambio entre magnitudes, así como los números o elementos que siguen en un patrón, y las justifica con sus experiencias concretas. Así también, justifica sus procesos de resolución."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre datos y valores desconocidos de una equivalencia y relaciones de variación entre los datos de dos magnitudes, y las transforma en ecuaciones simples ((por ejemplo: x + a = b)) con números naturales, y en proporcionalidad directa."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre los datos de una regularidad y los transforma en un patrón de repetición ((con criterios geométricos de traslación y giros)), patrones ((con y sin configuraciones puntuales)) cuya regla se asocia a la posición de sus elementos y patrones aditivos o multiplicativos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comunica su comprensión sobre las relaciones algebraicas.",
+                    "texto": "Expresa, con lenguaje algebraico y diversas representaciones, su comprensión del término general de un patrón ((por ejemplo: 2, 5, 8, 11, 14…→ término general = triple de un número, menos 1)), condiciones de desigualdad expresadas con los signos > y <, así como de la relación proporcional como un cambio constante."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Usa estrategias y procedimientos para encontrar equivalencias y reglas generales.",
+                    "texto": "Emplea estrategias heurísticas, estrategias de cálculo y propiedades de la igualdad ((uniformidad y cancelativa)) para encontrar el valor de la incógnita en una ecuación, para hallar la regla de formación de un patrón o para completar, crear o continuar secuencias."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones de cambio y equivalencia.",
+                    "texto": "Hace afirmaciones sobre la equivalencia entre expresiones y la relación entre una magnitud y otra en situaciones de variation, y las justifica con ejemplos concretos y propiedades de los números y las operaciones. Así también, justifica su proceso de resolución."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre datos y valores desconocidos de una equivalencia y de no equivalencia ((desequilibrio)), y las transforma en ecuaciones simples ((por ejemplo: x + a = b)) con números naturales, fracciones o decimales, o en desigualdades."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Traduce datos y condiciones a expresiones algebraicas y gráficas.",
+                    "texto": "Establece relaciones entre los datos de una regularidad y los transforma en patrones de repetición ((que combinan criterios geométricos de simetría, giros o traslaciones)), patrones ((con y sin configuraciones puntuales)) cuya regla de formación se asocia a la posición de sus elementos, o en patrones de segundo orden ((por ejemplo: 1; 4; 10; 19; 31; 46…))."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comunica su comprensión sobre las relaciones algebraicas.",
+                    "texto": "Expresa, con lenguaje algebraico y diversas representaciones, su comprensión del término general de un patrón, las condiciones de desigualdad expresadas con los signos > y <, así como de la relación proporcional como un cambio constante."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Usa estrategias y procedimientos para encontrar equivalencias y reglas generales.",
+                    "texto": "Emplea estrategias heurísticas, estrategias de cálculo, la simplificación de expresiones usando propiedades de la igualdad y las operaciones, para encontrar el valor de la incógnita en una ecuación o hallar el término general de un patrón, y para determinar si una cantidad es mayor o menor que otra."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones de cambio y equivalencia.",
+                    "texto": "Elabora afirmaciones sobre los términos no inmediatos en un patrón y sobre lo que ocurre cuando modifica cantidades que intervienen en los miembros de una desigualdad, y las justifica con ejemplos, cálculos, propiedades de la igualdad o a través de sus conocimientos. Así también, justifica su proceso de resolución."
+                }
+            ]
+        },
+        {
+            "nombre": "Resuelve problemas de forma, movimiento y localización",
+            "estandares": {
+                "Ciclo III": "Resuelve problemas en los que modela las características y datos de ubicación de los objetos del entorno a formas bidimensionales y tridimensionales, sus elementos, posición y desplazamientos. Describe estas formas mediante sus elementos: número de lados, esquinas, lados curvos y rectos; número de puntas caras, formas de sus caras, usando representaciones concretas y dibujos. Así también traza y describe desplazamientos y posiciones, en cuadriculados y puntos de referencia usando algunos términos del lenguaje geométrico. Emplea estrategias y procedimientos basados en la manipulación, para construir objetos y medir su longitud ((ancho y largo)) usando unidades no convencionales.",
+                "Ciclo IV": "Resuelve problemas en los que modela características y datos de ubicación de los objetos a formas bidimensionales y tridimensionales, sus elementos, propiedades, su movimiento y ubicación en el plano cartesiano. Describe con lenguaje geométrico, estas formas reconociendo ángulos rectos, número de lados y vértices del polígono, así como líneas paralelas y perpendiculares, identifica formas simétricas y realiza traslaciones, en cuadrículas. Así también elabora croquis, donde traza y describe desplazamientos y posiciones, usando puntos de referencia. Emplea estrategias y procedimientos para trasladar y construir formas a través de la composición y descomposición, y para medir la longitud, superficie y capacidad de los objetos, usando unidades convencionales y no convencionales, recursos e instrumentos de medición.",
+                "Ciclo V": "Resuelve problemas en los que modela características de los objetos con formas bidimensionales compuestas y tridimensionales. Además, modela la ubicación y los movimientos mediante coordenadas en el plano cartesiano, la rotación y ampliación o reducción de formas bidimensionales. Describe y clasifica prismas rectos, cuadriláteros, triángulos, círculos, por sus elementos: vértices, lados, caras, ángulos, y por sus propiedades; usando lenguaje geométrico. Realiza giros en cuartos y medias vueltas, ampliaciones, reducciones y reflexiones de formas bidimensionales, en el plano cartesiano. Describe recorridos y ubicaciones en planos. Emplea procedimientos e instrumentos para ampliar, reducir, girar y construir formas, así como para estimar o medir la longitud, superficie y capacidad, seleccionando la unidad de medida convencional apropiada y realizando conversiones."
+            },
+            "capacidades": [
+                "Modela objetos con formas geométricas y sus transformaciones.",
+                "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                "Usa estrategias y procedimientos para orientarse en el espacio.",
+                "Argumenta afirmaciones sobre relaciones geométricas."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre las características de los objetos del entorno y las asocia y representa con formas geométricas tridimensionales ((cuerpos que ruedan y no ruedan)) y bidimensionales ((cuadrado, rectángulo, círculo, triángulo)), así como con las medidas de su longitud."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con material concreto o dibujos su comprensión sobre las características de los objetos de su entorno según sus formas bidimensionales y tridimensionales, longitud, y el espacio que ocupa."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con material concreto, bosquejos o gráficos los desplazamientos y posiciones de objetos o personas con relación a un punto de referencia; hace uso de expresiones como \"arriba\", \"abajo\", \"detrás de\", \"encima de\", \"debajo de\", \"al lado\", \"dentro\", \"fuera\", \"en el borde\"."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Usa estrategias y procedimientos para orientarse en el espacio.",
+                    "texto": "Emplea estrategias heurísticas, recursos y procedimientos de comparación para medir directamente la longitud de dos objetos con unidades no convencionales ((dedos, manos, pies, pasos, brazos, y objetos como clips, lápices, palillos, etc.)) y la visualización para construir objetos con material concreto."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones geométricas.",
+                    "texto": "Explica algunas propiedades físicas o semejanzas de los objetos y las formas geométricas, con base en su exploración o visualización. Así también, explica el proceso seguido."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre las características de los objetos del entorno, las asocia y representa con formas geométricas bidimensionales ((figuras regulares o irregulares)), sus elementos y con sus medidas de longitud y superficie; y con formas tridimensionales ((cuerpos redondos y compuestos)), sus elementos y su capacidad."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre los datos de ubicación y recorrido de objetos y personas del entorno, y los expresa en un gráfico, teniendo a los objetos fijos como puntos de referencia; asimismo, considera el eje de simetría de un objeto o una figura."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con material concreto y dibujos su comprensión sobre algún elemento de las formas tridimensionales ((número de puntas, número de caras, formas de sus caras)) y bidimensionales ((número de lados, vértices, lados curvos y rectos))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con material concreto su comprensión sobre la medida de la longitud al determinar cuántas veces es más largo un objeto con relación a otro. Expresa también que el objeto mantiene su longitud a pesar de sufrir transformaciones como romper, enrollar o flexionar ((conservación de la longitud))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Usa estrategias y procedimientos para orientarse en el espacio.",
+                    "texto": "Emplea estrategias heurísticas y procedimientos como la comparación, el tanteo, el uso de la cuadrícula, los cálculos, la descomposición y composición de figuras, así como el uso de diversos recursos, para construir formas simétricas, ubicar objetos y trasladar figuras, usando recursos. Así también, usa diversas estrategias para medir, de manera exacta o aproximada ((estimar)), la longitud ((centímetro, metro)) y el contorno de una figura, y comparar la capacidad y superficie de los objetos empleando la unidad de medida, no convencional o convencional, según convenga, así como algunos instrumentos de medición."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones geométricas.",
+                    "texto": "Hace afirmaciones sobre algunas propiedades físicas o semejanzas de los objetos y las prueba con ejemplos concretos. Así también, explica el proceso seguido."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre las características de objetos reales o imaginarios, los asocia y representa con formas bidimensionales ((polígonos)) y sus elementos, así como con su perímetro, medidas de longitud y superficie; y con formas tridimensionales ((cubos y prismas de base cuadrangular)), sus elementos y su capacidad."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre los datos de ubicación y recorrido de los objetos, personas y lugares cercanos, así como la traslación de los objetos o figuras, y los expresa en gráficos o croquis teniendo a los objetos y lugares fijos como puntos de referencia."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con dibujos su comprensión sobre los elementos de cubos y prismas de base cuadrangular: caras, vértices, aristas; también, su comprensión sobre los elementos de los polígonos: ángulos rectos, número de lados y vértices; así como su comprensión sobre líneas perpendiculares y paralelas usando lenguaje geométrico."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con material concreto o gráficos su comprensión sobre el perímetro y la medida de capacidad de los recipientes para determinar cuántas veces se puede llenar uno con el otro."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Usa estrategias y procedimientos para orientarse en el espacio.",
+                    "texto": "Emplea estrategias de cálculo, la visualización y los procedimientos de composición y descomposición para construir formas, ángulos, realizar ampliaciones, reducciones y reflexiones de las figuras, así como para hacer trazos en el plano cartesiano. Para ello, usa diversos recursos e instrumentos de dibujo. También, usa diversas estrategias para medir, de manera exacta o aproximada ((estimar)), la medida de ángulos, la longitud ((perímetro, kilómetro, metro)), la superficie ((unidades patrón)), la capacidad ((en litros y con fracciones)) de los objetos; además, realiza conversiones de unidades de longitud mediante cálculos numéricos y usa la propiedad transitiva para ordenar objetos según su longitud."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones geométricas.",
+                    "texto": "Hace afirmaciones sobre algunas relaciones entre elementos de las formas y su desarrollo en el plano, y explica sus semejanzas y diferencias mediante ejemplos concretos o dibujos con base en su exploración o visualización. Así también, explica el proceso seguido."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre las características de objetos reales o imaginarios, los asocia y representa con formas bidimensionales ((cuadriláteros)) y sus elementos, así como con su perímetro y medidas de la superficie; y con formas tridimensionales ((prismas rectos)), sus elementos y su capacidad."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre los datos de ubicación y recorrido de los objetos, personas o lugares, y las expresa en un croquis o plano sencillo teniendo en cuenta referencias como, por ejemplo, calles o avenidas."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con dibujos su comprensión sobre los elementos de prismas rectos y cuadriláteros ((ángulos, vértices, bases)), y propiedades ((lados paralelos y perpendiculares)) usando lenguaje geométrico."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con gráficos o croquis los desplazamientos y posiciones de objetos, personas y lugares cercanos, así como sus traslaciones con relación a objetos fijos como puntos de referencia."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Usa estrategias y procedimientos para orientarse en el espacio.",
+                    "texto": "Emplea estrategias de cálculo, la visualización y los procedimientos de composición y descomposición para construir formas simétricas, ubicar objetos y trasladar figuras, usando recursos. Así también, usa diversas estrategias para medir de manera exacta o aproximada ((estimar)) la longitud, el perímetro ((metro y centímetro)), la superficie ((unidades patrón)) y la capacidad ((en litros y en decimales)) de los objetos, y hace conversiones de unidades de longitud. Emplea la unidad de medida, convencional o no convencional, según convenga, así como algunos instrumentos de medición ((cinta métrica, regla, envases o recipientes))."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones geométricas.",
+                    "texto": "Hace afirmaciones sobre las semejanzas y diferencias entre las formas geométricas, y las explica con ejemplos concretos y con base en sus conocimientos matemáticos. Asimismo, explica el proceso seguido."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre las características de objetos reales o imaginarios, los asocia y representa con formas bidimensionales ((triángulos, cuadriláteros y círculos)), sus elementos, perímetros y superficies; y con formas tridimensionales ((prismas rectos y cilindros)), sus elementos y el volumen de los prismas rectos con base rectangular."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre los cambios de tamaño de los objetos con las ampliaciones, reducciones y reflexiones de una figura plana."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con dibujos su comprensión sobre los elementos de prismas rectos y cilindros ((caras, vértices, aristas)); también, expresa su comprensión sobre los elementos de los polígonos ((ángulos, lados, vértices)), triángulos, cuadriláteros y círculos ((centro, radio, diámetro)); usando lenguaje geométrico."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con gráficos su comprensión sobre el perímetro, el volumen de un cuerpo sólido y el área como propiedades medibles de los objetos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Usa estrategias y procedimientos para orientarse en el espacio.",
+                    "texto": "Emplea estrategias de cálculo, la visualización y los procedimientos de composición y descomposición para construir formas, ángulos, realizar ampliaciones, reducciones y reflexiones de las figuras, así como para hacer trazos en el plano cartesiano. Para ello, usa diversos recursos e instrumentos de dibujo. También, usa diversas estrategias para medir, de manera exacta o aproximada ((estimar)), la medida de ángulos, la longitud, el perímetro, el área y el volumen de los objetos; además, realiza conversiones de unidades de longitud mediante cálculos numéricos y usa la propiedad transitiva para ordenar objetos según su longitud."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones geométricas.",
+                    "texto": "Plantea afirmaciones sobre las relaciones entre los objetos, entre los objetos y las formas geométricas, y entre las formas geométricas, así como su desarrollo en el plano, y las explica con argumentos basados en ejemplos concretos, gráficos y en sus conocimientos matemáticos con base en su exploración o visualización. Así también, explica el proceso seguido."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre las características de objetos reales o imaginarios, los asocia y representa con formas bidimensionales compuestas ((triángulos, cuadriláteros y círculos)), sus elementos, perímetros, superficies y volúmenes; y con formas tridimensionales compuestas ((cubos, prismas rectos, pirámides)), sus elementos y volúmenes."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Modela objetos con formas geométricas y sus transformaciones.",
+                    "texto": "Establece relaciones entre los cambios de tamaño y ubicación de los objetos con las ampliaciones, reducciones y giros en el plano cartesiano."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con dibujos su comprensión sobre los elementos y propiedades del prisma, pirámide, polígono y círculo usando lenguaje geométrico."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comunica su comprensión sobre las formas y relaciones geométricas.",
+                    "texto": "Expresa con gráficos su comprensión sobre el perímetro, el volumen de un cuerpo sólido y el área, como propiedades medibles de los objetos."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Usa estrategias y procedimientos para orientarse en el espacio.",
+                    "texto": "Emplea estrategias de cálculo, la visualización y los procedimientos de composición y descomposición para construir formas, ángulos, realizar ampliaciones, reducciones y reflexiones de las figuras, así como para hacer trazos en el plano cartesiano. Para ello, usa diversos recursos e instrumentos de dibujo. También, usa diversas estrategias para medir, de manera exacta o aproximada ((estimar)), la medida de ángulos, la longitud, el perímetro, el área y el volumen de los objetos, y hace conversiones de unidades de longitud, masa y tiempo, y de temperatura, empleando recursos e instrumentos de medición."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Argumenta afirmaciones sobre relaciones geométricas.",
+                    "texto": "Plantea afirmaciones sobre las relaciones y propiedades que descubre entre los objetos, entre objetos y formas geométricas, y entre las formas geométricas, sobre la base de simulaciones y la observación de casos. Las justifica con ejemplos y sus conocimientos geométricos. Así también, justifica sus procesos de resolución."
+                }
+            ]
+        },
+        {
+            "nombre": "Resuelve problemas de gestión de datos e incertidumbre",
+            "estandares": {
+                "Ciclo III": "Resuelve problemas relacionados con datos cualitativos en situaciones de su interés, recolecta datos a través de preguntas sencillas, los registra en listas o tablas de conteo simple ((frecuencia)) y los organiza en pictogramas horizontales y gráficos de barras simples. Lee la información contenida en estas tablas o gráficos identificando el dato o datos que tuvieron mayor o menor frecuencia y explica sus decisiones basándose en la información producida. Expresa la ocurrencia de sucesos cotidianos usando las expresiones \"siempre\", \"a veces\" y \"nunca\".",
+                "Ciclo IV": "Resuelve problemas relacionados con datos cualitativos o cuantitativos ((discretos)) sobre un tema de estudio, recolecta datos a través de encuestas y entrevistas sencillas, registra en tablas de frecuencia simples y los representa en pictogramas, gráficos de barra simple con escala ((múltiplos de diez)). Interpreta información contenida en gráficos de barras simples y dobles y tablas de doble entrada, comparando frecuencias y usando el significado de la moda de un conjunto de datos; a partir de esta información, elabora algunas conclusiones y toma decisiones. Expresa la ocurrencia de sucesos cotidianos usando las nociones de seguro, más probable, menos probable, y justifica su respuesta.",
+                "Ciclo V": "Resuelve problemas relacionados con temas de estudio, en las que reconoce variables cualitativas o cuantitativas discretas, recolecta datos a través de encuestas y de diversas fuentes de información. Selecciona tablas de doble entrada, gráficos de barras dobles y gráficos de líneas, seleccionando el más adecuado para representar los datos. Usa el significado de la moda para interpretar información contenida en gráficos y en diversas fuentes de información. Realiza afirmaciones sobre la información presentada en gráficos y las justifica. Expresa la ocurrencia de sucesos usando nociones de seguro, más probable, menos probable, e igualmente probable; justifica su respuesta con base en la información obtenida o en razonamientos."
+            },
+            "capacidades": [
+                "Representa datos con gráficos y medidas estadísticas o probabilísticas.",
+                "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                "Usa estrategias y procedimientos para recopilar y procesar datos.",
+                "Sustenta conclusiones o decisiones con base en la información obtenida."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Representa datos con gráficos y medidas estadísticas o probabilísticas.",
+                    "texto": "Representa las características y el comportamiento de datos cualitativos ((por ejemplo, color de ojos: pardos, negros; plato favorito: cebiche, arroz con pollo, etc.)) de una población, a través de pictogramas horizontales ((el símbolo representa una unidad)) y gráficos de barras verticales simples ((sin escala)), en situaciones cotidianas de su interés personal o de sus pares."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Expresa la ocurrencia de acontecimientos cotidianos usando las expresiones: \"siempre\", \"a veces\" y \"nunca\"."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Lee información contenida en tablas de frecuencia simple ((conteo simple)), pictogramas horizontales y gráficos de barras verticales simples; indica la mayor o menor frecuencia y compara los datos, los cuales representa con material concreto y gráfico."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Usa estrategias y procedimientos para recopilar y procesar datos.",
+                    "texto": "Recopila datos mediante preguntas sencillas y el empleo de procedimientos y recursos ((material concreto y otros)); los procesa y organiza en listas de datos o tablas de frecuencia simple ((conteo simple)) para describirlos."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Sustenta conclusiones o decisiones con base en la información obtenida.",
+                    "texto": "Toma decisiones sencillas y las explica a partir de la información obtenida."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Representa datos con gráficos y medidas estadísticas o probabilísticas.",
+                    "texto": "Representa las características y el comportamiento de datos cualitativos ((por ejemplo, color de ojos: pardos, negros; plato favorito: cebiche, arroz con pollo, etc.)) y cuantitativos discretos ((por ejemplo: número de hermanos: 3, 2; cantidad de goles: 2, 4, 5, etc.)) de una población, a través de pictogramas verticales y horizontales ((el símbolo representa más de una unidad)) y gráficos de barras horizontales ((simples y escala dada de 2 en 2, 5 en 5 y 10 en 10)), en situaciones de su interés o un tema de estudio."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Expresa la ocurrencia de acontecimientos cotidianos usando las expresiones: \"seguro\", \"posible\" e \"imposible\"."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Lee tablas de frecuencias simples ((absolutas)), gráficos de barras horizontales simples con escala y pictogramas de frecuencias con equivalencias, para interpretar la información explícita de los datos contenidos en diferentes formas de representación."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Usa estrategias y procedimientos para recopilar y procesar datos.",
+                    "texto": "Recopila datos mediante encuestas sencillas o entrevistas cortas con preguntas adecuadas empleando procedimientos y recursos; los procesa y organiza en listas de datos, tablas de doble entrada o tablas de frecuencia, para describirlos y analizarlos."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Sustenta conclusiones o decisiones con base en la información obtenida.",
+                    "texto": "Toma decisiones sencillas y las explica a partir de la información obtenida."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Representa datos con gráficos y medidas estadísticas o probabilísticas.",
+                    "texto": "Representa las características y el comportamiento de datos cualitativos ((por ejemplo, color de los ojos: pardos, negros; profesión: médico, abogado, etc.)) y cuantitativos discretos ((por ejemplo: número de hermanos: 3, 2; cantidad de goles: 2, 4, 5, etc.)) de una población, a través de pictogramas verticales y horizontales ((cada símbolo representa más de una unidad)), gráficos de barras con escala dada ((múltiplos de 10)) y la moda como la mayor frecuencia, en situaciones de interés o un tema de estudio."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Expresa la ocurrencia de acontecimientos cotidianos usando las nociones \"seguro\", \"posible\" e \"imposible\"."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Lee tablas de frecuencias simples ((absolutas)), gráficos de barras horizontales simples con escala y pictogramas de frecuencias con equivalencias, para interpretar la información del mismo conjunto de datos contenidos en diferentes formas de representación y de la situación estudiada."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Usa estrategias y procedimientos para recopilar y procesar datos.",
+                    "texto": "Recopila datos mediante encuestas sencillas o entrevistas cortas con preguntas adecuadas empleando procedimientos y recursos; los procesa y organiza en listas de datos, tablas de doble entrada o tablas de frecuencia, para describirlos y analizarlos."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Sustenta conclusiones o decisiones con base en la información obtenida.",
+                    "texto": "Selecciona y emplea procedimientos y recursos como el recuento, el diagrama u otros, para determinar la moda como dato con mayor frecuencia en un conjunto de datos de un tema de estudio y de situaciones cotidianas; elabora sus conclusiones y las justifica."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Representa datos con gráficos y medidas estadísticas o probabilísticas.",
+                    "texto": "Representa las características de una población en estudio sobre situaciones de interés o aleatorias, asociándolas a variables cualitativas ((por ejemplo: color de ojos: pardos, negros; profesión: médico, abogado, etc.)) y cuantitativas discretas ((por ejemplo: número de hermanos: 3, 2; cantidad de goles: 2, 4, 5, etc.)), así como también el comportamiento del conjunto de datos, a través de gráficos de barras dobles, gráficos de líneas, la moda y la media aritmética como centro de un conjunto de datos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Expresa su comprensión de la moda como la mayor frecuencia y la media aritmética como punto de equilibrio; así como todos los posibles resultados de la ocurrencia de sucesos cotidianos usando las nociones \"seguro\", \"más probable\" y \"menos probable\"."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Lee gráficos de barras con escala, tablas de doble entrada y pictogramas de frecuencias con equivalencias, para interpretar la información a partir de los datos contenidos en diferentes formas de representación y de la situación estudiada."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Usa estrategias y procedimientos para recopilar y procesar datos.",
+                    "texto": "Recopila datos mediante encuestas sencillas o entrevistas cortas con preguntas adecuadas empleando procedimientos y recursos; los procesa y organiza en tablas de doble entrada, tablas de frecuencia y gráficos de barras, para describirlos y analizarlos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Sustenta conclusiones o decisiones con base en la información obtenida.",
+                    "texto": "Selecciona y emplea procedimientos y recursos tales como el cálculo de la moda y la media aritmética para determinar los valores representativos de un conjunto de datos de un tema de estudio o de situaciones cotidianas, y las interpreta según el contexto. Elabora sus conclusiones y las justifica."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Representa datos con gráficos y medidas estadísticas o probabilísticas.",
+                    "texto": "Representa las características de una población en estudio, las que asocia a variables cualitativas ((por ejemplo: color de ojos: pardos, negros; profesión: médico, abogado, etc.)) y cuantitativas discretas ((por ejemplo: número de hermanos: 3, 2; cantidad de goles: 2, 4, 5, etc.)), así como también el comportamiento del conjunto de datos, a través de gráficos de barras dobles, gráficos de líneas, la moda y la media aritmética como centro de un conjunto de datos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Expresa su comprensión de la moda como la mayor frecuencia y la media aritmética como punto de equilibrio; así como todos los posibles resultados de la ocurrencia de sucesos cotidianos usando las nociones \"seguro\", \"más probable\" y \"menos probable\"."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Lee tablas de doble entrada y gráficos de barras dobles, así como información proveniente de diversas fuentes ((periódicos, revistas, entrevistas, experimentos, etc.)), para interpretar la información que contienen considerando los datos, las condiciones de la medición y la agrupación de datos en intervalos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Usa estrategias y procedimientos para recopilar y procesar datos.",
+                    "texto": "Recopila datos mediante encuestas sencillas o entrevistas cortas con preguntas adecuadas empleando procedimientos y recursos; los procesa y organiza en tablas de doble entrada o tablas de frecuencia, para describirlos y analizarlos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Sustenta conclusiones o decisiones con base en la información obtenida.",
+                    "texto": "Selecciona y emplea procedimientos y recursos como el cálculo de la moda, media aritmética y la probabilidad de un evento ((ocurrencia de sucesos)) para determinar el dato o datos que representan un conjunto y el mayor o menor riesgo de la ocurrencia de sucesos. Predice la ocurrencia de un suceso o la tendencia de un conjunto de datos; justifica sus decisiones y conclusiones a partir de la información obtenida."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Representa datos con gráficos y medidas estadísticas o probabilísticas.",
+                    "texto": "Representa las características de una población en estudio, las que asocia a variables cualitativas ((por ejemplo: color de ojos: pardos, negros; profesión: médico, abogado, etc.)) y cuantitativas discretas ((por ejemplo: número de hermanos: 3, 2; cantidad de goles: 2, 4, 5, etc.)), así como también el comportamiento del conjunto de datos, a través de gráficos de barras dobles, gráficos de líneas, la moda y la media aritmética como centro de un conjunto de datos."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Expresa su comprensión de la moda como la mayor frecuencia y la media aritmética como punto de equilibrio; así como todos los posibles resultados de la ocurrencia de sucesos cotidianos usando las nociones \"seguro\", \"más probable\", \"igualmente probable\" y \"menos probable\"."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comunica su comprensión de los conceptos estadísticos y probabilísticos.",
+                    "texto": "Lee tablas de doble entrada y gráficos de barras dobles, así como información proveniente de diversas fuentes ((periódicos, revistas, entrevistas, experimentos, etc.)), para interpretar la información que contienen considerando los datos, las condiciones de la medición y la agrupación de datos en intervalos."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Usa estrategias y procedimientos para recopilar y procesar datos.",
+                    "texto": "Recopila datos mediante encuestas sencillas o entrevistas cortas con preguntas adecuadas empleando procedimientos y recursos; los procesa y organiza en tablas de doble entrada o tablas de frecuencia agrupada, para describirlos y analizarlos."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Sustenta conclusiones o decisiones con base en la información obtenida.",
+                    "texto": "Selecciona y emplea procedimientos y recursos como el cálculo de la moda, media aritmética y la probabilidad de un evento ((ocurrencia de sucesos)) para determinar el dato o datos que representan un conjunto y el mayor o menor riesgo de la ocurrencia de sucesos. Predice la tendencia de los datos o la ocurrencia de sucesos a partir del análisis de los resultados de un experimento aleatorio o de un estudio estadístico. Justifica sus decisiones y conclusiones a partir de la información obtenida."
+                }
+            ]
+        }
+    ]
+}

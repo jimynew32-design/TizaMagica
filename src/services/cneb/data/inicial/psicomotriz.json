@@ -1,0 +1,134 @@
+{
+    "area": "Psicomotriz",
+    "nivel": "Inicial",
+    "competencias": [
+        {
+            "nombre": "Se desenvuelve de manera autónoma a través de su motricidad",
+            "estandares": {
+                "Ciclo I": "Se desenvuelve de manera autónoma a través de su motricidad cuando explora y descubre sus posibilidades de movimiento y de desplazamiento en situaciones cotidianas. Expresa corporalmente sus sensaciones, emociones y sentimientos a través del tono, gesto, posturas, ritmo y movimiento.",
+                "Ciclo II": "Se desenvuelve de manera autónoma a través de su motricidad cuando explora y descubre su lado dominante y sus posibilidades de movimiento por propia iniciativa en situaciones cotidianas. Realiza acciones motrices básicas en las que coordina movimientos para desplazarse con seguridad y utiliza objetos con precisión, orientándose y regulando sus acciones en relación a estos, a las personas, el espacio y el tiempo. Expresa corporalmente sus sensaciones, emociones y sentimientos a través del tono, gesto, posturas, ritmo y movimiento en situaciones de juego."
+            },
+            "capacidades": [
+                "Comprende su cuerpo.",
+                "Se expresa corporalmente."
+            ],
+            "desempenos": [
+                {
+                    "grado": "9 meses",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y movimientos de manera autónoma que le permiten desplazarse por el espacio, explorar su cuerpo y los objetos de su entorno. ((Ejemplo: El niño sentado en el piso, se estira para alcanzar un juguete y, al lograrlo, se lo lleva a la boca))."
+                },
+                {
+                    "grado": "9 meses",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Realiza acciones y movimientos en los que expresa sus emociones."
+                },
+                {
+                    "grado": "18 meses",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y movimientos de manera autónoma que le permiten desplazarse por el espacio, explorar su cuerpo y los objetos de su entorno; inicia la coordinación de movimientos para caminar y utilizar objetos."
+                },
+                {
+                    "grado": "18 meses",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Realiza acciones y movimientos en los que expresa sus emociones."
+                },
+                {
+                    "grado": "24 meses",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y movimientos de manera autónoma para explorar su cuerpo, el espacio y los objetos de su entorno. Realiza acciones motrices básicas de coordinación para caminar, correr, saltar y utilizar objetos según sus intereses."
+                },
+                {
+                    "grado": "24 meses",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Realiza acciones y movimientos en los que expresa sus emociones."
+                },
+                {
+                    "grado": "36 meses",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y movimientos de manera autónoma para explorar su cuerpo, el espacio y los objetos de su entorno. Realiza acciones motrices básicas de coordinación para caminar, correr, saltar, trepar y utilizar objetos según sus intereses."
+                },
+                {
+                    "grado": "36 meses",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Realiza acciones y movimientos en los que expresa sus emociones."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y movimientos como correr, saltar desde pequeñas alturas, trepar, rodar, deslizarse explorando las posibilidades de su cuerpo con relación al espacio, la superficie y los objetos. ((Ejemplo: Un niño juega a trepar un pequeño muro, camina intentando mantener el equilibrio y salta desde cierta altura))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y movimientos de coordinación óculo-manual y óculo-podal en diferentes situaciones cotidianas y de juego según sus intereses. ((Ejemplo: Un niño desenrosca la tapa de su botella, pela una fruta, y puede abrir y cerrar sus envases colocándoles las tapas))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Reconoce sus sensaciones corporales, e identifica algunas de las necesidades y cambios en el estado de su cuerpo, como la respiración después de una actividad física. Reconoce las partes de su cuerpo al relacionarlas con sus acciones y nombrarlas espontáneamente en diferentes situaciones cotidianas."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Expresa sus emociones explorando las posibilidades de su cuerpo."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Representa su cuerpo ((o los de otros)) a su manera y utilizando diferentes materiales."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y juegos de manera autónoma, como correr, saltar, trepar, rodar, deslizarse, hacer giros, patear y lanzar pelotas, etc. explorando las posibilidades de sus cuerpo con relación al espacio, la superficie y los objetos, regulando su fuerza, velocidad y con cierto control de su equilibrio. ((Ejemplo: Un niño, al jugar a perseguir y atrapar a su compañero, corre y aumenta su velocidad, cambia de dirección al correr y salta pequeños obstáculos))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y movimientos de coordinación óculo-manual y óculo-podal, acorde con sus necesidades e intereses, y según las características de los objetos o materiales que emplea en diferentes situaciones cotidianas de exploración e juego. ((Ejemplo: Un niño juega a poner un pie delante del otro sin perder el equilibrio))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Reconoce sus sensaciones corporales, e identifica las necesidades y cambios en el estado de su cuerpo, como la respiración y sudoración después de una actividad física. Reconoce las partes de su cuerpo al relacionarlas con sus acciones y nombrarlas espontáneamente en diferentes situaciones cotidianas."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Expresa sus emociones explorando las posibilidades de su cuerpo."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Representa su cuerpo ((o los de otros)) a su manera, utilizando diferentes materiales y haciendo evidentes algunas partes, como la cabeza, los brazos, las piernas y algunos elementos del rostro."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y juegos de manera autónoma combinando habilidades motrices básicas como correr, saltar, trepar, rodar, deslizarse, hacer giros y volteretas explorando las posibilidades de su cuerpo con relación al espacio, el tiempo, la superficie y los objetos; en estas acciones, muestra predominio y mayor control de un lado de su cuerpo. ((Ejemplo: Un niño juega a caminar detrás de otro niño. Aceleran la marcha, inventan diferentes formas de caminar, corren saltando, caminan hacia atrás, se impulsan y hacen saltos largos, entre otros movimientos))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Realiza acciones y movimientos de coordinación óculo-manual y óculo-podal que requieren mayor precisión. Lo hace en diferentes situaciones cotidianas, de juego o de representación gráfico-plástica, ajustándose a los límites espaciales y a las características de los objetos, materiales y/o herramientas que utilizan, según sus necesidades, intereses y posibilidades. ((Ejemplo: En el patio, un niño dibuja círculos en el suelo para jugar con canicas tratando de hacerlas caer dentro de los círculos que dibujó))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Reconoce sus sensaciones corporales, e identifica las necesidades y cambios en el estado de su cuerpo, como la respiración y sudoración. Reconoce las partes de su cuerpo al relacionarlas con sus acciones y nombrarlas espontáneamente en diferentes situaciones cotidianas."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Expresa sus emociones explorando las posibilidades de su cuerpo."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Representa su cuerpo ((o el de otro)) a su manera, incorporando más detalles de la figura humana, e incluyendo algunas características propias ((cabello corto, largo, lacio, rizado, etc.))."
+                }
+            ]
+        }
+    ]
+}

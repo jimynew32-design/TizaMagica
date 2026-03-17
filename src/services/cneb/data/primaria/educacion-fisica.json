@@ -1,0 +1,318 @@
+{
+    "area": "Educación Física",
+    "nivel": "Primaria",
+    "competencias": [
+        {
+            "nombre": "Se desenvuelve de manera autónoma a través de su motricidad",
+            "estandares": {
+                "Ciclo III": "Se desenvuelve de manera autónoma a través de su motricidad cuando comprende su cuerpo en estado de reposo y movimiento. Explora su lateralidad y las posibilidades de su cuerpo; organiza sus movimientos para desplazarse con seguridad y utiliza objetos con precisión. Expresa corporalmente sus sensaciones y emociones a través de gestos, posturas, ritmos y movimientos en situaciones de juego.",
+                "Ciclo IV": "Se desenvuelve de manera autónoma a través de su motricidad cuando comprende su cuerpo y utiliza sus posibilidades de movimiento. Realiza acciones motrices básicas en las que coordina movimientos para desplazarse con seguridad y utiliza objetos con precisión, orientándose en relación a estos, a las personas y al espacio. Expresa corporalmente sus sensaciones, emociones y sentimientos.",
+                "Ciclo V": "Se desenvuelve de manera autónoma a través de su motricidad cuando comprende su cuerpo de acuerdo a las situaciones de movimiento. Crea con sus compañeros secuencias rítmicas y movimientos corporales expresivos. Utiliza sus posibilidades de movimiento para desplazarse con seguridad y utiliza objetos con precisión, regulando su fuerza y velocidad en relación al espacio y tiempo."
+            },
+            "capacidades": [
+                "Comprende su cuerpo.",
+                "Se expresa corporalmente."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Explora de manera autónoma las posibilidades de su cuerpo en diferentes acciones para mejorar sus movimientos ((saltar, correr, lanzar)) de acuerdo a sus intereses."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Se orienta en un espacio compartido para desplazarse con seguridad utilizando nociones espaciales ((arriba, abajo, dentro, fuera))."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Expresa corporalmente sus sensaciones y emociones a través del cuerpo, gestos y mímica en situaciones lúdicas."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Explora de manera autónoma las posibilidades de su cuerpo en diferentes acciones y movimientos; muestra coordinación óculo-manual y óculo-podal en situaciones de juego."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Se orienta en el espacio y tiempo con relación a sí mismo y a otros puntos de referencia."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Resuelve situaciones motrices al utilizar su cuerpo y objetos; regula su equilibrio en diferentes superficies y alturas."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Explora y reconoce sus capacidades físicas para mejorar sus movimientos en situaciones de juego y actividades cotidianas."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Se orienta en el espacio y tiempo en relación a sí mismo y a otros, utilizando nociones espaciales y temporales."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Utiliza su cuerpo y el movimiento para expresar sensaciones, emociones y sentimientos en actividades rítmicas y expresivas."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Reconoce su lado dominante y utiliza sus posibilidades de movimiento para realizar acciones motrices con precisión."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Se orienta en el espacio y tiempo utilizando conceptos espaciales ((derecha, izquierda, delante, detrás))."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Organiza secuencias de movimientos con ritmo y música de manera colectiva."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Aplica sus habilidades motrices básicas de acuerdo a sus necesidades en situaciones de juego y actividades deportivas."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Regula su cuerpo en situaciones de equilibrio y control postural de acuerdo a las demandas de las actividades."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Crea secuencias motrices con ritmo y música manifestando sus emociones."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Aplica sus habilidades motrices básicas de acuerdo a sus necesidades y posibilidades en situaciones de juego y deporte escolar."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comprende su cuerpo.",
+                    "texto": "Regula su cuerpo y coordina sus movimientos en situaciones de equilibrio y control de acuerdo a las demandas de las actividades."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Se expresa corporalmente.",
+                    "texto": "Crea de manera colectiva secuencias rítmicas y movimientos corporales expresivos."
+                }
+            ]
+        },
+        {
+            "nombre": "Asume una vida saludable",
+            "estandares": {
+                "Ciclo III": "Asume una vida saludable cuando diferencia alimentos saludables de su dieta personal y familiar. Identifica la postura correcta en situaciones cotidianas y reconoce la importancia de la higiene. Realiza actividades físicas diarias de acuerdo a su interés.",
+                "Ciclo IV": "Asume una vida saludable cuando comprende los beneficios de la actividad física y la alimentación saludable. Adopta posturas adecuadas en la práctica de actividades físicas y reconoce la importancia del descanso. Realiza actividades físicas de manera regular.",
+                "Ciclo V": "Asume una vida saludable cuando explica la relación entre la actividad física, higiene y alimentación saludable. Evalúa su estado de salud y adopta prácticas saludables para mejorar su calidad de vida. Realiza actividades físicas diariamente."
+            },
+            "capacidades": [
+                "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                "Incorpora prácticas que mejoran su calidad de vida."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Describe los alimentos de su dieta familiar y las posturas que adopta en su vida cotidiana."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Realiza con autonomía prácticas de higiene ((lavado de manos y cara)) y reconoce cuándo tiene sed para hidratarse."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Regula su esfuerzo al participar en actividades lúdicas."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Identifica alimentos saludables y los consume como parte de su dieta diaria; reconoce la importancia de la higiene personal y del ambiente."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Adopta posturas correctas al realizar actividades físicas y cotidianas."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Diferencia los estados de reposo y actividad."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Explica la importancia de la hidratación y el consumo de alimentos saludables como hábitos permanentes."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Adopta posturas adecuadas en actividades cotidianas y lúdicas."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Incorpora el autocuidado relacionado con los ritmos de actividad-descanso para mejorar su funcionamiento corporal."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Selecciona alimentos saludables para su dieta basándose en la información que maneja sobre el valor nutricional."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Explica los beneficios de la actividad física para el bienestar emocional y la salud."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Propone y practica hábitos de higiene antes, durante y después de la actividad física."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Explica las condiciones que favorecen la salud y aquellas que la perjudican basándose en el conocimiento de su cuerpo."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Realiza actividades físicas de intensidad moderada a vigorosa para mejorar su capacidad cardiovascular."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Realiza mediciones simples de su peso y talla y las registra para observar su crecimiento."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Comprende las relaciones entre la actividad física, alimentación, postura e higiene personal y del ambiente, y la salud.",
+                    "texto": "Explica la relación entre el gasto calórico, la ingesta de alimentos y la intensidad de la actividad física."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Muestra hábitos saludables integrando la actividad física en su vida cotidiana."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Incorpora prácticas que mejoran su calidad de vida.",
+                    "texto": "Adapta su dieta de acuerdo a sus necesidades energéticas para mantener un peso saludable."
+                }
+            ]
+        },
+        {
+            "nombre": "Interactúa a través de sus habilidades sociomotrices",
+            "estandares": {
+                "Ciclo III": "Interactúa a través de sus habilidades sociomotrices al aceptar al otro como compañero de juego y busca el consenso sobre la manera de jugar para lograr el bienestar común y muestra una actitud de respeto evitando juegos violentos y humillantes; expresa su posición ante un conflicto con intención de resolverlo y escucha la posición de sus compañeros en los diferentes tipos de juegos. Resuelve situaciones motrices a través de estrategias colectivas y participa en la construcción de reglas de juego adaptadas a la situación y al entorno, para lograr un objetivo común en la práctica de actividades lúdicas.",
+                "Ciclo IV": "Interactúa a través de sus habilidades sociomotrices al tomar acuerdos sobre la manera de jugar y los posibles cambios o conflictos que se den y propone adaptaciones o modificaciones para favorecer la inclusión de compañeros en actividades lúdicas, aceptando al oponente como compañero de juego. Adapta la estrategia de juego anticipando las intenciones de sus compañeros y oponentes para cumplir con los objetivos planteados. Propone reglas y las modifica de acuerdo a las necesidades del contexto y los intereses del grupo en la práctica de actividades físicas.",
+                "Ciclo V": "Interactúa a través de sus habilidades sociomotrices proactivamente con un sentido de cooperación teniendo en cuenta las adaptaciones o modificaciones propuestas por el grupo en diferentes actividades físicas. Hace uso de estrategias de cooperación y oposición seleccionando los diferentes elementos técnicos y tácticos que se pueden dar en la práctica de actividades lúdicas y predeportivas, para resolver la situación de juego que le dé un mejor resultado y que responda a las variaciones que se presentan en el entorno."
+            },
+            "capacidades": [
+                "Se relaciona utilizando sus habilidades sociomotrices.",
+                "Crea y aplica estrategias y tácticas de juego."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Asume roles y funciones de manera individual y dentro de un grupo; interactúa de forma espontánea en actividades lúdicas y disfruta de la compañía de sus pares para sentirse parte del grupo."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Participa en juegos cooperativos y de oposición en parejas y pequeños grupos; acepta al oponente como compañero de juego y las formas diferentes de jugar."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Crea y aplica estrategias y tácticas de juego.",
+                    "texto": "Propone soluciones a situaciones motrices y lúdicas, y llega a acuerdos con sus pares a fin de cumplir con los objetivos que surjan; respeta las reglas de juego propuestas."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Participa en juegos cooperativos y de oposición en parejas y pequeños grupos; acepta al oponente como compañero de juego y llega a consensos sobre la manera de jugar."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Muestra una actitud de respeto en la práctica de actividades lúdicas y evita juegos bruscos, amenazas o apodos; acepta la participación de todos sus compañeros."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Crea y aplica estrategias y tácticas de juego.",
+                    "texto": "Resuelve de manera compartida situaciones producidas en los diferentes tipos de juegos ((tradicionales, autóctonos, etc.)) y adecúa las reglas para la inclusión de sus pares y el entorno."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Propone cambios en las condiciones de juego, si fuera necesario, para posibilitar la inclusión de sus pares; así, promueve el respeto y la participación, y busca un sentido de pertenencia al grupo."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Participa en juegos cooperativos y de oposición en parejas, pequeños y grandes grupos; acepta al oponente como compañero de juego y arriba a consensos sobre la manera de jugar."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Crea y aplica estrategias y tácticas de juego.",
+                    "texto": "Genera estrategias colectivas en las actividades lúdicas según el rol de sus compañeros y el suyo propio, a partir de los resultados en el juego."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Propone normas y reglas en las actividades lúdicas y las modifica de acuerdo a las necesidades, el contexto y los intereses, con adaptaciones o modificaciones propuestas por el grupo."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Propone actividades lúdicas, como juegos populares y/o tradicionales, con adaptaciones o modificaciones propuestas por el grupo; acepta al oponente como compañero de juego y llega a consensos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Crea y aplica estrategias y tácticas de juego.",
+                    "texto": "Propone reglas y las modifica de acuerdo a las necesidades; adapta la estrategia de juego cuando prevé las intenciones de sus compañeros de equipo y oponentes."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Emplea la resolución reflexiva y el diálogo como herramientas para solucionar problemas o conflictos surgidos con sus pares durante la práctica de actividades lúdicas y predeportivas diversas."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Realiza actividades lúdicas en las que interactúa con sus compañeros y oponentes como compañeros de juego; respeta las diferencias personales y asume roles y cambio de roles."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Crea y aplica estrategias y tácticas de juego.",
+                    "texto": "Propone, junto con sus pares, soluciones estratégicas oportunas, y toma en cuenta los aportes y las características de cada integrante del grupo al practicar juegos diversos."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Participa en actividades físicas en la naturaleza, eventos predeportivos, juegos populares, entre otros, y toma decisiones en favor del grupo aunque vaya en contra de sus intereses personales, con un sentido solidario y de cooperación."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Se relaciona utilizando sus habilidades sociomotrices.",
+                    "texto": "Modifica juegos y actividades para que se adecúen a las necesidades y posibilidades del grupo y a la lógica del juego deportivo."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Crea y aplica estrategias y tácticas de juego.",
+                    "texto": "Participa en actividades lúdicas, predeportivas y deportivas en las que pone en práctica diversas estrategias; adecúa normas de juego y la mejor solución táctica para dar respuesta a las variaciones del entorno."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,635 @@
+{
+    "area": "Castellano como Segunda Lengua",
+    "nivel": "Primaria",
+    "competencias": [
+        {
+            "nombre": "Se comunica oralmente en castellano como segunda lengua",
+            "estandares": {
+                "Ciclo III": "Se comunica oralmente mediante textos breves y sencillos de vocabulario frecuente. Infiere el propósito comunicativo y reconoce los recursos no verbales y paraverbales del interlocutor. Se expresa brevemente organizando la información mediante frases cotidianas para comunicar gustos, necesidades básicas, emociones y acciones concretas. Utiliza recursos no verbales, gestuales y corporales para hacer efectiva la situación comunicativa. Indica qué le gusta o le disgusta de lo escuchado. En un intercambio, formula preguntas ((a partir de la toma de turnos de su entorno cultural)) y responde de forma básica a su interlocutor usando algunas frases de su lengua materna si fuera necesario.",
+                "Ciclo IV": "Se comunica oralmente mediante textos orales sencillos de vocabulario variado. Interpreta el propósito comunicativo del interlocutor, reconoce y relaciona información relevante. Se expresa brevemente organizando la información en torno a un tema usando vocabulario cotidiano. Utiliza recursos no verbales y paraverbales. Opina brevemente sobre un texto. En un intercambio, formula y responde preguntas a su interlocutor.",
+                "Ciclo V": "Se comunica oralmente mediante diversos tipos de textos en registros formales e informales. Infiere el tema e interpreta el propósito comunicativo del interlocutor y reconoce información relevante. Se expresa adecuando su texto oral a situaciones comunicativas formales e informales usando vocabulario variado. Organiza y desarrolla ideas en torno a un tema relacionándolas mediante el uso de algunos conectores y referentes. Utiliza recursos no verbales y paraverbales. Opina sobre un texto justificando su posición. En un intercambio con sus pares expresa sus ideas ampliándolas y vinculándolas a un tema."
+            },
+            "capacidades": [
+                "Obtiene información del texto oral.",
+                "Infiere e interpreta información del texto oral.",
+                "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                "Interactúa estratégicamente con distintos interlocutores.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto oral."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información de textos orales breves y sencillos del ámbito escolar, familiar y comunal, donde predomina vocabulario conocido ((referentes cercanos)), que cuentan con apoyo de gestos, expresiones corporales y tono de voz del interlocutor."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce algunas relaciones lógicas entre las ideas; para ello, se apoya en recursos verbales, no verbales y paraverbales ((volumen y tono))."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa ideas para comunicar gustos, preferencias o necesidades, aunque reitera información que no afecta el sentido del texto. Establece relaciones lógicas entre estas ideas."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea recursos no verbales ((gestos y movimientos corporales)) y paraverbales ((entonación)) para enfatizar información."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en situaciones comunicativas de su contexto más próximo, como institución educativa o comunidad, a través de preguntas y respuestas. Usa su lengua materna si fuese necesario."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina sobre el texto oral que escucha e indica qué le gustó de lo escuchado ((personas, personajes, acciones, el tema a partir de su experiencia previa y el contexto sociocultural, etc.))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información de textos orales breves y sencillos del ámbito escolar, familiar y comunal, donde predomina vocabulario conocido, que cuentan con apoyo de gestos, expresiones corporales y tono de voz del interlocutor."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce algunas relaciones lógicas entre las ideas; para ello, se apoya en recursos verbales, no verbales y paraverbales ((volumen y tono))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa ideas para comunicar gustos, preferencias o necesidades, aunque reitera información que no afecta el sentido del texto. Establece relaciones lógicas entre estas ideas."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea recursos no verbales ((gestos y movimientos corporales)) y paraverbales ((entonación)) para enfatizar información."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en situaciones comunicativas de su contexto más próximo, como institución educativa o comunidad, a través de preguntas y respuestas. Usa su lengua materna si fuese necesario."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina sobre el texto oral que escucha e indica qué le gustó de lo escuchado ((personas, personajes, acciones, el tema a partir de su experiencia previa y el contexto sociocultural, etc.))."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de textos orales sencillos con vocabulario variado seleccionando datos específicos del texto que escucha."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce relaciones lógicas entre las ideas, como las secuencias temporales, las relaciones de semejanza y diferencia y de causa-efecto, apoyándose en recursos no verbales y paraverbales ((volumen y tono))."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Señala características implícitas de personas, personajes, animales, objetos, lugares, a partir de información explícita en el texto oral."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto oral a partir de su contexto sociocultural."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa ideas en torno a un tema, aunque con algunas digresiones o repetición de información que no afectan el sentido del texto. Ordena estas ideas usando algunos conectores para establecer relaciones lógicas entre ellas. Incorpora vocabulario cotidiano así como recursos no verbales ((gestos y movimientos corporales)) al construir el sentido de su texto oral."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea recursos no verbales ((gestos y movimientos corporales)) y paraverbales ((entonación)) para enfatizar información."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en situaciones comunicativas de su contexto más próximo, como institución educativa o comunidad, agregando información oportuna al intercambio oral."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina brevemente sobre hechos, personas, personajes, acciones, tema y propósito comunicativo, a partir de su experiencia y contexto sociocultural."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de textos orales sencillos con vocabulario variado seleccionando datos específicos del texto que escucha."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce relaciones lógicas entre las ideas, como las secuencias temporales, las relaciones de semejanza y diferencia y de causa-efecto, apoyándose en recursos no verbales y paraverbales ((volumen y tono))."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Señala características implícitas de personas, personajes, animales, objetos, lugares, a partir de información explícita en el texto oral."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto oral a partir de su contexto sociocultural."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Adecúa el texto oral a la situación comunicativa, considerando el propósito comunicativo y sus destinatarios."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa ideas en torno a un tema, aunque con algunas digresiones que no afectan el sentido del texto. Ordena estas ideas usando algunos conectores para establecer relaciones lógicas entre ellas. Incorpora vocabulario cotidiano así como recursos no verbales ((gestos y movimientos corporales)) al construir el sentido de su texto oral."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea recursos no verbales ((gestos y movimientos corporales)) y paraverbales ((entonación)) para enfatizar información."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en situaciones comunicativas de su contexto más próximo, como institución educativa o comunidad, agregando información oportuna al intercambio oral."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina brevemente sobre hechos, personas, personajes, acciones, tema y propósito comunicativo, a partir de su experiencia y contexto sociocultural."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de textos orales, tanto de los que usan registro formal como informal, seleccionando datos específicos del texto que escucha."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce relaciones lógicas entre las ideas, como las secuencias temporales, las relaciones de semejanza y diferencia y de causa-efecto, apoyándose en recursos no verbales y paraverbales ((volumen y tono))."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Señala características implícitas de personas, personajes, animales, objetos, lugares, así como el significado de las palabras, a partir de información explícita en el texto oral."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto oral a partir de su contexto sociocultural y distingue lo relevante de lo complementario."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Adecúa el texto oral a la situación comunicativa considerando el propósito comunicativo y sus destinatarios. Distingue el registro formal e informal, para adecuarse a la situación comunicativa."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa ideas en torno a un tema, aunque puede presentar digresiones que no afectan el sentido del texto. Organiza estas ideas usando algunos conectores y referentes para establecer relaciones lógicas entre ellas. Incorpora vocabulario variado así como recursos no verbales ((gestos y movimientos corporales)) al construir el sentido de su texto oral."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea estratégicamente recursos no verbales ((gestos y movimientos corporales)) y paraverbales ((entonación)) para enfatizar información."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en situaciones comunicativas de su contexto más próximo, como institución educativa o comunidad, agregando información oportuna al tema; respeta los turnos de la conversación de acuerdo a las normas de cortesía local."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina sobre ideas, hechos, personas, personajes, temas, ideas principales, así como el propósito comunicativo, a partir de su experiencia y contextos socioculturales."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Justifica su posición sobre lo que dice el texto considerando su experiencia y los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de textos orales, tanto de los que usan registro formal como informal, seleccionando datos específicos del texto que escucha."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce relaciones lógicas entre las ideas, como las secuencias temporales, las relaciones de semejanza y diferencia y de causa-efecto, apoyándose en recursos no verbales y paraverbales ((volumen y tono))."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Señala características implícitas de personas, personajes, animales, objetos, lugares, así como el significado de las palabras, a partir de información explícita en el texto oral."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto oral a partir de su contexto sociocultural y distingue lo relevante de lo complementario."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Adecúa el texto oral a la situación comunicativa considerando el propósito comunicativo y sus destinatarios. Distingue y elige entre el registro formal e informal, para adecuarse a la situación comunicativa."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa ideas en torno a un tema y se mantiene en este. Organiza estas ideas usando diversos conectores y referentes para establecer relaciones lógicas entre ellas ((de contraste, de causa, de consecuencia, etc.)). Incorpora un vocabulario variado así como recursos no verbales ((gestos y movimientos corporales)) al construir el sentido de su texto oral."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea estratégicamente recursos no verbales ((gestos y movimientos corporales)) y paraverbales ((entonación)) para enfatizar información."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en situaciones comunicativas de su contexto más próximo, como institución educativa o comunidad, agregando información oportuna al tema; respeta los turnos de la conversación de acuerdo a las normas de cortesía local."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina sobre ideas, hechos, personas, personajes, temas, ideas principales, así como el propósito comunicativo, a partir de su experiencia y contextos socioculturales."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Justifica su posición sobre lo que dice el texto considerando su experiencia y los contextos socioculturales en que se desenvuelve."
+                }
+            ]
+        },
+        {
+            "nombre": "Lee diversos tipos de textos escritos en castellano como segunda lengua",
+            "estandares": {
+                "Ciclo III": "Lee diversos tipos de textos breves de estructura simple que tratan sobre temas cotidianos, en los que predomina vocabulario conocido e ilustraciones. Identifica y relaciona información ubicada en distintas partes del texto. Expresa sus gustos y preferencias sobre el contenido de un texto en su lengua materna.",
+                "Ciclo IV": "Lee diversos tipos de textos de estructura simple que presentan vocabulario variado. Identifica y relaciona información ubicada en distintas partes del texto ((semejanzas y diferencias)), infiere el propósito y el tema central e interpreta el sentido de un texto relacionándolo con alguna situación de su contexto sociocultural. Reconoce la utilidad de elementos formales básicos en el texto. Opina de forma breve sobre las ideas del texto.",
+                "Ciclo V": "Lee diversos tipos de textos con algunos elementos complejos que presentan vocabulario variado. Relaciona información ubicada en distintas partes del texto, infiere el propósito comunicativo, el tema central y las ideas principales. Interpreta integrando información explícita e implícita para construir el sentido de un texto relacionándolo con su contexto sociocultural. Reconoce la utilidad de elementos formales. Opina sobre sucesos e ideas del texto justificando su posición."
+            },
+            "capacidades": [
+                "Obtiene información del texto escrito.",
+                "Infiere e interpreta información del texto.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica palabras conocidas en textos breves de estructura sencilla, con temas cotidianos de su contexto local, acompañados de ilustraciones y en los que predomina un vocabulario conocido y reiterativo."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce información; para ello, anticipa el contenido del texto a partir de algunos indicios ((título, ilustraciones, palabras conocidas))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica nombres, palabras y frases cotidianas en textos breves de estructura simple, con temas cotidianos, acompañados de ilustraciones y en los que predomina un vocabulario conocido."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce información; para ello, anticipa el contenido del texto a partir de algunos indicios ((título, ilustraciones, palabras conocidas))."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Comenta en su lengua materna qué le gustó del texto leído."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información ubicada en distintas partes de un texto de estructura simple."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Integra información ubicada en distintas partes del texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce relaciones de semejanzas y diferencias."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce información a partir de la estructura del texto, como subtítulos, títulos, etc."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce características de personajes, animales, objetos y lugares, así como el significado de palabras según el contexto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema y el propósito del texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina en forma breve sobre el contenido del texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Explica la utilidad de los elementos normativos básicos de la lengua que favorecen la comprensión."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información ubicada en distintas partes de un texto de estructura simple."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Integra información ubicada en distintas partes del texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce relaciones de semejanzas y diferencias."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce información a partir de la estructura del texto, como subtítulos, títulos, etc."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce características de personajes, animales, objetos y lugares, así como el significado de palabras según el contexto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema y el propósito del texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina en forma breve sobre el contenido del texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Explica la utilidad de los elementos normativos básicos de la lengua que favorecen la comprensión."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información relevante del texto con algunos elementos complejos y vocabulario variado."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Integra información ubicada en distintas partes del texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce relaciones de semejanzas y diferencias, causa-efecto, problema-solución."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce información a partir de la estructura del texto, como subtítulos, títulos, etc."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce características de personajes, animales, objetos y lugares, así como el significado de palabras según el contexto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema y el propósito del texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina sobre el contenido del texto y justifica su posición."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Explica la utilidad de los elementos normativos básicos de la lengua que favorecen la comprensión."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información relevante del texto con algunos elementos complejos y vocabulario variado."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Integra información ubicada en distintas partes del texto."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce relaciones de semejanzas y diferencias, causa-efecto, problema-solución."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce información a partir de la estructura del texto, como subtítulos, títulos, etc."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce características de personajes, animales, objetos y lugares, así como el significado de palabras según el contexto."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema y el propósito del texto."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina sobre el contenido del texto y justifica su posición."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Explica la utilidad de los elementos normativos básicos de la lengua que favorecen la comprensión."
+                }
+            ]
+        },
+        {
+            "nombre": "Escribe diversos tipos de textos en castellano como segunda lengua",
+            "estandares": {
+                "Ciclo III": "Escribe frases y oraciones para formar un texto sobre temas cotidianos respondiendo a su propósito a partir de su experiencia previa. Relaciona ideas vinculadas a un tema y utiliza vocabulario de uso frecuente. Establece relaciones entre ideas mediante el uso de algunos conector para añadir información puntual y utiliza algunos recursos ortográficos.",
+                "Ciclo IV": "Escribe diversos tipos de textos sobre temas cotidianos respondiendo a su propósito a partir de su experiencia previa y una fuente de información. Organiza y desarrolla ideas en párrafos en torno a un tema y utiliza vocabulario de uso frecuente. Establece relaciones entre ideas mediante el uso de algunos conectores para añadir información específica, utiliza y algunos recursos ortográficos. Reflexiona y evalúa su texto escrito.",
+                "Ciclo V": "Escribe diversos tipos de textos de forma reflexiva sobre temas variados. Adecúa su texto al destinatario, propósito y el registro, a partir de diversas fuentes de información. Organiza y desarrolla sus ideas en párrafos en torno a un tema y utiliza vocabulario variado. Establece relaciones entre ideas mediante el uso de diferentes recursos ((conectores, pronombres)), usando diversos recursos ortográficos para darle claridad al sentido del texto. Reflexiona y evalúa su texto escrito."
+            },
+            "capacidades": [
+                "Adecúa el texto a la situación comunicativa.",
+                "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe palabras sueltas. Por ejemplo, nombres de objetos: mesa, sapo, pato, etc."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Escribe frases y oraciones para construir un texto sobre temas cercanos a sus vivencias, teniendo en cuenta el propósito comunicativo y sus experiencias previas."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe usando algunos conectores. Utiliza vocabulario de uso frecuente."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza algunos recursos ortográficos, como el punto y la coma."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa el texto a la situación comunicativa ((del ámbito cotidiano)) considerando el propósito. Incluye en sus escritos alguna fuente de información oral o escrita."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos en torno a un tema, aunque presenta reiteración de información o algunas digresiones que no afectan el sentido del texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Relaciona las ideas usando algunos conectores de adición, como \"y\", además de algunos referentes."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Utiliza vocabulario frecuente."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza algunos recursos ortográficos, como la coma, el punto final, entre otros."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa, con ayuda del docente, si el contenido de su texto se adecúa al propósito y tema, con el fin de mejorarlo."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa el texto a la situación comunicativa ((del ámbito cotidiano)) considerando el propósito. Incluye en sus escritos alguna fuente de información oral o escrita."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos en torno a un tema, aunque presenta reiteración de información o algunas digresiones que no afectan el sentido del texto. Ordena las ideas en párrafos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Relaciona las ideas usando algunos conectores de adición, como \"y\", además de algunos referentes."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Utiliza vocabulario frecuente."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza algunos recursos ortográficos para que su texto sea claro, como la coma, el punto seguido, el punto final, entre otros."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa si el contenido de su texto y el registro usado se adecúa a la situación comunicativa, con el fin de mejorarlo."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa su texto, sobre temas variados, al destinatario y propósito comunicativo considerando más de una fuente de información oral o escrita."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos en torno a un tema, aunque presenta algunas digresiones que no afectan el sentido del texto. Ordena las ideas en párrafos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Relaciona las ideas usando conectores ((consecuencia, contraste, comparación, entre otros)) y referentes."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Utiliza vocabulario variado, además de expresiones formulaicas como \"había una vez\", entre otras."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza diversos recursos ortográficos para que su texto sea claro."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa si el contenido de su texto y el registro usado se adecúan a la situación comunicativa, con el fin de mejorarlo."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa si los recursos ortográficos que utiliza en su texto tienen algún efecto en su lector."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa su texto, sobre temas variados, al destinatario, registro formal e informal y propósito comunicativo considerando más de una fuente de información oral o escrita."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos en torno a un tema, aunque presenta algunas digresiones que no afectan el sentido del texto. Ordena las ideas en párrafos."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Relaciona las ideas usando conectores ((consecuencia, contraste, comparación, entre otros)) y referentes."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Utiliza vocabulario variado, además de diversas expresiones formulaicas."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza diversos recursos ortográficos para que su texto sea claro."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa si el contenido de su texto, el vocabulario y el registro usado se adecúan a la situación comunicativa, con el fin de mejorarlo."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa si los recursos ortográficos que utiliza en su texto tienen algún efecto en su lector."
+                }
+            ]
+        }
+    ]
+}

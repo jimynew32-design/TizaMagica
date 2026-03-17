@@ -1,0 +1,402 @@
+{
+    "area": "Inglés como Lengua Extranjera",
+    "nivel": "Secundaria",
+    "competencias": [
+        {
+            "nombre": "Se comunica oralmente en inglés como lengua extranjera",
+            "estandares": {
+                "Ciclo VI": "Se comunica oralmente mediante diversos tipos de textos en inglés. Infiere el tema, propósito, hechos y conclusiones a partir de información explícita e interpreta la intención del interlocutor. Se expresa adecuando el texto a situaciones comunicativas cotidianas usando pronunciación y entonación adecuada; organiza y desarrolla ideas en torno a un tema central haciendo uso de algunos conectores coordinados y subordinados incluyendo vocabulario cotidiano y construcciones gramaticales determinadas y pertinentes. Utiliza recursos no verbales y para-verbales para dar énfasis a su texto. Opina sobre lo escuchado haciendo uso de sus conocimientos del tema. En un intercambio, participa formulando y respondiendo preguntas sobre actividades diarias, eventos pasados y temas de interés personal.",
+                "Ciclo VII": "Se comunica oralmente mediante diversos tipos de textos en inglés. Infiere el tema, propósito, hechos y conclusiones a partir de información implícita y explícita e interpreta la intención del interlocutor. Se expresa adecuando el texto a situaciones comunicativas formales e informales usando pronunciación y entonación inteligible; organiza y desarrolla ideas en torno a un tema y las relaciona haciendo uso de algunos recursos cohesivos, vocabulario variado y construcciones gramaticales determinadas y pertinentes. Utiliza recursos no verbales y para-verbales para garantizar la pertinencia del mensaje. Reflexiona y evalúa sobre lo escuchado haciendo uso de sus conocimientos sobre el tema. En un intercambio, participa formulando y respondiendo preguntas sobre temas que le son conocidos o habituales y evalúa las respuestas escuchadas para dar sus aportes tomando en cuenta los puntos de vista de otros."
+            },
+            "capacidades": [
+                "Obtiene información del texto oral en inglés.",
+                "Infiere e interpreta información del texto oral en inglés.",
+                "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                "Interactúa estratégicamente en inglés con distintos interlocutores.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto oral en inglés."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Obtiene información del texto oral en inglés.",
+                    "texto": "Obtiene información explícita y relevante en textos orales en inglés, con vocabulario cotidiano reconociendo el propósito comunicativo participando como oyente activo y apoyándose en el contexto."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral en inglés.",
+                    "texto": "Infiere información en inglés deduciendo características de personas, animales, objetos, lugares y hechos, el significado de palabras, frases y expresiones dentro de un contexto, así como relaciones lógicas ((semejanza y diferencia)) y jerárquicas ((ideas principales y complementarias)) en textos orales e interpreta el sentido del texto oral apoyándose en recursos verbales, no verbales y para-verbales del emisor."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Expresa oralmente sus ideas y opiniones en inglés sobre seres, objetos, hechos, lugares, en textos orales acerca de información personal, preferencias alimenticias, eventos presentes y futuros, adecuándose a sus interlocutores y contexto utilizando recursos no verbales y para-verbales para enfatizar la información y mantener el interés."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla ideas en torno a un tema ampliando información de forma pertinente. Organiza las ideas con coherencia, cohesión y fluidez a su nivel, estableciendo relaciones lógicas entre ellas ((en especial de adición, contraste, secuencia, causa, consecuencia)) a través de conectores e incorporando vocabulario cotidiano y construcciones gramaticales determinadas mediante el uso de oraciones de mediana complejidad."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Interactúa estratégicamente en inglés con distintos interlocutores.",
+                    "texto": "Interactúa en diversas situaciones orales con otras personas en inglés formulando y respondiendo preguntas, haciendo algunos comentarios, explicando y complementando ideas adaptando sus respuestas a los puntos de vista del interlocutor utilizando vocabulario cotidiano y pronunciación y entonación adecuada."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral en inglés.",
+                    "texto": "Reflexiona sobre el texto oral que escucha en inglés, opinando sobre personas, animales, objetos, lugares, secuencias temporales, propósito comunicativo y relaciones de semejanza, diferencia y conclusiones relacionando la información con sus conocimientos del tema."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Obtiene información del texto oral en inglés.",
+                    "texto": "Obtiene información explícita y relevante en textos orales en inglés, con vocabulario cotidiano que incluye algunos sinónimos reconociendo el propósito comunicativo, participando como oyente activo y apoyándose en el contexto."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto oral en inglés.",
+                    "texto": "Infiere información en inglés, deduciendo características de personas, animales, objetos, lugares y hechos, el significado de palabras, frases y expresiones en context, así como secuencias temporales, relaciones de semejanza-diferencia deduciendo el tema central y conclusiones en textos orales e interpreta el sentido del texto oral apoyándose en recursos verbales, no verbales y para-verbales del emisor."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Expresa oralmente sus ideas y opiniones en inglés sobre información personal instrucciones, hábitos alimenticios, obligaciones, planes e intereses, eventos pasados, eventos futuros, y comparaciones adecuándose a sus interlocutores y contexto utilizando recursos no verbales y para-verbales para enfatizar la información y mantener el interés."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla ideas en torno a un tema ampliando información de forma pertinente. Organiza y jerarquiza ideas con coherencia, cohesión y fluidez a su nivel, estableciendo relaciones lógicas entre ellas ((en especial de contraste, secuencia, causa, consecuencia, comparación)) a través de conectores coordinados y subordinados e incorporando vocabulario cotidiano y funciones gramaticales determinadas mediante el uso de oraciones de mediana complejidad."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Interactúa estratégicamente en inglés con distintos interlocutores.",
+                    "texto": "Interactúa en diversas situaciones orales con otras personas en inglés formulando y respondiendo preguntas, haciendo algunos comentarios, explicando y complementando ideas adaptando sus respuestas a los puntos de vista del interlocutor, aclarando y contrastando ideas utilizando vocabulario cotidiano y pronunciación y entonación adecuada."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral en inglés.",
+                    "texto": "Reflexiona sobre el texto oral que escucha in inglés, opinando sobre el tema central, características de personas, animales, objetos, lugares, secuencias temporales, propósito comunicativo y relaciones de semejanza, diferencia y conclusiones relacionando la información con sus conocimientos del tema."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Obtiene información del texto oral en inglés.",
+                    "texto": "Obtiene información explícita, relevante y contrapuesta en textos orales en inglés, que presentan vocabulario variado que incluye sinónimos reconociendo el propósito comunicativo participando como oyente activo y apoyándose en el contexto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral en inglés.",
+                    "texto": "Infiere información en inglés deduciendo características de personas, animales, objetos, lugares y hechos, el significado de palabras, frases y expresiones en contexto así como secuencias temporales, relaciones de semejanza y diferencia, relaciones de causa-efecto, el tema central, ideas complementarias y conclusiones en textos orales e interpreta el sentido del texto oral apoyándose en recursos verbales, no verbales y para-verbales del emisor."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Expresa oralmente sus ideas y opiniones en inglés sobre festividades, lugares turísticos, intereses, comidas típicas, rutinas, eventos pasados experiencias, planes, posibilidades, obligaciones, prohibiciones adecuándose a sus interlocutores y contexto utilizando recursos no verbales y para-verbales para enfatizar la información y mantener el interés."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla ideas en torno a un tema ampliando información de forma pertinente. Organiza y jerarquiza ideas con coherencia, cohesión y fluidez a su nivel, estableciendo relaciones lógicas entre ellas ((en especial de, contraste, secuencia, causa, consecuencia, comparación y disyunción)) a través de conectores coordinados, subordinados y otros referentes incorporando vocabulario variado y construcciones gramaticales determinadas y pertinentes mediante el uso de oraciones en su mayoría complejas."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Interactúa estratégicamente en inglés con distintos interlocutores.",
+                    "texto": "Interactúa en diversas situaciones orales con otras personas en inglés formulando y respondiendo preguntas, haciendo comentarios, explicando y complementando ideas adaptando sus respuestas a los puntos de vista y necesidades del interlocutor, aclarando y contrastando ideas utilizando vocabulario variado y pronunciación y entonación inteligible."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral en inglés.",
+                    "texto": "Reflexiona sobre el texto oral que escucha en inglés, opinando sobre el tema central, características de personas, animales, objetos, lugares, secuencias temporales, propósito comunicativo y relaciones de semejanza y diferencia, relaciones de causa-efecto y conclusiones relacionando la información con sus conocimientos del tema."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Obtiene información del texto oral en inglés.",
+                    "texto": "Obtiene información explícita, relevante y contrapuesta en textos orales en inglés que presentan vocabulario variado reconociendo el propósito comunicativo, hechos y opiniones, participando como oyente activo y apoyándose en el contexto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral en inglés.",
+                    "texto": "Infiere información en inglés deduciendo características de personas, animales, objetos, lugares y hechos, el significado de palabras, frases y expresiones en contexto así como secuencias temporales, propósito comunicativo, relaciones de semejanza y diferencia, relaciones de causa-efecto deduciendo el tema central, ideas complementarias y conclusión en textos orales a partir de información implícita y explícita e interpreta el sentido del texto oral apoyándose en recursos verbales, no verbales y para-verbales del emisor."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Expresa oralmente sus ideas y opiniones en inglés para realizar una compra, orden, pedido e invitación; describir memorias, actividades pasadas, experiencias, situaciones irreales y reportes; brindar sugerencias, comparar eventos, adecuando su texto oral a sus interlocutores y contexto utilizando recursos no verbales y para-verbales para enfatizar la información, mantener el interés y producir diversos efectos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla ideas en torno a un tema ampliando información de forma pertinente. Organiza y jerarquiza ideas con coherencia, cohesión y fluidez a su nivel, estableciendo relaciones lógicas entre ellas a través de diferentes conectores coordinados, subordinados y otros referentes incorporando vocabulario variado y construcciones gramaticales determinadas y pertinentes mediante el uso de diversos tipos de oraciones en su mayoría complejas y compuestas."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Interactúa estratégicamente en inglés con distintos interlocutores.",
+                    "texto": "Interactúa en diversas situaciones orales con otras personas en inglés formulando y respondiendo preguntas, haciendo comentarios, explicando y complementando ideas adaptando sus respuestas a los puntos de vista y necesidades del interlocutor, aclarando y contrastando ideas así como decidiendo en que momento participará en situaciones como diálogos, debates, paneles y presentaciones utilizando vocabulario variado y pronunciación y entonación inteligible."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral en inglés.",
+                    "texto": "Reflexiona sobre el texto oral que escucha en inglés, opinando sobre el tema central, características de personas, animales, objetos, lugares, secuencias temporales, propósito comunicativo y relaciones de semejanza y diferencia, relaciones de causa-efecto y conclusiones, hechos y opiniones relacionando la información con sus conocimientos del tema."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Obtiene información del texto oral en inglés.",
+                    "texto": "Obtiene información explícita, relevante y contrapuesta en textos orales en inglés, con vocabulario variado reconociendo el propósito comunicativo, hechos, opiniones, y posturas del emisor, participando como oyente activo y apoyándose en el contexto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral en inglés.",
+                    "texto": "Infiere información en inglés deduciendo características de personas, animales, objetos, lugares y hechos, el significado de palabras, frases y expresiones en contexto así como secuencias temporales, propósito comunicativo, relaciones de semejanza y diferencia, relaciones de causa-efecto, el tema central, ideas complementarias, conclusiones y posturas del emisor en textos orales a partir de información implícita y explícita e interpreta el sentido del texto oral apoyándose en recursos verbales, no verbales y para-verbales del emisor."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Expresa oralmente sus ideas y opiniones en inglés para describir síntomas, enfermedades, tratamientos médicos, medio ambiente, vacaciones, inventos, planes, experiencias presentes, experiencias pasadas, planes futuros adecuando su texto oral a sus interlocutores y contexto utilizando recursos no verbales y para-verbales para enfatizar la información, mantener el interés y producir diversos efectos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla ideas en torno a un tema ampliando información de forma pertinente. Organiza sus ideas y las jerarquiza con coherencia, cohesión y fluidez, estableciendo diferentes relaciones lógicas entre ellas a través de un variado uso de conectores coordinados, subordinados y otros referentes incorporando vocabulario variado y especializado y construcciones gramaticales determinadas y pertinentes mediante el uso de diversos tipos de oraciones en su mayoría complejas y compuestas."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Interactúa estratégicamente en inglés con distintos interlocutores.",
+                    "texto": "Interactúa en diversas situaciones orales con otras personas en inglés formulando y respondiendo preguntas, haciendo comentarios, explaining y complementando ideas adaptando sus respuestas a los puntos de vista y necesidades del interlocutor, aclarando y contrastando ideas así como decidiendo en que momento participará para persuadir y contra argumentar en situaciones como diálogos, debates, paneles y presentaciones utilizando vocabulario variado y pronunciación y entonación inteligible."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral en inglés.",
+                    "texto": "Reflexiona sobre el texto oral que escucha en inglés, opinando sobre el tema central, características de personas, animales, objetos, lugares, secuencias temporales, propósito comunicativo y relaciones de semejanza y diferencia, relaciones de causa-efecto y conclusiones, hechos, opiniones y posturas del emisor relacionando la información con sus conocimientos del tema."
+                }
+            ]
+        },
+        {
+            "nombre": "Lee diversos tipos de textos en inglés como lengua extranjera",
+            "estandares": {
+                "Ciclo VI": "Lee diversos tipos de texto en inglés que presentan estructuras simples y algunos elementos complejos con vocabulario cotidiano. Obtiene información e integra datos que están en distintas partes del texto. Realiza inferencias locales partir de información explícita e implícita e interpreta el texto seleccionando información relevante y complementaria. Reflexiona sobre aspectos variados del texto evaluando el uso del lenguaje y la intención de los recursos textuales más comunes a partir de su conocimiento y experiencia.",
+                "Ciclo VII": "Lee diversos tipos de texto en inglés con algunas estructuras complejas y vocabulario variado y especializado. Integra información contrapuesta ubicada en distintas partes del texto. Interpreta el texto integrando la idea principal con información específica para construir su sentido global. Reflexiona sobre las formas y contenidos del texto. Evalúa el uso del lenguaje y los recursos textuales así como el efecto del texto en el lector a partir de su conocimiento y del contexto sociocultural."
+            },
+            "capacidades": [
+                "Obtiene información del texto escrito en inglés.",
+                "Infiere e interpreta información del texto escrito en inglés.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Obtiene información del texto escrito en inglés.",
+                    "texto": "Obtiene información relevante y complementaria ubicada en distintas partes del texto en inglés integrando datos que se encuentran dispersos con estructuras gramaticales simples y algunos elementos complejos y vocabulario cotidiano."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Infiere información deduciendo características de seres, objetos, hechos, lugares, en textos escritos en inglés acerca de información personal, preferencias alimenticias, eventos presentes y futuros, el significado de palabras y expresiones cotidianas en contexto, así como relaciones lógicas ((causa-efecto)) a partir de información explícita e implícita del texto."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Interpreta el sentido global del texto integrando información explícita e implícita identificando el propósito comunicativo e ideas principales."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona y evalúa los textos que lee opinando sobre el contenido, organización textual y sentido de algunos recursos textuales a partir de su experiencia y contexto."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Obtiene información del texto escrito en inglés.",
+                    "texto": "Obtiene información relevante y complementaria distinguiéndola de otra cercana y semejante; integra datos en diversos tipos de textos escritos en inglés, con estructuras simples y algunos elementos complejos, con vocabulario cotidiano que incluye algunos sinónimos."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Infiere información deduciendo características de seres, objetos, hechos, lugares, en textos escritos en inglés acerca de información personal, instrucciones, hábitos alimenticios obligaciones, planes e intereses, eventos pasados y futuros, el significado de palabras y expresiones cotidianas en contexto, así como relaciones lógicas ((causa-efecto)), y jerárquicas ((idea principal y complementarias)), a partir de información explícita e implícita del texto."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Interpreta el sentido global del texto integrando información explícita e implícita identificando el propósito comunicativo, ideas principales y características."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona sobre los textos escritos en inglés que lee opinando sobre el contenido, organización textual y sentido de some recursos textuales a partir de su experiencia y contexto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Obtiene información del texto escrito en inglés.",
+                    "texto": "Obtiene información relevante y complementaria ubicada en distintas partes del texto en inglés con estructuras gramaticales de mediana complejidad y vocabulario variado."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Infiere información deduciendo el tema central, características y secuencias temporales de textos escritos en inglés acerca de festividades, lugares turísticos, intereses, rutinas, eventos pasados experiencias, planes, posibilidades, obligaciones, prohibiciones, vocabulario variado en contexto, así como clasificando y sintetizando la información, y elaborando conclusiones sobre el texto a partir de información explícita e implícita del texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Interpreta el sentido global del texto integrando información explícita e implícita identificando el propósito comunicativo, ideas principales y características."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona y evalúa los textos que lee en inglés opinando acercas del contenido, organización textual y sentido de diversos recursos textuales, explicando el efecto del texto en el lector a partir de su experiencia y contexto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Obtiene información del texto escrito en inglés.",
+                    "texto": "Obtiene e integra información relevante, complementaria y contrapuesta ubicada en distintas partes del texto escrito en inglés con estructuras gramaticales de mediana complejidad y algunas complejas así como vocabulario variado y especializado."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Infiere información deduciendo el tema central, características, secuencias temporales de textos escritos en inglés acerca de compras, ordenes, invitaciones; eventos pasados, experiencias, reportes; sugerencias, comparar eventos, expresar posibilidades futuras, obligaciones y prohibiciones, vocabulario variado en contexto, así como clasificando y sintetizando la información, y elaborando conclusiones sobre el texto a partir de información explícita e implícita del texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Interpreta el sentido del texto relacionando información relevante y específica elabora conclusiones sobre el texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona y evalúa los textos que lee en inglés opinando acercas del contenido, organización textual y sentido de diversos recursos textuales, explicando el efecto del texto en el lector a partir de su experiencia y contexto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Obtiene información del texto escrito en inglés.",
+                    "texto": "Obtiene e integra información relevante, complementaria, contrapuesta ubicada en distintas partes del texto con estructuras gramaticales de mediana complejidad algunas complejas y vocabulario variado y especializado."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Infiere información deduciendo el tema central, características, secuencias temporales de textos escritos en inglés acerca de enfermedades, tratamientos médicos, medio ambiente, vacaciones, inventos, planes, experiencias presentes, experiencias pasadas, planes futuros; vocabulario variado en contexto, así como clasificando y sintetizando la información, y elaborando conclusiones sobre el texto a partir de información explícita e implícita del texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto escrito en inglés.",
+                    "texto": "Interpreta el sentido del texto relacionando información relevante y específica y complementaria, elabora conclusiones sobre el texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona y evalúa los textos que lee en inglés opinando acercas del contenido, organización textual y sentido de diversos recursos textuales, la intención del autor, explicando el efecto del texto en el lector a partir de su experiencia y contexto."
+                }
+            ]
+        },
+        {
+            "nombre": "Escribe diversos tipos de textos en inglés como lengua extranjera",
+            "estandares": {
+                "Ciclo VI": "Escribe diversos tipos de textos de mediana extensión en inglés. Adecúa su texto al destinatario, propósito y registro a partir de su experiencia previa y fuentes de información básica. Organiza y desarrolla sus ideas en torno a un tema central y los estructura en uno o dos párrafos. Relaciona sus ideas a través del uso de algunos recursos cohesivos ((sinónimos, pronominalización y conectores aditivos, adversativos, temporales y causales)) con vocabulario cotidiano y pertinente y construcciones gramaticales simples y de mediana complejidad. Utiliza recursos ortográficos que permiten claridad en sus textos. Reflexiona sobre el contenido del texto y evalúa el uso de algunos recursos formales.",
+                "Ciclo VII": "Escribe diversos tipos de textos de amplia extensión de forma reflexiva en inglés. Adecúa su texto al destinatario, propósito y registro a partir de su experiencia previa y fuentes de información variada. Organiza y desarrolla sus ideas alrededor de un tema central y las estructura en párrafos y subtítulos. Relaciona sus ideas a través del uso de algunos recursos cohesivos ((sinónimos, antónimos, pronominalización y conectores aditivos, adversativos, temporales, condicionales, disyuntivos y causales)) con vocabulario variado y pertinente a la temática tratada y construcciones gramaticales de mediana complejidad. Utiliza recursos ortográficos que permiten claridad en sus textos. Reflexiona sobre el texto que escribe y evalúa los usos del lenguaje con la finalidad de mejorar el texto que escribe en inglés."
+            },
+            "capacidades": [
+                "Adecúa el texto en inglés a la situación comunicativa.",
+                "Organiza y desarrolla las ideas en inglés de forma coherente y cohesionada.",
+                "Utiliza convenciones del lenguaje escrito en inglés de forma pertinente.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Adecúa el texto en inglés a la situación comunicativa.",
+                    "texto": "Escribe textos de mediana complejidad en inglés de una extensión de 90 a 100 palabras adecuando su texto al destinatario, propósito comunicativo y tipo de texto, distinguiendo el registro formal e informal utilizando vocabulario cotidiano y pertinente."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Organiza y desarrolla las ideas en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla sus ideas con coherencia en torno a un tema central ampliando la información de acuerdo al propósito comunicativo. Organiza y jerarquiza sus ideas en párrafos cortos estableciendo relaciones lógicas entre éstas en especial de adición, contraste, secuencia, causa y consecuencia utilizando conectores apropiados y vocabulario cotidiano y pertinente que contribuyen a dar sentido al texto."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito en inglés de forma pertinente.",
+                    "texto": "Utiliza convenciones del lenguaje escrito tal como diversos recursos ortográficos así como construcciones gramaticales determinadas en su mayoría estructuras de mediana complejidad."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona sobre el texto que escribe en inglés, revisando si se adecúa al destinatario, propósito y tema verificando la coherencia entre las ideas, el uso de algunos conectores, el vocabulario empleado, así como los recursos ortográficos usados para mejorar y dar sentido al texto."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Adecúa el texto en inglés a la situación comunicativa.",
+                    "texto": "Escribe textos de mediana complejidad en inglés de una extensión de 90 a 100 palabras, adecuando su texto al destinatario, propósito comunicativo y tipo de texto, distinguiendo el registro formal e informal incorporando vocabulario cotidiano y pertinente."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Organiza y desarrolla las ideas en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla sus ideas con coherencia en torno a un tema central ampliando la información de acuerdo al propósito comunicativo de forma pertinente. Organiza y jerarquiza sus ideas en párrafos cortos estableciendo relaciones lógicas entre éstas en especial de contraste, secuencia, causa, consecuencia y comparación a través de conectores coordinados y subordinados e incorporando vocabulario cotidiano y pertinente que contribuyen a dar sentido al texto."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito en inglés de forma pertinente.",
+                    "texto": "Utiliza convenciones del lenguaje escrito tal como diversos recursos ortográficos así como construcciones gramaticales determinadas en su mayoría estructuras de mediana complejidad con la finalidad contribuir a la claridad del texto."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona sobre el texto que escribe en inglés, revisando si se adecúa al destinatario, propósito, tema y registro verificando la coherencia entre las ideas, el uso de algunos conectores, el vocabulario adecuado, las estructuras usadas así como los recursos ortográficos utilizados para mejorar y dar sentido al texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Adecúa el texto en inglés a la situación comunicativa.",
+                    "texto": "Escribe textos variados en inglés de una extensión de 100 a 140 palabras adecuando su texto al destinatario, propósito comunicativo, registro formal e informal, tipo de texto, seleccionando el formato y soporte adecuados y utilizando vocabulario variado y pertinente."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Organiza y desarrolla las ideas en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla sus ideas con coherencia en torno a un tema central ampliando la información de acuerdo al propósito comunicativo de forma pertinente. Organiza y jerarquiza sus ideas en párrafos de mediana extensión estableciendo relaciones lógicas entre éstas en especial de contraste, secuencia, causa, consecuencia, comparación y disyunción a través de conectores coordinados y subordinados e incorporando vocabulario variado y pertinente que contribuyen a dar sentido al texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito en inglés de forma pertinente.",
+                    "texto": "Utiliza convenciones del lenguaje escrito tal como diversos recursos ortográficos así como construcciones gramaticales determinadas y pertinentes en su mayoría estructuras de mediana complejidad y complejas con la finalidad contribuir a la claridad del texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona y evalúa el texto que escribe en inglés, revisando si se adecúa a la situación comunicativa verificando la coherencia entre las ideas, el uso apropiado de conectores, el vocabulario adecuado, las estructuras apropiadas usadas así como los recursos ortográficos utilizados para mejorar y garantizar el sentido del texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa el texto en inglés a la situación comunicativa.",
+                    "texto": "Escribe textos variados en inglés de una extensión de 100 a 140 palabras adecuando su texto al destinatario, diferentes propósitos comunicativos y tipos de texto, usando registros formales e informales según el contexto, seleccionando el formato y soporte adecuados y empleando vocabulario variado y pertinente que permiten claridad en sus textos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Organiza y desarrolla las ideas en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla sus ideas con coherencia en torno a un tema central ampliando la información de acuerdo al propósito comunicativo de forma pertinente. Organiza y jerarquiza sus ideas en párrafos de mediana extensión estableciendo relaciones lógicas entre éstas a través de un conjunto de diferentes conectores coordinados, subordinados y otros referentes e incorporando vocabulario variado y pertinente que contribuyen a dar sentido al texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito en inglés de forma pertinente.",
+                    "texto": "Utiliza diversas estrategias discursivas del lenguaje escrito tal como recursos ortográficos variados así como construcciones gramaticales determinadas y pertinentes en su mayoría estructuras de mediana complejidad y complejas con la finalidad contribuir a la claridad del texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona y evalúa el texto que escribe en inglés de forma permanente, revisando si se adecúa a la situación comunicativa verificando la coherencia entre las ideas, el uso apropiado de recursos cohesivos, el vocabulario adecuado, las estructuras apropiadas usadas así como los recursos ortográficos utilizados para mejorar y garantizar el sentido del texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa el texto en inglés a la situación comunicativa.",
+                    "texto": "Escribe diversos tipos de textos en inglés de una extensión de 100 a 140 palabras, adecuándose al destinatario, diferentes propósitos comunicativos, tipos de textos, registros formales e informales según el contexto, seleccionando el formato y soporte adecuados y empleando vocabulario variado y pertinente de acuerdo a la temática tratada que permiten claridad en sus textos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Organiza y desarrolla las ideas en inglés de forma coherente y cohesionada.",
+                    "texto": "Desarrolla sus ideas con coherencia y cohesión en torno a un tema central ampliando la información de acuerdo al propósito comunicativo de forma pertinente. Organiza y jerarquiza sus ideas en párrafos de diversa extensión estableciendo diferentes relaciones lógicas entre éstas a través de un variado uso de diferentes conectores incorporando vocabulario variado y especializado que contribuyen a dar sentido al texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito en inglés de forma pertinente.",
+                    "texto": "Utiliza diversas estrategias discursivas del lenguaje escrito tal como recursos ortográficos variados así como construcciones gramaticales determinadas y pertinentes en su mayoría estructuras compuestas y complejas con la finalidad contribuir a la claridad del texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito en inglés.",
+                    "texto": "Reflexiona y evalúa el texto que escribe en inglés de forma permanente, revisando si se adecúa a la situación comunicativa verificando la coherencia entre las ideas, el uso apropiado de recursos cohesivos, el vocabulario variado y adecuado, las diferentes estructuras usadas así como los recursos ortográficos utilizados para mejorar y garantizar el sentido del texto."
+                }
+            ]
+        }
+    ]
+}

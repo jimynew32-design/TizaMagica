@@ -1,0 +1,289 @@
+{
+    "area": "Comunicación",
+    "nivel": "Inicial",
+    "competencias": [
+        {
+            "nombre": "Se comunica oralmente en su lengua materna",
+            "estandares": {
+                "Ciclo I": "Se comunica oralmente, escucha lo que le dicen otros y responde de manera no verbal, a través de gestos, miradas y movimientos, y verbal, a través de balbuceos y palabras. Expresa sus necesidades, emociones e intereses para comunicarse con las personas de su entorno.",
+                "Ciclo II": "Se comunica oralmente mediante diversos tipos de textos; identifica información explícita; realiza inferencias sencillas a partir de esta información e interpreta recursos no verbales y paraverbales de las personas de su entorno. Opina sobre lo que más/menos le gustó del contenido del texto. Se expresa espontáneamente a partir de sus conocimientos previos, con el propósito de interactuar con uno o más interlocutores conocidos en una situación comunicativa. Desarrolla sus ideas manteniéndose por lo general en el tema; utiliza vocabulario de uso frecuente y una pronunciación entendible, se apoya en gestos y lenguaje corporal. En un intercambio, generalmente participa y responde en forma pertinente a lo que le dicen."
+            },
+            "capacidades": [
+                "Obtiene información del texto oral.",
+                "Infiere e interpreta información del texto oral.",
+                "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                "Interactúa estratégicamente con distintos interlocutores.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto oral."
+            ],
+            "desempenos": [
+                {
+                    "grado": "9 meses",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                    "texto": "Expresa sus necesidades, emociones e intereses y responde a las interacciones con el adulto significativo a través de gestos, miradas, movimientos corporales y primeros balbuceos."
+                },
+                {
+                    "grado": "18 meses",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                    "texto": "Expresa sus necesidades, emociones e intereses y responde a las interacciones con el adulto significativo y otros niños a través de palabras, gestos, miradas y movimientos corporales."
+                },
+                {
+                    "grado": "24 meses",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                    "texto": "Expresa sus necesidades, emociones e intereses y responde a las interacciones con el adulto significativo y otros niños a través de palabras, frases cortas, gestos, miradas y movimientos corporales."
+                },
+                {
+                    "grado": "36 meses",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                    "texto": "Expresa sus necesidades, emociones e intereses y da cuenta de algunas experiencias al interactuar con personas de su entorno. Utiliza palabras de uso frecuente, gestos, miradas y movimientos corporales con la intención de comunicar algo."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                    "texto": "Expresa sus necesidades, emociones, intereses y da cuenta de algunas experiencias al interactuar con personas de su entorno familiar, escolar o local. Utiliza palabras de uso frecuente, sonrisas, miradas, señas, gestos, movimientos corporales y diversos volúmenes de voz con la intención de lograr su propósito: informar, pedir, convencer o agradecer. ((Ejemplo: Un niño dice a la docente: \"No me quiele dal dompecabezas\", moviendo la cabeza en señal de negación))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en conversaciones o escucha cuentos, leyendas y otros relatos de la tradición oral. Formula preguntas sobre lo que le interesa saber o responde a lo que le preguntan."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de un texto oral. Menciona el nombre de personas y personajes, sigue indicaciones orales o vuelve a contar con sus propias palabras los sucesos que más le gustaron."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce características de personas, personajes, animales y objetos en anécdotas, cuentos y rimas orales."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Comenta lo que le gusta o le disgusta de personas, personajes, hechos o situaciones de la vida cotidiana a partir de sus experiencias y del contexto en que se desenvuelve."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                    "texto": "Expresa sus necesidades, emociones, intereses y da cuenta de sus experiencias al interactuar con personas de su entorno familiar, escolar o local. Utiliza palabras de uso frecuente, sonrisas, miradas, señas, gestos, movimientos corporales y diversos volúmenes de voz según su interlocutor y propósito: informar, pedir, convencer o agradecer."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en conversaciones o escucha cuentos, leyendas, adivinanzas y otros relatos de la tradición oral. Formula preguntas sobre lo que le interesa saber o lo que no ha comprendido o responde a lo que le preguntan. ((Ejemplo: Un niño comenta sobre la leyenda \"La quena de oro\" que escuchó y dice: La flauta no sonaba porque el jefe era malo))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de un texto oral. Menciona algunos hechos, el nombre de personas y personajes. Sigue indicaciones orales o vuelve a contar con sus propias palabras los sucesos que más le gustaron."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce relaciones de causa-efecto, así como características de personas, personajes, animales y objetos en anécdotas, cuentos, leyendas y rimas orales. ((Ejemplo: Una niña responde sobre porqué en la leyenda la estrella fue convertida en gusano y dice: \"Porque Apí la quería mucho\", \"para que Apí y la estrella estén juntos\", \"para que la estrella hable con Apí\"))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Comenta lo que le gusta o le disgusta de personas, personajes, hechos o situaciones de la vida cotidiana a partir de sus experiencias y del contexto en que se desenvuelve."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Adecúa, organiza y desarrolla el texto de forma coherente y cohesionada.",
+                    "texto": "Expresa sus necesidades, emociones, intereses y da cuenta de sus experiencias al interactuar con personas de su entorno familiar, escolar o local. Utiliza palabras de uso frecuente y, estratégicamente, sonrisas, miradas, señas, gestos, movimientos corporales y diversos volúmenes de voz, según su interlocutor y propósito: informar, pedir, convencer, agradecer. Desarrolla sus ideas en torno a un tema, aunque en ocasiones puede salirse de este. ((Ejemplo: Sergio comenta que las vacas que vio en el paseo del salón eran muy grandes, algunas tenían cachos y olían horrible, mientras se tapa la nariz con su mano))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en conversaciones, diálogos o escucha cuentos, leyendas, rimas, adivinanzas y otros relatos de la tradición oral. Espera su turno para hablar, escucha mientras su interlocutor habla, pregunta y responde sobre lo que le interesa saber o lo que no ha comprendido con la intención de obtener información."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de un texto oral. Menciona algunos hechos y lugares, el nombre de personas y personajes. Sigue indicaciones orales o vuelve a contar con sus propias palabras los sucesos que más le gustaron. ((Ejemplo: Un niño comenta después de escuchar la leyenda \"La Ciudad Encantada de Huancabamba\" dice: \"El niño caminó, caminó y se perdió y se puso a llorar, apareció el señor con una corona y un palo, y se lo llevó al niño\"))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce relaciones de causa-efecto, así como características de personas, personajes, animales y objetos en anécdotas, cuentos, leyendas y rimas orales."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Comenta sobre lo que le gusta o disgusta de personas, personajes, hechos o situaciones de la vida cotidiana dando razones sencillas a partir de sus experiencias y del contexto en que se desenvuelve."
+                }
+            ]
+        },
+        {
+            "nombre": "Lee diversos tipos de textos escritos en su lengua materna",
+            "estandares": {
+                "Ciclo II": "Lee diversos tipos de textos que tratan temas reales o imaginarios que le son cotidianos, en los que predominan palabras conocidas y que se acompañan con ilustraciones. Construye hipótesis o predicciones sobre la información contenida en los textos y demuestra comprensión de las ilustraciones y de algunos símbolos escritos que transmiten información. Expresa sus gustos y preferencias en relación a los textos leídos a partir de su propia experiencia. Utiliza algunas convenciones básicas de los textos escritos."
+            },
+            "capacidades": [
+                "Obtiene información del texto escrito.",
+                "Infiere e interpreta información del texto escrito.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito."
+            ],
+            "desempenos": [
+                {
+                    "grado": "3 años",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica características de personas, personajes, animales u objetos a partir de lo que observa en las ilustraciones cuando explora cuentos, etiquetas, carteles, que se presenta en variados soportes. ((Ejemplo: Un niño está viendo un catálogo de productos de alimentos, y dice: \"Este compra mi mamá\". \"Es rico, me gusta\", añade mientras señala la imagen del yogurt))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Infiere e interpreta información del texto escrito.",
+                    "texto": "Dice de qué tratará, cómo continuará o cómo terminará el texto a partir de las ilustraciones o imágenes que observa antes y durante la lectura que realiza ((por sí mismo o a través de un adulto)). ((Ejemplo: El niño al ver la caratula del cuento \"Los tres chanchitos\" dice: \"el de los chanchitos\"))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Comenta las emociones que le generó el texto leído ((por sí mismo o a través de un adulto)), a partir de sus intereses y experiencias. ((Ejemplo: Un niño dice: \"El lobo me dio miedo\", después de escuchar el cuento de los tres chanchitos))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica características de personas, personajes, animales, objetos o acciones a partir de lo que observa en ilustraciones cuando explora cuentos, etiquetas, carteles, que se presentan en variados soportes. ((Ejemplo: Cuando un niño explora el cuento \"Buenas noches Gorila\", en el momento de intercambio sobre lo leído con los demás niños, él dice: \"El gorila le quitó las llaves al señor\"))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Infiere e interpreta información del texto escrito.",
+                    "texto": "Dice de qué tratará, cómo continuará o cómo terminará el texto a partir de las ilustraciones o imágenes que observa antes y durante la lectura que realiza ((por sí mismo o a través de un adulto)). ((Ejemplo: Cuando un niño está buscando información sobre las tortugas para el mural que elaborarán sobre los animales de mar, observa la portada de una revista que muestra a una tortuga en el mar. El niño coge esa revista y dice: \"Aquí hay tortugas y están en el agua\"))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Comenta las emociones que le generó el texto leído ((por sí mismo o a través de un adulto)), a partir de sus intereses y experiencias."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica características de personas, personajes, animales, objetos o acciones a partir de lo que observa en las ilustraciones, así como de algunas palabras conocidas por él: su nombre o el de otros, palabras que aparecen frecuentemente en los cuentos, canciones, rondas, rimas, anuncios publicitarios o carteles del aula ((calendario, cumpleaños, acuerdos de convivencia)) que se presentan en variados soportes."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Infiere e interpreta información del texto escrito.",
+                    "texto": "Dice de qué tratará, cómo continuará o cómo terminará el texto a partir de algunos indicios, como el título, las ilustraciones, palabras, expresiones o sucesos significativos, que observa o escucha antes y durante la lectura que realiza ((por sí mismo o a través de un adulto)). ((Ejemplo: Cuando el docente lee el título del cuento \"Gato asustadizo y Buuu\" uno de los niños dice: \"Es del gato\"))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Opina dando razones sobre algún aspecto del texto leído ((por sí mismo o a través de un adulto)), a partir de sus intereses y experiencia. ((Ejemplo: Después de escuchar a la docente leer el cuento La niña del papagayo, una niña dice: \"No estaba triste la niña porque se fue con su amiguito\"))."
+                }
+            ]
+        },
+        {
+            "nombre": "Escribe diversos tipos de textos en su lengua materna",
+            "estandares": {
+                "Ciclo II": "Escribe a partir de sus hipótesis de escritura diversos tipos de textos sobre temas variados considerando el propósito y el destinatario a partir de su experiencia previa. Desarrolla sus ideas en torno a un tema con la intención de transmitir ideas o emociones. Sigue la linealidad y direccionalidad de la escritura."
+            },
+            "capacidades": [
+                "Adecúa el texto a la situación comunicativa.",
+                "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito."
+            ],
+            "desempenos": [
+                {
+                    "grado": "4 años",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe por propia iniciativa y a su manera sobre lo que le interesa. Utiliza trazos, grafismos u otras formas para expresar sus ideas y emociones a través de una nota, para relatar una vivencia o un cuento."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Escribe por propia iniciativa y a su manera sobre lo que le interesa: considera a quién le escribirán y para qué lo escribirá."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Utiliza trazos, grafismos, letras ordenadas de izquierda a derecha y sobre una línea imaginaria para expresar sus ideas o emociones en torno a un tema a través de una nota o carta, para relatar una vivencia o un cuento."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Revisa el escrito que ha dictado, en función de lo que quiere comunicar."
+                }
+            ]
+        },
+        {
+            "nombre": "Crea proyectos desde los lenguajes artísticos",
+            "estandares": {
+                "Ciclo I": "Explora por iniciativa propia diversos materiales y objetos de su entorno y descubre las posibilidades expresivas de sus movimientos y de los materiales que trabaja para expresar sus emociones.",
+                "Ciclo II": "Crea proyectos artísticos al experimentar y manipular libremente diversos medios y materiales para descubrir sus propiedades expresivas. Explora los elementos básicos de los lenguajes del arte como el sonido, los colores y el movimiento. Explora sus propias ideas imaginativas que construye a partir de sus vivencias y las transforma en algo nuevo mediante el juego simbólico, el dibujo, la pintura, la construcción, la música y el movimiento creativo. Comparte espontáneamente sus experiencias y creaciones."
+            },
+            "capacidades": [
+                "Explora y experimenta los lenguajes del arte.",
+                "Aplica procesos creativos.",
+                "Socializa sus procesos y proyectos."
+            ],
+            "desempenos": [
+                {
+                    "grado": "9 meses",
+                    "capacidad": "Explora y experimenta los lenguajes del arte.",
+                    "texto": "Explora por iniciativa propia diversos materiales y objetos de su entorno y descubre las posibilidades expresivas de sus movimientos y de los materiales."
+                },
+                {
+                    "grado": "18 meses",
+                    "capacidad": "Explora y experimenta los lenguajes del arte.",
+                    "texto": "Explora por iniciativa propia diversos materiales y objetos de su entorno y descubre las posibilidades expresivas de sus movimientos y de los materiales."
+                },
+                {
+                    "grado": "24 meses",
+                    "capacidad": "Explora y experimenta los lenguajes del arte.",
+                    "texto": "Explora por iniciativa propia diversos materiales y objetos de su entorno; descubre los efectos que se producen al combinar un material con otro y las posibilidades expresivas de sus movimientos."
+                },
+                {
+                    "grado": "36 meses",
+                    "capacidad": "Explora y experimenta los lenguajes del arte.",
+                    "texto": "Explora por iniciativa propia diversos materiales y objetos de su entorno; descubre los efectos que se producen al combinar un material con otro y las posibilidades expresivas de sus movimientos y de los materiales con los que trabaja."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Explora y experimenta los lenguajes del arte.",
+                    "texto": "Explora por iniciativa propia diversos materiales de acuerdo con sus necesidades e intereses. Descubre las posibilidades expresivas de sus movimientos y de los materiales con los que trabaja. ((Ejemplo: En el taller de danza, uno de los niños toma una cinta y empieza a moverla y a moverse con ella))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Aplica procesos creativos.",
+                    "texto": "Representa sus ideas acerca de sus vivencias personales usando diferentes lenguajes artísticos ((el dibujo, la pintura, la danza o el movimiento, el teatro, la música, los títeres, etc.)). ((Ejemplo: Mario toma crayolas y papel para dibujar un chancho))."
+                },
+                {
+                    "grado": "3 años",
+                    "capacidad": "Socializa sus procesos y proyectos.",
+                    "texto": "Muestra y comenta de forma espontánea, a compañeros y adultos de su entorno, lo que ha realizado al jugar y crear proyectos a través de los lenguajes artísticos. ((Ejemplo: Raúl realiza un dibujo por propia iniciativa, sobre el proyecto de la tienda))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Explora y experimenta los lenguajes del arte.",
+                    "texto": "Explora por iniciativa propia diversos materiales de acuerdo con sus necesidades e intereses. Descubre los efectos que se producen al combinar un material con otro. ((Ejemplo: En el taller de música, una de las niñas elige un par de latas y las golpea entre sí))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Aplica procesos creativos.",
+                    "texto": "Representa ideas acerca de sus vivencias personales usando diferentes lenguajes artísticos ((el dibujo, la pintura, la danza o el movimiento, el teatro, la música, los títeres, etc.)). ((Ejemplo: Uno de ellos, dice: \"Llegaron mis tíos, y cantaron y tocaban un tambor... así\"))."
+                },
+                {
+                    "grado": "4 años",
+                    "capacidad": "Socializa sus procesos y proyectos.",
+                    "texto": "Muestra y comenta de forma espontánea a compañeros y adultos de su entorno, lo que ha realizado, al jugar y crear proyectos a través de los lenguajes artísticos. ((Ejemplo: Marcela construyó una casita con material reusable y comunica a sus compañeritos lo que hizo))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Explora y experimenta los lenguajes del arte.",
+                    "texto": "Explora de manera individual y/o grupal diversos materiales de acuerdo con sus necesidades e intereses. Descubre los efectos que se producen al combinar un material con otro. ((Ejemplo: Sandra experimenta con movimientos ágiles y grandes para hacer de gorila, y Natalia práctica gestos para hacer de guardián))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Aplica procesos creativos.",
+                    "texto": "Representa ideas acerca de sus vivencias personales y del contexto en el que se desenvuelve usando diferentes lenguajes artísticos ((el dibujo, la pintura, la danza o el movimiento, el teatro, la música, los títeres, etc.)). ((Ejemplo: Juan representa usando diferentes materiales, un puente, y comenta que cerca de su casa han construido un puente))."
+                },
+                {
+                    "grado": "5 años",
+                    "capacidad": "Socializa sus procesos y proyectos.",
+                    "texto": "Muestra sus creaciones y observa las creaciones de otros. Describe lo que ha creado. A solicitud de la docente, manifiesta lo que le gusta de la experiencia, o de su proyecto y del proyecto de otros. ((Ejemplo: Julio ha hecho un corazón para su mamá con arcilla y témpera))."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,214 @@
+{
+    "area": "Educación Religiosa",
+    "nivel": "Primaria",
+    "competencias": [
+        {
+            "nombre": "Construye su identidad como persona humana, amada por Dios, digna, libre y trascendente, comprendiendo la doctrina de su propia religión, abierto al diálogo con las que le son cercanas",
+            "estandares": {
+                "Ciclo III": "Descubre a Dios en la creación y lo reconoce como Padre que lo ama. Se reconoce como hijo de Dios y hermano de todas las personas. Participa con entusiasmo en las acciones de dar gracias a Dios por la vida y por los dones recibidos.",
+                "Ciclo IV": "Describe el amor de Dios presente en la creación y en el Plan de Salvación a través de la historia. Reconoce que Dios lo ama y lo cuida, y lo manifiesta a través de sus acciones cotidianas. Expresa su fe participando en las acciones de su comunidad religiosa.",
+                "Ciclo V": "Argumenta la presencia de Dios en la creación y en su vida personal y familiar. Reconoce la importancia de la religión en la vida de las personas y de la sociedad. Expresa su fe de manera coherente con sus principios y valores éticos."
+            },
+            "capacidades": [
+                "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                "Cultiva y valora las manifestaciones religiosas de su entorno argumentando su fe de manera comprensible y respetuosa."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Identifica que Dios manifiesta su amor en la Creación y lo relaciona con el amor que recibe de sus padres, docentes y amigos."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Comprende los principales hechos de la Historia de la Salvación y los relaciona con su familia y su institución educativa."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Cultiva y valora las manifestaciones religiosas de su entorno argumentando su fe de manera comprensible y respetuosa.",
+                    "texto": "Reconoce lo bueno y lo malo de sus acciones, y establece relaciones de diálogo y respeto con sus pares."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Descubre que Dios nos creó por amor a su imagen y semejanza, y valora sus propias características físicas y espirituales."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Explica los principales hechos de la Historia de la Salvación y los relaciona con su entorno próximo."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Cultiva y valora las manifestaciones religiosas de su entorno argumentando su fe de manera comprensible y respetuosa.",
+                    "texto": "Establece relaciones respetuosas con sus compañeros en las que manifiesta el amor de Dios."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Identifica la acción de Dios en diversos acontecimientos de la Historia de la Salvación."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Conoce a Dios Padre, que se manifiesta en las Sagradas Escrituras, y acepta su mensaje de amor."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Cultiva y valora las manifestaciones religiosas de su entorno argumentando su fe de manera comprensible y respetuosa.",
+                    "texto": "Expresa su fe al participar en celebraciones religiosas de su comunidad."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Relaciona los contenidos de la Revelación Cristiana ((Biblia y Tradición)) con los acontecimientos cotidianos de su vida."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Reconoce la importancia de la oración como medio de comunicación con Dios."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Cultiva y valora las manifestaciones religiosas de su entorno argumentando su fe de manera comprensible y respetuosa.",
+                    "texto": "Participa en la Iglesia como comunidad de fe y de amor, y respeta la dignidad de las personas."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Explica el cumplimiento de las promesas de Dios en la persona de Jesucristo."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Reconoce la importancia del Bautismo y de los demás sacramentos en su vida cristiana."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Cultiva y valora las manifestaciones religiosas de su entorno argumentando su fe de manera comprensible y respetuosa.",
+                    "texto": "Promueve la convivencia armónica basada en el diálogo y el respeto mutuo entre las diferentes religiones."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Comprende que la Iglesia es una comunidad de amor que anuncia el Reino de Dios."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Conoce a Dios y asume su identidad religiosa y espiritual como persona digna, libre y trascendente.",
+                    "texto": "Explica los fundamentos de la fe cristiana y los relaciona con su vida diaria y el contexto social."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Cultiva y valora las manifestaciones religiosas de su entorno argumentando su fe de manera comprensible y respetuosa.",
+                    "texto": "Fundamenta su fe ante los desafíos del mundo actual, manteniendo una actitud de escucha y diálogo."
+                }
+            ]
+        },
+        {
+            "nombre": "Asume la experiencia del encuentro personal y comunitario con Dios en su proyecto de vida en coherencia con su creencia religiosa",
+            "estandares": {
+                "Ciclo III": "Expresa el amor de Dios en sus acciones cotidianas y reconoce la importancia de convivir en armonía con los demás y con la naturaleza. Participa en la construcción de una comunidad basada en el amor y el respeto.",
+                "Ciclo IV": "Expresa su fe participando en las prácticas religiosas de su comunidad. Propone y realiza acciones para mejorar la convivencia en su entorno escolar y familiar a partir de los valores cristianos y del mensaje de Jesús.",
+                "Ciclo V": "Participa en la vida de su comunidad religiosa y colabora en proyectos de ayuda y solidaridad con los más necesitados. Actúa de acuerdo a las enseñanzas de Jesús y de la Iglesia en su vida diaria y en la resolución de conflictos."
+            },
+            "capacidades": [
+                "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Practica el silencio y la oración como medios para comunicarse con Dios."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Colabora en la conservación de la naturaleza y el cuidado de su entorno."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida.",
+                    "texto": "Agradece a Dios por la Creación y por todos los dones recibidos en su vida diaria."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Participa en momentos de oración y celebraciones religiosas de forma respetuosa."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Propone acciones sencillas para ayudar a sus compañeros en situaciones de necesidad."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida.",
+                    "texto": "Expresa su fe mediante acciones concretas en el cuidado de sí mismo y de los demás."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Participa en la preparación de celebraciones religiosas, colaborando con sus pares de forma solidaria."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Propone metas sencillas para mejorar su comportamiento en su familia y escuela."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida.",
+                    "texto": "Muestra su fe mediante acciones concretas en la convivencia cotidiana, en coherencia con el mensaje de Jesús."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Participa en actividades de servicio y colaboración en su comunidad parroquial o educativa."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida.",
+                    "texto": "Expresa su fe mediante la práctica de las obras de misericordia en su entorno familiar y escolar."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida.",
+                    "texto": "Actúa según los valores cristianos en la resolución de conflictos cotidianos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Participa en la construcción de un proyecto de vida inspirado en el mensaje de Jesús y los valores del Evangelio."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Realiza acciones de solidaridad con los más necesitados, motivado por su fe."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida.",
+                    "texto": "Expresa su compromiso de fe mediante acciones que favorecen la justicia y la paz en su comunidad."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Transforma su entorno desde el encuentro personal y comunitario con Dios y desde la fe que profesa.",
+                    "texto": "Expresa su compromiso cristiano participando proactivamente en proyectos de ayuda social y evangelización."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida.",
+                    "texto": "Actúa con coherencia entre lo que cree, dice y hace según la doctrina cristiana en situaciones complejas."
+                },
+                {
+                    "grado": "6to grado",
+                    "capacidad": "Actúa coherentemente en razón de su fe según las pautas de su conciencia ética en situaciones concretas de la vida.",
+                    "texto": "Promueve la reconciliación y el perdón para mejorar el clima de convivencia en su entorno."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,577 @@
+{
+    "area": "Comunicación",
+    "nivel": "Secundaria",
+    "competencias": [
+        {
+            "nombre": "Se comunica oralmente en su lengua materna",
+            "estandares": {
+                "Ciclo VI": "Se comunica oralmente mediante diversos tipos de textos; infiere información relevante y conclusiones e interpreta la intención del interlocutor y las relaciones de poder en discursos que contienen sesgos, falacias y ambigüedades. Se expresa adecuándose a situaciones comunicativas formales e informales. Organiza y desarrolla sus ideas en torno a un tema y las relaciona mediante el uso de conectores y otros referentes, así como de un vocabulario variado y pertinente. Utiliza recursos no verbales y paraverbales para enfatizar lo que dice. Reflexiona y evalúa los textos escuchados a partir de sus conocimientos y el contexto sociocultural. En un intercambio, hace contribuciones relevantes y evalúa las ideas de los otros para contrargumentar, eligiendo estratégicamente cómo y en qué momento participar.",
+                "Ciclo VII": "Se comunica oralmente mediante diversos tipos de textos; infiere información relevante y conclusiones e interpreta la intención del interlocutor y las relaciones de poder en discursos que contienen sesgos, falacias y ambigüedades. Se expresa adecuándose a situaciones comunicativas formales e informales y a los géneros discursivos orales en que participa. Organiza y desarrolla sus ideas en torno a un tema y las relaciona mediante el uso de diversos recursos cohesivos; incorpora un vocabulario especializado y enfatiza los significados mediante el uso de recursos no verbales y paraverbales. Reflexiona sobre el texto y evalúa la validez de la información y su efecto en los interlocutores, de acuerdo a sus conocimientos, fuentes de información y al contexto sociocultural. En un intercambio, hace contribuciones relevantes y evalúa las ideas de los otros para contrargumentar, eligiendo estratégicamente cómo y en qué momento participar."
+            },
+            "capacidades": [
+                "Obtiene información del texto oral.",
+                "Infiere e interpreta información del texto oral.",
+                "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                "Interactúa estratégicamente con distintos interlocutores.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto oral."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de los textos orales que escucha seleccionando datos específicos. Integra esta información cuando es dicha en distintos momentos, o por distintos interlocutores, en textos orales que presentan sinónimos y expresiones con sentido figurado."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido; para ello, vincula el texto con sus conocimientos y el contexto sociocultural."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto oral ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información explícita y presuposiciones del texto. Señala las características implícitas de seres, objetos, hechos y lugares. Determina el significado de palabras en contexto y de expresiones con sentido figurado."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica las intenciones de sus interlocutores considerando el uso de recursos verbales, no verbales y paraverbales. Explica diferentes puntos de vista, contradicciones y estereotipos, así como la trama y las motivaciones de personajes en textos lúdicos y características de tipos textuales y géneros discursivos."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Adecúa el texto oral a la situación comunicativa considerando el propósito comunicativo, el tipo textual y algunas características del género discursivo. Mantiene el registro formal o informal adaptándose a los interlocutores y sus contextos socioculturales."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa sus ideas en torno a un tema de forma coherente y cohesionada. Ordena dichas ideas y las desarrolla para ampliar la información sin digresiones o vacíos. Establece relaciones lógicas entre las ideas ((en especial, de adición, contraste, secuencia, causa y consecuencia)) a través de diversos referentes y conectores. Incorpora un vocabulario pertinente que incluye sinónimos y términos propios de los campos del saber."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea gestos y movimientos corporales que enfatizan lo que dice. Mantiene la distancia física con sus interlocutores, así como el volumen, la entonación y el ritmo de su voz para transmitir emociones, caracterizar personajes o producir efectos en el público, como el suspenso, el entretenimiento, entre otros."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en diversos intercambios orales alternando los roles de hablante y oyente. Recurre a saberes previos y aporta nueva información para argumentar, aclarar y contrastar ideas considerando normas y modos de cortesía según el contexto sociocultural."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina como hablante y oyente sobre el contenido del texto oral, los estereotipos y valores que este plantea, las intenciones de los interlocutores, y el efecto de lo dicho en el hablante y el oyente. Justifica su posición sobre lo que dice el texto considerando su experiencia y los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Evalúa la adecuación de textos orales del ámbito escolar y social y de medios de comunicación a la situación comunicativa, así como la coherencia de las ideas y la cohesión entre estas. Evalúa la eficacia de recursos verbales, no verbales y paraverbales, así como la pertinencia del registro adecuado al contexto y a la intención."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de los textos orales que escucha seleccionando datos específicos y algunos detalles. Integra esta información cuando es dicha en distintos momentos, o por distintos interlocutores, en textos orales que presentan información contrapuesta, sesgos, sinónimos y expresiones con sentido figurado."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido; para ello, vincula el texto con sus conocimientos y el contexto sociocultural."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto oral ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información contrapuesta, presuposiciones y sesgos del texto. Señala las características implícitas de seres, objetos, hechos y lugares. Determina el significado de palabras en contexto y de expresiones con sentido figurado."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica las intenciones de sus interlocutores considerando el uso de recursos verbales, no verbales y paraverbales. Explica diferentes puntos de vista, contradicciones, sesgos, estereotipos, algunas figuras retóricas ((como el símil, entre otras)), así como la trama, las motivaciones de personajes en textos lúdicos y características de tipos textuales y géneros discursivos."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Adecúa el texto oral a la situación comunicativa considerando el propósito comunicativo, el tipo textual y algunas características del género discursivo. Mantiene el registro formal o informal adaptándose a los interlocutores y sus contextos socioculturales."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa sus ideas en torno a un tema de forma coherente y cohesionada. Ordena dichas ideas y las desarrolla para ampliar la información sin digresiones o vacíos. Establece relaciones lógicas entre las ideas ((en especial, de comparación, simultaneidad y disyunción)) a través de diversos referentes y conectores. Incorpora un vocabulario pertinente que incluye sinónimos y términos propios de los campos del saber."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea gestos y movimientos corporales que enfatizan o atenúan lo que dice. Regula la distancia física que guarda con sus interlocutores. Ajusta el volumen, la entonación y el ritmo de su voz para transmitir emociones, caracterizar personajes o producir efectos en el público, como el suspenso, el entretenimiento, entre otros."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en diversos intercambios orales alternando los roles de hablante y oyente. Recurre a saberes previos, aporta nueva información y argumenta razones precisas para aclarar, contrastar y ampliar ideas considerando normas y modos de cortesía según el contexto sociocultural."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina como hablante y oyente sobre el contenido del texto oral, los estereotipos, creencias y valores que este plantea, las intenciones de los interlocutores, y el efecto de lo dicho en el hablante y el oyente. Justifica su posición sobre estrategias discursivas y recursos didácticos recurrentes considerando su experiencia y los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Evalúa la adecuación de textos orales del ámbito escolar y social y de medios de comunicación a la situación comunicativa, así como la coherencia de las ideas y la cohesión entre estas. Evalúa la eficacia de recursos verbales, no verbales y paraverbales, así como la pertinencia del registro adecuado al contexto y a la intención."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de los textos orales que escucha seleccionando detalles y datos específicos. Integra esta información cuando es dicha en distintos momentos, o por distintos interlocutores, en textos orales que presentan información contrapuesta y ambigua, sesgos, sinónimos y expresiones con sentido figurado."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto cuando este presenta información especializada. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido a partir de la compresión global del texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto oral ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información implicada, contrapuesta o de detalle, y de presuposiciones y sesgos del texto. Señala las características implícitas de seres, objetos, hechos y lugares. Determina el significado de palabras en contexto y de expresiones con sentido figurado."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica las intenciones de sus interlocutores considerando el uso de diversas estrategias discursivas, y de recursos no verbales y paraverbales. Explica diferentes puntos de vista, falacias, ambigüedades, contrasentidos, diversas figuras retóricas, así como la trama y la evolución de personajes. También explica las representaciones sociales que el texto oral presenta sobre el mundo y las personas, y las intenciones que subyacen a estas de acuerdo con su cosmovisión y el contexto sociocultural."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Adecúa el texto oral a la situación comunicativa considerando el propósito comunicativo, el tipo textual y las características del género discursivo. Mantiene el registro formal o informal adaptándose a los interlocutores y sus contextos socioculturales."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa sus ideas en torno a un tema de forma coherente y cohesionada. Ordena dichas ideas y las desarrolla para ampliar la información sin digresiones o vacíos. Establece diversas relaciones lógicas entre las ideas a través de varios tipos de referentes, conectores y otros marcadores textuales. Incorpora un vocabulario pertinente y preciso que incluye términos especializados."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea estratégicamente gestos y movimientos corporales que enfatizan o atenúan lo que dice. Regula la distancia física que guarda con sus interlocutores. Ajusta el volumen, la entonación y el ritmo de su voz, así como las pausas y los silencios, para transmitir emociones, caracterizar personajes o producir otros efectos en el público, como el suspenso y el entretenimiento."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en diversos intercambios orales alternando los roles de hablante y oyente. Decide estratégicamente cómo y en qué momento participar recurriendo a saberes previos, aportando nueva información y argumentando razones de peso para persistir en su postura, y contrastar o ampliar ideas utilizando normas y modos de cortesía según el contexto sociocultural."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina como hablante y oyente sobre el contenido del texto oral, los estereotipos, las creencias y los valores que este plantea, las intenciones de los interlocutores, y el efecto de lo dicho en el hablante y el oyente. Justifica su posición sobre las relaciones de poder e ideologías presentes en los textos considerando su experiencia y los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Emite un juicio crítico sobre la adecuación de textos orales del ámbito escolar y social y de medios de comunicación a la situación comunicativa, así como la coherencia de las ideas y la cohesión entre estas. Evalúa la eficacia de recursos verbales, no verbales y paraverbales, así como la pertinencia del registro adecuado al contexto y a la intención."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de los textos orales que escucha seleccionando detalles y datos específicos. Integra esta información cuando es dicha en distintos momentos, o por distintos interlocutores, en textos orales que presentan información contrapuesta y ambigua, sesgos, falacias, ironías, y expresiones con sentido figurado."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto cuando este presenta información especializada o abstracta. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido a partir de la compresión global del texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto oral ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información implicada, de detalle, ambigua y contrapuesta, y de presuposiciones y sesgos del texto. Señala las características implícitas de seres, objetos, hechos y lugares. Determina el significado de palabras en contexto y de expresiones con sentido figurado e ironías."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica las intenciones de sus interlocutores considerando el uso de diversas estrategias discursivas, y de recursos no verbales y paraverbales. Explica diferentes puntos de vista, falacias, ambigüedades, contrasentidos, diversas figuras retóricas, así como la trama y la evolución de personajes. También explica las representaciones sociales y los niveles de sentido ((ironía, ideologías, entre otros)) que el texto oral presenta sobre el mundo y las personas, y las intenciones que subyacen a estas de acuerdo con su cosmovisión y el contexto sociocultural."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Adecúa el texto oral a la situación comunicativa considerando el propósito comunicativo, el tipo textual y las características del género discursivo. Elige estratégicamente el registro formal o informal adaptándose a los interlocutores y sus contextos socioculturales."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa sus ideas en torno a un tema de forma coherente y cohesionada. Ordena dichas ideas y las desarrolla para ampliar la información sin digresiones o vacíos. Establece diversas relaciones lógicas entre las ideas a través de varios tipos de referentes, conectores y otros marcadores textuales. Incorpora un vocabulario pertinente y preciso que incluye términos especializados y abstractos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea estratégicamente gestos y movimientos corporales que enfatizan o atenúan lo que dice. Controla la distancia física que guarda con sus interlocutores. Ajusta el volumen, la entonación y el ritmo de su voz, así como las pausas y los silencios, para transmitir emociones, caracterizar personajes o producir otros efectos en el público, como el suspenso y el entretenimiento."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en diversos intercambios orales alternando los roles de hablante y oyente. Decide estratégicamente cómo y en qué momento participar recurriendo a saberes previos, aportando nueva información y argumentando razones de peso para persuadir, contrargumentar y consensuar, así como para persistir en su postura, considerando normas y modos de cortesía según el contexto sociocultural."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina como hablante y oyente sobre el contenido del texto oral, las representaciones sociales que este plantea, las intenciones de los interlocutores, y el effecto de lo dicho en el hablante y el oyente. Justifica su posición sobre las relaciones de poder e ideologías presentes en los textos considerando su experiencia y los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Emite un juicio crítico sobre la adecuación de textos orales del ámbito escolar y social y de medios de comunicación a la situación comunicativa, así como la coherencia de las ideas y la cohesión entre estas. Evalúa la validez de la información y la eficacia de recursos verbales, no verbales y paraverbales, así como la pertinencia del registro adecuado al contexto y a la intención."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Obtiene información del texto oral.",
+                    "texto": "Recupera información explícita de los textos orales que escucha seleccionando detalles y datos específicos. Integra esta información cuando es dicha en distintos momentos, o por distintos interlocutores, en textos orales que presentan información contrapuesta y ambigua, sesgos, falacias, ironías, ambigüedades y contrasentidos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica el tema y propósito comunicativo del texto cuando este presenta información especializada o abstracta. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido a partir de la compresión global del texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto oral ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información implicada, de detalle, ambigua y contrapuesta, y de presuposiciones y sesgos del texto. Señala las características implícitas de seres, objetos, hechos y lugares. Determina el significado de palabras en contexto y de expresiones con sentido figurado e ironías."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto oral.",
+                    "texto": "Explica las intenciones de sus interlocutores considerando el uso de diversas estrategias discursivas, y de recursos no verbales y paraverbales. Explica diferentes puntos de vista, falacias, ambigüedades, contrasentidos, diversas figuras retóricas, así como la trama y la evolución de personajes. También explica las representaciones sociales y los niveles de sentido ((ironía, ideologías, entre otros)) que el texto oral presenta sobre el mundo y las personas, y las intenciones que subyacen a estas de acuerdo con su cosmovisión y el contexto sociocultural."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Adecúa el texto oral a la situación comunicativa considerando el propósito comunicativo, el tipo textual y las características del género discursivo. Elige estratégicamente el registro formal o informal adaptándose a los interlocutores y sus contextos socioculturales."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa, organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Expresa sus ideas en torno a un tema de forma coherente y cohesionada. Ordena dichas ideas y las desarrolla para ampliar la información sin digresiones o vacíos. Establece diversas relaciones lógicas entre las ideas a través de varios tipos de referentes, conectores y otros marcadores textuales. Incorpora un vocabulario pertinente y preciso que incluye términos especializados y abstractos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Utiliza recursos no verbales y paraverbales de forma estratégica.",
+                    "texto": "Emplea estratégicamente gestos y movimientos corporales que enfatizan o atenúan lo que dice. Controla la distancia física que guarda con sus interlocutores. Ajusta el volumen, la entonación y el ritmo de su voz, así como las pausas y los silencios, para transmitir emociones, caracterizar personajes o producir otros efectos en el público, como el suspenso y el entretenimiento."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Interactúa estratégicamente con distintos interlocutores.",
+                    "texto": "Participa en diversos intercambios orales alternando los roles de hablante y oyente. Decide estratégicamente cómo y en qué momento participar recurriendo a saberes previos, aportando nueva información y argumentando razones de peso para persuadir, contrargumentar y consensuar, así como para persistir en su postura, considerando normas y modos de cortesía según el contexto sociocultural."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Opina como hablante y oyente sobre el contenido del texto oral, las representaciones sociales que este plantea, las intenciones de los interlocutores, y el effecto de lo dicho en el hablante y el oyente. Justifica su posición sobre las relaciones de poder e ideologías presentes en los textos considerando su experiencia y los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto oral.",
+                    "texto": "Emite un juicio crítico sobre la adecuación de textos orales del ámbito escolar y social y de medios de comunicación a la situación comunicativa, así como la coherencia de las ideas y la cohesión entre estas. Evalúa la validez de la información y la eficacia de recursos verbales, no verbales y paraverbales, así como la pertinencia del registro adecuado al contexto y a la intención."
+                }
+            ]
+        },
+        {
+            "nombre": "Lee diversos tipos de textos escritos en su lengua materna",
+            "estandares": {
+                "Ciclo VI": "Lee diversos tipos de texto con estructuras complejas y vocabulario variado. Integra información contrapuesta que está en distintas partes del texto. Interpreta el texto considerando información relevante y complementaria para construir su sentido global, valiéndose de otros textos. Reflexiona sobre formas y contenidos del texto a partir de su conocimiento y experiencia. Evalúa el uso del lenguaje, la intención de los recursos textuales y el efecto del texto en el lector a partir de su conocimiento y del contexto sociocultural.",
+                "Ciclo VII": "Lee diversos tipos de texto con estructuras complejas y vocabulario variado y especializado. Integra información contrapuesta y ambigua que está en distintas partes del texto. Interpreta el texto considerando información relevante y de detalle para construir su sentido global, valiéndose de otros textos. Reflexiona sobre formas y contenidos del texto a partir de su conocimiento y experiencia. Evalúa el uso del lenguaje, la intención de los recursos textuales y el efecto del texto en el lector a partir de su conocimiento y del contexto sociocultural en el que se envuelve."
+            },
+            "capacidades": [
+                "Obtiene información del texto escrito.",
+                "Infiere e interpreta información del texto.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información explícita, relevante y complementaria seleccionando datos específicos y algunos detalles en diversos tipos de texto de estructura simple de vocabulario variado. Integra información explícita cuando se encuentra en distintas partes del texto, o en distintos textos al realizar una lectura intertextual."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema, los subtemas y el propósito comunicativo del texto. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido vinculando el texto con sus conocimientos y el contexto sociocultural."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto escrito ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información explícita e implícita del texto, o al realizar una lectura intertextual. Señala las características implícitas de seres, objetos, hechos y lugares, y determina el significado de palabras en contexto y de expresiones con sentido figurado."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica la intención del autor, los diferentes puntos de vista, los estereotipos, y la información que aportan gráficos e ilustraciones. Explica la trama, y las características y motivaciones de personas y personajes, además de algunas figuras retóricas ((como el epíteto, el símil, entre otras)), considerando algunas características del tipo textual y género discursivo."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina sobre el contenido, la organización textual, el sentido de diversos recursos textuales y la intención del autor. Evalúa los efectos del texto en los lectores a partir de su experiencia y de los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Justifica la elección o recomendación de textos de su preferencia cuando los comparte con otros. Sustenta su posición sobre estereotipos, creencias y valores presentes en los textos considerando su experiencia y el contexto sociocultural en que se desenvuelve."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información explícita, relevante y complementaria seleccionando datos específicos y algunos detalles en diversos tipos de texto de estructura compleja y con vocabulario variado. Integra información explícita cuando se encuentra en distintas partes del texto, o en distintos textos al realizar una lectura intertextual."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema, los subtemas y el propósito comunicativo del texto. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido vinculando el texto con sus conocimientos y el contexto sociocultural."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto escrito ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información contrapuesta del texto o al realizar una lectura intertextual. Señala las características implícitas de seres, objetos, hechos y lugares, y determina el significado de palabras en contexto y de expresiones con sentido figurado."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica la intención del autor, los diferentes puntos de vista, los estereotipos, y la información que aportan gráficos e ilustraciones. Explica la trama, y las características y motivaciones de personas y personajes, además de algunas figuras retóricas ((como la metáfora, la hipérbole, entre otras)), considerando algunas características del tipo textual y género discursivo."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina sobre el contenido, la organización textual, el sentido de diversos recursos textuales y la intención del autor. Evalúa los efectos del texto en los lectores a partir de su experiencia y de los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Justifica la elección o recomendación de textos de su preferencia cuando los comparte con otros. Sustenta su posición sobre estereotipos, creencias y valores presentes en los textos considerando su experiencia y el contexto sociocultural en que se desenvuelve."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información explícita, relevante y complementaria seleccionando datos específicos y detalles dispersos en diversos tipos de texto de estructura compleja y con información contrapuesta y vocabulario variado. Integra información explícita cuando se encuentra en distintas partes del texto, o en distintos textos al realizar una lectura intertextual."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema, los subtemas y el propósito comunicativo del texto cuando este presenta información especializada. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido a partir de la comprensión global del texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto escrito ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información contrapuesta o de detalle del texto, o al realizar una lectura intertextual. Señala las características implícitas de seres, objetos, hechos y lugares, y determina el significado de palabras en contexto y de expresiones con sentido figurado."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica la intención del autor, los diferentes puntos de vista, los estereotipos, y las representaciones sociales presentes en el texto. Explica la trama, y las características y motivaciones de personas y personajes, además de algunas figuras retóricas ((como la ironía y la alegoría, entre otras)), considerando algunas características del tipo textual y género discursivo."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina sobre el contenido, la organización textual, las estrategias discursivas, el sentido de diversos recursos textuales y la intención del autor. Evalúa los efectos del texto en los lectores a partir de su experiencia y de los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y context del texto.",
+                    "texto": "Justifica la elección o recomendación de textos de su preferencia cuando los comparte con otros. Sustenta su posición sobre las relaciones de poder e ideologías presentes en los textos considerando su experiencia y el contexto sociocultural en que se desenvuelve."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información explícita, relevante y complementaria seleccionando datos específicos y detalles dispersos con información contrapuesta y ambigua en textos de estructura compleja y vocabulario especializado. Integra información explícita cuando se encuentra en distintas partes del texto, o en distintos textos al realizar una lectura intertextual."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema, los subtemas y el propósito comunicativo del texto cuando este presenta información especializada o abstracta. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido a partir de la comprensión global del texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto escrito ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información de detalle, contrapuesta o ambigua del texto, o al realizar una lectura intertextual. Señala las características implícitas de seres, objetos, hechos y lugares, y determina el significado de palabras en contexto y de expresiones con sentido figurado, así como de ironías y sesgos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica la intención del autor, los diferentes puntos de vista, los estereotipos, y las representaciones sociales presentes en el texto. Explica la trama, y las características y motivaciones de personas y personajes, además de figuras retóricas ((como la metonimia y el oxímoron, entre otras)), considerando algunas características del tipo textual y género discursivo."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina sobre el contenido, la organización textual, las estrategias discursivas, el sentido de diversos recursos textuales y la intención del autor. Evalúa los efectos del texto en los lectores a partir de su experiencia y de los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y context del texto.",
+                    "texto": "Justifica la elección o recomendación de textos de su preferencia cuando los comparte con otros. Sustenta su posición sobre las relaciones de poder e ideologías presentes en los textos considerando su experiencia y el contexto sociocultural en que se desenvuelve."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Obtiene información del texto escrito.",
+                    "texto": "Identifica información explícita, relevante y complementaria seleccionando datos específicos y detalles dispersos con información contrapuesta y ambigua en textos de estructura compleja y vocabulario especializado. Integra información explícita cuando se encuentra en distintas partes del texto, o en distintos textos al realizar una lectura intertextual."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica el tema, los subtemas y el propósito comunicativo del texto cuando este presenta información especializada o abstracta. Distingue lo relevante de lo complementario clasificando y sintetizando la información. Establece conclusiones sobre lo comprendido a partir de la comprensión global del texto."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Deduce diversas relaciones lógicas entre las ideas del texto escrito ((causa-efecto, semejanza-diferencia, entre otras)) a partir de información de detalle, contrapuesta o ambigua del texto, o al realizar una lectura intertextual. Señala las características implícitas de seres, objetos, hechos y lugares, y determina el significado de palabras en contexto y de expresiones con sentido figurado, así como de ironías y sesgos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Infiere e interpreta información del texto.",
+                    "texto": "Explica la intención del autor, los diferentes puntos de vista, los estereotipos, y las representaciones sociales presentes en el texto. Explica la trama, y las características y motivaciones de personas y personajes, además de figuras retóricas ((como la metonimia y el oxímoron, entre otras)), considerando algunas características del tipo textual y género discursivo."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto.",
+                    "texto": "Opina sobre el contenido, la organización textual, las estrategias discursivas, el sentido de diversos recursos textuales y la intención del autor. Evalúa los efectos del texto en los lectores a partir de su experiencia y de los contextos socioculturales en que se desenvuelve."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y context del texto.",
+                    "texto": "Justifica la elección o recomendación de textos de su preferencia cuando los comparte con otros. Sustenta su posición sobre las relaciones de poder e ideologías presentes en los textos considerando su experiencia y el contexto sociocultural en que se desenvuelve."
+                }
+            ]
+        },
+        {
+            "nombre": "Escribe diversos tipos de textos en su lengua materna",
+            "estandares": {
+                "Ciclo VI": "Escribe diversos tipos de texto de forma reflexiva. Adecúa su texto al destinatario, propósito y el registro a partir de su experiencia previa y de fuentes de información complementarias. Organiza y desarrolla lógicamente las ideas en torno a un tema, y las estructura en párrafos y subtítulos de acuerdo a algunos géneros discursivos. Establece relaciones entre ideas a través del uso adecuado de varios tipos de conectores, referentes y emplea vocabulario variado. Utiliza recursos ortográficos y textuales para separar y aclarar expresiones e ideas, así como diferenciar el significado de las palabras con la intención de darle claridad y sentido a su texto. Reflexiona y evalúa de manera permanente la coherencia y cohesión de las ideas en el texto que escribe, así como el uso del lenguaje para argumentar, reforzar o sugerir sentidos y producir diversos efectos en el lector según la situación comunicativa.",
+                "Ciclo VII": "Escribe diversos tipos de texto de forma reflexiva. Adecúa su texto al destinatario, propósito y el registro a partir de su experiencia previa y de fuentes de información complementarias y divergentes. Organiza y desarrolla lógicamente las ideas en torno a un tema, y las estructura en párrafos, capítulos o apartados de acuerdo a distintos géneros discursivos. Establece relaciones entre ideas a través del uso preciso de diversos recursos cohesivos. Emplea vocabulario variado, especializado y preciso, así como una variedad de recursos ortográficos y textuales para darle claridad y sentido a su texto. Reflexiona y evalúa de manera permanente la validez de la información, la coherencia y cohesión de las ideas en el texto que escribe; controla el lenguaje para contrargumentar, reforzar o sugerir sentidos y producir diversos efectos en el lector según la situación comunicativa."
+            },
+            "capacidades": [
+                "Adecúa el texto a la situación comunicativa.",
+                "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito."
+            ],
+            "desempenos": [
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa el texto a la situación comunicativa considerando el propósito comunicativo, el tipo textual y algunas características del género discursivo, así como el formato y el soporte. Mantiene el registro formal o informal adaptándose a los destinatarios y seleccionando diversas fuentes de información complementaria."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos de forma coherente y cohesionada. Ordena las ideas en torno a un tema, las jerarquiza en subtemas e ideas principales, y las desarrolla para ampliar o precisar la información sin digresiones o vacíos. Establece relaciones lógicas entre las ideas ((como consecuencia, contraste, comparación o disyunción)) a través de algunos referentes y conectores. Incorpora de forma pertinente un vocabulario que incluye sinónimos e diversos términos propios de los campos del saber."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza recursos gramaticales y ortográficos ((por ejemplo, tildación diacrítica)) que contribuyen al sentido de su texto. Emplea algunos recursos textuales y figuras retóricas ((epítetos y símiles)) con distintos propósitos: para aclarar ideas, y reforzar o sugerir sentidos en el texto, con el fin de producir efectos en el lector, como el suspenso o la persuasión, entre otros."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa de manera permanente el texto determinando si se adecúa a la situación comunicativa y si hay digresiones, repeticiones innecesarias o vacíos de información que afectan la coherencia entre las ideas, o si el uso de conectores y referentes asegura la cohesión entre estas. También evalúa la utilidad de los recursos ortográficos empleados y la pertinencia del vocabulario para mejorar el texto y garantizar su sentido."
+                },
+                {
+                    "grado": "1er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa el efecto de su texto en los lectores a partir de los recursos textuales y estilísticos utilizados considerando su propósito al momento de escribirlo. Compara y contrasta aspectos gramaticales y ortográficos, así como características de tipos textuales y géneros discursivos, cuando revisa el texto."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa el texto a la situación comunicativa considerando el propósito comunicativo, el tipo textual y algunas características del género discursivo, así como el formato y el soporte. Mantiene el registro formal o informal adaptándose a los destinatarios y seleccionando diversas fuentes de información complementaria."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos de forma coherente y cohesionada. Ordena las ideas en torno a un tema, las jerarquiza en subtemas e ideas principales, y las desarrolla para ampliar o precisar la información sin digresiones o vacíos. Establece relaciones lógicas entre las ideas ((como comparación, simultaneidad y disyunción)) a través de varios tipos de referentes y conectores. Incorpora de forma pertinente un vocabulario que incluye sinónimos e diversos términos propios de los campos del saber."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza recursos gramaticales y ortográficos ((por ejemplo, tildación diacrítica)) que contribuyen al sentido de su texto. Emplea algunos recursos textuales y figuras retóricas ((metáforas e hipérboles)) con distintos propósitos: para aclarar ideas, y reforzar o sugerir sentidos en el texto, con el fin de producir efectos en el lector, como el suspenso o la persuasión, entre otros."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa de manera permanente el texto determinando si se adecúa a la situación comunicativa y si hay digresiones, repeticiones innecesarias o vacíos de información que afectan la coherencia entre las ideas, o si el uso de conectores y referentes asegura la cohesión entre estas. También evalúa la utilidad de los recursos ortográficos empleados y la pertinencia del vocabulario para mejorar el texto y garantizar su sentido."
+                },
+                {
+                    "grado": "2do grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa el efecto de su texto en los lectores a partir de los recursos textuales y estilísticos utilizados considerando su propósito al momento de escribirlo. Compara y contrasta aspectos gramaticales y ortográficos, así como características de tipos textuales y géneros discursivos, cuando revisa el texto."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa el texto a la situación comunicativa considerando el propósito comunicativo, el tipo textual y las características del género discursivo, así como el formato y el soporte. Mantiene el registro formal o informal adaptándose a los destinatarios y seleccionando diversas fuentes de información especializada."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos de forma coherente y cohesionada. Ordena las ideas en torno a un tema, las jerarquiza en subtemas e ideas principales, y las desarrolla para ampliar o precisar la información sin digresiones o vacíos. Establece diversas relaciones lógicas entre las ideas a través de varios tipos de referentes y conectores. Incorpora de forma pertinente un vocabulario que incluye sinónimos y términos especializados."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza recursos gramaticales y ortográficos que contribuyen al sentido de su texto. Emplea algunos recursos textuales y figuras retóricas ((ironía y alegoría)) con distintos propósitos: para aclarar ideas, y reforzar o sugerir sentidos en el texto, con el fin de producir efectos en el lector, como el suspenso o la persuasión, entre otros."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa de manera permanente el texto determinando si se adecúa a la situación comunicativa y si hay digresiones, repeticiones innecesarias o vacíos de información que afectan la coherencia entre las ideas, o si el uso de conectores y referentes asegura la cohesión entre estas. También evalúa la utilidad de los recursos ortográficos empleados y la pertinencia del vocabulario para mejorar el texto y garantizar su sentido."
+                },
+                {
+                    "grado": "3er grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa el efecto de su texto en los lectores a partir de los recursos textuales y estilísticos utilizados considerando su propósito al momento de escribirlo. Compara y contrasta aspectos gramaticales y ortográficos, así como características de tipos textuales y géneros discursivos, cuando revisa el texto."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa el texto a la situación comunicativa considerando el propósito comunicativo, el tipo textual y las características del género discursivo, así como el formato y el soporte. Elige estratégicamente el registro formal o informal adaptándose a los destinatarios y seleccionando diversas fuentes de información especializada."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos de forma coherente y cohesionada. Ordena las ideas en torno a un tema, las jerarquiza en subtemas e ideas principales, y las desarrolla para ampliar o precisar la información sin digresiones o vacíos. Establece diversas relaciones lógicas entre las ideas a través de varios tipos de referentes y conectores. Incorpora de forma pertinente un vocabulario que incluye sinónimos e términos especializados y abstractos."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza recursos gramaticales y ortográficos que contribuyen al sentido de su texto. Emplea algunos recursos textuales y figuras retóricas ((metonimia e oxímoron)) con distintos propósitos: para aclarar ideas, y reforzar o sugerir sentidos en el texto, con el fin de producir efectos en el lector, como el suspenso o la persuasión, entre otros."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa de manera permanente el texto determinando si se adecúa a la situación comunicativa y si hay digresiones, repeticiones innecesarias o vacíos de información que afectan la coherencia entre las ideas, o si el uso de conectores y referentes asegura la cohesión entre estas. También evalúa la utilidad de los recursos ortográficos empleados y la pertinencia del vocabulario para mejorar el texto y garantizar su sentido."
+                },
+                {
+                    "grado": "4to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa el efecto de su texto en los lectores a partir de los recursos textuales y estilísticos utilizados considerando su propósito al momento de escribirlo. Compara y contrasta aspectos gramaticales y ortográficos, así como características de tipos textuales y géneros discursivos, cuando revisa el texto que escribe."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Adecúa el texto a la situación comunicativa.",
+                    "texto": "Adecúa el texto a la situación comunicativa considerando el propósito comunicativo, el tipo textual y las características del género discursivo, así como el formato y el soporte. Elige estratégicamente el registro formal o informal adaptándose a los destinatarios y seleccionando diversas fuentes de información especializada o abstracta."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Organiza y desarrolla las ideas de forma coherente y cohesionada.",
+                    "texto": "Escribe textos de forma coherente y cohesionada. Ordena las ideas en torno a un tema, las jerarquiza en subtemas e ideas principales, y las desarrolla para ampliar o precisar la información sin digresiones o vacíos. Establece diversas relaciones lógicas entre las ideas a través de varios tipos de referentes y conectores. Incorpora de forma pertinente un vocabulario que incluye sinónimos e términos especializados y abstractos."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Utiliza convenciones del lenguaje escrito de forma pertinente.",
+                    "texto": "Utiliza recursos gramaticales y ortográficos que contribuyen al sentido de su texto. Emplea algunos recursos textuales y figuras retóricas con distintos propósitos: para aclarar ideas, y reforzar o sugerir sentidos en el texto, con el fin de producir efectos en el lector, como el suspenso o la persuasión, entre otros."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa de manera permanente el texto determinando si se adecúa a la situación comunicativa y si hay digresiones, repeticiones innecesarias o vacíos de información que afectan la coherencia entre las ideas, o si el uso de conectores y referentes asegura la cohesión entre estas. También evalúa la utilidad de los recursos ortográficos empleados y la pertinencia del vocabulario para mejorar el texto y garantizar su sentido."
+                },
+                {
+                    "grado": "5to grado",
+                    "capacidad": "Reflexiona y evalúa la forma, el contenido y contexto del texto escrito.",
+                    "texto": "Evalúa el efecto de su texto en los lectores a partir de los recursos textuales y estilísticos utilizados considerando su propósito al momento de escribirlo. Compara y contrasta aspectos gramaticales y ortográficos, así como características de tipos textuales y géneros discursivos, cuando revisa el texto que escribe."
+                }
+            ]
+        }
+    ]
+}
