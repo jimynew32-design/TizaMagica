@@ -19,11 +19,11 @@ export const PlanSelector: React.FC = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isOpen]);
 
+    const activeDisplay = planActivo || planes[0];
+
     if (!activeDisplay && planes.length === 0) {
         // Simple defensive check
     }
-
-    const activeDisplay = planActivo || planes[0];
 
     if (!activeDisplay) {
         return (

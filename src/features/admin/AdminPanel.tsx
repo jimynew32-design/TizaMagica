@@ -97,15 +97,25 @@ export const AdminPanel: React.FC = () => {
 
         try {
             // 1. Borrar de solicitudes_acceso
-            await supabase.from('solicitudes_acceso').delete().eq('id', sol.id);
+            const { error: errorSolicitud } = await supabase
+                .from('solicitudes_acceso')
+                .delete()
+                .eq('id', sol.id);
+            
+            if (errorSolicitud) throw errorSolicitud;
 
             // 2. Intentar borrar perfil si existe (DNI es el alias)
-            await supabase.from('perfiles').delete().eq('dni', sol.alias);
+            const { error: errorPerfil } = await supabase
+                .from('perfiles')
+                .delete()
+                .eq('dni', sol.alias);
+
+            if (errorPerfil) throw errorPerfil;
             
             await fetchSolicitudes();
         } catch (error: any) {
             console.error('Error al eliminar:', error);
-            alert('Error al procesar la eliminación: ' + error.message);
+            alert('Error al procesar la eliminación: ' + (error.message || 'Error desconocido de permisos'));
         } finally {
             setProcessingId(null);
         }

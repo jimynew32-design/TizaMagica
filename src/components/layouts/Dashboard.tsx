@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 import { AISettingsPanel } from '@/components/settings/AISettingsPanel';
 import { NotificationModal } from '@/components/ui/NotificationModal';
 import { UserMenu } from '@/components/dashboard/UserMenu';
-import { useIsMobile } from '@/hooks/ui/useMediaQuery';
 import { cn } from '@/lib/cn';
 
 export const DashboardLayout: React.FC = () => {
@@ -15,7 +14,6 @@ export const DashboardLayout: React.FC = () => {
     const { loadPlanes, planesLoaded } = usePlanAnualStore();
     const { isSettingsOpen, toggleSettings } = useAIConfigStore();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const isMobile = useIsMobile();
 
     useEffect(() => {
         if (perfil?.id) {
@@ -24,7 +22,7 @@ export const DashboardLayout: React.FC = () => {
     }, [perfil?.id, planesLoaded]);
 
     return (
-        <div className="min-h-dvh bg-app relative grid lg:grid-cols-[auto_1fr] grid-rows-[1fr] overflow-x-hidden">
+        <div className="min-h-dvh bg-app relative flex overflow-x-hidden">
             {/* Background Decorative Elements */}
             <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
                 <div className="absolute top-[-10%] right-[-10%] w-[40dvw] h-[40dvh] bg-primary-teal/5 blur-[120px] rounded-full animate-glow-pulse" />
@@ -45,7 +43,7 @@ export const DashboardLayout: React.FC = () => {
             )}
 
             {/* Navigation Drawer Overlay (Mobile Only) */}
-            {isMobile && isMobileMenuOpen && (
+            {isMobileMenuOpen && (
                 <div 
                     className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[60] lg:hidden animate-fade-in"
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -54,28 +52,26 @@ export const DashboardLayout: React.FC = () => {
 
             {/* Navigation Sidebar */}
             <aside className={cn(
-                "fixed inset-y-0 left-0 z-[70] transition-transform duration-500 lg:relative lg:translate-x-0 lg:z-auto h-dvh",
-                isMobile && (isMobileMenuOpen ? "translate-x-0" : "-translate-x-full")
+                "fixed inset-y-0 left-0 z-[70] transition-transform duration-500 lg:relative lg:translate-x-0 lg:z-auto h-dvh flex-shrink-0",
+                isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             )}>
-                <Sidebar onNavigate={() => isMobile && setIsMobileMenuOpen(false)} />
+                <Sidebar onNavigate={() => setIsMobileMenuOpen(false)} />
             </aside>
 
             {/* Main Content Area */}
-            <main className="flex flex-col min-h-dvh w-full overflow-hidden z-10 relative" id="main-content">
+            <main className="flex-1 flex flex-col min-w-0 min-h-dvh overflow-hidden z-10 relative" id="main-content">
                 {/* Top Header */}
                 <header className="h-20 flex items-center justify-between px-safe sticky top-0 z-40 bg-black/60 backdrop-blur-xl border-b border-white/5 safe-area-pt">
                     <div className="flex items-center gap-3">
-                        {isMobile && (
-                            <button 
-                                onClick={() => setIsMobileMenuOpen(true)}
-                                className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 active:scale-95 transition-all"
-                                aria-label="Abrir menú de navegación"
-                                aria-controls="main-sidebar"
-                                aria-expanded={isMobileMenuOpen}
-                            >
-                                <span className="material-icons-round text-gray-300">menu</span>
-                            </button>
-                        )}
+                        <button 
+                            onClick={() => setIsMobileMenuOpen(true)}
+                            className="lg:hidden w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 active:scale-95 transition-all"
+                            aria-label="Abrir menú de navegación"
+                            aria-controls="main-sidebar"
+                            aria-expanded={isMobileMenuOpen}
+                        >
+                            <span className="material-icons-round text-gray-300">menu</span>
+                        </button>
                         <PlanSelector />
                     </div>
 
