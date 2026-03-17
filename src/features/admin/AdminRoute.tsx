@@ -46,14 +46,22 @@ export const AdminRoute: React.FC = () => {
 
     useEffect(() => {
         const verify = async () => {
-            // Verificación por email (Producción)
-            const { data: { session } } = await supabase.auth.getSession();
-            const adminEmails = ['admin@tizamagica.edu.pe'];
-            const userEmail = session?.user?.email || '';
+            try {
+                // Verificación por email con timeout para evitar bloqueos en el despliegue
+                const { data } = await Promise.race([
+                    supabase.auth.getSession(),
+                    new Promise((_, reject) => setTimeout(() => reject('timeout'), 2500))
+                ]) as any;
 
-            if (adminEmails.includes(userEmail)) {
-                setStatus('authorized');
-                return;
+                const adminEmails = ['admin@tizamagica.edu.pe'];
+                const userEmail = data?.session?.user?.email || '';
+
+                if (adminEmails.includes(userEmail)) {
+                    setStatus('authorized');
+                    return;
+                }
+            } catch (err) {
+                console.warn('Admin verification timeout/error, falling back to PIN protocol');
             }
 
             // Verificación por PIN (Localhost y Producción)
