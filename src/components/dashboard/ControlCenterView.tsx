@@ -35,12 +35,12 @@ export const ControlCenterView: React.FC = () => {
     const planActivo = planes[0]; // Simplificación para el dashboard
 
     return (
-        <div className="space-y-10 animate-fade-in">
+        <div className="space-y-6 md:space-y-10 animate-fade-in">
             {/* Hero / Welcome */}
-            <header className="relative py-12 px-8 overflow-hidden rounded-[3rem] bg-gradient-to-br from-primary-teal/20 via-surface-card to-surface-card border border-white/5">
-                <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary-teal/10 blur-[120px] rounded-full" />
-                <div className="relative z-10 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-8">
-                    <div className="space-y-4 max-w-2xl">
+            <header className="relative py-8 md:py-12 px-5 md:px-8 overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br from-primary-teal/20 via-surface-card to-surface-card border border-white/5">
+                <div className="absolute -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary-teal/10 blur-[80px] md:blur-[120px] rounded-full" />
+                <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                    <div className="space-y-4 max-w-2xl w-full">
                         <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-full bg-primary-teal animate-pulse shadow-[0_0_10px_#2dd4bf]" />
                             <div className="flex items-center gap-2">
@@ -52,24 +52,24 @@ export const ControlCenterView: React.FC = () => {
                                 </span>
                             </div>
                         </div>
-                        <h2 className="text-5xl font-black text-white uppercase tracking-tight leading-none pt-2">
+                        <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-none pt-2">
                             ¡Hola, <span className="text-primary-teal">{perfil?.nombreCompleto?.split(' ')[0] || 'Jimy'}</span>!
                         </h2>
-                        <p className="text-gray-300 text-2xl font-medium flex items-center gap-3">
-                            Hoy es {new Intl.DateTimeFormat('es-PE', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date()).replace(',', '')} <span className="text-3xl">🗓️</span>
+                        <p className="text-gray-300 text-lg md:text-2xl font-medium flex items-center gap-3">
+                            Hoy es {new Intl.DateTimeFormat('es-PE', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date()).replace(',', '')} <span className="text-2xl md:text-3xl">🗓️</span>
                         </p>
                         
-                        <div className="pt-6 flex flex-wrap gap-4">
+                        <div className="pt-4 md:pt-6 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                             <button 
                                 onClick={() => lastResource ? navigate(lastResource.path) : navigate('/unidades')}
-                                className="px-8 py-4 rounded-2xl bg-primary-teal text-white font-black uppercase tracking-widest text-sm hover:shadow-[0_0_30px_rgba(45,170,170,0.4)] transition-all flex items-center gap-3 active:scale-95"
+                                className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 rounded-2xl bg-primary-teal text-white font-black uppercase tracking-widest text-xs md:text-sm hover:shadow-[0_0_30px_rgba(45,170,170,0.4)] transition-all flex items-center justify-center gap-3 active:scale-95"
                             >
-                                <span className="material-icons-round">edit_note</span>
+                                <span className="material-icons-round text-xl md:text-2xl">edit_note</span>
                                 {lastResource ? `CONTINUAR: ${lastResource.title}` : 'COMENZAR PLANIFICACIÓN'}
                             </button>
                             
-                            <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-brand-magenta/10 to-brand-magenta/5 border border-brand-magenta/30 text-brand-magenta font-black uppercase tracking-widest text-sm hover:bg-brand-magenta/20 hover:shadow-[0_0_20px_rgba(255,0,255,0.2)] transition-all flex items-center gap-3 group active:scale-95">
-                                <span className="material-icons-round group-hover:rotate-12 transition-transform shadow-glow-magenta rounded-full">sparkles</span>
+                            <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 rounded-2xl bg-gradient-to-r from-brand-magenta/10 to-brand-magenta/5 border border-brand-magenta/30 text-brand-magenta font-black uppercase tracking-widest text-xs md:text-sm hover:bg-brand-magenta/20 hover:shadow-[0_0_20px_rgba(255,0,255,0.2)] transition-all flex items-center justify-center gap-3 group active:scale-95">
+                                <span className="material-icons-round group-hover:rotate-12 transition-transform shadow-glow-magenta rounded-full text-xl md:text-2xl">sparkles</span>
                                 ¿QUÉ TAL TU CLASE DE HOY?
                             </button>
                         </div>
@@ -77,7 +77,7 @@ export const ControlCenterView: React.FC = () => {
 
                     {/* Ticket de Sesión */}
                     <div className={cn(
-                        "w-full xl:w-80 p-6 rounded-[2rem] bg-white/[0.02] border backdrop-blur-md shadow-2xl relative overflow-hidden group transition-all duration-500",
+                        "w-full lg:w-80 p-6 rounded-3xl md:rounded-[2rem] bg-white/[0.02] border backdrop-blur-md shadow-2xl relative overflow-hidden group transition-all duration-500",
                         activeSession ? "border-primary-teal/30 hover:bg-primary-teal/[0.03]" : "border-white/10 opacity-60"
                     )}>
                         <div className="absolute top-0 right-0 w-32 h-32 bg-primary-teal/10 blur-[40px] group-hover:bg-primary-teal/20 transition-colors" />
@@ -192,21 +192,21 @@ export const ControlCenterView: React.FC = () => {
                             planes.slice(0, 3).map(plan => {
                                 const compsCount = Object.keys(plan.matrizCompetencias || {}).length;
                                 return (
-                                    <div key={plan.id} className="p-5 bg-white/[0.02] rounded-3xl border border-white/5 hover:border-primary-teal/30 hover:bg-white/[0.04] transition-all cursor-pointer group flex flex-col md:flex-row md:items-center justify-between gap-4" onClick={() => { selectPlan(plan.id); navigate('/plan-anual/diagnostico'); }}>
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-12 h-12 bg-black/40 rounded-2xl flex items-center justify-center text-primary-teal/50 border border-white/5 group-hover:bg-primary-teal/10 group-hover:text-primary-teal group-hover:border-primary-teal/30 transition-all shrink-0">
-                                                <span className="material-icons-round text-xl">folder_special</span>
+                                    <div key={plan.id} className="p-4 md:p-5 bg-white/[0.02] rounded-3xl border border-white/5 hover:border-primary-teal/30 hover:bg-white/[0.04] transition-all cursor-pointer group flex flex-col md:flex-row md:items-center justify-between gap-4" onClick={() => { selectPlan(plan.id); navigate('/plan-anual/diagnostico'); }}>
+                                        <div className="flex items-start gap-3 md:gap-4">
+                                            <div className="w-10 md:w-12 h-10 md:h-12 bg-black/40 rounded-xl md:rounded-2xl flex items-center justify-center text-primary-teal/50 border border-white/5 group-hover:bg-primary-teal/10 group-hover:text-primary-teal group-hover:border-primary-teal/30 transition-all shrink-0">
+                                                <span className="material-icons-round text-lg md:text-xl">folder_special</span>
                                             </div>
-                                            <div className="space-y-1 mt-0.5">
-                                                <div className="flex items-center gap-2">
-                                                    <h4 className="text-base font-black text-white group-hover:text-primary-teal transition-colors uppercase leading-none">{plan.area}</h4>
-                                                    <span className="px-2 py-0.5 rounded-full bg-green-500/10 text-green-500 border border-green-500/20 text-[8px] font-black uppercase tracking-widest">Activo</span>
-                                                    <span className="px-2 py-0.5 rounded-full bg-white/5 text-gray-400 border border-white/10 text-[8px] font-black uppercase tracking-widest hidden md:inline-flex">II Bimestre</span>
+                                            <div className="space-y-1 mt-0.5 min-w-0 flex-1">
+                                                <div className="flex flex-wrap items-center gap-2">
+                                                    <h4 className="text-sm md:text-base font-black text-white group-hover:text-primary-teal transition-colors uppercase leading-none truncate">{plan.area}</h4>
+                                                    <span className="px-2 py-0.5 rounded-full bg-green-500/10 text-green-500 border border-green-500/20 text-[7px] md:text-[8px] font-black uppercase tracking-widest">Activo</span>
+                                                    <span className="px-2 py-0.5 rounded-full bg-white/5 text-gray-400 border border-white/10 text-[7px] md:text-[8px] font-black uppercase tracking-widest hidden md:inline-flex">II Bimestre</span>
                                                 </div>
-                                                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest pt-1 flex items-center gap-2">
+                                                <p className="text-[9px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest pt-1 flex items-center gap-1 md:gap-2">
                                                     {plan.grado} — {plan.ciclo}
                                                     <span className="w-1 h-1 rounded-full bg-white/20" />
-                                                    <span className="text-brand-magenta">{compsCount} Competencias Priorizadas</span>
+                                                    <span className="text-brand-magenta">{compsCount} Comps</span>
                                                 </p>
                                                 <div className="flex items-center gap-1.5 text-gray-500 pt-1 group-hover:text-gray-300 transition-colors" title="Multi-sede (Aplica a varias secciones)">
                                                     <span className="material-icons-round text-[10px]">link</span>

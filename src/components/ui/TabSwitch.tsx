@@ -26,7 +26,7 @@ export const TabSwitch: React.FC<TabSwitchProps> = ({
 }) => {
     return (
         <div className={cn(
-            "flex p-1 bg-surface-header/40 backdrop-blur-xl rounded-2xl border border-white/5 shadow-2xl w-fit",
+            "flex p-1 bg-surface-header/40 backdrop-blur-xl rounded-2xl border border-white/5 shadow-2xl w-fit max-w-full overflow-x-auto no-scrollbar",
             className
         )}>
             {options.map((option) => {
@@ -36,7 +36,7 @@ export const TabSwitch: React.FC<TabSwitchProps> = ({
                         key={option.value}
                         onClick={() => onChange(option.value)}
                         className={cn(
-                            "relative flex items-center justify-center gap-2 transition-all duration-500 ease-premium",
+                            "relative flex items-center justify-center gap-2 transition-all duration-500 ease-premium whitespace-nowrap",
                             size === 'sm' ? "py-1.5 px-4 rounded-lg text-[10px]" : "py-2.5 px-6 rounded-xl text-[11px]",
                             "font-black uppercase tracking-widest",
                             isActive

@@ -341,38 +341,33 @@ export const SesionEditor: React.FC = () => {
                 title={local.titulo || 'Sin título'}
                 subtitle={`Sesión de Aprendizaje · ${unidad?.diagnosticoStep.titulo || 'Unidad'}`}
                 syncStatus={isSyncing ? 'syncing' : 'synced'}
-                className="sticky top-0 bg-background/80 backdrop-blur-2xl z-50 py-6 border-b border-white/5 -mx-4 px-4"
+                className="sticky top-0 bg-background/80 backdrop-blur-2xl z-50 py-4 md:py-6 border-b border-white/5 -mx-4 px-4"
                 actions={[
-                    <button 
-                        onClick={() => navigate(-1)} 
-                        className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors group"
-                    >
-                        <span className="material-icons-round text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest">Volver</span>
-                    </button>,
-                    <TabSwitch 
-                        options={STEPS}
-                        value={activeStep}
-                        onChange={setActiveStep}
-                        variant="teal"
-                        className="bg-black/40 border-white/10"
-                    />,
-                    <div className="flex items-center gap-2">
-                        <button 
-                            onClick={() => navigate(`/sesiones/${sesionId}/preview`)}
-                            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all text-[10px] font-black uppercase tracking-widest"
-                        >
-                            <span className="material-icons-round text-sm">visibility</span>
-                            Vista previa
-                        </button>
-                        <button 
-                            onClick={handleExport}
-                            disabled={exporting}
-                            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all text-[10px] font-black uppercase tracking-widest"
-                        >
-                            {exporting ? <Spinner size="sm" /> : <span className="material-icons-round text-sm">description</span>}
-                            Exportar
-                        </button>
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full md:w-auto">
+                        <div className="flex items-center gap-2">
+                            <button 
+                                onClick={() => navigate(-1)} 
+                                className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white transition-all"
+                            >
+                                <span className="material-icons-round text-lg">arrow_back</span>
+                                <span className="text-[10px] font-black uppercase tracking-widest">Volver</span>
+                            </button>
+                            <button 
+                                onClick={() => navigate(`/sesiones/${sesionId}/preview`)}
+                                className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all text-[10px] font-black uppercase tracking-widest"
+                            >
+                                <span className="material-icons-round text-sm">visibility</span>
+                                <span className="hidden sm:inline">Vista previa</span>
+                                <span className="sm:hidden">Ver</span>
+                            </button>
+                        </div>
+                        <TabSwitch 
+                            options={STEPS}
+                            value={activeStep}
+                            onChange={setActiveStep}
+                            variant="teal"
+                            className="bg-black/40 border-white/10 flex-1 md:flex-none"
+                        />
                     </div>
                 ]}
             />
@@ -446,8 +441,8 @@ export const SesionEditor: React.FC = () => {
                                 </div>
                             </header>
                             <div className="relative group">
-                                <input
-                                    className="w-full bg-white/[0.03] border border-white/5 rounded-3xl p-8 text-2xl font-black text-white outline-none focus:border-primary-teal/50 focus:bg-white/[0.05] transition-all placeholder-gray-800 shadow-2xl"
+                                <textarea
+                                    className="w-full bg-white/[0.03] border border-white/5 rounded-3xl p-6 md:p-8 text-xl md:text-2xl font-black text-white outline-none focus:border-primary-teal/50 focus:bg-white/[0.05] transition-all placeholder-gray-800 shadow-2xl resize-none h-32 md:h-auto"
                                     value={local.titulo}
                                     onChange={e => update({ titulo: e.target.value })}
                                     placeholder="Escribe el título de la sesión aquí..."
@@ -642,8 +637,8 @@ export const SesionEditor: React.FC = () => {
                                     <span className="material-icons-round text-sm">
                                         {totalMin > 90 ? 'warning' : totalMin === 90 ? 'check_circle' : 'schedule'}
                                     </span>
-                                    <span className="text-[10px] font-black uppercase tracking-widest">
-                                        {totalMin} / 90 MINUTOS
+                                    <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest">
+                                        {totalMin} / 90 MIN
                                     </span>
                                 </div>
                                 {totalMin > 90 && (
@@ -682,8 +677,8 @@ export const SesionEditor: React.FC = () => {
                                             </div>
                                         </div>
 
-                                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                                            <div className="lg:col-span-12 space-y-2">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-10">
+                                            <div className="md:col-span-2 lg:col-span-12 space-y-2">
                                                 <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] ml-1">Descripción Pedagógica</label>
                                                 <div className="relative group">
                                                     <textarea
@@ -693,16 +688,16 @@ export const SesionEditor: React.FC = () => {
                                                     />
                                                 </div>
                                             </div>
-                                            <div className="lg:col-span-6 space-y-2">
+                                            <div className="md:col-span-1 lg:col-span-6 space-y-2">
                                                 <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] ml-1">Estrategia Metodológica</label>
                                                 <textarea
                                                     className="w-full bg-white/[0.03] border border-white/5 rounded-2xl p-5 text-xs text-gray-400 focus:border-white/20 transition-all outline-none h-28"
                                                     value={data.estrategiaMetodologica}
                                                     onChange={e => updateMomento(momento, 'estrategiaMetodologica', e.target.value)}
-                                                    placeholder="¿Cómo enseñarás en este momento? (placeholder pedagógico)"
+                                                    placeholder="¿Cómo enseñarás en este momento?"
                                                 />
                                             </div>
-                                            <div className="lg:col-span-6 space-y-2">
+                                            <div className="md:col-span-1 lg:col-span-6 space-y-2">
                                                 <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] ml-1">Recursos y Materiales</label>
                                                 <textarea
                                                     className="w-full bg-white/[0.03] border border-white/5 rounded-2xl p-5 text-xs text-gray-400 focus:border-white/20 transition-all outline-none h-28"

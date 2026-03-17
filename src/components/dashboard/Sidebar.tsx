@@ -10,9 +10,10 @@ interface SidebarItemProps {
     variant?: 'operative' | 'anual' | 'unidad' | 'sesion' | 'admin';
     subItem?: boolean;
     isAI?: boolean;
+    onClick?: () => void;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ to, icon, label, collapsed, variant = 'anual', subItem, isAI }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({ to, icon, label, collapsed, variant = 'anual', subItem, isAI, onClick }) => {
     const getColors = () => {
         if (isAI) return "text-primary-teal group-hover:text-primary-teal";
         switch (variant) {
@@ -38,6 +39,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ to, icon, label, collapsed, v
         <NavLink
             to={to}
             title={collapsed ? label : undefined}
+            onClick={onClick}
             className={({ isActive }) => cn(
                 "flex items-center gap-3 rounded-xl transition-all duration-500 ease-premium group border border-transparent relative",
                 collapsed ? "px-3 py-3 justify-center" : cn("px-4 py-3", subItem && "ml-4 scale-[0.96]"),
@@ -79,7 +81,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ to, icon, label, collapsed, v
     );
 };
 
-export const Sidebar: React.FC = () => {
+export interface SidebarProps {
+    onNavigate?: () => void;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ onNavigate }) => {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
@@ -112,7 +118,7 @@ export const Sidebar: React.FC = () => {
                 {/* 1. NIVEL OPERATIVO: EL HOY */}
                 <div className="space-y-1">
                     {!collapsed && <p className="text-[9px] font-black text-white/20 uppercase tracking-[0.3em] mb-3 pl-4">Centro de Mando</p>}
-                    <SidebarItem to="/dashboard" icon="space_dashboard" label="Vista General" variant="operative" collapsed={collapsed} />
+                    <SidebarItem to="/dashboard" icon="space_dashboard" label="Vista General" variant="operative" collapsed={collapsed} onClick={onNavigate} />
                 </div>
 
                 {/* 2. CICLO DE PLANIFICACIÓN: CORAZÓN DEL SIDEBAR */}
@@ -127,11 +133,11 @@ export const Sidebar: React.FC = () => {
                         {!collapsed && <div className="absolute left-[29px] top-10 bottom-2 w-[1px] bg-gradient-to-b from-brand-magenta/40 to-transparent" />}
                         
                         <div className="space-y-1.5">
-                            <SidebarItem to="/plan-anual/diagnostico" icon="summarize" label="M01. Diagnóstico" variant="anual" subItem={!collapsed} collapsed={collapsed} />
-                            <SidebarItem to="/plan-anual/identidad" icon="diversity_3" label="M02. Identidad" variant="anual" subItem={!collapsed} collapsed={collapsed} />
-                            <SidebarItem to="/plan-anual/propositos" icon="assignment_turned_in" label="M03. Propósitos" variant="anual" subItem={!collapsed} collapsed={collapsed} />
-                            <SidebarItem to="/plan-anual/estrategia" icon="calendar_month" label="M04. Estrategia" variant="anual" subItem={!collapsed} collapsed={collapsed} />
-                            <SidebarItem to="/plan-anual/orientaciones" icon="explore" label="M05. Orientaciones" variant="anual" subItem={!collapsed} collapsed={collapsed} />
+                            <SidebarItem to="/plan-anual/diagnostico" icon="summarize" label="M01. Diagnóstico" variant="anual" subItem={!collapsed} collapsed={collapsed} onClick={onNavigate} />
+                            <SidebarItem to="/plan-anual/identidad" icon="diversity_3" label="M02. Identidad" variant="anual" subItem={!collapsed} collapsed={collapsed} onClick={onNavigate} />
+                            <SidebarItem to="/plan-anual/propositos" icon="assignment_turned_in" label="M03. Propósitos" variant="anual" subItem={!collapsed} collapsed={collapsed} onClick={onNavigate} />
+                            <SidebarItem to="/plan-anual/estrategia" icon="calendar_month" label="M04. Estrategia" variant="anual" subItem={!collapsed} collapsed={collapsed} onClick={onNavigate} />
+                            <SidebarItem to="/plan-anual/orientaciones" icon="explore" label="M05. Orientaciones" variant="anual" subItem={!collapsed} collapsed={collapsed} onClick={onNavigate} />
                         </div>
                     </div>
 
@@ -139,14 +145,14 @@ export const Sidebar: React.FC = () => {
                     <div className="space-y-1">
                         {!collapsed && <p className="text-[9px] font-black text-purple-400/60 uppercase tracking-[0.3em] mb-3 pl-4">Unidades</p>}
                         {collapsed && <div className="border-t border-purple-500/20 my-4" />}
-                        <SidebarItem to="/unidades" icon="folder_copy" label="Gestión de Unidades" variant="unidad" collapsed={collapsed} />
+                        <SidebarItem to="/unidades" icon="folder_copy" label="Gestión de Unidades" variant="unidad" collapsed={collapsed} onClick={onNavigate} />
                     </div>
 
                     {/* C. SESIONES (DÍA A DÍA) */}
                     <div className="space-y-1">
                         {!collapsed && <p className="text-[9px] font-black text-cyan-400/60 uppercase tracking-[0.3em] mb-3 pl-4">Sesiones</p>}
                         {collapsed && <div className="border-t border-cyan-500/20 my-4" />}
-                        <SidebarItem to="/sesiones" icon="menu_book" label="Diario de Clase" variant="sesion" collapsed={collapsed} />
+                        <SidebarItem to="/sesiones" icon="menu_book" label="Diario de Clase" variant="sesion" collapsed={collapsed} onClick={onNavigate} />
                     </div>
 
                     {/* D. PLUS: HERRAMIENTAS AVANZADAS */}
@@ -160,6 +166,7 @@ export const Sidebar: React.FC = () => {
                             variant="sesion" 
                             collapsed={collapsed}
                             isAI={true}
+                            onClick={onNavigate}
                         />
                     </div>
                 </div>

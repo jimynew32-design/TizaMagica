@@ -62,7 +62,7 @@ export const ModuleHeader: React.FC<ModuleHeaderProps> = ({
             </div>
 
             {actions && actions.length > 0 && (
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3 w-full md:w-auto md:justify-end">
                     {actions.map((action, idx) => (
                         <div key={idx} className="hover:scale-105 transition-transform active:scale-95">
                             {action}

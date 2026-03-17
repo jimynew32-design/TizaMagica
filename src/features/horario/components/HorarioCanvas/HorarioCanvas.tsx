@@ -35,14 +35,14 @@ export const HorarioCanvas: React.FC = () => {
     return (
         <div className="w-full space-y-8 animate-in fade-in duration-700">
             {/* Cabecera del Canvas */}
-            <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-[#0a0a0a] p-8 rounded-[2.5rem] border border-white/5 shadow-2xl">
+            <header className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 bg-[#0a0a0a] p-5 md:p-8 rounded-3xl md:rounded-[2.5rem] border border-white/5 shadow-2xl">
                 <div className="flex items-center gap-4">
-                    <div className="p-4 bg-brand-magenta/10 rounded-2xl">
-                        <span className="material-icons-round text-brand-magenta text-3xl">dashboard</span>
+                    <div className="p-3 md:p-4 bg-brand-magenta/10 rounded-xl md:rounded-2xl">
+                        <span className="material-icons-round text-brand-magenta text-2xl md:text-3xl">dashboard</span>
                     </div>
                     <div>
-                        <h3 className="text-2xl font-black uppercase tracking-tighter">Tablero Maestro</h3>
-                        <p className="text-[10px] text-white/40 font-black uppercase tracking-[4px]">Visualización por Sección</p>
+                        <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">Tablero Maestro</h3>
+                        <p className="text-[8px] md:text-[10px] text-white/40 font-black uppercase tracking-[2px] md:tracking-[4px]">Visualización por Sección</p>
                     </div>
                 </div>
 
@@ -66,17 +66,17 @@ export const HorarioCanvas: React.FC = () => {
             </header>
 
             {/* La Grilla del Horario */}
-            <div className="relative overflow-x-auto bg-[#050505] rounded-[2.5rem] border border-white/5 p-8">
-                <div className="min-w-[1000px] space-y-4">
+            <div className="relative overflow-x-auto bg-[#050505] rounded-[1.5rem] md:rounded-[2.5rem] border border-white/5 p-4 md:p-8 custom-scrollbar">
+                <div className="min-w-[800px] md:min-w-[1000px] space-y-3 md:space-y-4">
                     {/* Header de Días */}
-                    <div className="grid grid-cols-6 gap-4 mb-8">
-                        <div className="text-[10px] font-black uppercase tracking-[4px] text-white/10 flex items-center justify-center">
+                    <div className="grid grid-cols-6 gap-2 md:gap-4 mb-4 md:mb-8 sticky top-0 bg-[#050505] z-20">
+                        <div className="text-[8px] md:text-[10px] font-black uppercase tracking-[2px] md:tracking-[4px] text-white/10 flex items-center justify-center sticky left-0 bg-[#050505] z-30">
                             Hora
                         </div>
                         {diasLaborables.map(dia => (
                             <div key={dia} className="text-center">
-                                <p className="text-[10px] font-black uppercase tracking-[6px] text-white/20 mb-1">{dia}</p>
-                                <div className="h-0.5 w-8 bg-brand-magenta/20 mx-auto rounded-full" />
+                                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[3px] md:tracking-[6px] text-white/20 mb-1">{dia}</p>
+                                <div className="h-0.5 w-6 md:w-8 bg-brand-magenta/20 mx-auto rounded-full" />
                             </div>
                         ))}
                     </div>
@@ -88,10 +88,10 @@ export const HorarioCanvas: React.FC = () => {
                         const timeStr = `${blockStart.getHours().toString().padStart(2, '0')}:${blockStart.getMinutes().toString().padStart(2, '0')}`;
 
                         return (
-                            <div key={bIdx} className="grid grid-cols-6 gap-4 group/row">
-                                <div className="flex flex-col items-center justify-center p-4">
-                                    <span className="text-lg font-black text-white/60 tracking-tighter leading-none">{timeStr}</span>
-                                    <span className="text-[8px] font-black text-brand-magenta/40 uppercase tracking-widest mt-1">Bloque {bIdx + 1}</span>
+                            <div key={bIdx} className="grid grid-cols-6 gap-2 md:gap-4 group/row">
+                                <div className="flex flex-col items-center justify-center p-2 md:p-4 sticky left-0 bg-[#050505] z-10 border-r border-white/5 shadow-[10px_0_15px_-10px_rgba(0,0,0,0.5)]">
+                                    <span className="text-sm md:text-lg font-black text-white/60 tracking-tighter leading-none">{timeStr}</span>
+                                    <span className="text-[6px] md:text-[8px] font-black text-brand-magenta/40 uppercase tracking-widest mt-1">B{bIdx + 1}</span>
                                 </div>
 
                                 {diasLaborables.map(dia => {
@@ -101,7 +101,7 @@ export const HorarioCanvas: React.FC = () => {
                                         <div
                                             key={dia}
                                             className={cn(
-                                                "h-28 rounded-3xl border-2 transition-all duration-500 relative flex items-center justify-center p-4 group/cell overflow-hidden",
+                                                "h-20 md:h-28 rounded-2xl md:rounded-3xl border-2 transition-all duration-500 relative flex items-center justify-center p-3 md:p-4 group/cell overflow-hidden",
                                                 isZonaNula 
                                                     ? "bg-white/[0.02] border-white/5 cursor-not-allowed" 
                                                     : "bg-white/[0.03] border-white/5 hover:border-brand-magenta/30 hover:bg-brand-magenta/[0.02]"
@@ -133,8 +133,8 @@ export const HorarioCanvas: React.FC = () => {
             </div>
 
             {/* Panel Lateral de Clases No Asignadas */}
-            <div className="bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] p-8 space-y-6">
-                <div className="flex items-center justify-between">
+            <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl md:rounded-[2.5rem] p-5 md:p-8 space-y-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="space-y-1">
                         <h4 className="text-[10px] font-black uppercase tracking-[4px] text-white/40">Materias Pendientes</h4>
                         <p className="text-[8px] text-white/20 font-bold uppercase tracking-widest italic font-serif">Malla Curricular CNEB Detectada</p>

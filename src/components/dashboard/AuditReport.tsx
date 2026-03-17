@@ -78,11 +78,11 @@ export const AuditReport: React.FC = () => {
 
     return (
         <Card variant="strong" className="h-full flex flex-col bg-surface-card border-white/5 shadow-2xl overflow-hidden">
-            <div className="p-8 border-b border-white/5">
+            <div className="p-5 md:p-8 border-b border-white/5">
                 <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-sm font-black uppercase tracking-widest text-white flex items-center gap-2">
-                        <span className="material-icons-round text-primary-teal text-base">verified_user</span>
-                        Checklist de Calidad Pedagógica
+                    <CardTitle className="text-xs md:text-sm font-black uppercase tracking-widest text-white flex items-center gap-2">
+                        <span className="material-icons-round text-primary-teal text-sm md:text-base">verified_user</span>
+                        Checklist Calidad
                     </CardTitle>
                     {totalAlerts > 0 && (
                         <div className="flex items-center gap-1 bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">
@@ -137,7 +137,7 @@ export const AuditReport: React.FC = () => {
                                         <div 
                                             key={i}
                                             className={cn(
-                                                "p-4 rounded-2xl border flex flex-col gap-3 group transition-all relative overflow-hidden",
+                                                "p-3 md:p-4 rounded-xl md:rounded-2xl border flex flex-col gap-3 group transition-all relative overflow-hidden",
                                                 alert.type === 'error' ? "bg-red-500/5 border-red-500/10" : "bg-yellow-500/5 border-yellow-500/10"
                                             )}
                                         >

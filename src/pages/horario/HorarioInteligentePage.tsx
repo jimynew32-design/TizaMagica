@@ -128,20 +128,20 @@ const HorarioInteligentePage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white p-8 flex flex-col gap-12">
+        <div className="min-h-screen bg-black text-white p-4 md:p-8 flex flex-col gap-8 md:gap-12 overflow-x-hidden">
             {isGenerating && <GenerationLoading onComplete={handleGenerationComplete} />}
 
             {/* Header de Identidad */}
-            <header className="flex items-center justify-between max-w-[1600px] mx-auto w-full">
-                <div className="flex items-center gap-4">
-                    <div className="p-3 bg-brand-magenta/10 rounded-2xl border border-brand-magenta/20">
-                        <span className="material-icons-round text-brand-magenta text-3xl">auto_awesome</span>
+            <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between max-w-[1600px] mx-auto w-full gap-4">
+                <div className="flex items-center gap-3 md:gap-4">
+                    <div className="p-2 md:p-3 bg-brand-magenta/10 rounded-xl md:rounded-2xl border border-brand-magenta/20">
+                        <span className="material-icons-round text-brand-magenta text-2xl md:text-3xl">auto_awesome</span>
                     </div>
                     <div>
-                        <h1 className="text-4xl font-black uppercase tracking-tighter leading-none">
+                        <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none">
                             {formData.nombreIE || 'Generador de Horarios'}
                         </h1>
-                        <p className="text-[10px] text-gray-500 font-black uppercase tracking-[6px] mt-1">
+                        <p className="text-[8px] md:text-[10px] text-gray-500 font-black uppercase tracking-[3px] md:tracking-[6px] mt-1">
                             {formData.nombreIE ? 'Generador de Horarios Intelligence v4.0' : 'PlanX Intelligence v4.0'}
                         </p>
                     </div>
@@ -168,7 +168,7 @@ const HorarioInteligentePage: React.FC = () => {
                                     key={step.id}
                                     onClick={() => !isGenerating && setCurrentStep(step.id)}
                                     className={cn(
-                                        "relative px-8 py-4 rounded-[1.5rem] flex items-center gap-4 transition-all duration-500 group whitespace-nowrap",
+                                        "relative px-4 md:px-8 py-3 md:py-4 rounded-2xl md:rounded-[1.5rem] flex items-center gap-3 md:gap-4 transition-all duration-500 group whitespace-nowrap",
                                         isActive 
                                             ? "bg-brand-magenta text-white shadow-glow-magenta" 
                                             : "hover:bg-white/5 text-white/30 hover:text-white"
@@ -176,7 +176,7 @@ const HorarioInteligentePage: React.FC = () => {
                                 >
                                     <motion.span 
                                         className={cn(
-                                            "material-icons-round text-xl transition-colors duration-500",
+                                            "material-icons-round text-lg md:text-xl transition-colors duration-500",
                                             isActive ? "text-white" : "text-white/40 group-hover:text-white"
                                         )}
                                         animate={isActive ? { scale: [1, 1.2, 1] } : { scale: 1 }}
@@ -184,11 +184,11 @@ const HorarioInteligentePage: React.FC = () => {
                                         {isCompleted ? 'check_circle' : step.icon}
                                     </motion.span>
                                     <div className="text-left">
-                                        <p className="text-[10px] font-black uppercase tracking-widest leading-none">
+                                        <p className="text-[8px] md:text-[10px] font-black uppercase tracking-widest leading-none">
                                             {step.label}
                                         </p>
                                         <p className={cn(
-                                            "text-[8px] font-bold uppercase tracking-widest mt-1 opacity-40",
+                                            "text-[7px] md:text-[8px] font-bold uppercase tracking-widest mt-1 opacity-40 hidden sm:block",
                                             isActive ? "text-white" : "text-gray-500"
                                         )}>
                                             {step.description}
@@ -197,7 +197,7 @@ const HorarioInteligentePage: React.FC = () => {
                                     {isActive && (
                                         <motion.div 
                                             layoutId="step-glow"
-                                            className="absolute inset-0 rounded-[1.5rem] bg-brand-magenta/20 blur-xl -z-10"
+                                            className="absolute inset-0 rounded-2xl md:rounded-[1.5rem] bg-brand-magenta/20 blur-xl -z-10"
                                         />
                                     )}
                                 </button>

@@ -63,17 +63,17 @@ export const SesionesList: React.FC = () => {
     return (
         <div className="space-y-10 animate-fade-in pb-20">
             {/* Header */}
-            <header className="flex items-start justify-between">
+            <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div>
-                    <h2 className="text-3xl font-black text-white uppercase tracking-tight">Sesiones de Aprendizaje</h2>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">Sesiones de Aprendizaje</h2>
+                    <p className="text-gray-500 text-xs md:text-sm mt-1">
                         {sesionesCompletas.length}/{plannedTotal} sesiones diseñadas
                     </p>
                 </div>
-                <div className="flex items-center gap-4">
-                    <div className="text-right hidden md:block">
-                        <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest">Área Activa</p>
-                        <p className="text-sm font-bold text-white">{planActivo?.area || '—'} · {planActivo?.grado}</p>
+                <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                    <div className="text-left sm:text-right">
+                        <p className="text-[9px] md:text-[10px] font-black text-gray-600 uppercase tracking-widest">Área Activa</p>
+                        <p className="text-xs md:text-sm font-bold text-white">{planActivo?.area || '—'} · {planActivo?.grado}</p>
                     </div>
                 </div>
             </header>
@@ -113,20 +113,23 @@ export const SesionesList: React.FC = () => {
                                             <p className="text-[10px] text-gray-600 uppercase tracking-widest font-bold">{completadas}/{unidad.organizaStep?.totalSesiones || 0} diseñadas</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-2">
+                                    <div className="flex flex-wrap items-center gap-2">
                                         {sesionesDe.length > 0 && (
                                             <button
                                                 type="button"
                                                 onClick={(e) => handleDeleteAllSesiones(e, unidad.id)}
-                                                className="w-9 h-9 flex items-center justify-center rounded-xl bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:text-red-300 transition-colors border border-red-500/20"
+                                                className="w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-xl bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:text-red-300 transition-colors border border-red-500/20"
                                                 title="Eliminar todas las sesiones de esta unidad"
                                             >
                                                 <span className="material-icons-round text-sm">delete_sweep</span>
                                             </button>
                                         )}
-                                        <NeonButton variant="secondary" icon="open_in_new" onClick={() => navigate(`/unidades/${unidad.id}`)}>
+                                        <button 
+                                            onClick={() => navigate(`/unidades/${unidad.id}`)}
+                                            className="px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-primary-teal/10 border border-primary-teal/20 text-primary-teal text-[10px] font-black uppercase tracking-widest hover:bg-primary-teal hover:text-white transition-all shadow-lg active:scale-95"
+                                        >
                                             VER UNIDAD
-                                        </NeonButton>
+                                        </button>
                                     </div>
                                 </div>
 
