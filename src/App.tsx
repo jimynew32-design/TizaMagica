@@ -43,8 +43,6 @@ function App() {
             <Route path="/admin-tizamagica" element={<AdminRoute />}>
                 <Route index element={<AdminPanel />} />
             </Route>
-            
-            <Route path="/TizaMagica/admin-tizamagica" element={<Navigate to="/admin-tizamagica" replace />} />
 
             {/* Rutas Protegidas (Requieren Login Docente) */}
             <Route element={<PrivateRoute />}>
@@ -79,8 +77,7 @@ function App() {
                 </Route>
             </Route>
 
-            {/* Soporte para enlaces de producción en desarrollo */}
-            <Route path="/TizaMagica/*" element={<Navigate to="/" replace />} />
+
 
             {/* Redirección por defecto */}
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
