@@ -38,13 +38,13 @@ function App() {
         <Routes>
             {/* Rutas Públicas */}
             <Route path="/login" element={<LoginPage />} />
-            {/* Soporte de Redirección para URLs con prefijo (Producción) */}
-            <Route path="/TizaMagica/admin-tizamagica" element={<Navigate to="/admin-tizamagica" replace />} />
 
-            {/* Panel Admin — Independiente para acceso secreto directo */}
-            <Route element={<AdminRoute />}>
-                <Route path="/admin-tizamagica" element={<AdminPanel />} />
+            {/* Panel Admin — Prioridad Alta para evitar redirecciones de catch-all */}
+            <Route path="/admin-tizamagica" element={<AdminRoute />}>
+                <Route index element={<AdminPanel />} />
             </Route>
+            
+            <Route path="/TizaMagica/admin-tizamagica" element={<Navigate to="/admin-tizamagica" replace />} />
 
             {/* Rutas Protegidas (Requieren Login Docente) */}
             <Route element={<PrivateRoute />}>
