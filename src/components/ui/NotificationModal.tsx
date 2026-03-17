@@ -40,25 +40,25 @@ export const NotificationModal: React.FC = () => {
                 <div className="relative p-8 flex flex-col items-center text-center">
                     {/* Icon Circle */}
                     <div className={cn(
-                        "w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-xl border",
+                        "w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mb-6 shadow-xl border transition-all",
                         isError ? "bg-red-500/10 border-red-500/20 text-red-500" :
                             isSuccess ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-500" :
                                 isWarning ? "bg-amber-500/10 border-amber-500/20 text-amber-500" :
                                     "bg-primary-teal/10 border-primary-teal/20 text-primary-teal"
                     )}>
-                        <span className="material-icons-round text-4xl">
+                        <span className="material-icons-round text-3xl sm:text-4xl">
                             {isError ? 'report_problem' : isSuccess ? 'check_circle' : isWarning ? 'warning' : 'info'}
                         </span>
                     </div>
 
                     <h3 className={cn(
-                        "text-2xl font-black uppercase tracking-tight mb-2",
+                        "text-xl sm:text-2xl font-black uppercase tracking-tight mb-2",
                         isError ? "text-red-400" : isSuccess ? "text-emerald-400" : isWarning ? "text-amber-400" : "text-white"
                     )}>
                         {notification.title}
                     </h3>
 
-                    <p className="text-gray-400 text-sm leading-relaxed mb-8 font-medium">
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8 font-medium px-2">
                         {notification.message}
                     </p>
 

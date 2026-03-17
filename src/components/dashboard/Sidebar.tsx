@@ -89,9 +89,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ onNavigate }) => {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
-        <aside
+        <nav
             className={cn(
-                "h-screen fixed left-0 top-0 flex flex-col bg-black/80 backdrop-blur-3xl border-r border-white/5 transition-all duration-500 ease-premium z-50",
+                "h-full flex flex-col bg-black/80 backdrop-blur-3xl border-r border-white/5 transition-all duration-500 ease-premium",
                 collapsed ? "w-20 p-3" : "w-72 p-6"
             )}
         >
@@ -112,8 +112,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ onNavigate }) => {
                 )}
             </div>
 
-            {/* Navigation */}
-            <nav className="flex-1 space-y-8 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 pr-1 custom-scrollbar">
+            {/* Navigation Links */}
+            <div className="flex-1 space-y-8 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 pr-1 custom-scrollbar">
                 
                 {/* 1. NIVEL OPERATIVO: EL HOY */}
                 <div className="space-y-1">
@@ -170,13 +170,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ onNavigate }) => {
                         />
                     </div>
                 </div>
-            </nav>
+            </div>
 
             {/* Footer: Gestión y Administrativos */}
             <div className="mt-auto pt-6 border-t border-white/5 space-y-1">
-                {/* Collapse toggle */}
                 <button
                     onClick={() => setCollapsed(!collapsed)}
+                    aria-label={collapsed ? "Expandir menú lateral" : "Colapsar menú lateral"}
                     className="w-full flex items-center justify-center gap-2 py-4 rounded-xl text-gray-600 hover:text-white transition-all duration-500 group"
                 >
                     <span className={cn(
@@ -188,6 +188,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ onNavigate }) => {
                     {!collapsed && <span className="text-[9px] font-black uppercase tracking-[0.3em] opacity-50 group-hover:opacity-100">Colapsar</span>}
                 </button>
             </div>
-        </aside>
+        </nav>
     );
 };

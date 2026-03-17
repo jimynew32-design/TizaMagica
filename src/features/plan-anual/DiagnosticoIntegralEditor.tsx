@@ -424,6 +424,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                 title="Diagnóstico Integral"
                 subtitle="Análisis del contexto, características y matrícula de los estudiantes."
                 syncStatus={isSyncing ? 'syncing' : 'synced'}
+                className="px-2 md:px-0"
                 actions={[
                     <TabSwitch
                         options={[
@@ -436,7 +437,14 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                         onChange={(val) => setActiveTab(val as any)}
                         variant="magenta"
                     />,
-                    <AIButton variant="magenta" isLoading={loadingIA} onClick={handleMasterAI} size="md" />
+                    <AIButton 
+                        variant="magenta" 
+                        isLoading={loadingIA} 
+                        onClick={handleMasterAI} 
+                        size="md" 
+                        label="INTELIGENCIA" // Añadido label para mejor usabilidad táctil en móviles
+                        className="w-full sm:w-auto"
+                    />
                 ]}
             />
 

@@ -19,7 +19,13 @@ export const PlanSelector: React.FC = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isOpen]);
 
-    if (!planActivo && planes.length === 0) {
+    if (!activeDisplay && planes.length === 0) {
+        // Simple defensive check
+    }
+
+    const activeDisplay = planActivo || planes[0];
+
+    if (!activeDisplay) {
         return (
             <div className="px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-2xl">
                 <p className="text-[10px] font-bold text-yellow-500">SIN PLANES</p>
@@ -27,27 +33,28 @@ export const PlanSelector: React.FC = () => {
         );
     }
 
-    const activeDisplay = planActivo || planes[0];
-
     return (
         <div className="relative" ref={containerRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-3 px-4 py-2 bg-surface-card rounded-2xl border border-white/5 hover:border-primary-teal/30 transition-all duration-300 group"
+                aria-label="Seleccionar plan curricular"
+                aria-haspopup="true"
+                aria-expanded={isOpen}
+                className="flex items-center gap-3 px-4 py-2 bg-surface-card rounded-2xl border border-white/5 hover:border-primary-teal/30 transition-all duration-300 group outline-none focus-visible:ring-2 focus-visible:ring-primary-teal"
             >
-                <div className="w-8 h-8 rounded-xl bg-primary-teal/10 flex items-center justify-center text-primary-teal transition-colors group-hover:bg-primary-teal group-hover:text-gray-900">
+                <div className="w-8 h-8 rounded-xl bg-primary-teal/10 flex items-center justify-center text-primary-teal transition-colors group-hover:bg-primary-teal group-hover:text-gray-900 flex-shrink-0">
                     <span className="material-icons-round text-sm">library_books</span>
                 </div>
-                <div className="text-left">
-                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-none mb-1">PLAN ACTIVO</p>
-                    <p className="text-sm font-bold text-white leading-none whitespace-nowrap overflow-hidden text-ellipsis max-w-[150px]">
+                <div className="text-left overflow-hidden">
+                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-none mb-1 hidden sm:block">PLAN ACTIVO</p>
+                    <p className="text-sm font-bold text-white leading-none whitespace-nowrap overflow-hidden text-ellipsis max-w-[80px] xs:max-w-[120px] md:max-w-[150px]">
                         {activeDisplay?.area} — {activeDisplay?.grado}
                     </p>
                 </div>
                 <span className={cn(
                     "material-icons-round text-gray-500 transition-transform duration-300",
                     isOpen && "rotate-180"
-                )}>
+                )} aria-hidden="true">
                     expand_more
                 </span>
             </button>
@@ -63,12 +70,12 @@ export const PlanSelector: React.FC = () => {
                                     setIsOpen(false);
                                 }}
                                 className={cn(
-                                    "w-full flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-left transition-colors group",
+                                    "w-full flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-left transition-colors group outline-none focus-visible:bg-white/5",
                                     planActivo?.id === plan.id && "bg-primary-teal/5 border border-primary-teal/10"
                                 )}
                             >
                                 <div className={cn(
-                                    "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
+                                    "w-8 h-8 rounded-lg flex items-center justify-center transition-colors flex-shrink-0",
                                     planActivo?.id === plan.id ? "bg-primary-teal text-gray-900" : "bg-gray-700 text-gray-400 group-hover:text-white"
                                 )}>
                                     <span className="material-icons-round text-sm">auto_stories</span>
@@ -79,12 +86,6 @@ export const PlanSelector: React.FC = () => {
                                 </div>
                             </button>
                         ))}
-                    </div>
-                    <div className="mt-2 pt-2 border-t border-white/5">
-                        <button className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-primary-teal/10 text-primary-teal transition-colors group">
-                            <span className="material-icons-round text-sm">add_circle</span>
-                            <span className="text-xs font-bold uppercase tracking-wider">Nuevo Plan Anual</span>
-                        </button>
                     </div>
                 </div>
             )}

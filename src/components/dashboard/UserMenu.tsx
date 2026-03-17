@@ -24,12 +24,15 @@ export const UserMenu: React.FC = () => {
         <div className="relative" ref={menuRef}>
             <button 
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label="Abrir menú de usuario"
+                aria-haspopup="true"
+                aria-expanded={isOpen}
                 className={cn(
-                    "flex items-center gap-3 bg-white/5 px-4 py-2 rounded-xl border border-white/5 hover:bg-white/10 transition-all group active:scale-95",
+                    "flex items-center gap-3 bg-white/5 px-4 py-2 rounded-xl border border-white/5 hover:bg-white/10 transition-all group active:scale-95 touch-target focus-visible:ring-2 focus-visible:ring-brand-magenta outline-none",
                     isOpen && "bg-white/10 border-primary-teal/30 shadow-glow-teal"
                 )}
             >
-                <div className="text-right">
+                <div className="text-right hidden sm:block">
                     <p className="text-xs font-black text-white leading-none mb-1">
                         {perfil?.nombreCompleto || 'Docente'}
                     </p>
@@ -37,13 +40,13 @@ export const UserMenu: React.FC = () => {
                         {perfil?.nivel || 'Sin Nivel'}
                     </p>
                 </div>
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-teal to-brand-magenta flex items-center justify-center font-black text-white text-xs shadow-glow-teal transform group-hover:rotate-6 transition-transform">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-teal to-brand-magenta flex items-center justify-center font-black text-white text-xs shadow-glow-teal transform group-hover:rotate-6 transition-transform flex-shrink-0">
                     {perfil?.nombreCompleto?.[0] || 'D'}
                 </div>
                 <span className={cn(
                     "material-icons-round text-gray-500 transition-transform duration-300",
                     isOpen && "rotate-180"
-                )}>
+                )} aria-hidden="true">
                     expand_more
                 </span>
             </button>
@@ -59,7 +62,7 @@ export const UserMenu: React.FC = () => {
                     <div className="p-2">
                         <button 
                             onClick={() => { setIsOpen(false); navigate('/perfil'); }}
-                            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all group"
+                            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all group outline-none focus-visible:bg-white/10"
                         >
                             <span className="material-icons-round text-gray-500 group-hover:text-brand-magenta transition-colors">account_circle</span>
                             <span className="text-xs font-bold uppercase tracking-wider">Mi Perfil</span>
@@ -67,7 +70,7 @@ export const UserMenu: React.FC = () => {
 
                         <button 
                             onClick={() => { setIsOpen(false); toggleSettings(true); }}
-                            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all group"
+                            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-all group outline-none focus-visible:bg-white/10"
                         >
                             <span className="material-icons-round text-gray-500 group-hover:text-primary-teal transition-colors">bolt</span>
                             <span className="text-xs font-bold uppercase tracking-wider">Cerebro AI</span>
@@ -77,7 +80,7 @@ export const UserMenu: React.FC = () => {
                     <div className="p-2 border-t border-white/5 bg-white/[0.02]">
                         <button 
                             onClick={() => { setIsOpen(false); logout(); }}
-                            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-all group"
+                            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-500 hover:text-red-400 hover:bg-red-500/10 transition-all group outline-none focus-visible:bg-red-500/10"
                         >
                             <span className="material-icons-round text-gray-500 group-hover:text-red-400 transition-colors">logout</span>
                             <span className="text-xs font-bold uppercase tracking-wider">Cerrar Sesión</span>

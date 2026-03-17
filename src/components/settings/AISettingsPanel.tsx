@@ -106,7 +106,7 @@ export const AISettingsPanel: React.FC<AISettingsPanelProps> = ({ isModal, onClo
                 {/* Selector de Proveedor (Temporal) */}
                 <div className="space-y-4">
                     <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest ml-1">Seleccionar Motor de IA</label>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <button
                             onClick={() => setProvider('vertex')}
                             className={`p-4 rounded-2xl border transition-all flex flex-col gap-2 ${aiConfig.provider === 'vertex'
@@ -144,7 +144,7 @@ export const AISettingsPanel: React.FC<AISettingsPanelProps> = ({ isModal, onClo
                                 <span className="font-bold whitespace-nowrap">Vertex AI Proxy:</span> Las llamadas están protegidas en el servidor. Recomendado para producción.
                             </p>
                         </div>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <NeonInput
                                 label="Modelo Activo"
                                 value={aiConfig.activeModel || 'gemini-1.5-flash'}
@@ -240,12 +240,13 @@ export const AISettingsPanel: React.FC<AISettingsPanelProps> = ({ isModal, onClo
                 </div>
 
                 {/* Actions */}
-                <div className="pt-6 flex items-center justify-end gap-4">
+                <div className="pt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-4 overflow-visible px-1">
                     <NeonButton
                         variant="ghost"
                         onClick={handleTestConnection}
                         isLoading={testStatus === 'testing'}
                         icon={testStatus === 'success' ? 'check_circle' : testStatus === 'error' ? 'error' : undefined}
+                        className="w-full sm:w-auto"
                     >
                         Probar Conexión
                     </NeonButton>
