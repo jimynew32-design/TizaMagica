@@ -14,6 +14,8 @@ export const AdminPanel: React.FC = () => {
     const [solicitudes, setSolicitudes] = useState<any[]>([]);
     const [processingId, setProcessingId] = useState<string | null>(null);
     const [syncStatus, setSyncStatus] = useState<'synced' | 'syncing' | 'error'>('synced');
+    const [editingId, setEditingId] = useState<string | null>(null);
+    const [editForm, setEditForm] = useState<any>({});
 
     useEffect(() => {
         fetchSolicitudes();
@@ -91,6 +93,55 @@ export const AdminPanel: React.FC = () => {
         }
     };
 
+    const handleDelete = async (id: string) => {
+        if (!window.confirm("¿Estás seguro de que deseas eliminar esta solicitud?")) return;
+        setProcessingId(id);
+        try {
+            const { error } = await supabase.from('solicitudes_acceso').delete().eq('id', id);
+            if (error) throw error;
+            await fetchSolicitudes();
+        } catch (error: any) {
+            console.error('Error al eliminar:', error);
+            alert(`Hubo un problema al eliminar: ${error.message}`);
+        } finally {
+            setProcessingId(null);
+        }
+    };
+
+    const handleEditClick = (sol: any) => {
+        setEditingId(sol.id);
+        setEditForm({
+            estado: sol.estado || 'PENDIENTE_PAGO',
+            metodo_pago: sol.metodo_pago || '',
+            codigo_operacion: sol.codigo_operacion || '',
+            dias_suscripcion: sol.dias_suscripcion || 30
+        });
+    };
+
+    const handleSaveEdit = async (id: string) => {
+        setProcessingId(id);
+        try {
+            const { error } = await supabase
+                .from('solicitudes_acceso')
+                .update({
+                    estado: editForm.estado,
+                    metodo_pago: editForm.metodo_pago,
+                    codigo_operacion: editForm.codigo_operacion,
+                    dias_suscripcion: Number(editForm.dias_suscripcion)
+                })
+                .eq('id', id);
+            
+            if (error) throw error;
+            setEditingId(null);
+            await fetchSolicitudes();
+        } catch (error: any) {
+            console.error('Error al actualizar:', error);
+            alert(`Hubo un problema al guardar: ${error.message}`);
+        } finally {
+            setProcessingId(null);
+        }
+    };
+
     const sendWhatsApp = (solicitud: any, pin: string) => {
         let phone = solicitud.celular || '';
         phone = phone.replace(/\D/g, '');
@@ -98,7 +149,8 @@ export const AdminPanel: React.FC = () => {
             phone = '51' + phone;
         }
 
-        const msg = `¡Hola ${solicitud.nombres}! 🚀 Tu pago ha sido confirmado.\n\nTu cuenta de Ingeniería Pedagógica en TizaMágica está activa.\n\n🌐 *Ingresa en:* https://tizamagica.edu.pe\n👤 *Usuario:* ${solicitud.alias}\n🔑 *PIN Temporal:* ${pin}\n\n*Recuerda cambiar tu PIN una vez ingreses. ¡Bienvenido!*`;
+        const baseUrl = window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/');
+        const msg = `¡Hola ${solicitud.nombres}! 🚀 Tu pago ha sido confirmado.\n\nTu cuenta de Ingeniería Pedagógica en TizaMágica está activa.\n\n🌐 *Ingresa en:* ${baseUrl}\n👤 *Usuario:* ${solicitud.alias}\n🔑 *PIN Temporal:* ${pin}\n\n*Recuerda cambiar tu PIN una vez ingreses. ¡Bienvenido!*`;
         const encodedMsg = encodeURIComponent(msg);
         
         window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodedMsg}`, '_blank');
@@ -111,7 +163,8 @@ export const AdminPanel: React.FC = () => {
             phone = '51' + phone;
         }
 
-        const msg = `¡Hola ${solicitud.nombres}! 🚀 Tu cuenta en TizaMágica ya está activa.\n\n🌐 *Ingresa en:* https://tizamagica.edu.pe\n👤 *Usuario:* ${solicitud.alias}\n\nSi olvidaste tu PIN, contacta con soporte.`;
+        const baseUrl = window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/');
+        const msg = `¡Hola ${solicitud.nombres}! 🚀 Tu cuenta en TizaMágica ya está activa.\n\n🌐 *Ingresa en:* ${baseUrl}\n👤 *Usuario:* ${solicitud.alias}\n\nSi olvidaste tu PIN, contacta con soporte.`;
         const encodedMsg = encodeURIComponent(msg);
         
         window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodedMsg}`, '_blank');
@@ -152,6 +205,7 @@ export const AdminPanel: React.FC = () => {
                                         <th className="p-6">Docente e Institución</th>
                                         <th className="p-6">Identidad / Contacto</th>
                                         <th className="p-6">Transacción</th>
+                                        <th className="p-6">Suscripción</th>
                                         <th className="p-6">Estado</th>
                                         <th className="p-6 text-right">Acciones</th>
                                     </tr>
@@ -189,7 +243,24 @@ export const AdminPanel: React.FC = () => {
                                                     </div>
                                                 </td>
                                                 <td className="p-6">
-                                                    {sol.codigo_operacion ? (
+                                                    {editingId === sol.id ? (
+                                                        <div className="flex flex-col gap-2">
+                                                            <input 
+                                                                type="text" 
+                                                                value={editForm.metodo_pago}
+                                                                onChange={(e) => setEditForm({...editForm, metodo_pago: e.target.value})}
+                                                                placeholder="Método (ej. Yape)"
+                                                                className="bg-black/30 border border-white/10 rounded px-2 py-1 text-xs text-white"
+                                                            />
+                                                            <input 
+                                                                type="text" 
+                                                                value={editForm.codigo_operacion}
+                                                                onChange={(e) => setEditForm({...editForm, codigo_operacion: e.target.value})}
+                                                                placeholder="Operación"
+                                                                className="bg-black/30 border border-white/10 rounded px-2 py-1 text-[10px] text-gray-300 font-mono"
+                                                            />
+                                                        </div>
+                                                    ) : sol.codigo_operacion ? (
                                                         <div className="flex flex-col gap-1">
                                                             <span className="text-xs font-bold text-gray-300">{sol.metodo_pago}</span>
                                                             <span className="text-[10px] text-gray-500 font-mono">OP: {sol.codigo_operacion}</span>
@@ -199,33 +270,103 @@ export const AdminPanel: React.FC = () => {
                                                     )}
                                                 </td>
                                                 <td className="p-6">
-                                                    <span className={cn(
-                                                        "px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest border",
-                                                        sol.estado === 'APROBADA' && "bg-green-500/10 text-green-400 border-green-500/20",
-                                                        sol.estado === 'PENDIENTE_PAGO' && "bg-amber-500/10 text-amber-400 border-amber-500/20",
-                                                        sol.estado === 'SOLICITADO' && "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                                                    )}>
-                                                        {sol.estado.replace('_', ' ')}
-                                                    </span>
+                                                    {editingId === sol.id ? (
+                                                        <div className="flex items-center gap-2">
+                                                            <input 
+                                                                type="number" 
+                                                                value={editForm.dias_suscripcion}
+                                                                onChange={(e) => setEditForm({...editForm, dias_suscripcion: e.target.value})}
+                                                                className="bg-black/30 border border-white/10 rounded px-2 py-1 text-xs text-white w-16 text-center"
+                                                            />
+                                                            <span className="text-[10px] text-gray-400">días</span>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="flex flex-col gap-1">
+                                                            <span className="text-xs font-bold text-gray-300">
+                                                                {sol.dias_suscripcion || 0} <span className="text-[10px] text-gray-500 font-normal">días</span>
+                                                            </span>
+                                                        </div>
+                                                    )}
+                                                </td>
+                                                <td className="p-6">
+                                                    {editingId === sol.id ? (
+                                                        <select 
+                                                            value={editForm.estado}
+                                                            onChange={(e) => setEditForm({...editForm, estado: e.target.value})}
+                                                            className="bg-black/30 border border-white/10 rounded px-2 py-1 text-xs text-white"
+                                                        >
+                                                            <option value="SOLICITADO">SOLICITADO</option>
+                                                            <option value="PENDIENTE_PAGO">PENDIENTE PAGO</option>
+                                                            <option value="APROBADA">APROBADA</option>
+                                                        </select>
+                                                    ) : (
+                                                        <span className={cn(
+                                                            "px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest border",
+                                                            sol.estado === 'APROBADA' && "bg-green-500/10 text-green-400 border-green-500/20",
+                                                            sol.estado === 'PENDIENTE_PAGO' && "bg-amber-500/10 text-amber-400 border-amber-500/20",
+                                                            sol.estado === 'SOLICITADO' && "bg-blue-500/10 text-blue-400 border-blue-500/20"
+                                                        )}>
+                                                            {sol.estado.replace('_', ' ')}
+                                                        </span>
+                                                    )}
                                                 </td>
                                                 <td className="p-6 text-right">
-                                                    {sol.estado === 'APROBADA' ? (
-                                                        <NeonButton 
-                                                            variant="ghost" 
-                                                            onClick={() => handleSendWhatsApp(sol)}
-                                                            className="bg-[#25D366]/5 border-[#25D366]/20 text-[#25D366] text-[10px] font-black hover:bg-[#25D366]/10"
-                                                        >
-                                                            REENVIAR ACCESO
-                                                        </NeonButton>
+                                                    {editingId === sol.id ? (
+                                                        <div className="flex items-center justify-end gap-2">
+                                                            <button 
+                                                                onClick={() => setEditingId(null)}
+                                                                className="p-1.5 rounded-md hover:bg-white/10 text-gray-400 transition-colors"
+                                                                title="Cancelar"
+                                                            >
+                                                                <span className="material-icons-round text-sm">close</span>
+                                                            </button>
+                                                            <button 
+                                                                onClick={() => handleSaveEdit(sol.id)}
+                                                                disabled={processingId === sol.id}
+                                                                className="p-1.5 rounded-md hover:bg-green-500/20 text-green-400 transition-colors"
+                                                                title="Guardar"
+                                                            >
+                                                                <span className="material-icons-round text-sm">check</span>
+                                                            </button>
+                                                        </div>
                                                     ) : (
-                                                        <NeonButton 
-                                                            variant="magenta" 
-                                                            onClick={() => handleActivarDocente(sol)}
-                                                            isLoading={processingId === sol.id}
-                                                            className="text-[10px] font-black tracking-widest"
-                                                        >
-                                                            ACTIVAR CUENTA
-                                                        </NeonButton>
+                                                        <div className="flex items-center justify-end gap-2">
+                                                            <button 
+                                                                onClick={() => handleDelete(sol.id)}
+                                                                disabled={processingId === sol.id}
+                                                                className="p-1.5 rounded-md hover:bg-red-500/20 text-red-500/60 hover:text-red-400 transition-colors"
+                                                                title="Eliminar usuario"
+                                                            >
+                                                                <span className="material-icons-round text-[16px]">delete</span>
+                                                            </button>
+                                                            <button 
+                                                                onClick={() => handleEditClick(sol)}
+                                                                disabled={processingId === sol.id}
+                                                                className="p-1.5 rounded-md hover:bg-brand-magenta/20 text-brand-magenta/60 hover:text-brand-magenta transition-colors"
+                                                                title="Editar"
+                                                            >
+                                                                <span className="material-icons-round text-[16px]">edit</span>
+                                                            </button>
+                                                            
+                                                            {sol.estado === 'APROBADA' ? (
+                                                                <NeonButton 
+                                                                    variant="ghost" 
+                                                                    onClick={() => handleSendWhatsApp(sol)}
+                                                                    className="bg-[#25D366]/5 border-[#25D366]/20 text-[#25D366] text-[10px] font-black hover:bg-[#25D366]/10 ml-2 py-1 px-3"
+                                                                >
+                                                                    REENVIAR
+                                                                </NeonButton>
+                                                            ) : (
+                                                                <NeonButton 
+                                                                    variant="magenta" 
+                                                                    onClick={() => handleActivarDocente(sol)}
+                                                                    isLoading={processingId === sol.id}
+                                                                    className="text-[10px] font-black tracking-widest ml-2 py-1 px-3"
+                                                                >
+                                                                    ACTIVAR
+                                                                </NeonButton>
+                                                            )}
+                                                        </div>
                                                     )}
                                                 </td>
                                             </tr>
