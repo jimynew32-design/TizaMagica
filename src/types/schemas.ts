@@ -19,19 +19,9 @@ export type TipoInstrumento = 'Lista de Cotejo' | 'Rúbrica' | 'Guion de Observa
 
 export type IAProvider = 'vertex' | 'gemini' | 'lmstudio'
 
-export type TipoNEE = 
-    | 'Ninguna'
-    | 'Discapacidad Intelectual'
-    | 'Discapacidad Auditiva'
-    | 'Discapacidad Visual'
-    | 'Discapacidad Física'
-    | 'Trastorno del Espectro Autista (TEA)'
-    | 'Sordoceguera'
-    | 'Multidiscapacidad'
-    | 'Talento y Superdotación'
-    | 'Dificultades Específicas de Aprendizaje'
+export type TipoNEE = string;
 
-export const CATEGORIAS_NEE: TipoNEE[] = [
+export const CATEGORIAS_NEE: string[] = [
     'Ninguna',
     'Discapacidad Intelectual',
     'Discapacidad Auditiva',
@@ -41,7 +31,8 @@ export const CATEGORIAS_NEE: TipoNEE[] = [
     'Sordoceguera',
     'Multidiscapacidad',
     'Talento y Superdotación',
-    'Dificultades Específicas de Aprendizaje'
+    'Dificultades Específicas de Aprendizaje',
+    'Otra (especificar...)'
 ]
 
 // ============================================
@@ -82,6 +73,8 @@ export interface PerfilDocente {
     }
     // Configuración (Onboarding Paso 3)
     nivel: NivelEducativo
+    tipoIE?: 'JER' | 'JEC' | 'CEBA' | 'EBE' | 'EIB' | 'SFT'
+    turno?: 'Mañana' | 'Tarde' | 'Noche'
     cargaHoraria: FilaHorario[]
     // Estado
     isOnboarded: boolean
@@ -140,14 +133,38 @@ export interface Estudiante {
     lineaBase?: NivelLogro // Nivel de logro del año anterior
 }
 
+export interface EstadisticaNEE {
+    tipo: TipoNEE
+    cantidad: number
+}
+
+export interface ResultadoCompetencia {
+    id: string
+    nombre: string
+    logro: {
+        AD: number
+        A: number
+        B: number
+        C: number
+    }
+}
+
 export interface DiagnosticoIntegral {
     perfilContexto: string
     ubicacion: string
     contexto: MatrizContexto
     caracteristicas: CaracteristicasParticulares
     estilos: EstilosIntereses
-    estudiantes: Estudiante[]
-    cantidadEstudiantes: number
+    // Estadísticas de Matrícula (Reemplaza a Estudiante[])
+    cantidadTotal: number
+    cantidadVarones: number
+    cantidadMujeres: number
+    estadisticasNEE: EstadisticaNEE[]
+    // Evaluación Diagnóstica
+    evaluacionCompetencias: ResultadoCompetencia[]
+    gradoIdentificado?: string        
+    nombreAula?: string              
+    seccion?: string
 }
 
 // ============================================
@@ -439,24 +456,24 @@ export interface Sesion {
     competenciaId: string              // 3.3 - Heredado
     capacidadId: string
     desempenoPrecisado: string
-    
+
     // V. Enfoques Transversales de Sesión
     enfoquesTransversalesSesion: EnfoqueTransversalSesion[]
-    
+
     evidencia: string                  // 3.4
     instrumento: TipoInstrumento       // 3.5
     instrumentoContenido: string       // Contenido del instrumento generado
-    
+
     // VII. Evaluación más profunda
     criteriosEvaluacionSesion: CriterioEvaluacionSesion[]
     indicadorObservable: string         // VII-A
     criterioLogro: string              // VII-A
-    
+
     secuenciaDidactica: SecuenciaDidactica  // 3.6
     recursos: string[]                 // 3.7
     guionDocente?: string              // 4.4 Guion Docente
     materialesExpress?: string          // 4.5 Materiales Express
-    
+
     // Orden y metadata
     orden: number
     createdAt: string
@@ -514,6 +531,7 @@ export interface AIConfig {
     provider: IAProvider
     geminiApiKey: string
     lmstudioUrl: string
+    lmstudioApiKey: string
     vertexConfig: GoogleCloudConfig
     activeModel: string
     autoRetry: boolean
@@ -570,8 +588,14 @@ export const createDefaultDiagnostico = (): DiagnosticoIntegral => ({
         escenarioEIB: 'Escenario 1: Monolingüe',
         diagnosticoSociolinguistico: '',
     },
-    estudiantes: [],
-    cantidadEstudiantes: 0,
+    cantidadTotal: 0,
+    cantidadVarones: 0,
+    cantidadMujeres: 0,
+    estadisticasNEE: [],
+    evaluacionCompetencias: [],
+    gradoIdentificado: '',
+    nombreAula: '',
+    seccion: ''
 })
 
 export const createDefaultPlanAnual = (

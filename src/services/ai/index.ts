@@ -64,17 +64,24 @@ async function chatCompletionViaEdgeFunction(
     // --- TEMPORAL: SOPORTE LM STUDIO PARA PRUEBAS ---
     if (aiConfig.provider === 'lmstudio') {
         let baseUrl = aiConfig.lmstudioUrl || 'http://localhost:1234/v1';
-        // Normalizar URL: asegurar que termine en /v1 si no lo tiene
-        if (!baseUrl.endsWith('/v1') && !baseUrl.endsWith('/v1/')) {
+        
+        // Normalización inteligente: No forzar /v1 si ya tiene una ruta similar
+        if (!baseUrl.includes('/v1') && !baseUrl.includes('/api/')) {
             baseUrl = baseUrl.replace(/\/$/, '') + '/v1';
+        }
+        
+        const headers: Record<string, string> = {
+            'Content-Type': 'application/json',
+        };
+        
+        if (aiConfig.lmstudioApiKey) {
+            headers['Authorization'] = `Bearer ${aiConfig.lmstudioApiKey}`;
         }
         
         try {
             const response = await fetch(`${baseUrl}/chat/completions`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers,
                 body: JSON.stringify({
                     model: model || 'local-model',
                     messages: [
@@ -82,14 +89,19 @@ async function chatCompletionViaEdgeFunction(
                         { role: 'user', content: userPrompt }
                     ],
                     temperature: options.temperature ?? 0.7,
+                    max_tokens: options.maxTokens ?? 2048,
+                    ...(options.responseFormat !== 'text' && { 
+                        response_format: { type: 'json_object' } 
+                    })
                 })
             });
 
-            const data = await response.json();
-
             if (!response.ok) {
-                throw new Error(data.error?.message || 'Error de conexión con LM Studio');
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error?.message || `Error del servidor local (Status: ${response.status})`);
             }
+
+            const data = await response.json();
 
             // Validar que LM Studio devolvió una respuesta válida procesada
             if (!data.choices || data.choices.length === 0) {
@@ -101,6 +113,11 @@ async function chatCompletionViaEdgeFunction(
             
             if (import.meta.env.DEV && aiConfig.enableLogging) {
                 console.log('[LM Studio Response]:', textResponse);
+            }
+
+            // Si se pidió texto plano, no intentar extraer JSON
+            if (options.responseFormat === 'text') {
+                return textResponse;
             }
 
             return extractJSON(textResponse);
@@ -164,6 +181,11 @@ async function chatCompletionViaEdgeFunction(
         console.log('[IA Proxy Raw Response]:', textResponse);
     }
 
+    // Si se pidió texto plano, no intentar extraer JSON
+    if (options.responseFormat === 'text') {
+        return textResponse;
+    }
+
     return extractJSON(textResponse);
 }
 
@@ -172,33 +194,49 @@ async function chatCompletionViaEdgeFunction(
  * Maneja respuestas con markdown, caracteres de control y formatos mixtos.
  */
 function extractJSON(text: string): any {
-    // 1. Limpiar caracteres de control invisibles
-    let cleaned = text.replace(/[\u0000-\u001F\u007F-\u009F]/g, (c: string) =>
-        c === '\n' ? '\\n' : c === '\r' ? '\\r' : c === '\t' ? '\\t' : ''
-    ).trim();
-
-    // 2. Remover bloques de código markdown
-    cleaned = cleaned.replace(/```json\n?|```/g, '').trim();
-
     try {
-        return JSON.parse(cleaned);
+        // 1. Intentar parse directo (caso ideal)
+        return JSON.parse(text.trim());
     } catch (e) {
+        // 2. Buscar bloques de código markdown
+        const markdownMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
+        if (markdownMatch && markdownMatch[1]) {
+            try {
+                return JSON.parse(markdownMatch[1].trim());
+            } catch (e2) {}
+        }
+
+        // 3. Fallback: Limpiar caracteres de control pero PRESERVAR saltos de línea estructurales
+        // Solo eliminamos caracteres de control REALMENTE problemáticos (0-31 excepto 9,10,13)
+        let cleaned = text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '').trim();
+
+        // 4. Buscar el primer '{' o '[' y el último '}' o ']'
         const firstBrace = cleaned.indexOf('{');
         const lastBrace = cleaned.lastIndexOf('}');
         const firstBracket = cleaned.indexOf('[');
         const lastBracket = cleaned.lastIndexOf(']');
 
-        if (firstBrace !== -1 && lastBrace !== -1) {
-            try { return JSON.parse(cleaned.substring(firstBrace, lastBrace + 1)); } catch (e2) {}
-        }
-        if (firstBracket !== -1 && lastBracket !== -1) {
-            try { return JSON.parse(cleaned.substring(firstBracket, lastBracket + 1)); } catch (e3) {}
+        // Decidir si buscar objeto o array según cuál aparezca primero
+        if (firstBrace !== -1 && (firstBracket === -1 || firstBrace < firstBracket)) {
+            if (lastBrace !== -1) {
+                try {
+                    const candidate = cleaned.substring(firstBrace, lastBrace + 1);
+                    return JSON.parse(candidate);
+                } catch (e3) {}
+            }
+        } else if (firstBracket !== -1) {
+            if (lastBracket !== -1) {
+                try {
+                    const candidate = cleaned.substring(firstBracket, lastBracket + 1);
+                    return JSON.parse(candidate);
+                } catch (e4) {}
+            }
         }
 
         if (import.meta.env.DEV) {
-            console.error('[IA] JSON Parse Error. Raw text:', text);
+            console.error('[IA] No se pudo extraer JSON. Texto original:', text);
         }
-        throw new Error('La respuesta de la IA no tiene un formato JSON válido.');
+        throw new Error('La respuesta de la IA no tiene un formato JSON válido. Modelo: ' + (text.length > 100 ? text.substring(0, 100) + '...' : text));
     }
 }
 
@@ -214,7 +252,11 @@ export async function checkConnection(
             const { useStore } = await import('@/store');
             const { aiConfig } = useStore.getState();
             const baseUrl = aiConfig.lmstudioUrl || 'http://localhost:1234/v1';
-            const response = await fetch(`${baseUrl}/models`, { method: 'GET' });
+            const headers: Record<string, string> = { 'Accept': 'application/json' };
+            if (aiConfig.lmstudioApiKey) {
+                headers['Authorization'] = `Bearer ${aiConfig.lmstudioApiKey}`;
+            }
+            const response = await fetch(`${baseUrl}/models`, { method: 'GET', headers });
             return response.ok;
         }
 

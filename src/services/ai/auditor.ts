@@ -20,7 +20,10 @@ export class AuditorService {
         const alerts: AuditAlert[] = [];
 
         // 1. Auditoría M01 - Diagnóstico
-        const listIdiomas = plan.diagnostico.estilos.idiomas || [];
+        const diagnostico = plan.diagnostico || {};
+        const estilos = diagnostico.estilos || {};
+        const listIdiomas = estilos.idiomas || [];
+        
         if (listIdiomas.length === 0 || listIdiomas.some(i => i.etiqueta === 'L1' && i.valor === 'No especificada')) {
             alerts.push({
                 type: 'warning',
@@ -30,11 +33,13 @@ export class AuditorService {
             });
         }
 
-        const nee = plan.diagnostico.estudiantes.filter(e => e.nee && e.nee.length > 0);
-        if (nee.length > 0 && (!plan.orientaciones.metodologia || plan.orientaciones.metodologia.length < 20)) {
+        const estadisticasNEE = diagnostico.estadisticasNEE || [];
+        const tieneNEE = estadisticasNEE.some(s => s.cantidad > 0 && s.tipo !== 'Ninguna');
+        
+        if (tieneNEE && (!plan.orientaciones?.metodologia || plan.orientaciones.metodologia.length < 20)) {
             alerts.push({
                 type: 'warning',
-                message: `Tienes ${nee.length} estudiantes con NEE, pero no has detallado adaptaciones metodológicas en el plan anual.`,
+                message: `Existen estudiantes con NEE identificados, pero no has detallado adaptaciones metodológicas en el plan anual.`,
                 module: 'M01',
                 field: 'orientaciones.metodologia'
             });
@@ -52,7 +57,8 @@ export class AuditorService {
         }
 
         // 3. Auditoría M04 - Estrategia / Unidades
-        if (plan.unidades.length === 0) {
+        const unidades = plan.unidades || [];
+        if (unidades.length === 0) {
             alerts.push({
                 type: 'error',
                 message: 'Tu Estrategia Anual no tiene unidades. El sistema no puede generar la ruta de aprendizaje sin ellas.',
@@ -61,7 +67,7 @@ export class AuditorService {
             });
         }
 
-        plan.unidades.forEach((u: any) => {
+        unidades.forEach((u: any) => {
             const hasSituation = u.situacionSignificativa && u.situacionSignificativa.length >= 50;
             if (!hasSituation) {
                 alerts.push({

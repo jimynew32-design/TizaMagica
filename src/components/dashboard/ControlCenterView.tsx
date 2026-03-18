@@ -22,11 +22,11 @@ export const ControlCenterView: React.FC = () => {
     const progressUnidades = totalUnidades > 0 ? (unidadesDeseñadas / totalUnidades) * 100 : 0;
     
     // Stats Reales
-    const totalSesiones = sesiones.length;
-    const sesionesConIA = sesiones.filter(s => s.secuenciaDidactica?.inicio?.descripcion).length;
+    const totalSesiones = (sesiones || []).length;
+    const sesionesConIA = (sesiones || []).filter(s => s.secuenciaDidactica?.inicio?.descripcion).length;
     const progressSesiones = totalSesiones > 0 ? Math.round((sesionesConIA / totalSesiones) * 100) : 0;
 
-    const allStudents = planes.flatMap(p => p.diagnostico.estudiantes || []);
+    const allStudents = (planes || []).flatMap(p => (p.diagnostico as any)?.estudiantes || []);
     const studentsByLogro = allStudents.reduce((acc, s) => {
         acc[s.lineaBase || 'B'] = (acc[s.lineaBase || 'B'] || 0) + 1;
         return acc;

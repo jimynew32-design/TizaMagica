@@ -29,7 +29,7 @@ export const StepContexto: React.FC<StepContextoProps> = ({ data, onChange }) =>
         if (!isAutoCalculating) return;
 
         const calculateFinJornada = () => {
-            const [hours, minutes] = data.inicioJornada.split(':').map(Number);
+            const [hours, minutes] = (data.inicioJornada || '08:00').split(':').map(Number);
             const totalMinRecreos = (data.distribucionRecreos || []).reduce((acc, curr) => acc + curr, 0);
             const totalMinutes = (data.bloquesPorDia * data.duracionBloque) + totalMinRecreos;
             
@@ -47,48 +47,79 @@ export const StepContexto: React.FC<StepContextoProps> = ({ data, onChange }) =>
         calculateFinJornada();
     }, [data.inicioJornada, data.bloquesPorDia, data.duracionBloque, data.cantidadRecreos, data.distribucionRecreos, isAutoCalculating, data.finJornada, onChange]);
 
-    // Función pura para obtener la plantilla de configuración
-    const getTemplateValues = useCallback((nivel: string, modalidad: string) => {
+    // Función pura para obtener la plantilla de configuración según Modelo y Turno
+    const getTemplateValues = useCallback((nivel: string, tipoIE: string, turno: string) => {
+        let config: Partial<HorarioConfig> = {};
+
+        // Configuración por Defecto según Turno
+        if (turno === 'Mañana') config.inicioJornada = '08:00';
+        else if (turno === 'Tarde') config.inicioJornada = '13:30';
+        else if (turno === 'Noche') config.inicioJornada = '18:00';
+
+        // Ajustes según Nivel y Modelo
         if (nivel === 'Secundaria') {
-            if (modalidad === 'JEC') {
-                return {
-                    inicioJornada: '07:30',
-                    duracionBloque: 45,
-                    bloquesPorDia: 9,
-                    cantidadRecreos: 2,
-                    distribucionRecreos: [20, 20]
-                };
+            switch (tipoIE) {
+                case 'JEC':
+                    config = {
+                        ...config,
+                        inicioJornada: '07:30', // JEC siempre temprano
+                        duracionBloque: 45,
+                        bloquesPorDia: 9,
+                        cantidadRecreos: 2,
+                        distribucionRecreos: [20, 20]
+                    };
+                    break;
+                case 'CEBA':
+                    config = {
+                        ...config,
+                        inicioJornada: turno === 'Noche' ? '18:15' : '13:30',
+                        duracionBloque: 40,
+                        bloquesPorDia: 5,
+                        cantidadRecreos: 1,
+                        distribucionRecreos: [15]
+                    };
+                    break;
+                case 'SFT': // Secundaria Formación Técnica
+                    config = {
+                        ...config,
+                        duracionBloque: 45,
+                        bloquesPorDia: 8,
+                        cantidadRecreos: 1,
+                        distribucionRecreos: [20]
+                    };
+                    break;
+                default: // JER
+                    config = {
+                        ...config,
+                        duracionBloque: 45,
+                        bloquesPorDia: 7,
+                        cantidadRecreos: 1,
+                        distribucionRecreos: [30]
+                    };
             }
-            return {
-                inicioJornada: '08:00',
-                duracionBloque: 45,
-                bloquesPorDia: 7,
-                cantidadRecreos: 1,
-                distribucionRecreos: [30]
-            };
         } else if (nivel === 'Primaria') {
-            return {
-                inicioJornada: '08:00',
+            config = {
+                ...config,
                 duracionBloque: 45,
                 bloquesPorDia: 6,
                 cantidadRecreos: 1,
                 distribucionRecreos: [30]
             };
         } else if (nivel === 'Inicial') {
-            return {
-                inicioJornada: '08:30',
+            config = {
+                ...config,
                 duracionBloque: 30,
                 bloquesPorDia: 5,
                 cantidadRecreos: 1,
                 distribucionRecreos: [30]
             };
         }
-        return {};
+        return config;
     }, []);
 
     const handleNivelChange = (n: string) => {
         setIsAutoCalculating(true);
-        const template = getTemplateValues(n, data.modalidad);
+        const template = getTemplateValues(n, data.tipoIE || 'JER', data.turno || 'Mañana');
         onChange({ 
             nivel: n as any,
             ...template,
@@ -96,11 +127,21 @@ export const StepContexto: React.FC<StepContextoProps> = ({ data, onChange }) =>
         });
     };
 
-    const handleModalidadChange = (m: string) => {
+    const handleTipoIEChange = (tipo: string) => {
         setIsAutoCalculating(true);
-        const template = getTemplateValues(data.nivel, m);
+        const template = getTemplateValues(data.nivel, tipo, data.turno || 'Mañana');
         onChange({ 
-            modalidad: m as any,
+            tipoIE: tipo as any,
+            modalidad: (tipo === 'JEC' ? 'JEC' : 'JER'), // Mantenemos compatibilidad
+            ...template
+        });
+    };
+
+    const handleTurnoChange = (turno: string) => {
+        setIsAutoCalculating(true);
+        const template = getTemplateValues(data.nivel, data.tipoIE || 'JER', turno);
+        onChange({ 
+            turno: turno as any,
             ...template
         });
     };
@@ -191,27 +232,68 @@ export const StepContexto: React.FC<StepContextoProps> = ({ data, onChange }) =>
                         </div>
                     </div>
 
+                    {/* Modelo de Servicio (JER, JEC, etc) */}
                     <div className={cn("space-y-4 transition-all duration-500", data.nivel !== 'Secundaria' && "opacity-20 pointer-events-none grayscale")}>
-                        <label className="text-[10px] font-black uppercase tracking-[4px] text-brand-magenta">Modalidad</label>
+                        <label className="text-[10px] font-black uppercase tracking-[4px] text-brand-magenta flex justify-between items-center">
+                            Modelo de Servicio
+                            <span className="material-icons-round text-sm opacity-20">info</span>
+                        </label>
                         <div className="grid grid-cols-2 gap-2">
-                            {['JER', 'JEC'].map((m) => (
+                            {[
+                                { id: 'JER', label: 'JER', desc: 'Regular (7 blq)', icon: 'schedule' },
+                                { id: 'JEC', label: 'JEC', desc: 'Completa (9 blq)', icon: 'bolt' },
+                                { id: 'CEBA', label: 'CEBA', desc: 'Alternativa', icon: 'nightlight' },
+                                { id: 'SFT', label: 'SFT', desc: 'Técnica', icon: 'build_circle' },
+                                { id: 'EIB', label: 'EIB', desc: 'Bilingüe', icon: 'translate' },
+                                { id: 'EBE', label: 'EBE', desc: 'Especial', icon: 'favorite' }
+                            ].map((m) => (
                                 <button
-                                    key={m}
-                                    onClick={() => handleModalidadChange(m)}
+                                    key={m.id}
+                                    onClick={() => handleTipoIEChange(m.id)}
                                     className={cn(
-                                        "p-4 rounded-xl border font-black uppercase text-[10px] tracking-widest transition-all",
-                                        data.modalidad === m ? "bg-brand-magenta border-brand-magenta text-white shadow-glow-magenta" : "bg-white/5 border-white/10 text-white/40 hover:text-white hover:bg-white/10"
+                                        "p-3 rounded-xl border transition-all flex flex-col items-center gap-1 group relative",
+                                        data.tipoIE === m.id ? "bg-brand-magenta border-brand-magenta text-white shadow-glow-magenta" : "bg-white/5 border-white/10 text-white/40 hover:text-white hover:bg-white/10"
                                     )}
                                 >
-                                    {m}
+                                    <span className={cn("material-icons-round text-lg", data.tipoIE === m.id ? "text-white" : "text-white/20 group-hover:text-brand-magenta")}>{m.icon}</span>
+                                    <span className="font-black uppercase text-[10px] tracking-widest">{m.label}</span>
+                                    <span className="text-[6px] font-bold opacity-40 uppercase tracking-tighter">{m.desc}</span>
                                 </button>
                             ))}
                         </div>
-                        {data.nivel === 'Secundaria' && (
-                            <p className="text-[8px] font-bold text-white/20 uppercase tracking-widest leading-relaxed mt-4">
-                                * JEC incluye jornada completa con 9 bloques.
-                            </p>
-                        )}
+                    </div>
+
+                    {/* Turno de Trabajo */}
+                    <div className="space-y-4">
+                        <label className="text-[10px] font-black uppercase tracking-[4px] text-brand-magenta">Turno de Trabajo</label>
+                        <div className="grid grid-cols-1 gap-2">
+                            {[
+                                { id: 'Mañana', label: 'Mañana', icon: 'wb_sunny', range: '07:30 - 13:30' },
+                                { id: 'Tarde', label: 'Tarde', icon: 'wb_twilight', range: '13:00 - 18:30' },
+                                { id: 'Noche', label: 'Noche / CEBA', icon: 'dark_mode', range: '18:00 - 22:30' }
+                            ].map((t) => (
+                                <button
+                                    key={t.id}
+                                    onClick={() => handleTurnoChange(t.id)}
+                                    className={cn(
+                                        "p-4 rounded-xl border transition-all flex items-center justify-between group",
+                                        data.turno === t.id ? "bg-white text-black border-white shadow-glow-white-sm" : "bg-white/5 border-white/10 text-white/40 hover:text-white hover:bg-white/10"
+                                    )}
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <span className="material-icons-round text-xl">{t.icon}</span>
+                                        <div className="text-left">
+                                            <p className="font-black uppercase text-[10px] tracking-widest leading-none">{t.label}</p>
+                                            <p className="text-[7px] font-bold opacity-40 uppercase tracking-widest mt-1">{t.range}</p>
+                                        </div>
+                                    </div>
+                                    {data.turno === t.id && <span className="material-icons-round text-sm">check_circle</span>}
+                                </button>
+                            ))}
+                        </div>
+                        <p className="text-[8px] font-bold text-white/20 uppercase tracking-widest leading-relaxed mt-4">
+                            * El turno define los horarios sugeridos de entrada.
+                        </p>
                     </div>
 
                     <div className="space-y-4">

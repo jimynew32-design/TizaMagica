@@ -8,7 +8,9 @@ export interface HorarioConfig {
     nombreIE: string;
     cicloEscolar: string; // Ej: "2025/2026"
     nivel: 'Inicial' | 'Primaria' | 'Secundaria';
-    modalidad: 'JER' | 'JEC';
+    modalidad: 'JER' | 'JEC'; // Deprecated in favor of tipoIE for some cases but kept for compatibility
+    tipoIE: 'JER' | 'JEC' | 'CEBA' | 'EBE' | 'EIB' | 'SFT'; // JEC: Completa, JER: Regular, CEBA: Alternativa, EBE: Especial, EIB: Bilingüe, SFT: Técnica
+    turno: 'Mañana' | 'Tarde' | 'Noche';
     inicioJornada: string;
     finJornada: string; // HH:mm (Calculado o manual)
     duracionBloque: number;

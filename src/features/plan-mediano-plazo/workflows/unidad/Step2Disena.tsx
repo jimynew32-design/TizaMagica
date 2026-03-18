@@ -75,38 +75,38 @@ export const Step2Disena: React.FC<Step2DisenaProps> = ({ unidad, onUpdate }) =>
     }, [planActivo?.matrizCompetencias, unidad.numero]);
 
     // Competencias marcadas en M03 (fuente de verdad) - MEMOIZADO
-    const competenciasAnuales = React.useMemo(() => cnebCompetencias.filter(c => {
+    const competenciasAnuales = React.useMemo(() => (cnebCompetencias || []).filter(c => {
         const isParentMarked = planActivo?.matrizCompetencias[matrixIdComp(c.nombre)]?.[unidad.numero - 1];
-        const hasCapsMarked = c.capacidades.some(cap => isCapMarkedInAnnual(c.nombre, cap));
+        const hasCapsMarked = (c.capacidades || []).some(cap => isCapMarkedInAnnual(c.nombre, cap));
         return isParentMarked || hasCapsMarked;
     }).map(c => ({
         competenciaId: c.nombre,
         seleccionada: true,
-        capacidades: c.capacidades.map(cap => ({
+        capacidades: (c.capacidades || []).map(cap => ({
             capacidadId: cap,
             seleccionada: isCapMarkedInAnnual(c.nombre, cap)
         }))
     })), [cnebCompetencias, planActivo?.matrizCompetencias, isCapMarkedInAnnual, unidad.numero]);
 
     // TODAS las competencias del CNEB - MEMOIZADO
-    const todasLasCompetencias: CompetenciaSeleccionada[] = React.useMemo(() => cnebCompetencias.map(c => {
-        const fromM03 = competenciasAnuales.find(ca => ca.competenciaId === c.nombre);
+    const todasLasCompetencias: CompetenciaSeleccionada[] = React.useMemo(() => (cnebCompetencias || []).map(c => {
+        const fromM03 = (competenciasAnuales || []).find(ca => ca.competenciaId === c.nombre);
         if (fromM03) return fromM03;
         return {
             competenciaId: c.nombre,
             seleccionada: false,
-            capacidades: c.capacidades.map(cap => ({
+            capacidades: (c.capacidades || []).map(cap => ({
                 capacidadId: cap,
                 seleccionada: false
             }))
         };
     }), [cnebCompetencias, competenciasAnuales]);
 
-    const enfoquesAnuales = React.useMemo(() => planActivo ? ENFOQUES_TRANSVERSALES.filter(enf => 
+    const enfoquesAnuales = React.useMemo(() => planActivo ? (ENFOQUES_TRANSVERSALES || []).filter(enf => 
         planActivo.matrizCompetencias[enf.id]?.[unidad.numero - 1]
     ).map(enf => ({
         nombre: enf.nombre,
-        valores: enf.valores
+        valores: (enf.valores || [])
             .filter(v => planActivo.matrizCompetencias[matrixIdVal(enf.id, v.id)]?.[unidad.numero - 1])
             .map(v => ({
                 id: v.id,
@@ -148,16 +148,16 @@ export const Step2Disena: React.FC<Step2DisenaProps> = ({ unidad, onUpdate }) =>
             });
 
             // Conservar solo desempeños cuya capacidad sigue activa
-            const nextDes = desempenosUnidad.filter(d => {
+            const nextDes = (desempenosUnidad || []).filter(d => {
                 // El desempenoId tiene la forma "compSlug-capSlug-index"
-                const parts = d.desempenoId.split('-');
+                const parts = (d.desempenoId || '').split('-');
                 if (parts.length >= 2) {
                     return activeCapSlugs.has(parts[1]);
                 }
                 return true; // Conservar si el ID es legacy / no parseable
             });
 
-            if (nextDes.length !== desempenosUnidad.length) {
+            if (nextDes.length !== (desempenosUnidad || []).length) {
                 setDesempenosUnidad(nextDes);
             }
 
@@ -229,8 +229,8 @@ export const Step2Disena: React.FC<Step2DisenaProps> = ({ unidad, onUpdate }) =>
             const newAvailable: Record<string, CNEBDesempeno[]> = {};
 
             // Cargamos para TODAS las competencias del CNEB
-            for (const cnebComp of cnebCompetencias) {
-                const filtered = cnebComp.desempenos.filter(d =>
+            for (const cnebComp of (cnebCompetencias || [])) {
+                const filtered = (cnebComp.desempenos || []).filter(d =>
                     d.grado.toLowerCase().includes(planActivo.grado.toLowerCase())
                 );
                 newAvailable[cnebComp.nombre] = filtered;
@@ -258,7 +258,7 @@ export const Step2Disena: React.FC<Step2DisenaProps> = ({ unidad, onUpdate }) =>
                 
                 // Buscar los desempeños de esta capacidad (uso de slug para evitar fallos de matching por texto)
                 const capS = slug(cap.capacidadId);
-                const desForCap = compDesempenos.filter(d => slug(d.capacidad) === capS);
+                const desForCap = (compDesempenos || []).filter(d => slug(d.capacidad) === capS);
                 
                 desForCap.forEach(d => {
                     if (!currentSelectedText.has(d.texto)) {

@@ -14,7 +14,7 @@ export const SesionesList: React.FC = () => {
     const { showNotification } = useNotificationStore();
     const [loading, setLoading] = useState(false);
 
-    const unidadesDelPlan = planActivo ? unidades.filter(u => u.planAnualId === planActivo.id) : [];
+    const unidadesDelPlan = planActivo ? (unidades || []).filter(u => u.planAnualId === planActivo.id) : [];
 
     useEffect(() => {
         const loadAll = async () => {
@@ -28,10 +28,10 @@ export const SesionesList: React.FC = () => {
     }, [planActivo?.id]);
 
     const getSesionesByUnidad = (unidadId: string) =>
-        sesiones.filter(s => s.unidadId === unidadId).sort((a, b) => a.orden - b.orden);
+        (sesiones || []).filter(s => s.unidadId === unidadId).sort((a, b) => a.orden - b.orden);
 
-    const allSesionesOfPlan = sesiones.filter(s => unidadesDelPlan.some(u => u.id === s.unidadId));
-    const sesionesCompletas = allSesionesOfPlan.filter(s => !!(s.proposito || s.secuenciaDidactica?.inicio?.descripcion));
+    const allSesionesOfPlan = (sesiones || []).filter(s => unidadesDelPlan.some(u => u.id === s.unidadId));
+    const sesionesCompletas = (allSesionesOfPlan || []).filter(s => !!(s.proposito || s.secuenciaDidactica?.inicio?.descripcion));
     const plannedTotal = unidadesDelPlan.reduce((sum, u) => sum + (u.organizaStep?.totalSesiones || 0), 0);
 
     const handleDeleteSesion = async (e: React.MouseEvent, sesionId: string) => {

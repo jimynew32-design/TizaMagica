@@ -106,6 +106,7 @@ export const useAIConfigStore = () => useStore((s) => ({
     setProvider: s.setProvider,
     setGeminiApiKey: s.setGeminiApiKey,
     setLMStudioUrl: s.setLMStudioUrl,
+    setLMStudioApiKey: s.setLMStudioApiKey,
     setVertexConfig: s.setVertexConfig,
     setActiveModel: s.setActiveModel,
     setAutoRetry: s.setAutoRetry,

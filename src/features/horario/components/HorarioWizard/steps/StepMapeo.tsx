@@ -60,26 +60,40 @@ export const StepMapeo: React.FC<StepMapeoProps> = ({ recursos, carga, onChange 
 
     return (
         <div className="max-w-[1600px] mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <header className="flex justify-between items-end">
+            <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div className="space-y-1">
-                    <h3 className="text-2xl font-black uppercase tracking-tighter">Carga Académica y Contratos</h3>
-                    <p className="text-xs text-white/40 uppercase font-bold tracking-widest">Vincula Docentes con Materias, Secciones y Aulas</p>
+                    <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter">Carga Académica</h3>
+                    <p className="text-[10px] text-white/40 uppercase font-bold tracking-[0.3em]">Distribución Estratégica de Horas y Contratos</p>
                 </div>
                 
-                <div className="flex bg-white/5 p-1 rounded-xl border border-white/5">
+                <div className="flex items-center gap-4 w-full md:w-auto">
+                    {/* Selectores de Vista */}
+                    <div className="flex bg-white/5 p-1 rounded-2xl border border-white/5">
+                        <button 
+                            onClick={() => setViewMode('table')}
+                            className={cn("px-4 py-2.5 rounded-xl text-[9px] font-black uppercase transition-all flex items-center gap-2", viewMode === 'table' ? "bg-white text-black shadow-glow-white-sm" : "text-white/40 hover:text-white")}
+                        >
+                            <span className="material-icons-round text-sm">format_list_bulleted</span>
+                            Lista
+                        </button>
+                        <button 
+                            onClick={() => setViewMode('cards')}
+                            className={cn("px-4 py-2.5 rounded-xl text-[9px] font-black uppercase transition-all flex items-center gap-2", viewMode === 'cards' ? "bg-brand-magenta text-white shadow-glow-magenta-xs" : "text-white/40 hover:text-white")}
+                        >
+                            <span className="material-icons-round text-sm">grid_view</span>
+                            Tarjetas
+                        </button>
+                    </div>
+
+                    {/* Botón Acción Principal: Nueva Lección */}
                     <button 
-                        onClick={() => setViewMode('table')}
-                        className={cn("px-4 py-2 rounded-lg text-[10px] font-black uppercase transition-all", viewMode === 'table' ? "bg-brand-magenta text-white shadow-glow-magenta-xs" : "text-white/40 hover:text-white")}
+                        onClick={handleAddLesson}
+                        className="px-8 py-3.5 bg-brand-magenta text-white rounded-2xl text-[10px] font-black uppercase tracking-[3px] hover:shadow-glow-magenta active:scale-95 transition-all flex items-center justify-center gap-3 group"
                     >
-                        <span className="material-icons-round text-sm align-middle mr-2">format_list_bulleted</span>
-                        Lista Contratos
-                    </button>
-                    <button 
-                        onClick={() => setViewMode('cards')}
-                        className={cn("px-4 py-2 rounded-lg text-[10px] font-black uppercase transition-all", viewMode === 'cards' ? "bg-brand-magenta text-white shadow-glow-magenta-xs" : "text-white/40 hover:text-white")}
-                    >
-                        <span className="material-icons-round text-sm align-middle mr-2">grid_view</span>
-                        Vista Secciones
+                        <div className="w-5 h-5 rounded-lg bg-white/20 flex items-center justify-center group-hover:rotate-90 transition-transform">
+                            <span className="material-icons-round text-base">add</span>
+                        </div>
+                        Nueva Lección
                     </button>
                 </div>
             </header>
@@ -124,13 +138,6 @@ export const StepMapeo: React.FC<StepMapeoProps> = ({ recursos, carga, onChange 
                         </div>
                     </div>
 
-                    <button 
-                        onClick={handleAddLesson}
-                        className="mt-auto w-full py-4 bg-brand-magenta text-white rounded-2xl text-[10px] font-black uppercase tracking-[4px] hover:shadow-glow-magenta transition-all flex items-center justify-center gap-2"
-                    >
-                        <span className="material-icons-round text-base">add</span>
-                        Nueva Lección
-                    </button>
                 </div>
 
                 {/* Panel Derecho: Contenido */}

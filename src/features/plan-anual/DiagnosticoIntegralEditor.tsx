@@ -3,12 +3,13 @@ import { Card, CardTitle } from '@/components/ui/Card';
 import { AIButton } from '@/components/ui/AIButton';
 import { TabSwitch } from '@/components/ui/TabSwitch';
 import { cn } from '@/lib/cn';
-import { MatrizContexto, Impacto, DiagnosticoIntegral, EstilosIntereses, Estudiante, CATEGORIAS_NEE, TipoNEE, NivelLogro } from '@/types/schemas';
+import { MatrizContexto, Impacto, DiagnosticoIntegral, EstilosIntereses, EstadisticaNEE, TipoNEE, ResultadoCompetencia, CATEGORIAS_NEE } from '@/types/schemas';
 import { ModuleHeader } from '@/components/ui/ModuleHeader';
 import { usePlanAnualStore, useAIConfigStore, useNotificationStore } from '@/store';
 import { useDebounce } from '@/hooks/ui/useDebounce';
 import { chatCompletion } from '@/services/ai';
 import { PROMPTS } from '@/services/ai/prompts';
+import { cnebService } from '@/services/cneb';
 
 const AMBITOS = ['familiar', 'grupal', 'local', 'regional', 'nacional'] as const;
 const ASPECTOS = ['cultural', 'economico', 'ambiental'] as const;
@@ -58,28 +59,55 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
             idiomas: [{ etiqueta: 'L1', valor: 'Castellano' }, { etiqueta: 'L2', valor: 'No especificada' }],
             escenarioEIB: 'Escenario 1: Monolingüe', diagnosticoSociolinguistico: '',
         };
-        // Migration logic for old fields
-        if (!base.idiomas || base.idiomas.length === 0) {
+
+        // Si ya tiene idiomas, retornamos base asegurando intereses
+        if (base.idiomas && base.idiomas.length > 0) {
             return {
                 ...base,
-                idiomas: [
-                    { etiqueta: 'L1', valor: (base as any).lenguaMaterna || 'Castellano' },
-                    { etiqueta: 'L2', valor: (base as any).segundaLengua || 'No especificada' }
-                ]
+                intereses: base.intereses || []
             } as EstilosIntereses;
         }
-        return base as EstilosIntereses;
+
+        // Si no tiene idiomas (migración de formato antiguo), los construimos
+        return {
+            ...base,
+            intereses: base.intereses || [],
+            idiomas: [
+                { etiqueta: 'L1', valor: (base as any).lenguaMaterna || 'Castellano' },
+                { etiqueta: 'L2', valor: (base as any).segundaLengua || 'No especificada' }
+            ]
+        } as EstilosIntereses;
     });
 
     const [interesInput, setInteresInput] = useState('');
-    const [estudiantes, setEstudiantes] = useState<Estudiante[]>(planActivo?.diagnostico.estudiantes || []);
+    const [activeDimension, setActiveDimension] = useState<'cognitivo' | 'fisico' | 'emocional'>('cognitivo');
+    
+    // Matrícula y Estadísticas
+    const [gradoAula, setGradoAula] = useState(planActivo?.diagnostico.gradoIdentificado || planActivo?.grado || '');
+    const [nombreAula, setNombreAula] = useState(planActivo?.diagnostico.nombreAula || '');
+    const [seccion, setSeccion] = useState(planActivo?.diagnostico.seccion || '');
+    const [cantidadVarones, setCantidadVarones] = useState(planActivo?.diagnostico.cantidadVarones || 0);
+    const [cantidadMujeres, setCantidadMujeres] = useState(planActivo?.diagnostico.cantidadMujeres || 0);
+    const [cantidadTotal, setCantidadTotal] = useState(planActivo?.diagnostico.cantidadTotal || 0);
+    const [estadisticasNEE, setEstadisticasNEE] = useState<EstadisticaNEE[]>(planActivo?.diagnostico.estadisticasNEE || []);
+
+    // Evaluación Diagnóstica
+    const [evaluacionCompetencias, setEvaluacionCompetencias] = useState<ResultadoCompetencia[]>(planActivo?.diagnostico.evaluacionCompetencias || []);
+    const [loadingCompetencias, setLoadingCompetencias] = useState(false);
 
     const debouncedMatriz = useDebounce(matriz, 1000);
     const debouncedCarac = useDebounce(caracteristicas, 1000);
     const debouncedEstilos = useDebounce(estilos, 1000);
     const debouncedPerfil = useDebounce(perfilContexto, 1000);
     const debouncedUbicacion = useDebounce(ubicacion, 1000);
-    const debouncedEstudiantes = useDebounce(estudiantes, 1000);
+    const debouncedGradoAula = useDebounce(gradoAula, 1000);
+    const debouncedNombreAula = useDebounce(nombreAula, 1000);
+    const debouncedSeccion = useDebounce(seccion, 1000);
+    const debouncedCantidadVarones = useDebounce(cantidadVarones, 1000);
+    const debouncedCantidadMujeres = useDebounce(cantidadMujeres, 1000);
+    const debouncedCantidadTotal = useDebounce(cantidadTotal, 1000);
+    const debouncedEstadisticasNEE = useDebounce(estadisticasNEE, 1000);
+    const debouncedEvaluacion = useDebounce(evaluacionCompetencias, 1000);
 
 
     // BUG-08 fix: Resync local state when switching plans
@@ -101,17 +129,56 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                 observacionesGrupo: ''
             });
 
-            setEstilos(planActivo.diagnostico.estilos?.idiomas ? planActivo.diagnostico.estilos : {
-                ...planActivo.diagnostico.estilos,
+            const baseEstilos = planActivo.diagnostico.estilos;
+            setEstilos(baseEstilos?.idiomas ? {
+                ...baseEstilos,
+                intereses: baseEstilos.intereses || []
+            } : {
+                ...baseEstilos,
+                intereses: baseEstilos?.intereses || [],
                 idiomas: [
-                    { etiqueta: 'L1', valor: (planActivo.diagnostico.estilos as any).lenguaMaterna || 'Castellano' },
-                    { etiqueta: 'L2', valor: (planActivo.diagnostico.estilos as any).segundaLengua || 'No especificada' }
+                    { etiqueta: 'L1', valor: (baseEstilos as any)?.lenguaMaterna || 'Castellano' },
+                    { etiqueta: 'L2', valor: (baseEstilos as any)?.segundaLengua || 'No especificada' }
                 ]
             } as EstilosIntereses);
 
-            setEstudiantes(planActivo.diagnostico.estudiantes || []);
+            setGradoAula(planActivo.diagnostico.gradoIdentificado || planActivo.grado || '');
+            setNombreAula(planActivo.diagnostico.nombreAula || '');
+            setSeccion(planActivo.diagnostico.seccion || '');
+            setCantidadVarones(planActivo.diagnostico.cantidadVarones || 0);
+            setCantidadMujeres(planActivo.diagnostico.cantidadMujeres || 0);
+            setCantidadTotal(planActivo.diagnostico.cantidadTotal || 0);
+            setEstadisticasNEE(planActivo.diagnostico.estadisticasNEE || []);
+            setEvaluacionCompetencias(planActivo.diagnostico.evaluacionCompetencias || []);
+
+            // Cargar competencias si la evaluación está vacía
+            if ((planActivo.diagnostico.evaluacionCompetencias || []).length === 0) {
+                cargarCompetenciasPlan();
+            }
         }
     }, [planActivo?.id]);
+
+    const cargarCompetenciasPlan = async () => {
+        if (!planActivo) return;
+        setLoadingCompetencias(true);
+        try {
+            // Competencias de área
+            const areaComp = await cnebService.getCompetenciasByAreaNivel(planActivo.area, planActivo.nivel);
+            // Competencias transversales
+            const transComp = await cnebService.getCompetenciasByAreaNivel('Competencias Transversales', planActivo.nivel);
+            
+            const results: ResultadoCompetencia[] = [...areaComp, ...transComp].map(c => ({
+                id: c.nombre, // Usamos nombre como ID para simplicidad si no hay ID único disponible
+                nombre: c.nombre,
+                logro: { AD: 0, A: 0, B: 0, C: 0 }
+            }));
+            setEvaluacionCompetencias(results);
+        } catch (error) {
+            console.error('Error cargando competencias para diagnóstico:', error);
+        } finally {
+            setLoadingCompetencias(false);
+        }
+    };
 
     useEffect(() => {
         if (planActivo) {
@@ -121,12 +188,28 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                 contexto: debouncedMatriz,
                 caracteristicas: debouncedCarac,
                 estilos: debouncedEstilos,
-                estudiantes: debouncedEstudiantes,
-                cantidadEstudiantes: debouncedEstudiantes.length // Sincronización automática
+                cantidadTotal: debouncedCantidadTotal,
+                cantidadVarones: debouncedCantidadVarones,
+                cantidadMujeres: debouncedCantidadMujeres,
+                estadisticasNEE: debouncedEstadisticasNEE,
+                evaluacionCompetencias: debouncedEvaluacion,
+                gradoIdentificado: debouncedGradoAula,
+                nombreAula: debouncedNombreAula,
+                seccion: debouncedSeccion
             };
             updatePlan(planActivo.id, { diagnostico: newDiagnostico });
         }
-    }, [debouncedMatriz, debouncedCarac, debouncedEstilos, debouncedPerfil, debouncedUbicacion, debouncedEstudiantes]);
+    }, [
+        debouncedMatriz, debouncedCarac, debouncedEstilos, debouncedPerfil, 
+        debouncedUbicacion, debouncedGradoAula, debouncedNombreAula, debouncedSeccion,
+        debouncedCantidadVarones, debouncedCantidadMujeres, debouncedCantidadTotal, 
+        debouncedEstadisticasNEE, debouncedEvaluacion
+    ]);
+
+    // Auto-calcular total
+    useEffect(() => {
+        setCantidadTotal(cantidadVarones + cantidadMujeres);
+    }, [cantidadVarones, cantidadMujeres]);
 
     const handleImpactChange = (ambito: typeof AMBITOS[number], aspecto: typeof ASPECTOS[number], impacto: Impacto) => {
         setMatriz(prev => ({
@@ -256,7 +339,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
             setLoadingIA(true);
 
             const niveles = { cognitivo: caracteristicas.cognitivo.nivel, fisico: caracteristicas.fisico.nivel, emocional: caracteristicas.emocional.nivel };
-            const systemPrompt = "Eres un psicólogo educativo experto en CNEB. Genera un JSON estrictamente válido.";
+            const systemPrompt = "Eres un psicólogo educativo altamente especializado. Tu tarea es generar un análisis técnico JSON. IMPORTANTE: Cada descripción ('cognitivo', 'fisico', 'emocional') debe redactarse EXCLUSIVAMENTE como una lista de 4-5 viñetas separadas por saltos de línea (\\n), cada una comenzando con '- '. Prohibido el uso de párrafos sólidos.";
             const userPrompt = PROMPTS.POBLAR_CARACTERISTICAS(planActivo?.area || 'General', planActivo?.grado || 'Secundaria', caracteristicas.observacionesGrupo, niveles);
 
             const apiKey = await getDecryptedApiKey();
@@ -294,7 +377,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
             const apiKey = await getDecryptedApiKey();
 
 
-            const systemPrompt = 'Eres un experto en pedagogía. Tu tarea es generar estrategias DIDÁCTICAS basadas en los INTERESES de los estudiantes. NO redactes diagnósticos lingüísticos ni hables de la situación de las lenguas (eso va en la sección EIB). Sé directo y usa los intereses como motor del aprendizaje.';
+            const systemPrompt = 'Eres un experto en pedagogía. Tu tarea es generar estrategias DIDÁCTICAS basadas en los INTERESES de los estudiantes. Estructura la información en una lista de puntos claros con guiones. NO redactes diagnósticos lingüísticos ni hables de la situación de las lenguas (eso va en la sección EIB). Sé directo y usa los intereses como motor del aprendizaje.';
             const userPrompt = PROMPTS.POBLAR_ESTILOS(
                 planActivo.area,
                 estilos.edadMin,
@@ -368,7 +451,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
             const apiKey = await getDecryptedApiKey();
 
             const contextMat = matriz;
-            const systemPrompt = 'Redacta el diagnóstico sociolingüístico EIB en un SOLAMENTE un párrafo único, fluido y descriptivo. No uses listas ni viñetas. Sintetiza la realidad lingüística y el reto pedagógico en un solo bloque de texto.';
+            const systemPrompt = 'Redacta el diagnóstico sociolingüístico EIB estructurado en puntos técnicos con guiones. Sintetiza la realidad lingüística y el reto pedagógico en una secuencia de 3 o 4 viñetas descriptivas.';
             const userPrompt = PROMPTS.POBLAR_LENGUAJE(estilos.idiomas, estilos.escenarioEIB, contextMat);
 
             const textResult: string = await chatCompletion(systemPrompt, userPrompt, {
@@ -504,17 +587,94 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                 <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
                     <Card variant="glass">
                         <div className="flex flex-col lg:flex-row gap-8">
-                            <div className="w-full lg:w-1/3 space-y-8 p-4">
-                                {(['cognitivo', 'fisico', 'emocional'] as const).map(dim => (
-                                    <div key={dim} className="space-y-4">
-                                        <div className="flex justify-between items-center">
-                                            <label className="text-[10px] font-black text-primary-teal uppercase tracking-[0.2em]">{dim}</label>
-                                            <span className="text-xl font-black text-white">{caracteristicas[dim].nivel}</span>
+                            {/* Selector de Niveles (Izquierda) */}
+                            <div className="w-full lg:w-1/2 space-y-8 p-4">
+                                {/* Sub-Tabs para Dimensiones */}
+                                <div className="flex bg-white/5 p-1 rounded-2xl border border-white/10">
+                                    {(['cognitivo', 'fisico', 'emocional'] as const).map(dim => {
+                                        const dimIcons: Record<string, string> = { cognitivo: 'psychology', fisico: 'directions_run', emocional: 'favorite' };
+                                        return (
+                                            <button
+                                                key={dim}
+                                                onClick={() => setActiveDimension(dim)}
+                                                className={cn(
+                                                    "flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-500",
+                                                    activeDimension === dim 
+                                                        ? "bg-brand-magenta text-white shadow-glow-magenta-sm" 
+                                                        : "text-gray-500 hover:text-gray-300 hover:bg-white/5"
+                                                )}
+                                            >
+                                                <span className="material-icons-round text-sm">{dimIcons[dim]}</span>
+                                                <span className="hidden sm:inline">{dim}</span>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+
+                                {/* Selección Activa */}
+                                <div className="animate-in fade-in slide-in-from-right-4 duration-500">
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <div className="w-12 h-12 rounded-2xl bg-brand-magenta/10 border border-brand-magenta/30 flex items-center justify-center text-brand-magenta shadow-glow-magenta-sm">
+                                            <span className="material-icons-round text-2xl">
+                                                {activeDimension === 'cognitivo' ? 'psychology' : activeDimension === 'fisico' ? 'directions_run' : 'favorite'}
+                                            </span>
                                         </div>
-                                        <input type="range" min="1" max="5" value={caracteristicas[dim].nivel} onChange={e => setCaracteristicas(prev => ({ ...prev, [dim]: { ...prev[dim], nivel: parseInt(e.target.value) } }))} className="w-full transition-all accent-primary-teal" />
+                                        <div>
+                                            <label className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em]">Perfil Actual</label>
+                                            <div className="text-xl font-black text-white tracking-tight uppercase">Dimensión {activeDimension}</div>
+                                        </div>
                                     </div>
-                                ))}
+
+                                    <div className="space-y-2">
+                                        {[1, 2, 3, 4, 5].map(v => {
+                                            const descriptions: Record<number, string> = {
+                                                1: 'Intervención Urgente',
+                                                2: 'Necesita Refuerzo',
+                                                3: 'Perfil Estándar',
+                                                4: 'Avance Consolidado',
+                                                5: 'Nivel Destacado'
+                                            };
+                                            return (
+                                                <button
+                                                    key={v}
+                                                    onClick={() => setCaracteristicas(prev => ({ 
+                                                        ...prev, 
+                                                        [activeDimension]: { ...prev[activeDimension], nivel: v } 
+                                                    }))}
+                                                    className={cn(
+                                                        "w-full p-4 rounded-xl text-left transition-all duration-400 border flex items-center justify-between group/opt",
+                                                        caracteristicas[activeDimension].nivel === v 
+                                                            ? "bg-brand-magenta/20 border-brand-magenta text-white shadow-[0_0_20px_rgba(232,18,126,0.15)] scale-[1.02] z-10"
+                                                            : "bg-white/5 border-white/5 text-gray-500 hover:bg-white/[0.07] hover:border-white/10 hover:text-gray-300"
+                                                    )}
+                                                >
+                                                    <div className="flex items-center gap-4">
+                                                        <div className={cn(
+                                                            "w-6 h-6 rounded-lg flex items-center justify-center text-[10px] font-black border transition-all duration-500",
+                                                            caracteristicas[activeDimension].nivel === v 
+                                                                ? "bg-brand-magenta border-white/30 text-white" 
+                                                                : "bg-black/20 border-white/10 text-gray-600 group-hover/opt:border-white/20"
+                                                        )}>
+                                                            {v}
+                                                        </div>
+                                                        <span className={cn(
+                                                            "text-xs font-bold tracking-tight transition-colors",
+                                                            caracteristicas[activeDimension].nivel === v ? "text-white" : "group-hover/opt:text-white"
+                                                        )}>
+                                                            {descriptions[v]}
+                                                        </span>
+                                                    </div>
+                                                    {caracteristicas[activeDimension].nivel === v && (
+                                                        <span className="material-icons-round text-brand-magenta animate-pulse text-lg">check_circle</span>
+                                                    )}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             </div>
+
+                            {/* Observaciones (Derecha) */}
                             <div className="flex-1 p-4 space-y-4">
                                 <div className="flex items-center justify-between">
                                     <label className="text-[10px] font-black text-primary-teal uppercase tracking-[0.2em]">Observaciones del Docente</label>
@@ -526,15 +686,26 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                                         tooltip="Sugerir análisis técnico"
                                     />
                                 </div>
-                                <textarea className="w-full h-full bg-surface-card border border-white/5 rounded-2xl p-6 text-sm text-white placeholder:text-gray-700 min-h-[300px]" placeholder="Escribe lo que observas en tu grupo..." value={caracteristicas.observacionesGrupo} onChange={e => setCaracteristicas(prev => ({ ...prev, observacionesGrupo: e.target.value }))} />
+                                <textarea 
+                                    className="w-full h-full bg-surface-card border border-white/5 rounded-2xl p-6 text-sm text-white placeholder:text-gray-700 min-h-[300px]" 
+                                    placeholder="Escribe lo que observas en tu grupo..." 
+                                    value={caracteristicas.observacionesGrupo} 
+                                    onChange={e => setCaracteristicas(prev => ({ ...prev, observacionesGrupo: e.target.value }))} 
+                                />
                             </div>
                         </div>
                     </Card>
+
+                    {/* Resultados de Redacción */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {(['cognitivo', 'fisico', 'emocional'] as const).map(dim => (
                             <Card key={dim} variant="strong">
                                 <CardTitle className="capitalize">{dim}</CardTitle>
-                                <textarea className="w-full h-48 bg-transparent border border-white/5 rounded-2xl p-4 text-xs text-gray-300" value={caracteristicas[dim].texto} onChange={e => setCaracteristicas(prev => ({ ...prev, [dim]: { ...prev[dim], texto: e.target.value } }))} />
+                                <textarea 
+                                    className="w-full h-48 bg-transparent border border-white/5 rounded-2xl p-4 text-xs text-gray-300" 
+                                    value={caracteristicas[dim].texto} 
+                                    onChange={e => setCaracteristicas(prev => ({ ...prev, [dim]: { ...prev[dim], texto: e.target.value } }))} 
+                                />
                             </Card>
                         ))}
                     </div>
@@ -563,13 +734,14 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                                             <button
                                                 key={interes}
                                                 onClick={() => {
-                                                    if (!estilos.intereses.includes(interes)) {
-                                                        setEstilos(prev => ({ ...prev, intereses: [...prev.intereses, interes] }));
+                                                    const currentIntereses = estilos.intereses || [];
+                                                    if (!currentIntereses.includes(interes)) {
+                                                        setEstilos(prev => ({ ...prev, intereses: [...(prev.intereses || []), interes] }));
                                                     }
                                                 }}
                                                 className={cn(
                                                     "px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all border",
-                                                    estilos.intereses.includes(interes)
+                                                    (estilos.intereses || []).includes(interes)
                                                         ? "bg-primary-teal/20 border-primary-teal text-primary-teal"
                                                         : "bg-white/5 border-white/10 text-gray-500 hover:text-white hover:border-white/20"
                                                 )}
@@ -583,7 +755,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                                     <label className="text-[10px] font-black text-primary-teal uppercase tracking-[0.2em]">Intereses del Grupo</label>
                                     <div className="flex gap-2"><input type="text" className="flex-1 bg-white/5 border border-white/5 rounded-xl p-3 text-xs" placeholder="O escribe uno personalizado..." value={interesInput} onChange={e => setInteresInput(e.target.value)} onKeyPress={e => { if (e.key === 'Enter') { setEstilos(prev => ({ ...prev, intereses: [...prev.intereses, interesInput] })); setInteresInput(''); } }} /><button onClick={() => { if (interesInput.trim()) { setEstilos(prev => ({ ...prev, intereses: [...prev.intereses, interesInput] })); setInteresInput(''); } }} className="px-4 bg-primary-teal text-gray-900 rounded-xl font-black">Añadir</button></div>
                                     <div className="flex flex-col gap-2 max-h-[200px] overflow-y-auto pr-2 custom-scrollbar">
-                                        {estilos.intereses.length === 0 ? (
+                                        {(!estilos.intereses || estilos.intereses.length === 0) ? (
                                             <div className="py-8 text-center border-2 border-dashed border-white/5 rounded-2xl">
                                                 <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">No hay intereses añadidos</p>
                                             </div>
@@ -600,7 +772,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                                                         <span className="text-xs font-medium text-gray-300 group-hover:text-white transition-colors">{i}</span>
                                                     </div>
                                                     <button
-                                                        onClick={() => setEstilos(prev => ({ ...prev, intereses: prev.intereses.filter((_, x) => x !== idx) }))}
+                                                        onClick={() => setEstilos(prev => ({ ...prev, intereses: (prev.intereses || []).filter((_, x) => x !== idx) }))}
                                                         className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-600 hover:bg-red-500/20 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-all"
                                                     >
                                                         <span className="material-icons-round text-lg">delete_outline</span>
@@ -672,7 +844,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                                                     <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest">{idioma.etiqueta}</span>
                                                     {idx > 1 && (
                                                         <button
-                                                            onClick={() => setEstilos(prev => ({ ...prev, idiomas: prev.idiomas.filter((_, i) => i !== idx) }))}
+                                                        onClick={() => setEstilos(prev => ({ ...prev, idiomas: (prev.idiomas || []).filter((_, i) => i !== idx) }))}
                                                             className="text-gray-600 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-all"
                                                         >
                                                             <span className="material-icons-round text-sm">close</span>
@@ -795,202 +967,328 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                 </div>
             )}
             {activeTab === 'estudiantes' && (
-                <div className="animate-in slide-in-from-bottom-4 duration-500 space-y-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <Card variant="glass" className="lg:col-span-1">
-                            <div className="p-6 space-y-6">
-                                <h3 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2">
-                                    <span className="material-icons-round text-primary-teal">numbers</span>
-                                    Resumen de Matrícula
-                                </h3>
-                                <div className="space-y-4">
-                                    <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
-                                        <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1 block">Total de Estudiantes</label>
-                                        <div className="text-3xl font-black text-primary-teal">
-                                            {estudiantes.length}
-                                        </div>
-                                        <p className="text-[10px] text-gray-600 font-bold uppercase mt-1">Sincronizado con la lista</p>
-                                    </div>
-                                    <div className="p-4 bg-primary-teal/5 rounded-2xl border border-primary-teal/10">
-                                        <p className="text-[10px] text-primary-teal font-bold uppercase mb-1">Dato Pedagógico</p>
-                                        <p className="text-xs text-gray-400 italic leading-relaxed">
-                                            La cantidad de estudiantes influye en la organización de tiempos y la cantidad de materiales que la IA generará para tus sesiones.
-                                        </p>
-                                    </div>
-                                    <button 
-                                        onClick={() => {
-                                            if (window.confirm('¿Estás seguro de que deseas eliminar a todos los estudiantes? Esta acción no se puede deshacer.')) {
-                                                setEstudiantes([]);
-                                            }
-                                        }}
-                                        className="w-full py-3 bg-red-500/10 hover:bg-red-500/20 text-red-500 rounded-xl text-[10px] font-black uppercase transition-all border border-red-500/10"
-                                    >
-                                        Limpiar Matrícula
-                                    </button>
-                                </div>
-                            </div>
-                        </Card>
-
-                        <Card variant="glass" className="lg:col-span-2">
-                            <div className="p-6 space-y-6">
-                                <div className="flex items-center justify-between">
+                    <div className="animate-in slide-in-from-bottom-4 duration-500 space-y-8 pb-10">
+                        {/* SECCIÓN 1: DATOS DEL AULA Y ESTADÍSTICAS */}
+                        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                            <Card variant="glass" className="lg:col-span-1">
+                                <div className="p-6 space-y-6">
                                     <h3 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2">
-                                        <span className="material-icons-round text-brand-magenta">format_list_bulleted</span>
-                                        Lista de Estudiantes (Nombres)
+                                        <span className="material-icons-round text-primary-teal">school</span>
+                                        Datos del Aula
                                     </h3>
-                                    <button 
-                                        onClick={() => setEstudiantes([...estudiantes, { id: crypto.randomUUID(), nombres: '', apellidos: '', dni: '', genero: '' }])}
-                                        className="px-3 py-1.5 bg-brand-magenta/10 text-brand-magenta rounded-xl text-[10px] font-black uppercase hover:bg-brand-magenta/20 transition-all border border-brand-magenta/20 flex items-center gap-2"
-                                    >
-                                        <span className="material-icons-round text-sm">person_add</span>
-                                        Agregar Estudiante
-                                    </button>
-                                </div>
-
-                                <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
-                                    {estudiantes.length === 0 ? (
-                                        <div className="p-12 text-center border-2 border-dashed border-white/5 rounded-3xl">
-                                            <p className="text-xs text-gray-600 font-bold uppercase tracking-widest">Sin estudiantes registrados</p>
+                                    
+                                    <div className="space-y-4">
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest pl-1">Grado / Ciclo</label>
+                                            <div className="w-full bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-xs font-bold text-gray-400 cursor-not-allowed">
+                                                {gradoAula || 'Cargando...'}
+                                            </div>
                                         </div>
-                                    ) : (
-                                        estudiantes.map((est, idx) => (
-                                            <div key={est.id} className="group flex flex-col md:flex-row items-start md:items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
-                                                <span className="shrink-0 w-8 h-8 flex items-center justify-center bg-black/20 rounded-lg text-[10px] font-black text-gray-500">
-                                                    {idx + 1}
-                                                </span>
-                                                <div className="flex-1 grid grid-cols-1 md:grid-cols-6 gap-4 w-full">
-                                                    <div className="space-y-1">
-                                                        <label className="text-[9px] font-black text-gray-600 uppercase tracking-widest pl-1">DNI</label>
-                                                        <input 
-                                                            type="text"
-                                                            maxLength={8}
-                                                            value={est.dni}
-                                                            onChange={(e) => {
-                                                                const val = e.target.value.replace(/\D/g, '');
-                                                                const newEsts = [...estudiantes];
-                                                                newEsts[idx].dni = val;
-                                                                setEstudiantes(newEsts);
-                                                            }}
-                                                            placeholder="00000000"
-                                                            className="w-full bg-surface-card/50 border border-white/5 rounded-xl px-3 py-2 text-xs font-mono text-white focus:border-primary-teal/40 outline-none transition-all"
-                                                        />
-                                                    </div>
-                                                    <div className="space-y-1">
-                                                        <label className="text-[9px] font-black text-gray-600 uppercase tracking-widest pl-1">Apellidos</label>
-                                                        <input 
-                                                            type="text"
-                                                            value={est.apellidos}
-                                                            onChange={(e) => {
-                                                                const newEsts = [...estudiantes];
-                                                                newEsts[idx].apellidos = e.target.value;
-                                                                setEstudiantes(newEsts);
-                                                            }}
-                                                            placeholder="Apellidos"
-                                                            className="w-full bg-surface-card/50 border border-white/5 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-primary-teal/40 outline-none transition-all"
-                                                        />
-                                                    </div>
-                                                    <div className="space-y-1">
-                                                        <label className="text-[9px] font-black text-gray-600 uppercase tracking-widest pl-1">Nombres</label>
-                                                        <input 
-                                                            type="text"
-                                                            value={est.nombres}
-                                                            onChange={(e) => {
-                                                                const newEsts = [...estudiantes];
-                                                                newEsts[idx].nombres = e.target.value;
-                                                                setEstudiantes(newEsts);
-                                                            }}
-                                                            placeholder="Nombres"
-                                                            className="w-full bg-surface-card/50 border border-white/5 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-primary-teal/40 outline-none transition-all"
-                                                        />
-                                                    </div>
-                                                    <div className="space-y-1">
-                                                        <label className="text-[9px] font-black text-gray-600 uppercase tracking-widest pl-1">Género</label>
-                                                        <div className="flex gap-1 h-9">
-                                                            {['M', 'F'].map(g => (
-                                                                <button
-                                                                    key={g}
-                                                                    onClick={() => {
-                                                                        const newEsts = [...estudiantes];
-                                                                        newEsts[idx].genero = g as 'M' | 'F';
-                                                                        setEstudiantes(newEsts);
-                                                                    }}
-                                                                    className={cn(
-                                                                        "flex-1 rounded-xl text-[10px] font-black transition-all border",
-                                                                        est.genero === g 
-                                                                            ? "bg-primary-teal border-primary-teal text-gray-900 shadow-lg shadow-primary-teal/10" 
-                                                                            : "bg-white/5 border-white/5 text-gray-500 hover:text-white"
-                                                                    )}
-                                                                >
-                                                                    {g}
-                                                                </button>
-                                                            ))}
+
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest pl-1">Sección(es)</label>
+                                            <div className="flex flex-wrap gap-1 p-2 bg-white/5 border border-white/10 rounded-xl min-h-[42px]">
+                                                {seccion.split(',').filter(Boolean).map(s => (
+                                                    <span key={s} className="flex items-center gap-1 px-2 py-0.5 bg-brand-magenta/20 border border-brand-magenta/30 text-white text-[10px] font-black rounded-lg">
+                                                        {s}
+                                                        <button onClick={() => setSeccion(seccion.split(',').filter(x => x !== s).join(','))} className="hover:text-red-400">
+                                                            <span className="material-icons-round text-xs">close</span>
+                                                        </button>
+                                                    </span>
+                                                ))}
+                                                <input 
+                                                    type="text"
+                                                    placeholder="Escribre y pulsa Enter (ej: A, B, 1, 2...)"
+                                                    className="flex-1 bg-transparent border-none outline-none text-[10px] font-bold text-white min-w-[100px]"
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === 'Enter' || e.key === ',') {
+                                                            e.preventDefault();
+                                                            const val = e.currentTarget.value.trim().toUpperCase();
+                                                            if (val && !seccion.split(',').includes(val)) {
+                                                                setSeccion(seccion ? `${seccion},${val}` : val);
+                                                                e.currentTarget.value = '';
+                                                            }
+                                                        }
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className="flex flex-wrap gap-1 mt-2">
+                                                {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'].map(s => (
+                                                    <button 
+                                                        key={s}
+                                                        onClick={() => {
+                                                            const parts = seccion.split(',').filter(Boolean);
+                                                            if (parts.includes(s)) {
+                                                                setSeccion(parts.filter(p => p !== s).join(','));
+                                                            } else {
+                                                                setSeccion(seccion ? `${seccion},${s}` : s);
+                                                            }
+                                                        }}
+                                                        className={cn(
+                                                            "w-6 h-6 rounded flex items-center justify-center text-[9px] font-black border transition-all",
+                                                            seccion.split(',').includes(s)
+                                                                ? "bg-brand-magenta border-brand-magenta text-white"
+                                                                : "bg-white/5 border-white/5 text-gray-600 hover:text-white"
+                                                        )}
+                                                    >
+                                                        {s}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest pl-1">Nombre del Aula</label>
+                                            <input 
+                                                type="text"
+                                                value={nombreAula}
+                                                onChange={(e) => setNombreAula(e.target.value)}
+                                                placeholder="Ej: 'Los Abejitas'"
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs font-bold text-white focus:border-primary-teal transition-all outline-none"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Card>
+
+                            <Card variant="glass" className="lg:col-span-3">
+                                <div className="p-6 h-full flex flex-col">
+                                    <h3 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2 mb-6">
+                                        <span className="material-icons-round text-brand-magenta">analytics</span>
+                                        Resumen de Matrícula
+                                    </h3>
+                                    
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                                        {/* Varones */}
+                                        <div className="p-4 bg-blue-500/5 rounded-2xl border border-blue-500/10 space-y-3">
+                                            <div className="flex items-center justify-between">
+                                                <label className="text-[10px] font-black text-blue-400 uppercase tracking-widest">Varones</label>
+                                                <div className="material-icons-round text-blue-400 text-lg">male</div>
+                                            </div>
+                                            <input 
+                                                type="number"
+                                                min={0}
+                                                value={cantidadVarones}
+                                                onChange={(e) => setCantidadVarones(parseInt(e.target.value) || 0)}
+                                                className="w-full bg-black/30 border border-blue-500/20 rounded-xl px-4 py-4 text-3xl font-black text-blue-400 outline-none focus:border-blue-400 transition-all text-center"
+                                            />
+                                        </div>
+
+                                        {/* Mujeres */}
+                                        <div className="p-4 bg-pink-500/5 rounded-2xl border border-pink-500/10 space-y-3">
+                                            <div className="flex items-center justify-between">
+                                                <label className="text-[10px] font-black text-pink-400 uppercase tracking-widest">Mujeres</label>
+                                                <div className="material-icons-round text-pink-400 text-lg">female</div>
+                                            </div>
+                                            <input 
+                                                type="number"
+                                                min={0}
+                                                value={cantidadMujeres}
+                                                onChange={(e) => setCantidadMujeres(parseInt(e.target.value) || 0)}
+                                                className="w-full bg-black/30 border border-pink-500/20 rounded-xl px-4 py-4 text-3xl font-black text-pink-400 outline-none focus:border-pink-400 transition-all text-center"
+                                            />
+                                        </div>
+
+                                        {/* Total */}
+                                        <div className="p-4 bg-primary-teal/5 rounded-2xl border border-primary-teal/10 space-y-3 relative overflow-hidden group">
+                                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-125 transition-transform">
+                                                <span className="material-icons-round text-6xl text-primary-teal">groups</span>
+                                            </div>
+                                            <label className="text-[10px] font-black text-primary-teal uppercase tracking-widest relative z-10">Total Estudiantes</label>
+                                            <div className="text-5xl font-black text-primary-teal relative z-10 py-2">
+                                                {cantidadTotal}
+                                            </div>
+                                            <p className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter relative z-10">Calculado automáticamente</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Inclusión (NEE) */}
+                                    <div className="flex-1 border-t border-white/5 pt-6">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <label className="text-[10px] font-black text-brand-magenta uppercase tracking-widest flex items-center gap-2">
+                                                <span className="material-icons-round text-sm">stars</span>
+                                                Inclusión (Necesidades Educativas Especiales)
+                                            </label>
+                                            <button 
+                                                onClick={() => setEstadisticasNEE(prev => [...prev, { tipo: 'Discapacidad Intelectual', cantidad: 1 }])}
+                                                className="flex items-center gap-1 text-[9px] font-black text-brand-magenta uppercase px-2 py-1 bg-brand-magenta/10 rounded-lg hover:bg-brand-magenta/20 transition-all"
+                                            >
+                                                <span className="material-icons-round text-xs">add</span>
+                                                Añadir
+                                            </button>
+                                        </div>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                            {estadisticasNEE.map((nee, idx) => (
+                                                <div key={idx} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl p-2 animate-in zoom-in-95 duration-200">
+                                                    {nee.tipo === 'Otra (especificar...)' || (!CATEGORIAS_NEE.includes(nee.tipo) && nee.tipo !== 'Ninguna') ? (
+                                                        <div className="flex-1 flex gap-1 items-center">
+                                                            <input 
+                                                                autoFocus
+                                                                type="text"
+                                                                placeholder="Especifique..."
+                                                                className="flex-1 bg-black/20 border-b border-brand-magenta/30 text-[10px] font-bold text-white outline-none py-1"
+                                                                value={nee.tipo === 'Otra (especificar...)' ? '' : nee.tipo}
+                                                                onChange={(e) => {
+                                                                    const newNEE = [...estadisticasNEE];
+                                                                    newNEE[idx].tipo = e.target.value;
+                                                                    setEstadisticasNEE(newNEE);
+                                                                }}
+                                                            />
+                                                            <button 
+                                                                onClick={() => {
+                                                                    const newNEE = [...estadisticasNEE];
+                                                                    newNEE[idx].tipo = 'Discapacidad Intelectual';
+                                                                    setEstadisticasNEE(newNEE);
+                                                                }}
+                                                                className="text-gray-600 hover:text-white"
+                                                            >
+                                                                <span className="material-icons-round text-xs">undo</span>
+                                                            </button>
                                                         </div>
-                                                    </div>
-                                                    <div className="space-y-1">
-                                                        <label className="text-[9px] font-black text-brand-magenta uppercase tracking-widest pl-1">Inclusión / NEE</label>
+                                                    ) : (
                                                         <select 
-                                                            value={est.nee || 'Ninguna'}
+                                                            value={nee.tipo}
                                                             onChange={(e) => {
-                                                                const newEsts = [...estudiantes];
-                                                                newEsts[idx].nee = e.target.value as TipoNEE;
-                                                                setEstudiantes(newEsts);
+                                                                const newNEE = [...estadisticasNEE];
+                                                                newNEE[idx].tipo = e.target.value as TipoNEE;
+                                                                setEstadisticasNEE(newNEE);
                                                             }}
-                                                            className={cn(
-                                                                "w-full bg-brand-magenta/5 border rounded-xl px-3 py-2 text-[9px] font-bold outline-none transition-all h-9 appearance-none cursor-pointer",
-                                                                est.nee && est.nee !== 'Ninguna' 
-                                                                    ? "border-brand-magenta text-brand-magenta bg-brand-magenta/10" 
-                                                                    : "border-white/5 text-gray-500 hover:border-brand-magenta/30"
-                                                            )}
+                                                            className="flex-1 bg-transparent text-[10px] font-bold text-white outline-none"
                                                         >
-                                                            {CATEGORIAS_NEE.map(cat => (
-                                                                <option key={cat} value={cat} className="bg-gray-900 text-white text-xs">{cat}</option>
+                                                            {CATEGORIAS_NEE.filter(c => c !== 'Ninguna').map(c => (
+                                                                <option key={c} value={c} className="bg-gray-900">{c}</option>
                                                             ))}
                                                         </select>
-                                                    </div>
-                                                    <div className="space-y-1">
-                                                        <label className="text-[9px] font-black text-primary-teal uppercase tracking-widest pl-1">Logro Anterior</label>
-                                                        <div className="flex gap-1 h-9">
-                                                            {(['AD', 'A', 'B', 'C'] as NivelLogro[]).map(nivel => (
-                                                                <button
-                                                                    key={nivel}
-                                                                    onClick={() => {
-                                                                        const newEsts = [...estudiantes];
-                                                                        newEsts[idx].lineaBase = nivel;
-                                                                        setEstudiantes(newEsts);
-                                                                    }}
-                                                                    className={cn(
-                                                                        "flex-1 rounded-lg text-[9px] font-black transition-all border",
-                                                                        est.lineaBase === nivel 
-                                                                            ? nivel === 'AD' ? "bg-blue-500 border-blue-500 text-white shadow-lg shadow-blue-500/10"
-                                                                              : nivel === 'A' ? "bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-500/10"
-                                                                              : nivel === 'B' ? "bg-amber-500 border-amber-500 text-white shadow-lg shadow-amber-500/10"
-                                                                              : "bg-red-500 border-red-500 text-white shadow-lg shadow-red-500/10"
-                                                                            : "bg-white/5 border-white/5 text-gray-600 hover:text-white"
-                                                                    )}
-                                                                >
-                                                                    {nivel}
-                                                                </button>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-center gap-2 self-end md:self-center">
+                                                    )}
+                                                    <input 
+                                                        type="number"
+                                                        min={1}
+                                                        value={nee.cantidad}
+                                                        onChange={(e) => {
+                                                            const newNEE = [...estadisticasNEE];
+                                                            newNEE[idx].cantidad = parseInt(e.target.value) || 0;
+                                                            setEstadisticasNEE(newNEE);
+                                                        }}
+                                                        className="w-12 bg-black/40 border border-white/10 rounded-lg px-2 py-1 text-xs font-black text-brand-magenta text-center outline-none focus:border-brand-magenta/40"
+                                                    />
                                                     <button 
-                                                        onClick={() => setEstudiantes(estudiantes.filter(e => e.id !== est.id))}
-                                                        className="p-2 text-gray-600 hover:text-red-400 transition-colors"
+                                                        onClick={() => setEstadisticasNEE(prev => (prev || []).filter((_, i) => i !== idx))}
+                                                        className="text-gray-600 hover:text-red-400 transition-colors"
                                                     >
-                                                        <span className="material-icons-round text-sm">delete</span>
+                                                        <span className="material-icons-round text-sm">close</span>
                                                     </button>
                                                 </div>
-                                            </div>
-                                        ))
+                                            ))}
+                                            {estadisticasNEE.length === 0 && (
+                                                <div className="col-span-full py-4 text-center border border-dashed border-white/5 rounded-xl">
+                                                    <span className="text-[10px] text-gray-600 font-bold uppercase tracking-widest italic">No hay casos de inclusión registrados</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </Card>
+                        </div>
+
+                        {/* SECCIÓN 2: EVALUACIÓN DIAGNÓSTICA (POR COMPETENCIA) */}
+                        <Card variant="glass">
+                            <div className="p-6 space-y-6">
+                                <div className="flex items-center justify-between">
+                                    <div className="space-y-1">
+                                        <h3 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2">
+                                            <span className="material-icons-round text-primary-teal">assignment_turned_in</span>
+                                            Evaluación Diagnóstica: Nivel de Logro
+                                        </h3>
+                                        <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest pl-7">
+                                            Resultados por competencias (Área + Transversales)
+                                        </p>
+                                    </div>
+                                    {loadingCompetencias && (
+                                        <div className="flex items-center gap-2 px-3 py-1 bg-primary-teal/10 rounded-full border border-primary-teal/20 animate-pulse">
+                                            <span className="material-icons-round text-xs animate-spin text-primary-teal">sync</span>
+                                            <span className="text-[9px] font-black text-primary-teal uppercase">Cargando competencias...</span>
+                                        </div>
                                     )}
+                                </div>
+
+                                <div className="overflow-x-auto">
+                                    <table className="w-full text-left border-collapse">
+                                        <thead>
+                                            <tr className="border-b border-white/5">
+                                                <th className="py-4 px-4 text-[10px] font-black text-gray-500 uppercase tracking-widest">Competencia</th>
+                                                <th className="py-4 px-2 w-24 text-center text-[10px] font-black text-brand-magenta uppercase tracking-widest">AD</th>
+                                                <th className="py-4 px-2 w-24 text-center text-[10px] font-black text-primary-teal uppercase tracking-widest">A</th>
+                                                <th className="py-4 px-2 w-24 text-center text-[10px] font-black text-yellow-500 uppercase tracking-widest">B</th>
+                                                <th className="py-4 px-2 w-24 text-center text-[10px] font-black text-red-500 uppercase tracking-widest">C</th>
+                                                <th className="py-4 px-2 w-24 text-center text-[10px] font-black text-gray-600 uppercase tracking-widest">Logro %</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-white/5">
+                                            {evaluacionCompetencias.map((comp, idx) => {
+                                                const totalLogro = comp.logro.AD + comp.logro.A + comp.logro.B + comp.logro.C;
+                                                const porcLogro = totalLogro > 0 ? Math.round(((comp.logro.AD + comp.logro.A) / totalLogro) * 100) : 0;
+                                                
+                                                return (
+                                                    <tr key={comp.id} className="group hover:bg-white/5 transition-colors">
+                                                        <td className="py-4 px-4">
+                                                            <div className="flex flex-col gap-1">
+                                                                <span className="text-xs font-bold text-white leading-tight">{comp.nombre}</span>
+                                                                {idx >= evaluacionCompetencias.length - 2 && (
+                                                                    <span className="text-[8px] font-black text-primary-teal/60 uppercase tracking-tighter italic">Transversal</span>
+                                                                )}
+                                                            </div>
+                                                        </td>
+                                                        {(['AD', 'A', 'B', 'C'] as const).map(nivel => (
+                                                            <td key={nivel} className="py-4 px-2">
+                                                                <input 
+                                                                    type="number"
+                                                                    min={0}
+                                                                    value={comp.logro[nivel]}
+                                                                    onChange={(e) => {
+                                                                        const newEval = [...evaluacionCompetencias];
+                                                                        newEval[idx].logro[nivel] = parseInt(e.target.value) || 0;
+                                                                        setEvaluacionCompetencias(newEval);
+                                                                    }}
+                                                                    className={cn(
+                                                                        "w-full bg-black/40 border border-white/5 rounded-xl px-2 py-3 text-sm font-black text-center outline-none focus:border-white/20 transition-all",
+                                                                        nivel === 'AD' && "text-brand-magenta",
+                                                                        nivel === 'A' && "text-primary-teal",
+                                                                        nivel === 'B' && "text-yellow-500",
+                                                                        nivel === 'C' && "text-red-500"
+                                                                    )}
+                                                                />
+                                                            </td>
+                                                        ))}
+                                                        <td className="py-4 px-2 text-center">
+                                                            <div className="flex flex-col items-center gap-1">
+                                                                <span className={cn(
+                                                                    "text-xs font-black",
+                                                                    porcLogro >= 70 ? "text-primary-teal" : porcLogro >= 40 ? "text-yellow-500" : "text-gray-500"
+                                                                )}>
+                                                                    {porcLogro}%
+                                                                </span>
+                                                                <div className="w-12 h-1.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                                                                    <div 
+                                                                        className={cn(
+                                                                            "h-full transition-all duration-500",
+                                                                            porcLogro >= 70 ? "bg-primary-teal" : porcLogro >= 40 ? "bg-yellow-500" : "bg-red-500"
+                                                                        )}
+                                                                        style={{ width: `${porcLogro}%` }}
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            })}
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </Card>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
     );
 };

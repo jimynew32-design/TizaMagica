@@ -194,7 +194,7 @@ export const EstrategiaAnualEditor: React.FC = () => {
     };
 
     const deleteUnidad = (idx: number) => {
-        const next = unidades.filter((_, i) => i !== idx);
+        const next = (unidades || []).filter((_, i) => i !== idx);
         setUnidades(next);
         autoSave(next);
     };
@@ -213,7 +213,7 @@ export const EstrategiaAnualEditor: React.FC = () => {
         if (!planActivo || !perfil) return;
 
         // Validar campos obligatorios
-        const incompletas = unidades.filter(u => !u.tematica || !u.producto);
+        const incompletas = (unidades || []).filter(u => !u.tematica || !u.producto);
         if (incompletas.length > 0) {
             showNotification({
                 title: 'Campos Requeridos',

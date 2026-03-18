@@ -9,7 +9,7 @@ export const EvaluacionDashboard: React.FC = () => {
     const { sesiones } = useUnidadesStore();
 
     // Sesiones que tienen instrumentos generados
-    const sesionesConInstrumento = sesiones.filter(s => s.instrumentoContenido);
+    const sesionesConInstrumento = (sesiones || []).filter(s => s.instrumentoContenido);
 
     return (
         <div className="space-y-10 animate-fade-in pb-20">

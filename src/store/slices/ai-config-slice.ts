@@ -19,6 +19,7 @@ export interface AIConfigSlice {
     setProvider: (provider: 'vertex' | 'gemini' | 'lmstudio') => void
     setGeminiApiKey: (key: string) => void
     setLMStudioUrl: (url: string) => void
+    setLMStudioApiKey: (key: string) => void
     setVertexConfig: (config: Partial<AIConfig['vertexConfig']>) => void
     setActiveModel: (model: string) => void
     setAutoRetry: (enabled: boolean) => void
@@ -39,6 +40,7 @@ export const createAIConfigSlice: StateCreator<
         provider: 'vertex',
         geminiApiKey: '',
         lmstudioUrl: '',
+        lmstudioApiKey: '',
         vertexConfig: {
             project_id: '',
             client_email: '',
@@ -61,6 +63,10 @@ export const createAIConfigSlice: StateCreator<
 
     setLMStudioUrl: (url: string) => {
         set((state) => { state.aiConfig.lmstudioUrl = url });
+    },
+
+    setLMStudioApiKey: (key: string) => {
+        set((state) => { state.aiConfig.lmstudioApiKey = key });
     },
 
     setVertexConfig: (config: Partial<AIConfig['vertexConfig']>) => {

@@ -64,7 +64,7 @@ export const Step5Preve: React.FC<Step5PreveProps> = ({ unidad, onUpdate }) => {
     const [sesionesIAData, setSesionesIAData] = useState<SesionIA[]>([]);
 
     // Filtrar sesiones por unidad
-    const sesionesUnidad = sesiones.filter(s => s.unidadId === unidad.id);
+    const sesionesUnidad = (sesiones || []).filter(s => s.unidadId === unidad.id);
 
     // ─── Build calendar sessions from ORGANIZA ──────────────────────────────
 

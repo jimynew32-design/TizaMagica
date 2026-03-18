@@ -183,7 +183,7 @@ export const createUnidadesSlice: StateCreator<
     },
 
     getUnidadesByPlan: (planAnualId: string) => {
-        return get().unidades.filter((u: Unidad) => u.planAnualId === planAnualId)
+        return (get().unidades || []).filter((u: Unidad) => u.planAnualId === planAnualId)
     },
 
     // — Sesiones —
@@ -388,7 +388,7 @@ export const createUnidadesSlice: StateCreator<
     },
 
     getSesionesByUnidad: (unidadId: string) => {
-        return get().sesiones.filter((s: Sesion) => s.unidadId === unidadId)
+        return (get().sesiones || []).filter((s: Sesion) => s.unidadId === unidadId)
     },
 
     syncSesionesFromUnidad: async (unidad: Unidad, _planAnual: PlanAnual) => {

@@ -31,6 +31,8 @@ export interface PerfilSlice {
         institucion: { gereduDre: string; ugel: string; nombreIE: string; director: string },
         nivel: NivelEducativo,
         cargaHoraria: FilaHorario[],
+        tipoIE?: 'JER' | 'JEC' | 'CEBA' | 'EBE' | 'EIB' | 'SFT',
+        turno?: 'Mañana' | 'Tarde' | 'Noche'
     ) => Promise<void>
     setLastResource: (resource: { type: 'plan' | 'unidad' | 'sesion'; id: string; title: string; path: string }) => void
     syncScheduleWithPlanes: () => Promise<void>
@@ -328,7 +330,7 @@ export const createPerfilSlice: StateCreator<
         }
     },
 
-    updateOnboarding: async (nombre, institucion, nivel, cargaHoraria) => {
+    updateOnboarding: async (nombre, institucion, nivel, cargaHoraria, tipoIE, turno) => {
         const { updatePerfil } = get()
         await updatePerfil({
             nombreCompleto: nombre,
@@ -337,6 +339,8 @@ export const createPerfilSlice: StateCreator<
             nombreIE: institucion.nombreIE,
             director: institucion.director,
             nivel,
+            tipoIE,
+            turno,
             cargaHoraria,
             isOnboarded: true,
         })

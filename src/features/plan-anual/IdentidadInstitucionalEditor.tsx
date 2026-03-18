@@ -203,9 +203,9 @@ ${comps}
                                         key={enf.id}
                                         onClick={() => {
                                             setEnfoques(prev => 
-                                                prev.includes(enf.id) 
-                                                    ? prev.filter(i => i !== enf.id) 
-                                                    : [...prev, enf.id]
+                                                (prev || []).includes(enf.id) 
+                                                    ? (prev || []).filter(i => i !== enf.id) 
+                                                    : [...(prev || []), enf.id]
                                             );
                                         }}
                                         className={cn(

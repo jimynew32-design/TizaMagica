@@ -86,10 +86,12 @@ export interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ onNavigate }) => {
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
 
     return (
         <nav
+            onMouseEnter={() => setCollapsed(false)}
+            onMouseLeave={() => setCollapsed(true)}
             className={cn(
                 "h-full flex flex-col bg-black/80 backdrop-blur-3xl border-r border-white/5 transition-all duration-500 ease-premium",
                 collapsed ? "w-20 p-3" : "w-72 p-6"

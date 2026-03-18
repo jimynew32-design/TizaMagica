@@ -71,10 +71,10 @@ export const ResumenM03: React.FC<ResumenM03Props> = ({ unidad }) => {
 
     // Filtrar competencias marcadas
     const getCheckedComps = (allComps: CNEBCompetencia[]) => {
-        return allComps.filter(c => planActivo.matrizCompetencias[matrixIdComp(c.nombre)]?.[unitIdx])
+        return (allComps || []).filter(c => planActivo.matrizCompetencias[matrixIdComp(c.nombre)]?.[unitIdx])
             .map(c => ({
                 ...c,
-                capacidadesMarcadas: c.capacidades.filter(cap => planActivo.matrizCompetencias[matrixIdCap(c.nombre, cap)]?.[unitIdx])
+                capacidadesMarcadas: (c.capacidades || []).filter(cap => planActivo.matrizCompetencias[matrixIdCap(c.nombre, cap)]?.[unitIdx])
             }));
     };
 
@@ -82,11 +82,11 @@ export const ResumenM03: React.FC<ResumenM03Props> = ({ unidad }) => {
     const transMarcadas = getCheckedComps(transversales);
 
     // Filtrar enfoques marcados
-    const enfoquesMarcados = ENFOQUES_TRANSVERSALES.filter(enf => 
+    const enfoquesMarcados = (ENFOQUES_TRANSVERSALES || []).filter(enf => 
         planActivo.matrizCompetencias[enf.id]?.[unitIdx]
     ).map(enf => ({
         ...enf,
-        valoresMarcados: enf.valores.filter(v => planActivo.matrizCompetencias[matrixIdVal(enf.id, v.id)]?.[unitIdx])
+        valoresMarcados: (enf.valores || []).filter(v => planActivo.matrizCompetencias[matrixIdVal(enf.id, v.id)]?.[unitIdx])
     }));
 
     return (

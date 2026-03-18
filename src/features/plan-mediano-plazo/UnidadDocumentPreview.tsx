@@ -87,7 +87,7 @@ export const UnidadDocumentPreview: React.FC = () => {
 
     // Sesiones de esta unidad
     const sesionesUnidad = useMemo(
-        () => sesiones.filter(s => s.unidadId === id).sort((a, b) => a.orden - b.orden),
+        () => (sesiones || []).filter(s => s.unidadId === id).sort((a, b) => a.orden - b.orden),
         [sesiones, id]
     );
 

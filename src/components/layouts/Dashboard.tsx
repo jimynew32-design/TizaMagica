@@ -57,21 +57,30 @@ export const DashboardLayout: React.FC = () => {
             )}>
                 <Sidebar onNavigate={() => setIsMobileMenuOpen(false)} />
             </aside>
+            
+            {/* Mobile Floating Menu Button (FAB) */}
+            <button 
+                onClick={() => setIsMobileMenuOpen(true)}
+                className={cn(
+                    "lg:hidden fixed bottom-6 left-6 z-[80] w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500",
+                    "bg-black/60 backdrop-blur-xl border border-white/10 shadow-glow-magenta-sm hover:shadow-glow-magenta active:scale-90",
+                    isMobileMenuOpen ? "opacity-0 translate-y-20 pointer-events-none" : "opacity-100 translate-y-0"
+                )}
+                aria-label="Abrir menú"
+                id="mobile-fab"
+            >
+                <div className="flex flex-col gap-1.5 items-center">
+                    <div className="w-5 h-0.5 bg-brand-magenta rounded-full" />
+                    <div className="w-6 h-0.5 bg-white/80 rounded-full" />
+                    <div className="w-4 h-0.5 bg-brand-magenta rounded-full" />
+                </div>
+            </button>
 
             {/* Main Content Area */}
             <main className="flex-1 flex flex-col min-w-0 min-h-dvh overflow-hidden z-10 relative" id="main-content">
                 {/* Top Header */}
                 <header className="h-20 flex items-center justify-between px-safe sticky top-0 z-40 bg-black/60 backdrop-blur-xl border-b border-white/5 safe-area-pt">
                     <div className="flex items-center gap-3">
-                        <button 
-                            onClick={() => setIsMobileMenuOpen(true)}
-                            className="lg:hidden w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 active:scale-95 transition-all"
-                            aria-label="Abrir menú de navegación"
-                            aria-controls="main-sidebar"
-                            aria-expanded={isMobileMenuOpen}
-                        >
-                            <span className="material-icons-round text-gray-300">menu</span>
-                        </button>
                         <PlanSelector />
                     </div>
 

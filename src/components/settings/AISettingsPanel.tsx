@@ -24,33 +24,57 @@ export const AISettingsPanel: React.FC<AISettingsPanelProps> = ({ isModal, onClo
         setEnableLogging,
         setProvider,
         setLMStudioUrl,
+        setLMStudioApiKey,
         setActiveModel
     } = useAIConfigStore();
 
     const [testStatus, setTestStatus] = useState<'idle' | 'testing' | 'success' | 'error'>('idle');
     const [localModels, setLocalModels] = useState<string[]>([]);
     const [isLoadingModels, setIsLoadingModels] = useState(false);
+    const [fetchError, setFetchError] = useState<string | null>(null);
 
     // Cargar modelos de LM Studio si está seleccionado
     React.useEffect(() => {
         if (aiConfig.provider === 'lmstudio') {
             fetchModels();
         }
-    }, [aiConfig.provider, aiConfig.lmstudioUrl]);
+    }, [aiConfig.provider, aiConfig.lmstudioUrl, aiConfig.lmstudioApiKey]);
 
     const fetchModels = async () => {
         setIsLoadingModels(true);
+        setFetchError(null);
         try {
             const baseUrl = aiConfig.lmstudioUrl || 'http://localhost:1234/v1';
-            const res = await fetch(`${baseUrl}/models`);
-            if (res.ok) {
-                const data = await res.json();
+            const headers: Record<string, string> = { 'Accept': 'application/json' };
+            if (aiConfig.lmstudioApiKey) {
+                headers['Authorization'] = `Bearer ${aiConfig.lmstudioApiKey}`;
+            }
+
+            const res = await fetch(`${baseUrl}/models`, { headers });
+            const data = await res.json().catch(() => ({}));
+
+            if (!res.ok || data.error) {
+                const msg = data.error?.message || `Error del servidor (${res.status})`;
+                if (msg.includes('API token is required')) {
+                    setFetchError('Se requiere un Token de API. Actívalo en LM Studio Settings.');
+                } else {
+                    setFetchError(msg);
+                }
+                setLocalModels([]);
+                return;
+            }
+
+            if (data && data.data) {
                 const models = data.data.map((m: any) => m.id);
                 setLocalModels(models);
                 
+                if (models.length === 0) {
+                    setFetchError('Servidor activo, pero no hay modelos cargados en memoria.');
+                }
+
                 // Si no hay modelo seleccionado o es uno de Google, sugerir el primero o Qwen
                 const current = aiConfig.activeModel;
-                if (!current || current.includes('gemini')) {
+                if (!current || current.includes('gemini') || !models.includes(current)) {
                     const qwen = models.find((m: string) => m.toLowerCase().includes('qwen'));
                     if (qwen) {
                         setActiveModel(qwen);
@@ -58,9 +82,12 @@ export const AISettingsPanel: React.FC<AISettingsPanelProps> = ({ isModal, onClo
                         setActiveModel(models[0]);
                     }
                 }
+            } else {
+                setFetchError('Formato de respuesta desconocido de LM Studio.');
             }
         } catch (error) {
             console.error('Error fetching local models:', error);
+            setFetchError('No se pudo conectar. Verifica la URL y que LM Studio tenga CORS habilitado.');
             setLocalModels([]);
         } finally {
             setIsLoadingModels(false);
@@ -171,7 +198,7 @@ export const AISettingsPanel: React.FC<AISettingsPanelProps> = ({ isModal, onClo
                             </p>
                         </div>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 gap-4">
                             <NeonInput
                                 label="URL del Servidor"
                                 placeholder="http://localhost:1234/v1"
@@ -180,35 +207,52 @@ export const AISettingsPanel: React.FC<AISettingsPanelProps> = ({ isModal, onClo
                                 icon="link"
                             />
 
-                            <div className="space-y-1.5">
-                                <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest ml-1 flex items-center gap-2">
-                                    Modelo Local
-                                    {isLoadingModels && <span className="animate-spin text-[10px]">refresh</span>}
-                                </label>
-                                <div className="relative group">
-                                    <select 
-                                        className="w-full h-12 bg-white/5 border border-white/10 rounded-xl px-10 text-xs font-bold text-white focus:outline-none focus:border-magenta/50 focus:bg-white/[0.08] transition-all appearance-none cursor-pointer"
-                                        value={aiConfig.activeModel}
-                                        onChange={(e) => setActiveModel(e.target.value)}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <NeonInput
+                                    label="API Key (Opcional)"
+                                    placeholder="Solo si habilitaste Bearer Token"
+                                    type="password"
+                                    value={aiConfig.lmstudioApiKey}
+                                    onChange={(e) => setLMStudioApiKey(e.target.value)}
+                                    icon="vpn_key"
+                                />
+
+                                <div className="space-y-1.5">
+                                    <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest ml-1 flex items-center gap-2">
+                                        Modelo Local
+                                        {isLoadingModels && <span className="animate-spin text-[10px]">refresh</span>}
+                                    </label>
+                                    <div className="relative group">
+                                        <select 
+                                            className="w-full h-12 bg-white/5 border border-white/10 rounded-xl px-10 text-xs font-bold text-white focus:outline-none focus:border-magenta/50 focus:bg-white/[0.08] transition-all appearance-none cursor-pointer"
+                                            value={aiConfig.activeModel}
+                                            onChange={(e) => setActiveModel(e.target.value)}
+                                        >
+                                            {localModels.length > 0 ? (
+                                                localModels.map(m => (
+                                                    <option key={m} value={m} className="bg-[#1a1a1a] text-white py-2">{m}</option>
+                                                ))
+                                            ) : (
+                                                <option value="" className="bg-[#1a1a1a] text-gray-500">No se detectaron modelos...</option>
+                                            )}
+                                        </select>
+                                        <span className="material-icons-round absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg group-focus-within:text-magenta transition-colors">psychology</span>
+                                        <span className="material-icons-round absolute right-3 top-1/2 -translate-y-1/2 text-gray-550 text-sm pointer-events-none">expand_more</span>
+                                    </div>
+                                    {fetchError && (
+                                        <p className="text-[9px] text-red-400 mt-1 ml-1 flex items-center gap-1 animate-in fade-in duration-300">
+                                            <span className="material-icons-round text-[10px]">error_outline</span>
+                                            {fetchError}
+                                        </p>
+                                    )}
+                                    <button 
+                                        onClick={fetchModels}
+                                        className="text-[9px] text-magenta/60 hover:text-magenta font-black uppercase tracking-tighter ml-1 mt-1.5 transition-colors flex items-center gap-1"
                                     >
-                                        {localModels.length > 0 ? (
-                                            localModels.map(m => (
-                                                <option key={m} value={m} className="bg-[#1a1a1a] text-white py-2">{m}</option>
-                                            ))
-                                        ) : (
-                                            <option value="" className="bg-[#1a1a1a] text-gray-500">No se detectaron modelos...</option>
-                                        )}
-                                    </select>
-                                    <span className="material-icons-round absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg group-focus-within:text-magenta transition-colors">psychology</span>
-                                    <span className="material-icons-round absolute right-3 top-1/2 -translate-y-1/2 text-gray-550 text-sm pointer-events-none">expand_more</span>
+                                        <span className="material-icons-round text-[10px]">sync</span>
+                                        Actualizar Lista
+                                    </button>
                                 </div>
-                                <button 
-                                    onClick={fetchModels}
-                                    className="text-[9px] text-magenta/60 hover:text-magenta font-black uppercase tracking-tighter ml-1 transition-colors flex items-center gap-1"
-                                >
-                                    <span className="material-icons-round text-[10px]">sync</span>
-                                    Actualizar Lista
-                                </button>
                             </div>
                         </div>
 

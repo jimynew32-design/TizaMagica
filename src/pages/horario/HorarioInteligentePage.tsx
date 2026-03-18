@@ -52,6 +52,8 @@ const HorarioInteligentePage: React.FC = () => {
         cicloEscolar: '2025/2026',
         nivel: perfil?.nivel || 'Secundaria',
         modalidad: 'JER',
+        tipoIE: 'JER',
+        turno: 'Mañana',
         inicioJornada: '08:00',
         finJornada: '13:30',
         duracionBloque: 45,
@@ -222,41 +224,61 @@ const HorarioInteligentePage: React.FC = () => {
                     </motion.div>
                 </AnimatePresence>
 
-                {/* Navegación Footer */}
+                {/* Navegación Footer Maestro - Diseño Balanceado PlanX */}
                 {!generationFinished && (
-                    <footer className="mt-12 flex justify-between items-center border-t border-white/5 pt-12 relative z-10">
-                        <div className="flex items-center gap-4">
+                    <footer className="mt-12 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/5 pt-12 relative z-10 w-full animate-in fade-in slide-in-from-bottom-8 duration-700">
+                        {/* Lado Izquierdo: Acción de Retroceso */}
+                        <div className="w-full md:w-1/4 flex justify-start">
                             <button
                                 onClick={() => setCurrentStep((prev: number) => Math.max(1, prev - 1))}
                                 disabled={currentStep === 1 || isGenerating}
                                 className={cn(
-                                    "px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[4px] border border-white/10 transition-all",
-                                    currentStep === 1 ? "opacity-0 invisible" : "text-white/40 hover:text-white hover:bg-white/5"
+                                    "group flex items-center gap-3 px-8 py-5 rounded-3xl text-[10px] font-black uppercase tracking-[4px] border border-white/5 transition-all duration-500",
+                                    currentStep === 1 
+                                        ? "opacity-0 invisible pointer-events-none" 
+                                        : "text-white/20 hover:text-white hover:bg-white/5 hover:border-white/10"
                                 )}
                             >
+                                <span className="material-icons-round text-sm group-hover:-translate-x-1 transition-transform">west</span>
                                 Anterior
                             </button>
-                            
-                            {/* Botón de Vista Previa en Footer para mayor orden */}
+                        </div>
+                        
+                        {/* Centro: Acciones Secundarias de Consulta */}
+                        <div className="w-full md:w-auto flex justify-center">
                             <button
                                 onClick={() => setShowPreview(true)}
-                                className="px-6 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[4px] border border-brand-magenta/20 bg-brand-magenta/5 text-brand-magenta hover:bg-brand-magenta hover:text-white transition-all flex items-center gap-3 group"
+                                className="relative px-10 py-5 rounded-[2rem] text-[10px] font-black uppercase tracking-[5px] border border-brand-magenta/30 bg-brand-magenta/5 text-brand-magenta hover:bg-brand-magenta hover:text-white transition-all duration-500 flex items-center gap-4 group shadow-glow-magenta-xs hover:shadow-glow-magenta"
                             >
-                                <span className="material-icons-round text-sm group-hover:scale-110 transition-transform">auto_awesome</span>
+                                <div className="absolute inset-x-4 -top-px h-px bg-gradient-to-r from-transparent via-brand-magenta/40 to-transparent" />
+                                <span className="material-icons-round text-lg group-hover:rotate-12 transition-transform">auto_awesome</span>
                                 Consultar Estructura
                             </button>
                         </div>
 
-                        <button
-                            onClick={handleNext}
-                            disabled={isGenerating}
-                            className="px-12 py-4 bg-white text-black rounded-2xl text-[10px] font-black uppercase tracking-[4px] hover:bg-brand-magenta hover:text-white transition-all shadow-xl hover:shadow-glow-magenta flex items-center gap-3 group disabled:opacity-50"
-                        >
-                            <span>{currentStep === 5 ? 'Generar Horario' : 'Siguiente Paso'}</span>
-                            <span className="material-icons-round text-sm group-hover:translate-x-1 transition-transform">
-                                {currentStep === 5 ? 'bolt' : 'arrow_forward'}
-                            </span>
-                        </button>
+                        {/* Lado Derecho: Acción Primaria de Avance */}
+                        <div className="w-full md:w-1/4 flex justify-end">
+                            <button
+                                onClick={handleNext}
+                                disabled={isGenerating}
+                                className={cn(
+                                    "relative px-12 py-5 rounded-3xl text-[10px] font-black uppercase tracking-[4px] transition-all duration-500 flex items-center gap-4 group disabled:opacity-50 overflow-hidden",
+                                    currentStep === 5 
+                                        ? "bg-brand-magenta text-white shadow-glow-magenta hover:scale-105 active:scale-95" 
+                                        : "bg-white text-black hover:bg-brand-magenta hover:text-white shadow-xl"
+                                )}
+                            >
+                                {/* Efecto de brillo para Generar Horario */}
+                                {currentStep === 5 && (
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                                )}
+                                
+                                <span>{currentStep === 5 ? 'Generar Horario' : 'Siguiente Paso'}</span>
+                                <span className="material-icons-round text-lg group-hover:translate-x-1 transition-transform">
+                                    {currentStep === 5 ? 'bolt' : 'east'}
+                                </span>
+                            </button>
+                        </div>
                     </footer>
                 )}
             </main>

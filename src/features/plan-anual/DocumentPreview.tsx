@@ -381,7 +381,7 @@ export const DocumentPreview: React.FC = () => {
                                     <tr key={aspect.label}>
                                         <td style={{ ...tdStyle, fontWeight: 'bold', fontSize: '9pt' }}>ASPECTO {aspect.label}</td>
                                         {(['familiar', 'grupal', 'local', 'regional', 'nacional'] as const).map(ambito => (
-                                            <td key={ambito} style={{ ...tdStyle, fontSize: '8.5pt', minHeight: '50px' }}>
+                                            <td key={ambito} style={{ ...tdStyle, fontSize: '8.5pt', minHeight: '50px', whiteSpace: 'pre-wrap' }}>
                                                 {ctx[ambito]?.[aspect.key]?.texto || ''}
                                             </td>
                                         ))}
@@ -415,12 +415,12 @@ export const DocumentPreview: React.FC = () => {
                         <tbody>
                             <tr>
                                 <td style={{ ...tdStyle, textAlign: 'center' }}>{diag.estilos.edadMin}-{diag.estilos.edadMax} años</td>
-                                <td style={{ ...tdStyle, fontSize: '8.5pt' }}>{diag.caracteristicas.cognitivo.texto}</td>
-                                <td style={{ ...tdStyle, fontSize: '8.5pt' }}>{diag.caracteristicas.fisico.texto}</td>
-                                <td style={{ ...tdStyle, fontSize: '8.5pt' }}>{diag.caracteristicas.emocional.texto}</td>
-                                <td style={{ ...tdStyle, fontSize: '8.5pt' }}>{diag.estilos.estrategias}</td>
+                                <td style={{ ...tdStyle, fontSize: '8.5pt', whiteSpace: 'pre-wrap' }}>{diag.caracteristicas.cognitivo.texto}</td>
+                                <td style={{ ...tdStyle, fontSize: '8.5pt', whiteSpace: 'pre-wrap' }}>{diag.caracteristicas.fisico.texto}</td>
+                                <td style={{ ...tdStyle, fontSize: '8.5pt', whiteSpace: 'pre-wrap' }}>{diag.caracteristicas.emocional.texto}</td>
+                                <td style={{ ...tdStyle, fontSize: '8.5pt', whiteSpace: 'pre-wrap' }}>{diag.estilos.estrategias}</td>
                                 <td style={{ ...tdStyle, fontSize: '8.5pt' }}>{diag.estilos.intereses.join(', ')}</td>
-                                <td style={{ ...tdStyle, fontSize: '8pt' }}>
+                                <td style={{ ...tdStyle, fontSize: '8pt', whiteSpace: 'pre-wrap' }}>
                                     {diag.estilos.idiomas.map((idioma, idx) => (
                                         <div key={idx}>
                                             <b>{idioma.etiqueta}:</b> {idioma.valor}

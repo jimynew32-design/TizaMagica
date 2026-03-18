@@ -26,7 +26,7 @@ export const Step3Organiza: React.FC<Step3OrganizaProps> = ({ unidad, onUpdate }
     // Get M03 Calendario Comunal events filtered to this unit's range
     const comunalEvents = useMemo(() => {
         if (!planActivo?.calendarioComunalData?.events || !fechaInicio) return [];
-        return planActivo.calendarioComunalData.events.filter(ev => {
+        return (planActivo.calendarioComunalData.events || []).filter(ev => {
             const d = ev.date || ev.startDate;
             if (!d) return false;
             // Include events whose date falls within the unit range (loosely — by month)

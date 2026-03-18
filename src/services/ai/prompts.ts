@@ -51,6 +51,7 @@ Actúa como un experto geógrafo y antropólogo educativo peruano, especialista 
 - Mapa de Impacto (Referencia de estados): ${JSON.stringify(mapaImpacto)}
 
 2. Directrices de Redacción por Ámbito (Rigurosas):
+IMPORTANTE: No redactes párrafos largos. Toda la información debe estar estructurada en puntos (mínimo 3 por celda), cada uno comenzando con un guion ("- ") seguido de un espacio.
 
 A. FAMILIAR:
 - Cultural: Describe lenguas (lengua materna y segunda lengua), costumbres relevantes (fiestas/comidastípicas) y roles familiares.
@@ -109,7 +110,7 @@ REGLAS CRÍTICAS PARA [ESTRATEGIAS]:
 Responde ESTRICTAMENTE con este formato:
 
 [ESTRATEGIAS]
-(Lista de 4 a 6 estrategias directas basadas en los intereses).
+(Lista de 4 a 6 estrategias directas basadas en los intereses, cada una comenzando con un guion "- ").
 
 [INTERESES]
 Sugerencia 1|Sugerencia 2|Sugerencia 3|Sugerencia 4
@@ -125,10 +126,10 @@ Redacta el Diagnóstico Sociolingüístico para un aula con los siguientes datos
 - Escenario Lingüístico: ${escenario}
 - Contexto del aula (Análisis de Heatmap): ${JSON.stringify(contextoMatriz)}
 
-REGLAS DE REDACCIÓN (PÁRRAFO ÚNICO):
-1. Redacta el diagnóstico en un SOLO párrafo sólido y coherente.
-2. Integra el análisis de las lenguas L1/L2, el escenario lingüístico y el impacto en el aprendizaje en una narrativa fluida.
-3. Evita usar viñetas o listas; debe ser un bloque de texto descriptivo y bien hilado.
+REGLAS DE REDACCIÓN (ESTRUCTURADA EN PUNTOS):
+1. Redacta el diagnóstico en una secuencia de puntos claros y coherentes, cada uno comenzando con un guion ("- ").
+2. Integra el análisis de las lenguas L1/L2, el escenario lingüístico y el impacto en el aprendizaje dividiéndolo en al menos 3 o 4 viñetas.
+3. Evita los bloques de texto largos; usa viñetas para que la lectura sea ágil pero técnica.
 4. Usa un tono técnico, académico y empático.
 Responde ÚNICAMENTE con los puntos redactados del diagnóstico.
 `,
@@ -159,14 +160,15 @@ REGLAS DE REDACCIÓN ACADÉMICA / PEDAGÓGICA (ESTRICTAS):
    - Nivel 3: Perfil equilibrado (fortalezas y aspectos por consolidar esperados para el grado).
    - Niveles 4-5: Alto potencial, autonomía y consolidación de habilidades.
 5. ESTILO PEDAGÓGICO: Preciso, coherente, analítico. Evita generalizaciones innecesarias. Promueve la claridad conceptual y la pertinencia educativa.
-6. NATURALIDAD NARRATIVA: Redacta un párrafo sólido por dimensión. NO menciones los números de escala directamente en el texto.
+6. ESTRUCTURA DE PUNTOS (OBLIGATORIA): Redacta cada dimensión EXCLUSIVAMENTE como una lista de 4 a 5 puntos técnicos, cada uno comenzando con un guion ("- "). NO uses párrafos, bloques de texto ni menciones los números de escala directamente. La respuesta debe ser una secuencia de viñetas claras y profesionales.
+7. IMPACTO EN EL APRENDIZAJE: Cada punto debe conectar el hallazgo con una implicancia pedagógica para el área de ${area}.
 
 FORMATO DE SALIDA (JSON):
 Responde ÚNICAMENTE con un objeto JSON estrictamente válido con esta estructura:
 {
-  "cognitivo": "...",
-  "fisico": "...",
-  "emocional": "..."
+  "cognitivo": "- Punto 1\\n- Punto 2\\n- Punto 3...",
+  "fisico": "- Punto 1\\n- Punto 2\\n- Punto 3...",
+  "emocional": "- Punto 1\\n- Punto 2\\n- Punto 3..."
 }
 `,
 

@@ -41,7 +41,7 @@ export const AuditReport: React.FC = () => {
         });
 
         // Alertas de cada Unidad
-        const planUnidades = unidades.filter(u => u.planAnualId === planActivo.id);
+        const planUnidades = (unidades || []).filter(u => u.planAnualId === planActivo.id);
         planUnidades.forEach(u => {
             const unitAlerts = AuditorService.auditUnidad(u);
             if (unitAlerts.length > 0) {
