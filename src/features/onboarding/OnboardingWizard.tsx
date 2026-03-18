@@ -25,6 +25,8 @@ export const OnboardingWizard: React.FC = () => {
         nivel: 'Secundaria' as 'Inicial' | 'Primaria' | 'Secundaria',
         tipoIE: 'JER' as 'JER' | 'JEC' | 'CEBA' | 'EBE' | 'EIB' | 'SFT',
         turno: 'Mañana' as 'Mañana' | 'Tarde' | 'Noche',
+        duracionHora: 45,
+        configuracionRecreos: [20],
         cargaHoraria: []
     });
 
@@ -52,7 +54,9 @@ export const OnboardingWizard: React.FC = () => {
                 formData.nivel,
                 formData.cargaHoraria,
                 formData.tipoIE,
-                formData.turno
+                formData.turno,
+                formData.duracionHora,
+                formData.configuracionRecreos
             );
             navigate('/');
         } catch (err) {
@@ -184,19 +188,99 @@ export const OnboardingWizard: React.FC = () => {
                                         Turno de Trabajo
                                     </label>
                                     <div className="bg-white/5 p-2 rounded-[2rem] border border-white/5 backdrop-blur-3xl shadow-2xl">
-                                        <TabSwitch
-                                            className="w-full"
-                                            options={[
-                                                { value: 'Mañana', label: 'MAÑ', icon: 'wb_sunny' },
-                                                { value: 'Tarde', label: 'TAR', icon: 'wb_twilight' },
-                                                { value: 'Noche', label: 'NOC', icon: 'dark_mode' }
-                                            ]}
-                                            value={formData.turno}
-                                            onChange={(v) => setFormData({ ...formData, turno: v as any })}
-                                            variant="magenta"
-                                        />
+                                         <TabSwitch
+                                             className="w-full"
+                                             options={[
+                                                 { value: 'Mañana', label: 'MAÑ', icon: 'wb_sunny' },
+                                                 { value: 'Tarde', label: 'TAR', icon: 'wb_twilight' },
+                                                 { value: 'Noche', label: 'NOC', icon: 'dark_mode' }
+                                             ]}
+                                             value={formData.turno}
+                                             onChange={(v) => setFormData({ ...formData, turno: v as any })}
+                                             variant="magenta"
+                                         />
+                                     </div>
+                                 </div>
+
+                                 {/* Configuración de Tiempo Pro */}
+                                 <div className="col-span-1 md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-12 mt-4 pt-10 border-t border-white/5 animate-slide-up">
+                                    {/* Columna Izquierda: Hora Pedagógica y N° Recreos */}
+                                    <div className="space-y-10">
+                                        <div className="space-y-4 group">
+                                            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-primary-teal transition-colors flex items-center gap-3 px-3">
+                                                <span className="material-icons-round text-sm text-brand-magenta">timer</span>
+                                                Duración Hora Pedagógica
+                                            </label>
+                                            <div className="bg-white/[0.03] p-1.5 rounded-[1.5rem] border border-white/5 focus-within:border-primary-teal/30 focus-within:bg-white/[0.05] transition-all flex items-center">
+                                                <input 
+                                                    type="number" 
+                                                    value={formData.duracionHora}
+                                                    onChange={(e) => setFormData({ ...formData, duracionHora: parseInt(e.target.value) || 0 })}
+                                                    className="bg-transparent text-white font-black text-xl w-full px-6 py-3 focus:outline-none placeholder-gray-800"
+                                                    placeholder="45"
+                                                />
+                                                <span className="text-[10px] font-black text-gray-600 mr-6 uppercase tracking-widest">MIN</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-4 group">
+                                            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-primary-teal transition-colors flex items-center gap-3 px-3">
+                                                <span className="material-icons-round text-sm text-brand-magenta">reorder</span>
+                                                Cantidad de Recreos
+                                            </label>
+                                            <div className="bg-white/[0.03] p-1.5 rounded-[1.5rem] border border-white/5 focus-within:border-primary-teal/30 focus-within:bg-white/[0.05] transition-all overflow-hidden relative">
+                                                <select 
+                                                    value={formData.configuracionRecreos.length}
+                                                    onChange={(e) => {
+                                                        const n = parseInt(e.target.value);
+                                                        const current = formData.configuracionRecreos;
+                                                        if (n > current.length) {
+                                                            const added = Array(n - current.length).fill(20);
+                                                            setFormData({ ...formData, configuracionRecreos: [...current, ...added] });
+                                                        } else {
+                                                            setFormData({ ...formData, configuracionRecreos: current.slice(0, n) });
+                                                        }
+                                                    }}
+                                                    className="w-full bg-transparent p-4 text-white font-black text-xl appearance-none outline-none cursor-pointer"
+                                                >
+                                                    {[1,2,3,4,5,6,7,8,9,10].map(num => (
+                                                        <option key={num} value={num} className="bg-[#111]">{num} {num === 1 ? 'Recreo' : 'Recreos'}</option>
+                                                    ))}
+                                                </select>
+                                                <span className="material-icons-round absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">expand_more</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+
+                                    {/* Columna Derecha: Duraciones de Recreos Individuales */}
+                                    <div className="space-y-6">
+                                        <label className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 flex items-center gap-3 px-3">
+                                            <span className="material-icons-round text-sm text-brand-magenta">hourglass_top</span>
+                                            Duración por cada Recreo
+                                        </label>
+                                        
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                                            {formData.configuracionRecreos.map((duracion, idx) => (
+                                                <div key={idx} className="bg-white/[0.02] p-4 rounded-2xl border border-white/5 flex flex-col gap-2 group hover:bg-white/[0.04] transition-all">
+                                                    <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest">Recreo {idx + 1}</span>
+                                                    <div className="flex items-baseline gap-2">
+                                                        <input 
+                                                            type="number"
+                                                            value={duracion}
+                                                            onChange={(e) => {
+                                                                const newConf = [...formData.configuracionRecreos];
+                                                                newConf[idx] = parseInt(e.target.value) || 0;
+                                                                setFormData({ ...formData, configuracionRecreos: newConf });
+                                                            }}
+                                                            className="bg-transparent text-white font-black text-xl w-full focus:outline-none"
+                                                        />
+                                                        <span className="text-[10px] font-black text-gray-600 uppercase tracking-widest">min</span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                 </div>
                             </div>
                         )}
 
@@ -207,6 +291,8 @@ export const OnboardingWizard: React.FC = () => {
                                     nivel={formData.nivel}
                                     tipoIE={formData.tipoIE}
                                     turno={formData.turno}
+                                    duracionHora={formData.duracionHora}
+                                    configuracionRecreos={formData.configuracionRecreos}
                                     onChange={(horario: any) => setFormData({ ...formData, cargaHoraria: horario })}
                                 />
                             </div>

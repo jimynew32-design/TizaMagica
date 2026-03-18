@@ -8,6 +8,7 @@ import { cnebService } from '@/services/cneb';
 import { chatCompletion } from '@/services/ai';
 import { PROMPTS } from '@/services/ai/prompts';
 import { ResumenM03 } from './ResumenM03';
+import { cn } from '@/lib/cn';
 
 interface Step1DiagnosticoProps {
     unidad: Unidad;
@@ -101,16 +102,23 @@ RESPONDE SOLO JSON:
         const unitIdx = unidad.numero - 1;
         const uSummary = planActivo?.unidades[unitIdx];
         
-        // Si el Plan Anual tiene una situación y la unidad actual tiene otra (o está vacía/default)
-        // Actualizamos el estado local para reflejar lo que dice el Plan Anual
         if (uSummary && uSummary.situacionSignificativa !== unidad.diagnosticoStep.situacionSignificativa) {
             setSituacion(uSummary.situacionSignificativa);
         } else {
             setSituacion(unidad.diagnosticoStep.situacionSignificativa);
         }
         
-        setDiagnostico(unidad.diagnosticoStep.diagnosticoPrevio);
-    }, [unidad.id, planActivo?.unidades]);
+        // Cargar diagnóstico previo y auto-sincronizar matrícula si está vacía
+        const currentDiagnostico = unidad.diagnosticoStep.diagnosticoPrevio;
+        if (currentDiagnostico.totalEstudiantes <= 1 && planActivo?.diagnostico.cantidadTotal) {
+            setDiagnostico({ 
+                ...currentDiagnostico, 
+                totalEstudiantes: planActivo.diagnostico.cantidadTotal 
+            });
+        } else {
+            setDiagnostico(currentDiagnostico);
+        }
+    }, [unidad.id, planActivo?.unidades, planActivo?.diagnostico.cantidadTotal]);
 
     // Load CNEB
     useEffect(() => {
@@ -244,41 +252,69 @@ RESPONDE SOLO JSON:
         const isMismatch = diagnostico.totalEstudiantes > 0 && localSum !== diagnostico.totalEstudiantes && localSum > 0;
 
         return (
-            <div key={compId} className={`flex flex-col md:flex-row md:items-center gap-4 py-4 border-b border-white/5 last:border-0 hover:bg-white/[0.01] transition-all group px-2 rounded-xl ${isMismatch ? 'bg-red-500/5' : ''}`}>
+            <div key={compId} className={cn(
+                "flex flex-col md:flex-row md:items-center gap-4 py-4 border-b border-white/5 last:border-0 hover:bg-white/[0.01] transition-all group px-2 rounded-xl",
+                isMismatch ? "bg-red-500/5" : ""
+            )}>
                 <div className="flex-1">
-                    <p className={`text-xs font-bold leading-tight ${isMismatch ? 'text-red-400' : 'text-white'}`}>
+                    <p className={cn(
+                        "text-xs font-bold leading-tight",
+                        isMismatch ? "text-red-400" : "text-white"
+                    )}>
                         {comp.nombre}
                     </p>
-                    {isMismatch && (
-                        <p className="text-[9px] text-red-400/70 font-bold mt-1 animate-pulse">
-                        ⚠️ No coincide: {localSum} de {diagnostico.totalEstudiantes} estudiantes
-                        </p>
-                    )}
                 </div>
 
-                <div className="grid grid-cols-5 gap-2 w-full md:w-96">
+                <div className="grid grid-cols-12 gap-2 w-full md:w-[480px]">
                     {(['ad', 'a', 'b', 'c'] as (keyof LogroFrecuencia)[]).map((level) => (
-                        <div key={level} className="flex flex-col items-center gap-1">
+                        <div key={level} className="col-span-2 flex flex-col items-center gap-1">
                             <span className="text-[8px] font-black text-gray-600 uppercase tracking-widest">{level}</span>
                             <input
                                 type="number"
                                 min="0"
                                 value={f[level] === 0 ? '' : f[level]}
                                 onChange={(e) => handleLogroChange(compId, level, e.target.value)}
-                                className={`w-full bg-surface-card border rounded-lg py-1 text-center text-xs text-white focus:ring-1 transition-all font-black placeholder:text-gray-700 ${isMismatch ? 'border-red-500/40 focus:ring-red-500' : 'border-white/10 focus:ring-primary-teal group-hover:border-primary-teal/30'}`}
+                                className={cn(
+                                    "w-full bg-black/40 border rounded-xl py-2 text-center text-sm font-black transition-all outline-none",
+                                    level === 'ad' && (f.ad > 0 ? "text-brand-magenta border-brand-magenta/40 shadow-glow-magenta-xs" : "text-gray-600 border-white/5"),
+                                    level === 'a' && (f.a > 0 ? "text-primary-teal border-primary-teal/40 shadow-glow-teal-xs" : "text-gray-600 border-white/5"),
+                                    level === 'b' && (f.b > 0 ? "text-yellow-500 border-yellow-500/40" : "text-gray-600 border-white/5"),
+                                    level === 'c' && (f.c > 0 ? "text-red-500 border-red-500/40" : "text-gray-600 border-white/5"),
+                                    isMismatch && "border-red-900/50"
+                                )}
                                 placeholder="0"
                             />
-                            <span className={`text-[9px] font-bold opacity-0 group-hover:opacity-100 transition-opacity ${isMismatch ? 'text-red-400/60' : 'text-gray-500'}`}>
+                            <span className={`text-[9px] font-bold opacity-0 group-hover:opacity-100 transition-opacity ${isMismatch ? "text-red-400/60" : "text-gray-500"}`}>
                                 {calcPercent(f[level])}%
                             </span>
                         </div>
                     ))}
-                    <div className="flex flex-col items-center gap-1 border-l border-white/5 pl-2">
+                    
+                    <div className="col-span-2 flex flex-col items-center gap-1 border-l border-white/5 pl-2">
                         <span className="text-[8px] font-black text-primary-teal uppercase tracking-widest">TOTAL</span>
-                        <div className={`w-full h-[26px] flex items-center justify-center rounded-lg font-black text-xs ${isMismatch ? 'bg-red-500/20 text-red-400 border border-red-500/30' : 'bg-primary-teal/10 text-primary-teal border border-primary-teal/20'}`}>
+                        <div className={cn(
+                            "w-full h-[36px] flex items-center justify-center rounded-xl font-black text-sm",
+                            isMismatch ? "bg-red-500/20 text-red-400 border border-red-500/30" : "bg-primary-teal/10 text-primary-teal border border-primary-teal/20"
+                        )}>
                             {localSum}
                         </div>
-                        <span className="text-[7px] font-bold text-gray-600 uppercase mt-auto">alumnos</span>
+                    </div>
+
+                    <div className="col-span-2 flex flex-col items-center justify-center min-w-[50px]">
+                        {isMismatch && (
+                            <div className="flex flex-col items-center">
+                                <span className="text-[7px] font-black text-red-500 uppercase tracking-tighter mb-0.5 animate-pulse">
+                                    {diagnostico.totalEstudiantes - localSum > 0 ? 'Faltan' : 'Sobran'}
+                                </span>
+                                <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-2 py-0.5">
+                                    <span className="text-xs font-black text-red-500 leading-none">
+                                        {diagnostico.totalEstudiantes - localSum > 0 
+                                            ? `-${diagnostico.totalEstudiantes - localSum}` 
+                                            : `+${Math.abs(diagnostico.totalEstudiantes - localSum)}`}
+                                    </span>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -299,18 +335,52 @@ RESPONDE SOLO JSON:
                         </div>
                     </div>
                     <div className="hidden md:block">
-                        <div className="bg-surface-card border border-white/10 rounded-2xl p-3 flex gap-4 items-center">
-                            <div>
-                                <p className="text-[8px] font-black text-gray-500 uppercase tracking-widest leading-none mb-1">TOTAL ESTUDIANTES</p>
-                                <input
-                                    type="number"
-                                    min="0"
-                                    value={diagnostico.totalEstudiantes === 0 ? '' : diagnostico.totalEstudiantes}
-                                    onChange={(e) => handleTotalEstudiantesChange(e.target.value)}
-                                    className="bg-transparent border-b border-primary-teal/30 text-lg font-black text-white w-14 focus:outline-none focus:border-primary-teal text-center"
-                                    placeholder="0"
-                                />
+                        <div className="bg-surface-card border border-white/10 rounded-2xl p-4 flex gap-6 items-center relative group min-w-[220px]">
+                            <div className="flex flex-col flex-1">
+                                <label className="text-[9px] font-black text-gray-500 uppercase tracking-widest leading-none mb-2">Matrícula (M01)</label>
+                                <div className="flex flex-wrap gap-2">
+                                    {Object.entries(planActivo?.diagnostico.matriculaSecciones || {}).map(([id, data]: [string, any]) => (
+                                        <div key={id} className="flex flex-col items-center bg-black/20 px-3 py-1.5 rounded-xl border border-white/5 min-w-[36px]">
+                                            <span className="text-[8px] font-black text-brand-magenta mb-0.5">{id}</span>
+                                            <span className="text-[10px] font-black text-white">{data.varones + data.mujeres}</span>
+                                        </div>
+                                    ))}
+                                    {Object.keys(planActivo?.diagnostico.matriculaSecciones || {}).length === 0 && (
+                                        <span className="text-[7px] text-gray-600 font-bold uppercase italic">Sin secciones</span>
+                                    )}
+                                </div>
                             </div>
+
+                            <div className="h-10 w-px bg-white/10" />
+
+                            <div className="flex flex-col items-center">
+                                <p className="text-[9px] font-black text-primary-teal uppercase tracking-widest leading-none mb-2">Población Total</p>
+                                <div className="flex items-center gap-2">
+                                    <div className="bg-black/40 border border-brand-magenta/30 rounded-xl px-3 py-2 flex items-center justify-center min-w-[70px] shadow-glow-magenta-xs hover:border-brand-magenta/60 transition-all">
+                                        <input
+                                            type="number"
+                                            min="0"
+                                            value={diagnostico.totalEstudiantes === 0 ? '' : diagnostico.totalEstudiantes}
+                                            onChange={(e) => handleTotalEstudiantesChange(e.target.value)}
+                                            className="bg-transparent text-xl font-black text-white w-full outline-none text-center"
+                                            placeholder="0"
+                                        />
+                                    </div>
+                                    <button 
+                                        onClick={() => planActivo && handleTotalEstudiantesChange(planActivo.diagnostico.cantidadTotal.toString())}
+                                        title="Sincronizar con Diagnóstico M01"
+                                        className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-gray-500 hover:text-brand-magenta hover:bg-brand-magenta/10 hover:border-brand-magenta/20 transition-all"
+                                    >
+                                        <span className="material-icons-round text-lg">sync</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            {planActivo?.diagnostico.cantidadTotal === diagnostico.totalEstudiantes && diagnostico.totalEstudiantes > 0 && (
+                                <div className="absolute -top-2 -right-2 bg-brand-magenta text-white text-[7px] font-black px-2 py-0.5 rounded-full border border-brand-magenta/30 shadow-glow-magenta-xs animate-in fade-in zoom-in">
+                                    M01 SINCRONIZADO
+                                </div>
+                            )}
                         </div>
                     </div>
                 </CardHeader>

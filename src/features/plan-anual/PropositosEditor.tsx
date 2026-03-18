@@ -48,50 +48,51 @@ const CoverageRadar: React.FC<{
     );
 
     return (
-        <div className="fixed right-6 top-32 w-64 z-[40] animate-slide-in-right hidden xl:block">
-            <div className="bg-surface-card/80 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 shadow-2xl shadow-black/50 overflow-hidden relative group">
+        <div className="mt-12 animate-in fade-in slide-in-from-bottom-5 duration-700">
+            <div className="bg-surface-card/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 shadow-2xl overflow-hidden relative group">
                 {/* Decorative glow */}
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary-teal/10 rounded-full blur-[80px]" />
                 
-                <header className="relative mb-6">
-                    <p className="text-[10px] font-black text-primary-teal uppercase tracking-[.2em] mb-1">Radar de Cobertura</p>
-                    <h4 className="text-xs font-bold text-white uppercase italic">{label}</h4>
+                <header className="relative mb-8 text-center">
+                    <p className="text-[12px] font-black text-primary-teal uppercase tracking-[.3em] mb-2">Análisis de Cobertura Anual</p>
+                    <h4 className="text-xl font-black text-white uppercase italic tracking-tighter">{label}</h4>
                 </header>
 
-                <div className="relative space-y-6">
+                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     {/* Main Gauge */}
                     <div className="flex flex-col items-center">
-                        <div className="relative w-32 h-32 flex items-center justify-center">
-                            <svg className="w-full h-full transform -rotate-90">
+                        <div className="relative w-48 h-48 flex items-center justify-center">
+                            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 192 192">
                                 <circle
-                                    cx="64" cy="64" r="58"
+                                    cx="96" cy="96" r="88"
                                     fill="none"
                                     stroke="currentColor"
-                                    strokeWidth="8"
+                                    strokeWidth="12"
                                     className="text-white/5"
                                 />
                                 <circle
-                                    cx="64" cy="64" r="58"
+                                    cx="96" cy="96" r="88"
                                     fill="none"
                                     stroke="currentColor"
-                                    strokeWidth="8"
-                                    strokeDasharray={364}
-                                    strokeDashoffset={364 - (364 * totalPercent) / 100}
+                                    strokeWidth="12"
+                                    strokeDasharray={553}
+                                    strokeDashoffset={553 - (553 * totalPercent) / 100}
                                     strokeLinecap="round"
-                                    className="text-primary-teal transition-all duration-1000"
+                                    className="text-primary-teal transition-all duration-1000 shadow-glow-teal"
                                 />
                             </svg>
                             <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                <span className={`text-3xl font-black ${totalPercent === 100 ? 'text-brand-magenta' : 'text-white'}`}>
+                                <span className={`text-5xl font-black transition-colors duration-1000 ${totalPercent === 100 ? 'text-brand-magenta animate-pulse' : 'text-white'}`}>
                                     {totalPercent}%
                                 </span>
-                                <span className="text-[8px] font-black text-gray-500 uppercase tracking-widest">Global</span>
+                                <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest mt-1">Avance Global</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Breakdown */}
-                    <div className="space-y-4 pt-4 border-t border-white/5">
+                    <div className="space-y-6">
+                        <div className="space-y-4 pt-4 border-t border-white/5">
                         {stats.map((s, i) => (
                             <div key={i} className="space-y-1.5">
                                 <div className="flex justify-between items-end px-1">
@@ -111,12 +112,18 @@ const CoverageRadar: React.FC<{
                         ))}
                     </div>
 
-                    {totalPercent === 100 && (
-                        <div className="p-3 bg-brand-magenta/10 border border-brand-magenta/20 rounded-2xl flex items-center gap-3 animate-pulse">
-                            <span className="material-icons-round text-brand-magenta text-lg">verified</span>
-                            <p className="text-[9px] font-black text-brand-magenta uppercase leading-tight">Cobertura Total Alcanzada</p>
-                        </div>
-                    )}
+                        {totalPercent === 100 && (
+                            <div className="p-4 bg-brand-magenta/10 border border-brand-magenta/20 rounded-3xl flex items-center gap-4 animate-bounce">
+                                <div className="w-10 h-10 rounded-full bg-brand-magenta flex items-center justify-center shadow-glow-magenta">
+                                    <span className="material-icons-round text-white text-xl">verified</span>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black text-brand-magenta uppercase leading-tight tracking-widest">¡Felicidades!</p>
+                                    <p className="text-[9px] font-bold text-white/50 uppercase leading-tight mt-1">Cobertura Total Alcanzada</p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
@@ -1099,7 +1106,6 @@ Responde SOLO JSON puro. No inventes capacidades, usa las proporcionadas.`;
                         options={[
                             { value: 'Bimestre', label: 'BIM' },
                             { value: 'Trimestre', label: 'TRI' },
-                            { value: 'Semestre', label: 'SEM' },
                         ]}
                         value={periodoTipo}
                         onChange={(val) => handlePeriodoChange(val as any)}
@@ -1392,11 +1398,20 @@ Responde SOLO JSON puro. No inventes capacidades, usa las proporcionadas.`;
             )}
             {/* Radar de Coberturas (Tarea 3.1) */}
             {activeTab === 'competencias' && planActivo && (
-                <CoverageRadar 
-                    competencias={cnebCompetencias} 
-                    matrix={matrix} 
-                    label={planActivo.area}
-                />
+                <div className="space-y-12">
+                    <CoverageRadar 
+                        competencias={cnebCompetencias} 
+                        matrix={matrix} 
+                        label={planActivo.area}
+                    />
+                    {cnebTransversales.length > 0 && (
+                        <CoverageRadar 
+                            competencias={cnebTransversales} 
+                            matrix={matrix} 
+                            label="Competencias Transversales"
+                        />
+                    )}
+                </div>
             )}
 
             {activeTab === 'enfoques' && (

@@ -341,33 +341,53 @@ export const SesionEditor: React.FC = () => {
                 title={local.titulo || 'Sin título'}
                 subtitle={`Sesión de Aprendizaje · ${unidad?.diagnosticoStep.titulo || 'Unidad'}`}
                 syncStatus={isSyncing ? 'syncing' : 'synced'}
-                className="sticky top-0 bg-background/80 backdrop-blur-2xl z-50 py-4 md:py-6 border-b border-white/5 -mx-4 px-4"
+                className="bg-background py-4 md:py-6 border-b border-white/5 -mx-4 px-4"
                 actions={[
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full md:w-auto">
+                    <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4 w-full">
                         <div className="flex items-center gap-2">
-                            <button 
+                             <button 
                                 onClick={() => navigate(-1)} 
-                                className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white transition-all"
+                                className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white transition-all shadow-lg"
                             >
                                 <span className="material-icons-round text-lg">arrow_back</span>
-                                <span className="text-[10px] font-black uppercase tracking-widest">Volver</span>
+                                <span className="text-[10px] font-black uppercase tracking-widest hidden sm:inline">Volver</span>
                             </button>
                             <button 
                                 onClick={() => navigate(`/sesiones/${sesionId}/preview`)}
-                                className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all text-[10px] font-black uppercase tracking-widest"
+                                className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all text-[10px] font-black uppercase tracking-widest shadow-lg"
                             >
                                 <span className="material-icons-round text-sm">visibility</span>
                                 <span className="hidden sm:inline">Vista previa</span>
-                                <span className="sm:hidden">Ver</span>
                             </button>
                         </div>
+                        
                         <TabSwitch 
                             options={STEPS}
                             value={activeStep}
                             onChange={setActiveStep}
                             variant="teal"
-                            className="bg-black/40 border-white/10 flex-1 md:flex-none"
+                            className="bg-black/40 border-white/10 flex-1 lg:flex-none"
                         />
+
+                        <div className="flex items-center gap-2 lg:ml-auto">
+                             <button 
+                                onClick={handlePrint}
+                                className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-brand-magenta/10 border border-brand-magenta/20 text-brand-magenta hover:bg-brand-magenta/20 transition-all text-[10px] font-black uppercase tracking-widest shadow-lg shadow-brand-magenta/5"
+                            >
+                                <span className="material-icons-round text-sm">picture_as_pdf</span>
+                                <span className="hidden xl:inline">PDF Express</span>
+                                <span className="xl:hidden">PDF</span>
+                            </button>
+                            <button 
+                                 onClick={handleExport}
+                                 disabled={exporting}
+                                 className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-primary-teal/10 border border-primary-teal/20 text-primary-teal hover:bg-primary-teal/20 transition-all text-[10px] font-black uppercase tracking-widest shadow-lg shadow-primary-teal/5"
+                            >
+                                 {exporting ? <Spinner size="sm" /> : <span className="material-icons-round text-sm">description</span>}
+                                 <span className="hidden xl:inline">{exporting ? 'Exportando...' : 'Descargar Word'}</span>
+                                 <span className="xl:hidden">{exporting ? '...' : 'Word'}</span>
+                            </button>
+                        </div>
                     </div>
                 ]}
             />
@@ -988,33 +1008,6 @@ export const SesionEditor: React.FC = () => {
                 )}
             </div>
 
-            {/* Premium Indicator (Floating/Sticky at bottom but minimal) */}
-            <div className="fixed bottom-8 right-8 flex flex-col items-end gap-3 z-50 no-print">
-                <div className="flex items-center gap-3 px-4 py-2 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/10 shadow-2xl">
-                    <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-primary-teal animate-pulse"></span>
-                        <span className="text-[9px] font-black text-white/50 uppercase tracking-widest">TizA | IA Activa</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                        <button 
-                            onClick={handlePrint}
-                            className="flex items-center gap-2 text-brand-magenta hover:text-white transition-colors text-[9px] font-black uppercase tracking-widest px-2"
-                        >
-                            <span className="material-icons-round text-xs">picture_as_pdf</span>
-                            PDF Express
-                        </button>
-                        <span className="w-px h-3 bg-white/10" />
-                        <button 
-                             onClick={handleExport}
-                             disabled={exporting}
-                             className="flex items-center gap-2 text-primary-teal hover:text-white transition-colors text-[9px] font-black uppercase tracking-widest px-2"
-                        >
-                             {exporting ? <Spinner size="sm" /> : <span className="material-icons-round text-xs">description</span>}
-                             {exporting ? 'Exportando...' : 'Word'}
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };

@@ -169,10 +169,12 @@ export const DocumentPreview: React.FC = () => {
                             ['1.3. INSTITUCIÓN EDUCATIVA', perfil.nombreIE],
                             ['1.4. DIRECTOR', perfil.director],
                             ['1.5. DOCENTE', perfil.nombreCompleto],
-                            ['1.6. MODALIDAD/NIVEL', planActivo.nivel],
-                            ['1.7. CICLO/GRADO/SECCIÓN', `${planActivo.ciclo} / ${planActivo.grado}`],
-                            ['1.8. ÁREA CURRICULAR', planActivo.area],
-                            ['1.9. HORAS PEDAGÓGICAS SEMANALES', `${planActivo.sesionesPorSemana} horas`],
+                            ['1.6. MODALIDAD / NIVEL', `${perfil.tipoIE || 'JER'} / ${planActivo.nivel}`],
+                            ['1.7. CICLO / GRADO / SECCIÓN', `${planActivo.ciclo} / ${planActivo.grado} "${planActivo.diagnostico.seccion || '---'}"`],
+                            ['1.8. NOMBRE DEL AULA', planActivo.diagnostico.nombreAula || '---'],
+                            ['1.9. ÁREA CURRICULAR', planActivo.area],
+                            ['1.10. HORAS PEDAGÓGICAS', `${planActivo.sesionesPorSemana} horas semanales`],
+                            ['1.11. MATRÍCULA TOTAL', `${planActivo.diagnostico.cantidadTotal || 0} estudiantes (${planActivo.diagnostico.cantidadVarones}V / ${planActivo.diagnostico.cantidadMujeres}M)`],
                         ].map(([label, value], i) => (
                             <tr key={i}>
                                 <td style={{ fontWeight: 'bold', width: '220px', padding: '1px' }}>{label}</td>

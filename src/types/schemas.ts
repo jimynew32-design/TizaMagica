@@ -48,6 +48,8 @@ export interface CeldaHorario {
 export interface FilaHorario {
     horaInicio: string   // HH:mm
     horaFin: string      // HH:mm
+    tipo?: 'bloque' | 'recreo'
+    nombre?: string      // Ej. "Recreo 1", "Almuerzo"
     lunes?: CeldaHorario
     martes?: CeldaHorario
     miercoles?: CeldaHorario
@@ -76,6 +78,9 @@ export interface PerfilDocente {
     tipoIE?: 'JER' | 'JEC' | 'CEBA' | 'EBE' | 'EIB' | 'SFT'
     turno?: 'Mañana' | 'Tarde' | 'Noche'
     cargaHoraria: FilaHorario[]
+    // Configuración Horario
+    duracionHora?: number             // Minutos por hora pedagógica
+    configuracionRecreos?: number[]   // Arreglo con la duración en minutos de cada recreo
     // Estado
     isOnboarded: boolean
     activo?: boolean
@@ -149,17 +154,25 @@ export interface ResultadoCompetencia {
     }
 }
 
+export interface MatriculaSeccion {
+    varones: number
+    mujeres: number
+    nee: EstadisticaNEE[]
+}
+
 export interface DiagnosticoIntegral {
     perfilContexto: string
     ubicacion: string
     contexto: MatrizContexto
     caracteristicas: CaracteristicasParticulares
     estilos: EstilosIntereses
-    // Estadísticas de Matrícula (Reemplaza a Estudiante[])
+    // Estadísticas de Matrícula (Totales globales)
     cantidadTotal: number
     cantidadVarones: number
     cantidadMujeres: number
     estadisticasNEE: EstadisticaNEE[]
+    // Desglose por sección (Nuevo)
+    matriculaSecciones?: Record<string, MatriculaSeccion>
     // Evaluación Diagnóstica
     evaluacionCompetencias: ResultadoCompetencia[]
     gradoIdentificado?: string        

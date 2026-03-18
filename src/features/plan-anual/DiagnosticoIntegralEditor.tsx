@@ -3,7 +3,8 @@ import { Card, CardTitle } from '@/components/ui/Card';
 import { AIButton } from '@/components/ui/AIButton';
 import { TabSwitch } from '@/components/ui/TabSwitch';
 import { cn } from '@/lib/cn';
-import { MatrizContexto, Impacto, DiagnosticoIntegral, EstilosIntereses, EstadisticaNEE, TipoNEE, ResultadoCompetencia, CATEGORIAS_NEE } from '@/types/schemas';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MatrizContexto, Impacto, DiagnosticoIntegral, EstilosIntereses, EstadisticaNEE, ResultadoCompetencia, CATEGORIAS_NEE } from '@/types/schemas';
 import { ModuleHeader } from '@/components/ui/ModuleHeader';
 import { usePlanAnualStore, useAIConfigStore, useNotificationStore } from '@/store';
 import { useDebounce } from '@/hooks/ui/useDebounce';
@@ -13,6 +14,61 @@ import { cnebService } from '@/services/cneb';
 
 const AMBITOS = ['familiar', 'grupal', 'local', 'regional', 'nacional'] as const;
 const ASPECTOS = ['cultural', 'economico', 'ambiental'] as const;
+
+// Componente de Selección Premium (Personalizado para evitar estética nativa)
+const CustomSelect = ({ value, options, onChange }: { value: string, options: string[], onChange: (val: string) => void }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <div className="relative flex-1">
+            <button 
+                type="button"
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full flex items-center justify-between bg-black/60 border border-white/10 rounded-xl px-3 py-2.5 text-[10px] font-bold text-white hover:border-brand-magenta/50 transition-all outline-none group"
+            >
+                <span className="truncate pr-2">{value}</span>
+                <span className={cn(
+                    "material-icons-round text-sm transition-transform duration-300 text-gray-500 group-hover:text-brand-magenta",
+                    isOpen ? "rotate-180" : ""
+                )}>expand_more</span>
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <>
+                        <div className="fixed inset-0 z-[60]" onClick={() => setIsOpen(false)} />
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="absolute z-[70] left-0 right-0 mt-2 bg-gray-950 border border-white/10 rounded-xl shadow-glow-magenta-sm overflow-hidden min-w-[200px]"
+                        >
+                            <div className="max-h-64 overflow-y-auto custom-scrollbar p-1">
+                                {options.map(opt => (
+                                    <button 
+                                        key={opt}
+                                        type="button"
+                                        onClick={() => {
+                                            onChange(opt);
+                                            setIsOpen(false);
+                                        }}
+                                        className={cn(
+                                            "w-full text-left px-4 py-3 text-[10px] font-bold uppercase tracking-widest transition-all rounded-lg",
+                                            value === opt 
+                                                ? "bg-brand-magenta text-white" 
+                                                : "text-gray-400 hover:bg-white/5 hover:text-white"
+                                        )}
+                                    >
+                                        {opt}
+                                    </button>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
 
 export const DiagnosticoIntegralEditor: React.FC = () => {
     const { planActivo, updatePlan, isSyncing } = usePlanAnualStore();
@@ -90,6 +146,12 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
     const [cantidadMujeres, setCantidadMujeres] = useState(planActivo?.diagnostico.cantidadMujeres || 0);
     const [cantidadTotal, setCantidadTotal] = useState(planActivo?.diagnostico.cantidadTotal || 0);
     const [estadisticasNEE, setEstadisticasNEE] = useState<EstadisticaNEE[]>(planActivo?.diagnostico.estadisticasNEE || []);
+    
+    // Matrícula por Sección
+    const [matriculaSecciones, setMatriculaSecciones] = useState<Record<string, { varones: number, mujeres: number, nee: EstadisticaNEE[] }>>(
+        planActivo?.diagnostico.matriculaSecciones || {}
+    );
+    const [activeSectionId, setActiveSectionId] = useState<string>('GLOBAL');
 
     // Evaluación Diagnóstica
     const [evaluacionCompetencias, setEvaluacionCompetencias] = useState<ResultadoCompetencia[]>(planActivo?.diagnostico.evaluacionCompetencias || []);
@@ -107,6 +169,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
     const debouncedCantidadMujeres = useDebounce(cantidadMujeres, 1000);
     const debouncedCantidadTotal = useDebounce(cantidadTotal, 1000);
     const debouncedEstadisticasNEE = useDebounce(estadisticasNEE, 1000);
+    const debouncedMatriculaSecciones = useDebounce(matriculaSecciones, 1000);
     const debouncedEvaluacion = useDebounce(evaluacionCompetencias, 1000);
 
 
@@ -149,14 +212,17 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
             setCantidadMujeres(planActivo.diagnostico.cantidadMujeres || 0);
             setCantidadTotal(planActivo.diagnostico.cantidadTotal || 0);
             setEstadisticasNEE(planActivo.diagnostico.estadisticasNEE || []);
+            setMatriculaSecciones(planActivo.diagnostico.matriculaSecciones || {});
             setEvaluacionCompetencias(planActivo.diagnostico.evaluacionCompetencias || []);
-
+            
             // Cargar competencias si la evaluación está vacía
             if ((planActivo.diagnostico.evaluacionCompetencias || []).length === 0) {
                 cargarCompetenciasPlan();
             }
         }
     }, [planActivo?.id]);
+
+    const [showAllLetters, setShowAllLetters] = useState(false);
 
     const cargarCompetenciasPlan = async () => {
         if (!planActivo) return;
@@ -192,6 +258,7 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                 cantidadVarones: debouncedCantidadVarones,
                 cantidadMujeres: debouncedCantidadMujeres,
                 estadisticasNEE: debouncedEstadisticasNEE,
+                matriculaSecciones: debouncedMatriculaSecciones,
                 evaluacionCompetencias: debouncedEvaluacion,
                 gradoIdentificado: debouncedGradoAula,
                 nombreAula: debouncedNombreAula,
@@ -203,13 +270,37 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
         debouncedMatriz, debouncedCarac, debouncedEstilos, debouncedPerfil, 
         debouncedUbicacion, debouncedGradoAula, debouncedNombreAula, debouncedSeccion,
         debouncedCantidadVarones, debouncedCantidadMujeres, debouncedCantidadTotal, 
-        debouncedEstadisticasNEE, debouncedEvaluacion
+        debouncedEstadisticasNEE, debouncedMatriculaSecciones, debouncedEvaluacion
     ]);
 
-    // Auto-calcular total
+    // Recalcular Totales Globales a partir de Secciones si existen
     useEffect(() => {
-        setCantidadTotal(cantidadVarones + cantidadMujeres);
-    }, [cantidadVarones, cantidadMujeres]);
+        const activeSections = seccion.split(',').filter(Boolean);
+        if (activeSections.length > 0) {
+            let totalM = 0;
+            let totalF = 0;
+            const globalNEE: Record<string, number> = {};
+
+            activeSections.forEach(s => {
+                const data = matriculaSecciones[s];
+                if (data) {
+                    totalM += data.varones || 0;
+                    totalF += data.mujeres || 0;
+                    (data.nee || []).forEach(n => {
+                        globalNEE[n.tipo] = (globalNEE[n.tipo] || 0) + n.cantidad;
+                    });
+                }
+            });
+
+            setCantidadVarones(totalM);
+            setCantidadMujeres(totalF);
+            setCantidadTotal(totalM + totalF);
+            setEstadisticasNEE(Object.entries(globalNEE).map(([tipo, cantidad]) => ({ tipo, cantidad })));
+        } else {
+            // Auto-calcular total si no hay secciones usando los campos directos
+            setCantidadTotal(cantidadVarones + cantidadMujeres);
+        }
+    }, [matriculaSecciones, seccion, cantidadVarones, cantidadMujeres]);
 
     const handleImpactChange = (ambito: typeof AMBITOS[number], aspecto: typeof ASPECTOS[number], impacto: Impacto) => {
         setMatriz(prev => ({
@@ -985,21 +1076,41 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                                             </div>
                                         </div>
 
-                                        <div className="space-y-2">
-                                            <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest pl-1">Sección(es)</label>
-                                            <div className="flex flex-wrap gap-1 p-2 bg-white/5 border border-white/10 rounded-xl min-h-[42px]">
-                                                {seccion.split(',').filter(Boolean).map(s => (
-                                                    <span key={s} className="flex items-center gap-1 px-2 py-0.5 bg-brand-magenta/20 border border-brand-magenta/30 text-white text-[10px] font-black rounded-lg">
-                                                        {s}
-                                                        <button onClick={() => setSeccion(seccion.split(',').filter(x => x !== s).join(','))} className="hover:text-red-400">
-                                                            <span className="material-icons-round text-xs">close</span>
-                                                        </button>
-                                                    </span>
-                                                ))}
+                                            <div className="flex items-center justify-between px-1 mb-2">
+                                                <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest pl-1">Sección(es)</label>
+                                                <button 
+                                                    onClick={() => setShowAllLetters(!showAllLetters)}
+                                                    className={cn(
+                                                        "flex items-center gap-1.5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest transition-all",
+                                                        showAllLetters ? "bg-brand-magenta text-white shadow-glow-magenta-xs" : "bg-white/5 text-brand-magenta hover:bg-white/10"
+                                                    )}
+                                                >
+                                                    <span className="material-icons-round text-sm">{showAllLetters ? 'keyboard_arrow_up' : 'apps'}</span>
+                                                    {showAllLetters ? 'Ocultar' : 'Todas A-Z'}
+                                                </button>
+                                            </div>
+
+                                            <div className="flex flex-wrap gap-2 p-3 bg-white/5 border border-white/10 rounded-2xl min-h-[52px] focus-within:border-brand-magenta/30 transition-all">
+                                                <AnimatePresence>
+                                                    {seccion.split(',').filter(Boolean).map(s => (
+                                                        <motion.span 
+                                                            key={s} 
+                                                            initial={{ scale: 0.8, opacity: 0 }}
+                                                            animate={{ scale: 1, opacity: 1 }}
+                                                            exit={{ scale: 0.8, opacity: 0 }}
+                                                            className="flex items-center gap-2 px-3 py-1 bg-[#2a101d] border border-brand-magenta/30 text-white text-[10px] font-black rounded-lg"
+                                                        >
+                                                            {s}
+                                                            <button onClick={() => setSeccion(seccion.split(',').filter(x => x !== s).join(','))} className="w-4 h-4 rounded-full bg-black/20 hover:bg-black/40 flex items-center justify-center text-white/40 hover:text-white transition-all">
+                                                                <span className="material-icons-round text-[10px]">close</span>
+                                                            </button>
+                                                        </motion.span>
+                                                    ))}
+                                                </AnimatePresence>
                                                 <input 
                                                     type="text"
-                                                    placeholder="Escribre y pulsa Enter (ej: A, B, 1, 2...)"
-                                                    className="flex-1 bg-transparent border-none outline-none text-[10px] font-bold text-white min-w-[100px]"
+                                                    placeholder="Escribe o selecciona..."
+                                                    className="flex-1 bg-transparent border-none outline-none text-[11px] font-bold text-white min-w-[120px] placeholder:text-gray-700"
                                                     onKeyDown={(e) => {
                                                         if (e.key === 'Enter' || e.key === ',') {
                                                             e.preventDefault();
@@ -1012,30 +1123,72 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
                                                     }}
                                                 />
                                             </div>
-                                            <div className="flex flex-wrap gap-1 mt-2">
-                                                {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'].map(s => (
-                                                    <button 
-                                                        key={s}
-                                                        onClick={() => {
-                                                            const parts = seccion.split(',').filter(Boolean);
-                                                            if (parts.includes(s)) {
-                                                                setSeccion(parts.filter(p => p !== s).join(','));
-                                                            } else {
-                                                                setSeccion(seccion ? `${seccion},${s}` : s);
-                                                            }
-                                                        }}
-                                                        className={cn(
-                                                            "w-6 h-6 rounded flex items-center justify-center text-[9px] font-black border transition-all",
-                                                            seccion.split(',').includes(s)
-                                                                ? "bg-brand-magenta border-brand-magenta text-white"
-                                                                : "bg-white/5 border-white/5 text-gray-600 hover:text-white"
-                                                        )}
+                                            
+                                            {/* Teclado A-Z Condicional */}
+                                            <AnimatePresence>
+                                                {showAllLetters ? (
+                                                    <motion.div 
+                                                        initial={{ opacity: 0, height: 0 }}
+                                                        animate={{ opacity: 1, height: 'auto' }}
+                                                        exit={{ opacity: 0, height: 0 }}
+                                                        className="overflow-hidden"
                                                     >
-                                                        {s}
-                                                    </button>
-                                                ))}
-                                            </div>
-                                        </div>
+                                                        <div className="bg-black/20 border border-white/5 rounded-2xl p-4 mt-3 grid grid-cols-7 gap-1.5 shadow-inner">
+                                                            {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Única'].map(s => {
+                                                                const isSelected = seccion.split(',').includes(s);
+                                                                return (
+                                                                    <button 
+                                                                        key={s}
+                                                                        onClick={() => {
+                                                                            const parts = seccion.split(',').filter(Boolean);
+                                                                            if (parts.includes(s)) {
+                                                                                setSeccion(parts.filter(p => p !== s).join(','));
+                                                                            } else {
+                                                                                setSeccion(seccion ? `${seccion},${s}` : s);
+                                                                            }
+                                                                        }}
+                                                                        className={cn(
+                                                                            "h-8 rounded-lg text-[10px] font-black transition-all flex items-center justify-center border",
+                                                                            isSelected
+                                                                                ? "bg-brand-magenta border-brand-magenta text-white shadow-glow-magenta-xs"
+                                                                                : "bg-white/5 border-white/5 text-gray-600 hover:text-white hover:bg-white/10"
+                                                                        )}
+                                                                    >
+                                                                        {s}
+                                                                    </button>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </motion.div>
+                                                ) : (
+                                                    <div className="flex items-center gap-2 mt-3 px-1">
+                                                        {['A', 'B', 'C', 'D'].map(s => {
+                                                            const isSelected = seccion.split(',').includes(s);
+                                                            return (
+                                                                <button 
+                                                                    key={s}
+                                                                    onClick={() => {
+                                                                        const parts = seccion.split(',').filter(Boolean);
+                                                                        if (parts.includes(s)) {
+                                                                            setSeccion(parts.filter(p => p !== s).join(','));
+                                                                        } else {
+                                                                            setSeccion(seccion ? `${seccion},${s}` : s);
+                                                                        }
+                                                                    }}
+                                                                    className={cn(
+                                                                        "px-3 py-1.5 rounded-lg text-[10px] font-black border transition-all",
+                                                                        isSelected
+                                                                            ? "bg-brand-magenta/30 border-brand-magenta/60 text-white"
+                                                                            : "bg-white/5 border-white/5 text-gray-500 hover:text-white"
+                                                                    )}
+                                                                >
+                                                                    {s}
+                                                                </button>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                )}
+                                            </AnimatePresence>
 
                                         <div className="space-y-2">
                                             <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest pl-1">Nombre del Aula</label>
@@ -1053,140 +1206,219 @@ export const DiagnosticoIntegralEditor: React.FC = () => {
 
                             <Card variant="glass" className="lg:col-span-3">
                                 <div className="p-6 h-full flex flex-col">
-                                    <h3 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2 mb-6">
-                                        <span className="material-icons-round text-brand-magenta">analytics</span>
-                                        Resumen de Matrícula
-                                    </h3>
-                                    
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                                        {/* Varones */}
-                                        <div className="p-4 bg-blue-500/5 rounded-2xl border border-blue-500/10 space-y-3">
-                                            <div className="flex items-center justify-between">
-                                                <label className="text-[10px] font-black text-blue-400 uppercase tracking-widest">Varones</label>
-                                                <div className="material-icons-round text-blue-400 text-lg">male</div>
-                                            </div>
-                                            <input 
-                                                type="number"
-                                                min={0}
-                                                value={cantidadVarones}
-                                                onChange={(e) => setCantidadVarones(parseInt(e.target.value) || 0)}
-                                                className="w-full bg-black/30 border border-blue-500/20 rounded-xl px-4 py-4 text-3xl font-black text-blue-400 outline-none focus:border-blue-400 transition-all text-center"
-                                            />
-                                        </div>
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                                        <h3 className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2">
+                                            <span className="material-icons-round text-brand-magenta">analytics</span>
+                                            Resumen de Matrícula
+                                        </h3>
 
-                                        {/* Mujeres */}
-                                        <div className="p-4 bg-pink-500/5 rounded-2xl border border-pink-500/10 space-y-3">
-                                            <div className="flex items-center justify-between">
-                                                <label className="text-[10px] font-black text-pink-400 uppercase tracking-widest">Mujeres</label>
-                                                <div className="material-icons-round text-pink-400 text-lg">female</div>
-                                            </div>
-                                            <input 
-                                                type="number"
-                                                min={0}
-                                                value={cantidadMujeres}
-                                                onChange={(e) => setCantidadMujeres(parseInt(e.target.value) || 0)}
-                                                className="w-full bg-black/30 border border-pink-500/20 rounded-xl px-4 py-4 text-3xl font-black text-pink-400 outline-none focus:border-pink-400 transition-all text-center"
-                                            />
-                                        </div>
-
-                                        {/* Total */}
-                                        <div className="p-4 bg-primary-teal/5 rounded-2xl border border-primary-teal/10 space-y-3 relative overflow-hidden group">
-                                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-125 transition-transform">
-                                                <span className="material-icons-round text-6xl text-primary-teal">groups</span>
-                                            </div>
-                                            <label className="text-[10px] font-black text-primary-teal uppercase tracking-widest relative z-10">Total Estudiantes</label>
-                                            <div className="text-5xl font-black text-primary-teal relative z-10 py-2">
-                                                {cantidadTotal}
-                                            </div>
-                                            <p className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter relative z-10">Calculado automáticamente</p>
+                                        {/* Selector de Sección Interno */}
+                                        <div className="flex bg-black/40 p-1 rounded-xl border border-white/5 self-stretch sm:self-auto overflow-x-auto max-w-full custom-scrollbar">
+                                            {seccion.split(',').filter(Boolean).map(s => (
+                                                <button 
+                                                    key={s}
+                                                    onClick={() => setActiveSectionId(s)}
+                                                    className={cn(
+                                                        "px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all whitespace-nowrap",
+                                                        activeSectionId === s ? "bg-primary-teal text-gray-900 shadow-glow-teal-xs" : "text-gray-500 hover:text-white"
+                                                    )}
+                                                >
+                                                    Sección {s}
+                                                </button>
+                                            ))}
+                                            <button 
+                                                onClick={() => setActiveSectionId('GLOBAL')}
+                                                className={cn(
+                                                    "px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all whitespace-nowrap",
+                                                    activeSectionId === 'GLOBAL' ? "bg-brand-magenta text-white shadow-glow-magenta-xs" : "text-gray-500 hover:text-white"
+                                                )}
+                                            >
+                                                Resumen Global
+                                            </button>
                                         </div>
                                     </div>
 
-                                    {/* Inclusión (NEE) */}
-                                    <div className="flex-1 border-t border-white/5 pt-6">
-                                        <div className="flex items-center justify-between mb-4">
-                                            <label className="text-[10px] font-black text-brand-magenta uppercase tracking-widest flex items-center gap-2">
-                                                <span className="material-icons-round text-sm">stars</span>
-                                                Inclusión (Necesidades Educativas Especiales)
-                                            </label>
-                                            <button 
-                                                onClick={() => setEstadisticasNEE(prev => [...prev, { tipo: 'Discapacidad Intelectual', cantidad: 1 }])}
-                                                className="flex items-center gap-1 text-[9px] font-black text-brand-magenta uppercase px-2 py-1 bg-brand-magenta/10 rounded-lg hover:bg-brand-magenta/20 transition-all"
-                                            >
-                                                <span className="material-icons-round text-xs">add</span>
-                                                Añadir
-                                            </button>
-                                        </div>
+                                    {activeSectionId === 'GLOBAL' ? (
+                                        <>
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 animate-in fade-in slide-in-from-top-2 duration-400">
+                                                {/* Varones Global */}
+                                                <div className="p-4 bg-blue-500/5 rounded-2xl border border-blue-500/10 space-y-3">
+                                                    <div className="flex items-center justify-between">
+                                                        <label className="text-[10px] font-black text-blue-400 uppercase tracking-widest">Varones (TOTAL)</label>
+                                                        <div className="material-icons-round text-blue-400 text-lg">male</div>
+                                                    </div>
+                                                    <div className="text-4xl font-black text-blue-400 text-center py-2">{cantidadVarones}</div>
+                                                </div>
 
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                                            {estadisticasNEE.map((nee, idx) => (
-                                                <div key={idx} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl p-2 animate-in zoom-in-95 duration-200">
-                                                    {nee.tipo === 'Otra (especificar...)' || (!CATEGORIAS_NEE.includes(nee.tipo) && nee.tipo !== 'Ninguna') ? (
-                                                        <div className="flex-1 flex gap-1 items-center">
-                                                            <input 
-                                                                autoFocus
-                                                                type="text"
-                                                                placeholder="Especifique..."
-                                                                className="flex-1 bg-black/20 border-b border-brand-magenta/30 text-[10px] font-bold text-white outline-none py-1"
-                                                                value={nee.tipo === 'Otra (especificar...)' ? '' : nee.tipo}
-                                                                onChange={(e) => {
-                                                                    const newNEE = [...estadisticasNEE];
-                                                                    newNEE[idx].tipo = e.target.value;
-                                                                    setEstadisticasNEE(newNEE);
+                                                {/* Mujeres Global */}
+                                                <div className="p-4 bg-pink-500/5 rounded-2xl border border-pink-500/10 space-y-3">
+                                                    <div className="flex items-center justify-between">
+                                                        <label className="text-[10px] font-black text-pink-400 uppercase tracking-widest">Mujeres (TOTAL)</label>
+                                                        <div className="material-icons-round text-pink-400 text-lg">female</div>
+                                                    </div>
+                                                    <div className="text-4xl font-black text-pink-400 text-center py-2">{cantidadMujeres}</div>
+                                                </div>
+
+                                                {/* Total Global */}
+                                                <div className="p-4 bg-primary-teal/5 rounded-2xl border border-primary-teal/10 space-y-3 relative overflow-hidden group">
+                                                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-125 transition-transform">
+                                                        <span className="material-icons-round text-6xl text-primary-teal">groups</span>
+                                                    </div>
+                                                    <label className="text-[10px] font-black text-primary-teal uppercase tracking-widest relative z-10">Total Estudiantes</label>
+                                                    <div className="text-5xl font-black text-primary-teal relative z-10 py-2">
+                                                        {cantidadTotal}
+                                                    </div>
+                                                    <p className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter relative z-10">Calculado de todas las secciones</p>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex-1 border-t border-white/5 pt-6">
+                                                <label className="text-[10px] font-black text-brand-magenta uppercase tracking-widest flex items-center gap-2 mb-4">
+                                                    <span className="material-icons-round text-sm">stars</span>
+                                                    Consolidado de Inclusión (NEE)
+                                                </label>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                                    {estadisticasNEE.map((nee, idx) => (
+                                                        <div key={idx} className="flex items-center justify-between bg-black/20 border border-white/5 rounded-xl px-4 py-3">
+                                                            <span className="text-[10px] font-bold text-gray-300 uppercase">{nee.tipo}</span>
+                                                            <span className="text-sm font-black text-brand-magenta">{nee.cantidad}</span>
+                                                        </div>
+                                                    ))}
+                                                    {estadisticasNEE.length === 0 && (
+                                                        <div className="col-span-full py-4 text-center border border-dashed border-white/5 rounded-xl">
+                                                            <span className="text-[10px] text-gray-600 font-bold uppercase tracking-widest italic">No hay casos detectados</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <div className="animate-in fade-in slide-in-from-right-2 duration-400">
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                                                {/* Varones Sección */}
+                                                <div className="p-4 bg-blue-500/10 rounded-2xl border border-blue-500/20 space-y-3">
+                                                    <div className="flex items-center justify-between">
+                                                        <label className="text-[10px] font-black text-blue-300 uppercase tracking-widest">Varones (Sección {activeSectionId})</label>
+                                                        <div className="material-icons-round text-blue-300 text-lg">male</div>
+                                                    </div>
+                                                    <input 
+                                                        type="number" min={0}
+                                                        value={matriculaSecciones[activeSectionId]?.varones || 0}
+                                                        onChange={(e) => {
+                                                            const val = parseInt(e.target.value) || 0;
+                                                            setMatriculaSecciones(prev => ({
+                                                                ...prev,
+                                                                [activeSectionId]: { ...(prev[activeSectionId] || { varones: 0, mujeres: 0, nee: [] }), varones: val }
+                                                            }));
+                                                        }}
+                                                        className="w-full bg-black/40 border border-blue-500/30 rounded-xl px-4 py-4 text-3xl font-black text-blue-300 outline-none focus:border-blue-300 transition-all text-center"
+                                                    />
+                                                </div>
+
+                                                {/* Mujeres Sección */}
+                                                <div className="p-4 bg-pink-500/10 rounded-2xl border border-pink-500/20 space-y-3">
+                                                    <div className="flex items-center justify-between">
+                                                        <label className="text-[10px] font-black text-pink-300 uppercase tracking-widest">Mujeres (Sección {activeSectionId})</label>
+                                                        <div className="material-icons-round text-pink-300 text-lg">female</div>
+                                                    </div>
+                                                    <input 
+                                                        type="number" min={0}
+                                                        value={matriculaSecciones[activeSectionId]?.mujeres || 0}
+                                                        onChange={(e) => {
+                                                            const val = parseInt(e.target.value) || 0;
+                                                            setMatriculaSecciones(prev => ({
+                                                                ...prev,
+                                                                [activeSectionId]: { ...(prev[activeSectionId] || { varones: 0, mujeres: 0, nee: [] }), mujeres: val }
+                                                            }));
+                                                        }}
+                                                        className="w-full bg-black/40 border border-pink-500/30 rounded-xl px-4 py-4 text-3xl font-black text-pink-300 outline-none focus:border-pink-300 transition-all text-center"
+                                                    />
+                                                </div>
+
+                                                {/* Total Sección */}
+                                                <div className="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-3">
+                                                    <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Total S{activeSectionId}</label>
+                                                    <div className="text-5xl font-black text-white py-2">
+                                                        {(matriculaSecciones[activeSectionId]?.varones || 0) + (matriculaSecciones[activeSectionId]?.mujeres || 0)}
+                                                    </div>
+                                                    <p className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter">Estudiantes en esta sección</p>
+                                                </div>
+                                            </div>
+
+                                            {/* Inclusión por Sección */}
+                                            <div className="flex-1 border-t border-white/5 pt-6">
+                                                <div className="flex items-center justify-between mb-4">
+                                                    <label className="text-[10px] font-black text-brand-magenta uppercase tracking-widest flex items-center gap-2">
+                                                        <span className="material-icons-round text-sm">stars</span>
+                                                        Inclusión en Sección {activeSectionId}
+                                                    </label>
+                                                    <button 
+                                                        onClick={() => {
+                                                            const current = matriculaSecciones[activeSectionId] || { varones: 0, mujeres: 0, nee: [] };
+                                                            setMatriculaSecciones(prev => ({
+                                                                ...prev,
+                                                                [activeSectionId]: { ...current, nee: [...current.nee, { tipo: 'Discapacidad Intelectual', cantidad: 1 }] }
+                                                            }));
+                                                        }}
+                                                        className="flex items-center gap-1 text-[9px] font-black text-brand-magenta uppercase px-2 py-1 bg-brand-magenta/10 rounded-lg hover:bg-brand-magenta/20"
+                                                    >
+                                                        <span className="material-icons-round text-xs">add</span>
+                                                        Añadir NEE
+                                                    </button>
+                                                </div>
+
+                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                                    {(matriculaSecciones[activeSectionId]?.nee || []).map((nee, idx) => (
+                                                        <div key={idx} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl p-2">
+                                                            <CustomSelect 
+                                                                value={nee.tipo}
+                                                                options={CATEGORIAS_NEE.filter(c => c !== 'Ninguna')}
+                                                                onChange={(val) => {
+                                                                    const currentNEE = [...(matriculaSecciones[activeSectionId]?.nee || [])];
+                                                                    currentNEE[idx].tipo = val;
+                                                                    setMatriculaSecciones(prev => ({
+                                                                        ...prev,
+                                                                        [activeSectionId]: { ...prev[activeSectionId], nee: currentNEE }
+                                                                    }));
                                                                 }}
+                                                            />
+                                                            <input 
+                                                                type="number" min={1}
+                                                                value={nee.cantidad}
+                                                                onChange={(e) => {
+                                                                    const val = parseInt(e.target.value) || 0;
+                                                                    const currentNEE = [...(matriculaSecciones[activeSectionId]?.nee || [])];
+                                                                    currentNEE[idx].cantidad = val;
+                                                                    setMatriculaSecciones(prev => ({
+                                                                        ...prev,
+                                                                        [activeSectionId]: { ...prev[activeSectionId], nee: currentNEE }
+                                                                    }));
+                                                                }}
+                                                                className="w-10 bg-black/40 border border-white/10 rounded-lg text-xs font-black text-brand-magenta text-center"
                                                             />
                                                             <button 
                                                                 onClick={() => {
-                                                                    const newNEE = [...estadisticasNEE];
-                                                                    newNEE[idx].tipo = 'Discapacidad Intelectual';
-                                                                    setEstadisticasNEE(newNEE);
+                                                                    const currentNEE = (matriculaSecciones[activeSectionId]?.nee || []).filter((_, i) => i !== idx);
+                                                                    setMatriculaSecciones(prev => ({
+                                                                        ...prev,
+                                                                        [activeSectionId]: { ...prev[activeSectionId], nee: currentNEE }
+                                                                    }));
                                                                 }}
-                                                                className="text-gray-600 hover:text-white"
+                                                                className="text-gray-600 hover:text-red-400"
                                                             >
-                                                                <span className="material-icons-round text-xs">undo</span>
+                                                                <span className="material-icons-round text-sm">close</span>
                                                             </button>
                                                         </div>
-                                                    ) : (
-                                                        <select 
-                                                            value={nee.tipo}
-                                                            onChange={(e) => {
-                                                                const newNEE = [...estadisticasNEE];
-                                                                newNEE[idx].tipo = e.target.value as TipoNEE;
-                                                                setEstadisticasNEE(newNEE);
-                                                            }}
-                                                            className="flex-1 bg-transparent text-[10px] font-bold text-white outline-none"
-                                                        >
-                                                            {CATEGORIAS_NEE.filter(c => c !== 'Ninguna').map(c => (
-                                                                <option key={c} value={c} className="bg-gray-900">{c}</option>
-                                                            ))}
-                                                        </select>
+                                                    ))}
+                                                    {(matriculaSecciones[activeSectionId]?.nee || []).length === 0 && (
+                                                        <div className="col-span-full py-4 text-center border border-dashed border-white/5 rounded-xl opacity-50">
+                                                            <span className="text-[9px] text-gray-500 font-bold uppercase">Sin casos en esta sección</span>
+                                                        </div>
                                                     )}
-                                                    <input 
-                                                        type="number"
-                                                        min={1}
-                                                        value={nee.cantidad}
-                                                        onChange={(e) => {
-                                                            const newNEE = [...estadisticasNEE];
-                                                            newNEE[idx].cantidad = parseInt(e.target.value) || 0;
-                                                            setEstadisticasNEE(newNEE);
-                                                        }}
-                                                        className="w-12 bg-black/40 border border-white/10 rounded-lg px-2 py-1 text-xs font-black text-brand-magenta text-center outline-none focus:border-brand-magenta/40"
-                                                    />
-                                                    <button 
-                                                        onClick={() => setEstadisticasNEE(prev => (prev || []).filter((_, i) => i !== idx))}
-                                                        className="text-gray-600 hover:text-red-400 transition-colors"
-                                                    >
-                                                        <span className="material-icons-round text-sm">close</span>
-                                                    </button>
                                                 </div>
-                                            ))}
-                                            {estadisticasNEE.length === 0 && (
-                                                <div className="col-span-full py-4 text-center border border-dashed border-white/5 rounded-xl">
-                                                    <span className="text-[10px] text-gray-600 font-bold uppercase tracking-widest italic">No hay casos de inclusión registrados</span>
-                                                </div>
-                                            )}
+                                            </div>
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
                             </Card>
                         </div>

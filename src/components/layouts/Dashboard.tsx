@@ -22,7 +22,7 @@ export const DashboardLayout: React.FC = () => {
     }, [perfil?.id, planesLoaded]);
 
     return (
-        <div className="min-h-dvh bg-app relative flex overflow-x-hidden">
+        <div className="h-dvh bg-app relative flex overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
                 <div className="absolute top-[-10%] right-[-10%] w-[40dvw] h-[40dvh] bg-primary-teal/5 blur-[120px] rounded-full animate-glow-pulse" />
@@ -52,7 +52,7 @@ export const DashboardLayout: React.FC = () => {
 
             {/* Navigation Sidebar */}
             <aside className={cn(
-                "fixed inset-y-0 left-0 z-[70] transition-transform duration-500 lg:relative lg:translate-x-0 lg:z-auto h-dvh flex-shrink-0",
+                "fixed inset-y-0 left-0 z-[70] transition-transform duration-500 lg:sticky lg:top-0 lg:translate-x-0 lg:z-auto h-dvh flex-shrink-0",
                 isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             )}>
                 <Sidebar onNavigate={() => setIsMobileMenuOpen(false)} />

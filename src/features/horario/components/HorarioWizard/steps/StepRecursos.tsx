@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/cn';
-import { Docente, Aula, Seccion, Materia } from '../../../types';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Docente, Aula, Seccion, Materia } from '../../../types';
 
 interface StepRecursosProps {
     data: {
@@ -87,6 +87,8 @@ export const StepRecursos: React.FC<StepRecursosProps> = ({ data, nivelIE, onCha
     const [activeTab, setActiveTab] = useState<TabKey>('materias');
     const [inputValue, setInputValue] = useState('');
     const [editingId, setEditingId] = useState<string | null>(null);
+    const [selectedGrado, setSelectedGrado] = useState('1');
+    const [showAllLetters, setShowAllLetters] = useState(false);
 
     // Formulario simple para docente/materia individual en modo visual
     const [individualItem, setIndividualItem] = useState({ nombre: '', subtext: '', horas: 4 });
@@ -290,13 +292,6 @@ export const StepRecursos: React.FC<StepRecursosProps> = ({ data, nivelIE, onCha
     };
 
     const gradosCount = nivelIE === 'Secundaria' ? 5 : 6;
-    const [letras, setLetras] = useState(['A', 'B', 'C', 'D', 'E']);
-
-    const handleAddLetra = () => {
-        if (letras.length >= 26) return; // Límite Z
-        const nextChar = String.fromCharCode(65 + letras.length);
-        setLetras([...letras, nextChar]);
-    };
 
     return (
         <div className="max-w-[1200px] mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-20">
@@ -537,60 +532,202 @@ export const StepRecursos: React.FC<StepRecursosProps> = ({ data, nivelIE, onCha
                     )}
 
                     {activeTab === 'secciones' && (
-                        <div className="overflow-x-auto custom-scrollbar pb-4">
-                            <table className="w-full border-separate border-spacing-3">
-                                <thead>
-                                    <tr>
-                                        <th className="w-32"></th>
-                                        {letras.map(l => (
-                                            <th key={l} className="text-[10px] font-black text-white/30 uppercase py-2 tracking-widest text-center"> Sección {l}</th>
-                                        ))}
-                                        <th className="w-16"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {Array.from({length: gradosCount}).map((_, i) => {
-                                        const grado = (i + 1).toString();
-                                        return (
-                                            <tr key={grado}>
-                                                <td className="text-[11px] font-black text-white/50 uppercase pr-4 whitespace-nowrap">{grado}º Grado</td>
-                                                {letras.map(letra => {
-                                                    const isSelected = data.secciones.some(s => s.grado === grado && s.letra === letra);
-                                                    return (
-                                                        <td key={letra} className="p-0">
+                        <div className="space-y-12 pb-10">
+                            {/* Selector de Grado (Estilo Poseify) */}
+                            <div className="flex flex-wrap justify-center gap-3 animate-in fade-in slide-in-from-top-4 duration-500">
+                                {Array.from({length: gradosCount}).map((_, i) => {
+                                    const grado = (i + 1).toString();
+                                    const count = data.secciones.filter(s => s.grado === grado).length;
+                                    return (
+                                        <button
+                                            key={grado}
+                                            onClick={() => setSelectedGrado(grado)}
+                                            className={cn(
+                                                "px-8 py-4 rounded-3xl border text-[11px] font-black uppercase tracking-[0.2em] transition-all flex items-center gap-3",
+                                                selectedGrado === grado 
+                                                    ? "bg-white text-black border-white shadow-glow-white-sm scale-110 z-10" 
+                                                    : "bg-white/5 border-white/5 text-white/30 hover:bg-white/10 hover:border-white/20"
+                                            )}
+                                        >
+                                            {grado}º Grado
+                                            {count > 0 && (
+                                                <span className={cn(
+                                                    "px-2 py-0.5 rounded-lg text-[9px] font-black",
+                                                    selectedGrado === grado ? "bg-black/10 text-black" : "bg-brand-magenta/20 text-brand-magenta"
+                                                )}>
+                                                    {count}
+                                                </span>
+                                            )}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Widget de Configuración de Secciones (Inspirado en Captura) */}
+                            <div className="max-w-2xl mx-auto space-y-10">
+                                <div className="space-y-6">
+                                    <div className="flex items-center justify-between px-8">
+                                        <label className="text-[10px] font-black uppercase tracking-[0.6em] text-white/20">CONFIGURACIÓN DE SECCIÓN(ES)</label>
+                                        <div className="flex items-center gap-2">
+                                            <span className="w-2 h-2 rounded-full bg-brand-magenta animate-pulse shadow-glow-magenta-xs" />
+                                            <span className="text-[9px] font-black text-brand-magenta uppercase tracking-widest">Edición en Tiempo Real</span>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Contenedor de Selección (Chip Box) */}
+                                    <div className="bg-[#0f0f0f] border border-white/5 rounded-[3rem] p-10 min-h-[200px] flex flex-wrap items-start content-start gap-5 relative group focus-within:border-brand-magenta/20 transition-all shadow-[0_30px_100px_rgba(0,0,0,0.8)]">
+                                        <AnimatePresence>
+                                            {data.secciones.filter(s => s.grado === selectedGrado).map(sec => (
+                                                <motion.div
+                                                    key={sec.id}
+                                                    initial={{ opacity: 0, scale: 0.8, x: -10 }}
+                                                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                                                    exit={{ opacity: 0, scale: 0.8, x: 10 }}
+                                                    className="bg-[#2a101d] border border-brand-magenta/30 text-white rounded-[1.5rem] pl-6 pr-3 py-4 flex items-center gap-4 group/chip hover:bg-brand-magenta transition-all cursor-default shadow-lg"
+                                                >
+                                                    <span className="text-2xl font-black tracking-tighter">{sec.letra}</span>
+                                                    <button 
+                                                        onClick={() => toggleSeccion(selectedGrado, sec.letra)}
+                                                        className="w-8 h-8 rounded-full bg-black/40 hover:bg-black/80 flex items-center justify-center text-white/40 hover:text-white transition-all"
+                                                    >
+                                                        <span className="material-icons-round text-lg">close</span>
+                                                    </button>
+                                                </motion.div>
+                                            ))}
+                                        </AnimatePresence>
+                                        
+                                        <div className="flex-1 min-w-[300px] mt-2 h-14 flex items-center px-2">
+                                            <input 
+                                                placeholder="Escribe y pulsa Enter"
+                                                className="bg-transparent border-none outline-none text-2xl font-black text-white/20 placeholder:text-white/5 w-full focus:text-white transition-colors"
+                                                onKeyDown={(e) => {
+                                                    if (e.key === 'Enter') {
+                                                        const val = e.currentTarget.value.trim().toUpperCase();
+                                                        if (val && val.length < 5) toggleSeccion(selectedGrado, val);
+                                                        e.currentTarget.value = '';
+                                                    }
+                                                }}
+                                            />
+                                        </div>
+
+                                        {/* Efecto de borde dinámico */}
+                                        <div className="absolute inset-0 rounded-[3rem] border border-brand-magenta/10 opacity-0 group-focus-within:opacity-100 pointer-events-none transition-opacity" />
+                                    </div>
+
+                                    {/* Selector de Secciones con Toggle (Inspirado en Petición) */}
+                                    <div className="space-y-4">
+                                        <div className="flex items-center justify-between px-6">
+                                            <label className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">SECCIÓN(ES)</label>
+                                            <button 
+                                                onClick={() => setShowAllLetters(!showAllLetters)}
+                                                className={cn(
+                                                    "flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest transition-all",
+                                                    showAllLetters ? "bg-brand-magenta text-white shadow-glow-magenta-xs" : "bg-white/5 text-brand-magenta hover:bg-white/10"
+                                                )}
+                                            >
+                                                <span className="material-icons-round text-sm">{showAllLetters ? 'keyboard_arrow_up' : 'apps'}</span>
+                                                {showAllLetters ? 'Ocultar' : 'Ver Todas A-Z'}
+                                            </button>
+                                        </div>
+
+                                        {/* Contenedor de Selección (Chip Box) */}
+                                        <div className="bg-[#0f0f0f] border border-white/5 rounded-[3rem] p-8 min-h-[160px] flex flex-wrap items-start content-start gap-4 transition-all shadow-2xl">
+                                            <AnimatePresence>
+                                                {data.secciones.filter(s => s.grado === selectedGrado).map(sec => (
+                                                    <motion.div
+                                                        key={sec.id}
+                                                        initial={{ opacity: 0, scale: 0.8 }}
+                                                        animate={{ opacity: 1, scale: 1 }}
+                                                        exit={{ opacity: 0, scale: 0.8 }}
+                                                        className="bg-[#2a101d] border border-brand-magenta/30 text-white rounded-[1.2rem] pl-5 pr-2 py-3 flex items-center gap-3 transition-all"
+                                                    >
+                                                        <span className="text-xl font-black">{sec.letra}</span>
+                                                        <button 
+                                                            onClick={() => toggleSeccion(selectedGrado, sec.letra)}
+                                                            className="w-7 h-7 rounded-full bg-black/40 hover:bg-black/80 flex items-center justify-center text-white/40 hover:text-white transition-all"
+                                                        >
+                                                            <span className="material-icons-round text-base">close</span>
+                                                        </button>
+                                                    </motion.div>
+                                                ))}
+                                            </AnimatePresence>
+                                            
+                                            <div className="flex-1 min-w-[200px] h-14 flex items-center px-4">
+                                                <input 
+                                                    placeholder="Escribe o selecciona..."
+                                                    className="bg-transparent border-none outline-none text-xl font-black text-white/20 focus:text-white transition-colors w-full"
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === 'Enter') {
+                                                            const val = e.currentTarget.value.trim().toUpperCase();
+                                                            if (val && val.length < 5) toggleSeccion(selectedGrado, val);
+                                                            e.currentTarget.value = '';
+                                                        }
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Teclado A-Z Expandible */}
+                                        <AnimatePresence>
+                                            {showAllLetters ? (
+                                                <motion.div 
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: 'auto' }}
+                                                    exit={{ opacity: 0, height: 0 }}
+                                                    className="overflow-hidden bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-6 shadow-inner mt-2"
+                                                >
+                                                    <div className="grid grid-cols-8 gap-2">
+                                                        {['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Única'].map((letter) => {
+                                                            const isSelected = data.secciones.some(s => s.grado === selectedGrado && s.letra === letter);
+                                                            return (
+                                                                <button
+                                                                    key={letter}
+                                                                    onClick={() => toggleSeccion(selectedGrado, letter)}
+                                                                    className={cn(
+                                                                        "h-10 rounded-xl border font-black text-xs transition-all flex items-center justify-center",
+                                                                        isSelected 
+                                                                            ? "bg-brand-magenta border-brand-magenta text-white shadow-glow-magenta-sm" 
+                                                                            : "bg-white/5 border-white/5 text-gray-500 hover:text-white hover:bg-white/10"
+                                                                    )}
+                                                                >
+                                                                    {letter}
+                                                                </button>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                </motion.div>
+                                            ) : (
+                                                <div className="flex flex-wrap justify-center gap-2 pt-2">
+                                                    {['A', 'B', 'C', 'D'].map((letra) => {
+                                                        const isSelected = data.secciones.some(s => s.grado === selectedGrado && s.letra === letra);
+                                                        return (
                                                             <button
-                                                                onClick={() => toggleSeccion(grado, letra)}
+                                                                key={letra}
+                                                                onClick={() => toggleSeccion(selectedGrado, letra)}
                                                                 className={cn(
-                                                                    "w-full py-4 rounded-2xl border font-black text-sm transition-all relative overflow-hidden group",
+                                                                    "px-5 py-2.5 rounded-xl border font-black text-[10px] transition-all flex items-center justify-center min-w-[60px]",
                                                                     isSelected 
-                                                                        ? "bg-indigo-600 border-indigo-500 text-white shadow-glow-indigo-sm" 
-                                                                        : "bg-white/5 border-white/5 text-white/20 hover:bg-white/10"
+                                                                        ? "bg-brand-magenta/30 border-brand-magenta/50 text-white" 
+                                                                        : "bg-white/5 border-white/5 text-gray-600 hover:text-white"
                                                                 )}
                                                             >
-                                                                <span className="relative z-10">{grado}{letra}</span>
-                                                                {isSelected && <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />}
+                                                                {letra}
                                                             </button>
-                                                        </td>
-                                                    );
-                                                })}
-                                                {/* Botón "+" solo en la primera fila para añadir columna */}
-                                                <td className="p-0">
-                                                    {i === 0 && (
-                                                        <button 
-                                                            onClick={handleAddLetra}
-                                                            disabled={letras.length >= 26}
-                                                            className="w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white/40 hover:bg-brand-magenta hover:text-white hover:border-brand-magenta transition-all flex items-center justify-center ml-2 group"
-                                                            title="Añadir nueva sección"
-                                                        >
-                                                            <span className="material-icons-round text-xl group-hover:rotate-90 transition-transform">add</span>
-                                                        </button>
-                                                    )}
-                                                </td>
-                                            </tr>
-                                        );
-                                    })}
-                                </tbody>
-                            </table>
+                                                        );
+                                                    })}
+                                                </div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+
+                                    <div className="flex justify-center pt-4">
+                                        <div className="px-6 py-3 bg-white/5 border border-white/5 rounded-full flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-white/30">
+                                            <span className="material-icons-round text-sm">info</span>
+                                            Puedes usar el teclado o escribir directamente arriba
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>
