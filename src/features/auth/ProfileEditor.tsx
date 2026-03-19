@@ -187,6 +187,23 @@ export const ProfileEditor: React.FC = () => {
                                         icon="apartment"
                                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, ugel: e.target.value })}
                                     />
+                                    <div className="space-y-3">
+                                        <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest px-1 flex items-center gap-2">
+                                            <span className="material-icons-round text-primary-teal text-sm">stairs</span>
+                                            Nivel Educativo
+                                        </label>
+                                        <div className="flex bg-surface-header/30 p-1.5 rounded-2xl border border-white/5">
+                                            {(['Inicial', 'Primaria', 'Secundaria'] as NivelEducativo[]).map((n) => (
+                                                <button
+                                                    key={n}
+                                                    onClick={() => setFormData({ ...formData, nivel: n })}
+                                                    className={`flex-1 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all ${formData.nivel === n ? 'bg-primary-teal text-gray-900 shadow-lg scale-105' : 'text-gray-500 hover:text-white hover:bg-white/5'}`}
+                                                >
+                                                    {n}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className="p-6 bg-primary-teal/5 rounded-3xl border border-primary-teal/10 flex items-center gap-6">
@@ -206,7 +223,6 @@ export const ProfileEditor: React.FC = () => {
                     <SchedulerStep
                         value={formData.cargaHoraria}
                         nivel={formData.nivel}
-                        onNivelChange={(n) => setFormData({ ...formData, nivel: n })}
                         onChange={(val) => setFormData({ ...formData, cargaHoraria: val })}
                     />
                 </div>
